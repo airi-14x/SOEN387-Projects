@@ -678,3 +678,87 @@
 21-Sep-2019 12:55:18.550 INFOS [http-nio-8080-exec-45] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
 21-Sep-2019 12:55:20.327 INFOS [http-nio-8080-exec-45] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
 21-Sep-2019 12:55:20.372 INFOS [http-nio-8080-exec-45] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:18:42.132 INFOS [http-nio-8080-exec-58] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:18:42.499 INFOS [http-nio-8080-exec-58] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:20:07.841 INFOS [http-nio-8080-exec-68] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:20:08.153 INFOS [http-nio-8080-exec-68] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:20:11.069 INFOS [http-nio-8080-exec-69] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:20:11.113 INFOS [http-nio-8080-exec-69] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:26:57.883 INFOS [http-nio-8080-exec-73] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:26:58.091 INFOS [http-nio-8080-exec-73] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:27:05.438 INFOS [http-nio-8080-exec-81] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:27:05.513 INFOS [http-nio-8080-exec-81] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:27:48.753 INFOS [http-nio-8080-exec-75] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:27:49.153 INFOS [http-nio-8080-exec-75] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:27:51.994 INFOS [http-nio-8080-exec-81] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:27:52.194 INFOS [http-nio-8080-exec-81] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:31:02.254 INFOS [http-nio-8080-exec-91] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:31:02.652 INFOS [http-nio-8080-exec-91] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:32:58.369 INFOS [http-nio-8080-exec-88] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:32:58.722 INFOS [http-nio-8080-exec-88] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:33:02.192 INFOS [http-nio-8080-exec-90] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:33:02.260 INFOS [http-nio-8080-exec-90] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:33:20.650 INFOS [http-nio-8080-exec-96] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:33:21.006 INFOS [http-nio-8080-exec-96] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:33:59.047 INFOS [http-nio-8080-exec-92] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:33:59.207 INFOS [http-nio-8080-exec-92] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:44:47.520 INFOS [http-nio-8080-exec-107] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:44:47.821 INFOS [http-nio-8080-exec-107] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:45:36.357 INFOS [http-nio-8080-exec-112] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:45:36.416 INFOS [http-nio-8080-exec-112] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:46:17.439 INFOS [http-nio-8080-exec-115] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:46:17.523 INFOS [http-nio-8080-exec-115] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:46:21.743 INFOS [http-nio-8080-exec-114] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:46:21.814 INFOS [http-nio-8080-exec-114] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:47:54.412 INFOS [http-nio-8080-exec-120] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:47:54.523 INFOS [http-nio-8080-exec-120] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:49:47.047 INFOS [http-nio-8080-exec-112] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:49:47.112 INFOS [http-nio-8080-exec-112] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:51:19.478 INFOS [http-nio-8080-exec-126] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:51:19.722 INFOS [http-nio-8080-exec-126] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:51:35.559 INFOS [http-nio-8080-exec-124] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:51:35.650 INFOS [http-nio-8080-exec-124] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:52:23.260 INFOS [http-nio-8080-exec-110] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:52:23.400 INFOS [http-nio-8080-exec-110] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:52:24.253 INFOS [http-nio-8080-exec-114] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:52:24.316 INFOS [http-nio-8080-exec-114] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 13:55:50.968 INFOS [http-nio-8080-exec-133] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 13:55:51.415 INFOS [http-nio-8080-exec-133] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:02:08.268 INFOS [http-nio-8080-exec-142] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:02:08.603 INFOS [http-nio-8080-exec-142] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:03:37.767 INFOS [http-nio-8080-exec-154] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:03:38.213 INFOS [http-nio-8080-exec-154] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:03:57.989 INFOS [http-nio-8080-exec-144] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:03:58.182 INFOS [http-nio-8080-exec-144] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:04:11.936 INFOS [http-nio-8080-exec-156] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:04:12.215 INFOS [http-nio-8080-exec-156] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:05:42.608 INFOS [http-nio-8080-exec-154] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:05:42.675 INFOS [http-nio-8080-exec-154] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:05:50.439 INFOS [http-nio-8080-exec-141] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:05:50.510 INFOS [http-nio-8080-exec-141] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:06:17.832 INFOS [http-nio-8080-exec-157] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:06:18.665 INFOS [http-nio-8080-exec-157] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:06:46.641 INFOS [http-nio-8080-exec-157] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:06:46.677 INFOS [http-nio-8080-exec-157] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:07:02.683 INFOS [http-nio-8080-exec-141] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:07:02.736 INFOS [http-nio-8080-exec-141] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:07:41.370 INFOS [http-nio-8080-exec-168] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:07:41.457 INFOS [http-nio-8080-exec-168] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:08:10.896 INFOS [http-nio-8080-exec-168] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:08:10.959 INFOS [http-nio-8080-exec-168] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:10:08.383 INFOS [http-nio-8080-exec-176] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:10:08.477 INFOS [http-nio-8080-exec-176] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:10:51.510 INFOS [http-nio-8080-exec-176] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:10:51.822 INFOS [http-nio-8080-exec-176] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:11:21.507 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:11:21.589 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:12:15.086 INFOS [http-nio-8080-exec-182] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:12:15.166 INFOS [http-nio-8080-exec-182] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:12:28.149 INFOS [http-nio-8080-exec-168] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:12:28.337 INFOS [http-nio-8080-exec-168] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:14:24.247 INFOS [http-nio-8080-exec-164] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:14:24.594 INFOS [http-nio-8080-exec-164] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:18:34.372 INFOS [http-nio-8080-exec-195] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:18:34.542 INFOS [http-nio-8080-exec-195] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+21-Sep-2019 14:19:23.877 INFOS [http-nio-8080-exec-182] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+21-Sep-2019 14:19:24.175 INFOS [http-nio-8080-exec-182] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé

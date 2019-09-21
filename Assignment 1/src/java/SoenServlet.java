@@ -6,6 +6,7 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLDecoder;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,8 +32,10 @@ public class SoenServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        String title = "HTTP Header for SoenServlet";
+        String title = "Soen 387 Assignment 1";
         String requestMethod = request.getMethod();
+        String queryString = URLDecoder.decode(request.getQueryString().split("=")[1],
+        "UTF-8");
         
         String docType =
             "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
@@ -42,13 +45,13 @@ public class SoenServlet extends HttpServlet {
             "<head><title>" + title + "</title></head>\n"+
             "<body bgcolor = \"#f0f0f0\">\n" +
             "<h1 align = \"center\">" + title + "</h1>\n" +
-            "<h3> Request Method: " +  requestMethod + "</h3>\n" + 
+            "<h3> Request Method: " +  requestMethod + "</h3>\n" +
             "<table width = \"100%\" border = \"1\" align = \"center\">\n" +
             "<tr bgcolor = \"#949494\">\n" +
             "<th>Header Name</th><th>Header Value(s)</th>\n"+
             "</tr>\n"
         );
- 
+       
         Enumeration headerNames = request.getHeaderNames();
     
         while(headerNames.hasMoreElements()) {
@@ -56,6 +59,15 @@ public class SoenServlet extends HttpServlet {
             out.print("<tr><td>" + paramName + "</td>\n");
             String paramValue = request.getHeader(paramName);
             out.println("<td> " + paramValue + "</td></tr>\n");
+        }
+        
+        Enumeration queryParams = request.getParameterNames();
+        out.println("<tr bgcolor = \"#949494\"><th>Query String</th><th bgcolor = \"#949494\">Parameter Values</th></tr>\n");
+        while(queryParams.hasMoreElements()) {
+            String paramName = (String) queryParams.nextElement();
+            out.print("<tr><td>" + paramName + "</td> \n");
+            String paramValue = request.getParameter(paramName);
+            out.println("<td>" + paramValue + "</td></tr>\n");
         }
         out.println("</table>\n</body></html>");
     }

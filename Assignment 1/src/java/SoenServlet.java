@@ -7,16 +7,15 @@
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.*;
 
 /**
  *
  * @author jasminelatendresse
  */
-@WebServlet(urlPatterns = {"/SoenServlet"})
 public class SoenServlet extends HttpServlet {
 
     /**
@@ -31,18 +30,34 @@ public class SoenServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet SoenServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet SoenServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        PrintWriter out = response.getWriter();
+        String title = "HTTP Header for SoenServlet";
+        String requestMethod = request.getMethod();
+        
+        String docType =
+            "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
+
+        out.println(docType +
+            "<html>\n" +
+            "<head><title>" + title + "</title></head>\n"+
+            "<body bgcolor = \"#f0f0f0\">\n" +
+            "<h1 align = \"center\">" + title + "</h1>\n" +
+            "<h3> Request Method: " +  requestMethod + "</h3>\n" + 
+            "<table width = \"100%\" border = \"1\" align = \"center\">\n" +
+            "<tr bgcolor = \"#949494\">\n" +
+            "<th>Header Name</th><th>Header Value(s)</th>\n"+
+            "</tr>\n"
+        );
+ 
+        Enumeration headerNames = request.getHeaderNames();
+    
+        while(headerNames.hasMoreElements()) {
+            String paramName = (String)headerNames.nextElement();
+            out.print("<tr><td>" + paramName + "</td>\n");
+            String paramValue = request.getHeader(paramName);
+            out.println("<td> " + paramValue + "</td></tr>\n");
         }
+        out.println("</table>\n</body></html>");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

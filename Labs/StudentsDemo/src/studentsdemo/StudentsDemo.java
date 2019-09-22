@@ -33,13 +33,15 @@ public class StudentsDemo {
             System.out.println(students[i].displayStudent());
         }
 
+        Arrays.sort(students, (a, b) -> (int) (a.getId() - b.getId()));
         //Arrays.sort(students, (a,b) -> a - b);
+        /*
         Arrays.sort(students, new Comparator<Student>() {
             @Override
             public int compare(Student s1, Student s2) {
                 return (int) (s1.getId() - s2.getId());
             }
-        });
+        });*/
 
         System.out.println("");
         System.out.println("Post-sort on ID");

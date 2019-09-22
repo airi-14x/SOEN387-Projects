@@ -10,9 +10,10 @@ package studentsdemo;
  * @author Airi
  */
 public class Student {
-    public long id;
-    public String firstName;
-    public String lastName;
+
+    private long id;
+    private String firstName;
+    private String lastName;
 
     public Student(long id, String firstName, String lastName) {
         this.id = id;
@@ -43,6 +44,10 @@ public class Student {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-   
-    
+
+    public String displayStudent() {
+        return "ID:" + this.getId() + " " + "First Name:" + this.getFirstName()
+                + " " + "Last Name:" + this.getLastName();
+    }
+
 }

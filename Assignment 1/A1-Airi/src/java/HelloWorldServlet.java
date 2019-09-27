@@ -6,6 +6,7 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -31,15 +32,27 @@ public class HelloWorldServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
+            //localhost:8080/A1-Airi/HelloWorldServlet?format=text&param1=val1&param2=val2
+            out.println("<!DOCTYPE xhtml>");
             out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet HelloWorldServlet</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet HelloWorldServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h4>Request Method: " + request.getMethod() + "</h4>");
+            out.println("<h4>Request Headers: </h4>");
+            out.println("<h4>Host: " + request.getHeader("host") + "</h4>");
+            out.println("<h4>Connection: " + request.getHeader("connection") + "</h4>");
+            out.println("<h4>User-Agent: " + request.getHeader("user-agent") + "</h4>");
+            out.println("<h4>Accept: " + request.getHeader("accept") + "</h4>");
+            out.println("<h4>Query String: </h4>");
+            out.println("<h4>format: " + request.getParameter("format") + "</h4>");
+            Enumeration<String> request2 = request.getParameterNames();
+
+            out.println("");
             out.println("</body>");
-            out.println("</html>");
+            out.println("</xhtml>");
         }
     }
 

@@ -6,7 +6,6 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  * @author Airi
  */
 public class HelloWorldServlet extends HttpServlet {
+
+    String current_format = "";
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -47,10 +48,36 @@ public class HelloWorldServlet extends HttpServlet {
             out.println("<h4>User-Agent: " + request.getHeader("user-agent") + "</h4>");
             out.println("<h4>Accept: " + request.getHeader("accept") + "</h4>");
             out.println("<h4>Query String: </h4>");
-            out.println("<h4>format: " + request.getParameter("format") + "</h4>");
-            Enumeration<String> request2 = request.getParameterNames();
 
-            out.println("");
+            if (request.getParameter("format") == null) {
+                current_format = "html";
+                out.println("<h4>format: " + current_format + "</h4>");
+                out.println("");
+                out.println("Response:");
+                response.setStatus(200);
+                out.println(request.getProtocol());
+                out.println(response.getStatus() + " OK");
+
+            } else if (!request.getParameter("format").equals("text") && !request.getParameter("format").equals("html")
+                    && !request.getParameter("format").equals("xml")) {
+                out.println("");
+                response.setStatus(400); //Bad Request
+                out.println("<h4> Response: " + request.getProtocol() + " " + response.getStatus()
+                        + " Bad Request - Syntax error in Request</h4>");
+                //out.println("<h4>format: " + "ERROR PAGE NEEDED TO BE DISPLAYED!" + "</h4>");
+            } else {
+                current_format = request.getParameter("format");
+                out.println("<h4>format: " + current_format + "</h4>");
+                out.println("");
+                out.println("Response:");
+                response.setStatus(200);
+                out.println(request.getProtocol());
+                out.println(response.getStatus() + " OK");
+            }
+            //out.println(request.getQueryString());
+            //Enumeration<String> request2 = request.getParameterNames();
+
+            current_format = "";
             out.println("</body>");
             out.println("</xhtml>");
         }

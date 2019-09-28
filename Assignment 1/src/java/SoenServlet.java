@@ -34,18 +34,28 @@ public class SoenServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         String title = "Soen 387 Assignment 1";
         String requestMethod = request.getMethod();
-        String queryString = URLDecoder.decode(request.getQueryString().split("=")[1],
-        "UTF-8");
+        String queryString = "";
+        String[] arrayOfQueryString;
         
+        try{
+            arrayOfQueryString = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
+            for(String a : arrayOfQueryString){
+                queryString += a;
+            }
+        }
+        catch(NullPointerException e){
+            queryString = "No query string found";
+        }
         String docType =
             "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
-
+        
         out.println(docType +
             "<html>\n" +
             "<head><title>" + title + "</title></head>\n"+
             "<body bgcolor = \"#f0f0f0\">\n" +
             "<h1 align = \"center\">" + title + "</h1>\n" +
             "<h3> Request Method: " +  requestMethod + "</h3>\n" +
+            "<h3> Query String: " +  queryString + "</h3>\n" +
             "<table width = \"100%\" border = \"1\" align = \"center\">\n" +
             "<tr bgcolor = \"#949494\">\n" +
             "<th>Header Name</th><th>Header Value(s)</th>\n"+
@@ -62,7 +72,9 @@ public class SoenServlet extends HttpServlet {
         }
         
         Enumeration queryParams = request.getParameterNames();
+        
         out.println("<tr bgcolor = \"#949494\"><th>Query String</th><th bgcolor = \"#949494\">Parameter Values</th></tr>\n");
+        
         while(queryParams.hasMoreElements()) {
             String paramName = (String) queryParams.nextElement();
             out.print("<tr><td>" + paramName + "</td> \n");

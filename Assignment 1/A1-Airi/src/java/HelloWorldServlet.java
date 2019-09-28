@@ -36,7 +36,7 @@ public class HelloWorldServlet extends HttpServlet {
             //localhost:8080/A1-Airi/HelloWorldServlet?format=text&param1=val1&param2=val2
             //localhost:8080/A1-Airi/HelloWorldServlet?format=text&param1=１３２&param2=val2
             out.println("<!DOCTYPE xhtml>");
-            out.println("<html>");
+            out.println("<xhtml>");
             out.println("<head>");
             out.println("<title>Servlet HelloWorldServlet</title>");
             out.println("</head>");
@@ -76,6 +76,21 @@ public class HelloWorldServlet extends HttpServlet {
                     index++;
                     out.println("<h4>&nbsp &nbsp &nbsp &nbsp" + temp_str + "</h4>");
                 }
+            }
+
+            if (response.getStatus() == 200 && current_format.equals("html")) {
+                response.setContentType("text/html;charset=UTF-8");
+            }
+
+            if (response.getStatus() == 200 && current_format.equals("xml")) {
+                response.setContentType("text/xml;charset=UTF-8");
+                out.println("<response>");
+                out.println("<request-method>" + request.getMethod() + "</request-method>");
+                out.println("<request-headers>");
+
+                out.println("</request-headers>");
+
+                out.println("</response>");
             }
 
             current_format = "";

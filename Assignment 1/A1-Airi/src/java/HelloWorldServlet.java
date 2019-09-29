@@ -39,6 +39,10 @@ public class HelloWorldServlet extends HttpServlet {
             out.println("<xhtml>");
             out.println("<head>");
             out.println("<title>Servlet HelloWorldServlet</title>");
+            out.println("<style>");
+            out.println("table, th, td {");
+            out.println("border: 1px solid black;}");
+            out.println("</style>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet HelloWorldServlet at " + request.getContextPath() + "</h1>");
@@ -80,16 +84,46 @@ public class HelloWorldServlet extends HttpServlet {
 
             if (response.getStatus() == 200 && current_format.equals("html")) {
                 response.setContentType("text/html;charset=UTF-8");
+                out.println("<table>");
+                out.println("<tr>");
+                out.println("<th>Request Method:");
+                out.println("</th>");
+                out.println("<td>" + request.getMethod());
+                out.println("</td>");
+                out.println("</tr>");
+                out.println("</table>");
+                out.println("<th>Request Method:");
+                out.println("</th>");
+                out.println("<th>" + request.getMethod());
+                out.println("<td>");
+                out.println("</td>");
+                out.println("</th>");
             }
 
+            //localhost:8080/A1-Airi/HelloWorldServlet?format=xml&param1=１３２&param2=val2
             if (response.getStatus() == 200 && current_format.equals("xml")) {
                 response.setContentType("text/xml;charset=UTF-8");
                 out.println("<response>");
                 out.println("<request-method>" + request.getMethod() + "</request-method>");
                 out.println("<request-headers>");
-
+                out.println("<header name =\"Host\">" + request.getHeader("host") + "</header>");
+                out.println("<header name =\"Connection\">" + request.getHeader("connection") + "</header>");
+                out.println("<header name =\"User-Agent\">" + request.getHeader("user-agent") + "</header>");
+                out.println("<header name =\"Accept\">" + request.getHeader("accept") + "</header>");
                 out.println("</request-headers>");
+                out.println("<query-string>");
 
+                String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
+                for (String temp_str : query_strings) {
+                    String[] temp_query_string_pair = new String[2]; //Storing 1 key-value
+                    temp_str = temp_str.replace("=", " ");
+                    temp_query_string_pair = temp_str.split(" ");
+                    if (temp_query_string_pair.length == 2) {   // Ignore malformed string
+                        out.println("<" + temp_query_string_pair[0] + ">" + temp_query_string_pair[1]
+                                + "</" + temp_query_string_pair[0] + ">");
+                    }
+                }
+                out.println("</query-string>");
                 out.println("</response>");
             }
 

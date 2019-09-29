@@ -40,8 +40,8 @@ public class HelloWorldServlet extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet HelloWorldServlet</title>");
             out.println("<style>");
-            out.println("table, th, td {");
-            out.println("border: 1px solid black;}");
+            out.println("table { border-collapse: collapse; }");
+            out.println("th, td { border: 1px solid black; }");
             out.println("</style>");
             out.println("</head>");
             out.println("<body>");
@@ -82,22 +82,71 @@ public class HelloWorldServlet extends HttpServlet {
                 }
             }
 
+            //localhost:8080/A1-Airi/HelloWorldServlet?format=html&param1=愛理&param2=val2
             if (response.getStatus() == 200 && current_format.equals("html")) {
                 response.setContentType("text/html;charset=UTF-8");
                 out.println("<table>");
                 out.println("<tr>");
-                out.println("<th>Request Method:");
+                out.println("<th>&nbspRequest Method:&nbsp&nbsp");
                 out.println("</th>");
-                out.println("<td>" + request.getMethod());
-                out.println("</td>");
+                out.println("<td>" + "&nbsp" + request.getMethod());
+                out.println("&nbsp</td>");
                 out.println("</tr>");
                 out.println("</table>");
-                out.println("<th>Request Method:");
-                out.println("</th>");
-                out.println("<th>" + request.getMethod());
-                out.println("<td>");
-                out.println("</td>");
-                out.println("</th>");
+
+                out.println("&nbsp");
+
+                out.println("<table>");
+                out.println("<tr>");
+                out.println("<th>&nbspRequest Headers:" + "&nbsp</th>");
+                out.println("</tr>");
+
+                out.println("<tr>");
+                out.println("<td>&nbspHost</td>");
+                out.println("<td>&nbsp" + request.getHeader("host") + "&nbsp</td>");
+                out.println("</tr>");
+
+                out.println("</tr>");
+                out.println("<tr>");
+                out.println("<td>&nbspConnection</td>");
+                out.println("<td>&nbsp" + request.getHeader("connection") + "&nbsp</td>");
+                out.println("</tr>");
+
+                out.println("</tr>");
+                out.println("<tr>");
+                out.println("<td>&nbspUser-Agent</td>");
+                out.println("<td>&nbsp" + request.getHeader("user-agent") + "&nbsp</td>");
+                out.println("</tr>");
+
+                out.println("</tr>");
+                out.println("<tr>");
+                out.println("<td>&nbspAccept</td>");
+                out.println("<td>&nbsp" + request.getHeader("accept") + "&nbsp</td>");
+                out.println("</tr>");
+
+                out.println("</table>");
+
+                out.println("&nbsp");
+
+                out.println("<table>");
+                out.println("<tr>");
+                out.println("<th>&nbspQuery String:" + "&nbsp</th>");
+                out.println("</tr>");
+
+                String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
+                for (String temp_str : query_strings) {
+                    String[] temp_query_string_pair = new String[2]; //Storing 1 key-value
+                    temp_str = temp_str.replace("=", " ");
+                    temp_query_string_pair = temp_str.split(" ");
+                    if (temp_query_string_pair.length == 2) {   // Ignore malformed string
+                        out.println("<tr>");
+                        out.println("<td>&nbsp" + temp_query_string_pair[0] + "&nbsp</td>");
+                        out.println("<td>&nbsp" + temp_query_string_pair[1] + "&nbsp</td>");
+                        out.println("</tr>");
+                    }
+                }
+
+                out.println("</table>");
             }
 
             //localhost:8080/A1-Airi/HelloWorldServlet?format=xml&param1=１３２&param2=val2

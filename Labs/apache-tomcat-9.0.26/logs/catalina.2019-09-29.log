@@ -191,3 +191,11 @@
 29-Sep-2019 13:44:29.626 INFOS [http-nio-8080-exec-245] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
 29-Sep-2019 13:44:56.936 INFOS [http-nio-8080-exec-244] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
 29-Sep-2019 13:44:56.988 INFOS [http-nio-8080-exec-244] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:59:48.779 INFOS [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt valide a été reçue sur le port d'arrêt, arrêt de l'instance du serveur
+29-Sep-2019 13:59:48.784 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+29-Sep-2019 13:59:48.809 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+29-Sep-2019 13:59:48.817 INFOS [main] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+29-Sep-2019 13:59:48.896 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+29-Sep-2019 13:59:48.901 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+29-Sep-2019 13:59:48.908 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+29-Sep-2019 13:59:48.910 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]

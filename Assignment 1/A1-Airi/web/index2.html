@@ -7,9 +7,22 @@ and open the template in the editor.
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>TODO supply a title</title>
+        <title>Index - POST method</title>
     </head>
     <body>
-        <div>TODO write content</div>
+        <h3>Index2 - POST method</h3>
+        <form name = "POSTForm" method = "post">
+            <p>Name:<input type = "text" name = "name"></input></p>
+            <p>Email:<input type = "text" name = "email"></input></p>
+            <p>Format:
+                <select name = "formats">
+                    <option value = "not specified"></option>
+                    <option value = "html">html</option>
+                    <option value = "text">plain text</option>
+                    <option value = "xml">xml</option>
+                </select> 
+            </p>
+        </form>
+        <p>Go to <a href="index.html">GET's</a> page.</p>
     </body>
 </html>

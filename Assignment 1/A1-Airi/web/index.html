@@ -7,9 +7,23 @@ and open the template in the editor.
 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>TODO supply a title</title>
+        <title>Index - GET method</title>
+        <link rel = "stylesheet" type = "text/css" href="css-file1.css"></link>
     </head>
     <body>
-        <div>TODO write content</div>
+        <h2>Index - GET method</h2>
+        <form name = "GETForm" method = "get">
+            <p>Name:&emsp;<input type = "text" name = "name"></input></p>
+            <p>Email:&emsp;<input type = "text" name = "email"></input></p>
+            <p>Format:&emsp;
+                <select name = "formats">
+                    <option value = "not specified"></option>
+                    <option value = "html">html</option>
+                    <option value = "text">plain text</option>
+                    <option value = "xml">xml</option>
+                </select> 
+            </p>
+        </form>
+        <p>Go to <a href="index2.html">POST's</a> page.</p>
     </body>
 </html>

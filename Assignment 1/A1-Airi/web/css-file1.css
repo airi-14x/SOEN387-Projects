@@ -15,6 +15,7 @@ h2{
 form{
     border-style: dashed;
     color: greenyellow;
+    flex-wrap: wrap;
 }
 
 body{

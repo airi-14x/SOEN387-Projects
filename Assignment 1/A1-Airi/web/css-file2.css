@@ -8,3 +8,24 @@ and open the template in the editor.
     Author     : Airi
 */
 
+h2{
+    color: lightgray;
+    font-family: cursive;
+}
+
+form{
+    border-style: dashed;
+    color: darkcyan;
+    flex-wrap: wrap;
+}
+
+body{
+    background-color: darkslategray;
+}
+
+p{
+    color: lightgray;
+    padding: 10px;
+    font-family: fantasy;
+}
+

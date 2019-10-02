@@ -1,3 +1,4 @@
+package SOEN387;
 
 import com.sun.net.httpserver.HttpContext;
 import com.sun.net.httpserver.HttpExchange;
@@ -22,6 +23,7 @@ public class BasicHttpServerExample {
         HttpContext context = server.createContext("/");
         context.setHandler(BasicHttpServerExample::handleRequest);
         server.start();
+        //server.stop(0);
     }
 
     private static void handleRequest(HttpExchange exchange) throws IOException {

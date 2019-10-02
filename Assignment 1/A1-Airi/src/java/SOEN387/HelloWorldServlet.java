@@ -1,9 +1,10 @@
+package SOEN387;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
@@ -35,8 +36,8 @@ public class HelloWorldServlet extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             //localhost:8080/A1-Airi/HelloWorldServlet?format=text&param1=val1&param2=val2
             //localhost:8080/A1-Airi/HelloWorldServlet?format=text&param1=１３２&param2=val2
-            out.println("<!DOCTYPE xhtml>");
-            out.println("<xhtml>");
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
             out.println("<head>");
             out.println("<title>Servlet HelloWorldServlet</title>");
             out.println("<style>");
@@ -178,7 +179,7 @@ public class HelloWorldServlet extends HttpServlet {
 
             current_format = "";
             out.println("</body>");
-            out.println("</xhtml>");
+            out.println("</html>");
         }
     }
 

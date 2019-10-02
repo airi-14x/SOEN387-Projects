@@ -1,0 +1,13 @@
+{
+  "args": {
+    "assignment": "1", 
+    "course": "SOEN387"
+  }, 
+  "headers": {
+    "Accept": "*/*", 
+    "Host": "httpbin.org", 
+    "User-Agent": "curl/7.43.0"
+  }, 
+  "origin": "184.162.101.175, 184.162.101.175", 
+  "url": "https://httpbin.org/get?course=SOEN387&assignment=1"
+}

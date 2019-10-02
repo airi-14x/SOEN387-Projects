@@ -1,0 +1,165 @@
+22-Sep-2019 12:20:31.876 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:        Apache Tomcat/9.0.26
+22-Sep-2019 12:20:31.879 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé:       Sep 16 2019 15:51:39 UTC
+22-Sep-2019 12:20:31.880 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:      9.0.26.0
+22-Sep-2019 12:20:31.880 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS:           Mac OS X
+22-Sep-2019 12:20:31.880 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de l'OS:        10.11.6
+22-Sep-2019 12:20:31.880 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+22-Sep-2019 12:20:31.880 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Répertoire de Java:     /Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/jre
+22-Sep-2019 12:20:31.880 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de la JVM:           1.8.0_141-b15
+22-Sep-2019 12:20:31.880 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM:            Oracle Corporation
+22-Sep-2019 12:20:31.881 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+22-Sep-2019 12:20:31.881 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+22-Sep-2019 12:20:31.886 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.config.file=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/logging.properties
+22-Sep-2019 12:20:31.886 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+22-Sep-2019 12:20:31.886 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Airis-MBP
+22-Sep-2019 12:20:31.886 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djdk.tls.ephemeralDHKeySize=2048
+22-Sep-2019 12:20:31.887 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+22-Sep-2019 12:20:31.887 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+22-Sep-2019 12:20:31.887 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dignore.endorsed.dirs=
+22-Sep-2019 12:20:31.887 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.base=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+22-Sep-2019 12:20:31.888 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.home=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+22-Sep-2019 12:20:31.888 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.io.tmpdir=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/temp
+22-Sep-2019 12:20:31.888 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path: [/Users/Airi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+22-Sep-2019 12:20:32.661 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+22-Sep-2019 12:20:32.722 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["ajp-nio-8009"]
+22-Sep-2019 12:20:32.727 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [1 399] millisecondes
+22-Sep-2019 12:20:32.844 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+22-Sep-2019 12:20:32.845 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets: [Apache Tomcat/9.0.26]
+22-Sep-2019 12:20:32.864 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+22-Sep-2019 12:20:32.894 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/WebApplicationDemo] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a été ignoré
+22-Sep-2019 12:20:33.557 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a pris [693] ms
+22-Sep-2019 12:20:33.565 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/docs]
+22-Sep-2019 12:20:33.638 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/docs] de l'application web s'est terminé en [80] ms
+22-Sep-2019 12:20:33.639 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/examples]
+22-Sep-2019 12:20:34.486 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/examples] de l'application web s'est terminé en [847] ms
+22-Sep-2019 12:20:34.487 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/host-manager]
+22-Sep-2019 12:20:34.563 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/host-manager] de l'application web s'est terminé en [76] ms
+22-Sep-2019 12:20:34.564 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/manager]
+22-Sep-2019 12:20:34.625 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/manager] de l'application web s'est terminé en [62] ms
+22-Sep-2019 12:20:34.626 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/ROOT]
+22-Sep-2019 12:20:34.694 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/ROOT] de l'application web s'est terminé en [67] ms
+22-Sep-2019 12:20:34.707 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+22-Sep-2019 12:20:34.736 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["ajp-nio-8009"]
+22-Sep-2019 12:20:34.747 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [2 019] millisecondes
+22-Sep-2019 12:38:23.020 INFOS [http-nio-8080-exec-1] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/WebApplicationDemo]
+22-Sep-2019 14:10:01.950 INFOS [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt valide a été reçue sur le port d'arrêt, arrêt de l'instance du serveur
+22-Sep-2019 14:10:01.954 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+22-Sep-2019 14:10:01.975 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+22-Sep-2019 14:10:01.982 INFOS [main] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+22-Sep-2019 14:10:02.013 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+22-Sep-2019 14:10:02.019 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+22-Sep-2019 14:10:02.024 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+22-Sep-2019 14:10:02.026 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]
+22-Sep-2019 14:35:43.117 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:        Apache Tomcat/9.0.26
+22-Sep-2019 14:35:43.124 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé:       Sep 16 2019 15:51:39 UTC
+22-Sep-2019 14:35:43.124 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:      9.0.26.0
+22-Sep-2019 14:35:43.125 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS:           Mac OS X
+22-Sep-2019 14:35:43.125 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de l'OS:        10.11.6
+22-Sep-2019 14:35:43.125 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+22-Sep-2019 14:35:43.125 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Répertoire de Java:     /Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/jre
+22-Sep-2019 14:35:43.125 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de la JVM:           1.8.0_141-b15
+22-Sep-2019 14:35:43.125 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM:            Oracle Corporation
+22-Sep-2019 14:35:43.125 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+22-Sep-2019 14:35:43.125 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+22-Sep-2019 14:35:43.130 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.config.file=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/logging.properties
+22-Sep-2019 14:35:43.130 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+22-Sep-2019 14:35:43.130 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Airis-MBP
+22-Sep-2019 14:35:43.130 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djdk.tls.ephemeralDHKeySize=2048
+22-Sep-2019 14:35:43.130 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+22-Sep-2019 14:35:43.131 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+22-Sep-2019 14:35:43.131 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -agentlib:jdwp=transport=dt_socket,address=11550,server=y,suspend=n
+22-Sep-2019 14:35:43.131 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dignore.endorsed.dirs=
+22-Sep-2019 14:35:43.138 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.base=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+22-Sep-2019 14:35:43.139 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.home=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+22-Sep-2019 14:35:43.139 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.io.tmpdir=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/temp
+22-Sep-2019 14:35:43.140 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path: [/Users/Airi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+22-Sep-2019 14:35:44.073 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+22-Sep-2019 14:35:44.143 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["ajp-nio-8009"]
+22-Sep-2019 14:35:44.184 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [1 642] millisecondes
+22-Sep-2019 14:35:44.317 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+22-Sep-2019 14:35:44.318 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets: [Apache Tomcat/9.0.26]
+22-Sep-2019 14:35:44.336 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/docs]
+22-Sep-2019 14:35:45.095 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/docs] de l'application web s'est terminé en [760] ms
+22-Sep-2019 14:35:45.096 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/examples]
+22-Sep-2019 14:35:45.901 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/examples] de l'application web s'est terminé en [805] ms
+22-Sep-2019 14:35:45.902 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/host-manager]
+22-Sep-2019 14:35:45.974 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/host-manager] de l'application web s'est terminé en [73] ms
+22-Sep-2019 14:35:45.974 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/manager]
+22-Sep-2019 14:35:46.008 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/manager] de l'application web s'est terminé en [34] ms
+22-Sep-2019 14:35:46.012 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/ROOT]
+22-Sep-2019 14:35:46.133 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/ROOT] de l'application web s'est terminé en [121] ms
+22-Sep-2019 14:35:46.142 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+22-Sep-2019 14:35:46.155 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["ajp-nio-8009"]
+22-Sep-2019 14:35:46.163 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [1 978] millisecondes
+22-Sep-2019 14:35:53.115 INFOS [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+22-Sep-2019 14:35:53.119 AVERTISSEMENT [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/WebApplicationDemo] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a été ignoré
+22-Sep-2019 14:35:53.255 INFOS [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a pris [139] ms
+22-Sep-2019 14:35:53.289 INFOS [http-nio-8080-exec-10] org.apache.catalina.util.LifecycleBase.start La méthode start() a été appelée sur le composant [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WebApplicationDemo]] après que start() ait déjà été appelé, le deuxième appel sera ignoré
+22-Sep-2019 14:37:00.999 INFOS [http-nio-8080-exec-9] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/WebApplicationDemo]
+22-Sep-2019 14:37:01.040 INFOS [http-nio-8080-exec-4] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+22-Sep-2019 14:37:01.043 AVERTISSEMENT [http-nio-8080-exec-4] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/WebApplicationDemo] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a été ignoré
+22-Sep-2019 14:37:01.124 INFOS [http-nio-8080-exec-4] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a pris [83] ms
+22-Sep-2019 14:37:01.164 INFOS [http-nio-8080-exec-7] org.apache.catalina.util.LifecycleBase.start La méthode start() a été appelée sur le composant [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/WebApplicationDemo]] après que start() ait déjà été appelé, le deuxième appel sera ignoré
+22-Sep-2019 14:39:46.968 INFOS [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt valide a été reçue sur le port d'arrêt, arrêt de l'instance du serveur
+22-Sep-2019 14:39:46.969 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+22-Sep-2019 14:39:46.980 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+22-Sep-2019 14:39:46.988 INFOS [main] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+22-Sep-2019 14:39:47.020 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+22-Sep-2019 14:39:47.025 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+22-Sep-2019 14:39:47.028 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+22-Sep-2019 14:39:47.029 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]
+22-Sep-2019 16:50:30.965 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:        Apache Tomcat/9.0.26
+22-Sep-2019 16:50:30.970 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé:       Sep 16 2019 15:51:39 UTC
+22-Sep-2019 16:50:30.970 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:      9.0.26.0
+22-Sep-2019 16:50:30.971 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS:           Mac OS X
+22-Sep-2019 16:50:30.971 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de l'OS:        10.11.6
+22-Sep-2019 16:50:30.971 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+22-Sep-2019 16:50:30.972 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Répertoire de Java:     /Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/jre
+22-Sep-2019 16:50:30.972 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de la JVM:           1.8.0_141-b15
+22-Sep-2019 16:50:30.972 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM:            Oracle Corporation
+22-Sep-2019 16:50:30.972 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+22-Sep-2019 16:50:30.972 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+22-Sep-2019 16:50:30.977 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.config.file=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/logging.properties
+22-Sep-2019 16:50:30.977 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+22-Sep-2019 16:50:30.977 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Airis-MBP
+22-Sep-2019 16:50:30.977 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djdk.tls.ephemeralDHKeySize=2048
+22-Sep-2019 16:50:30.977 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+22-Sep-2019 16:50:30.977 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+22-Sep-2019 16:50:30.977 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dignore.endorsed.dirs=
+22-Sep-2019 16:50:30.978 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.base=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+22-Sep-2019 16:50:30.978 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.home=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+22-Sep-2019 16:50:30.978 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.io.tmpdir=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/temp
+22-Sep-2019 16:50:30.978 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path: [/Users/Airi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+22-Sep-2019 16:50:31.934 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+22-Sep-2019 16:50:32.073 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["ajp-nio-8009"]
+22-Sep-2019 16:50:32.081 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [1 640] millisecondes
+22-Sep-2019 16:50:32.211 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+22-Sep-2019 16:50:32.211 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets: [Apache Tomcat/9.0.26]
+22-Sep-2019 16:50:32.231 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+22-Sep-2019 16:50:32.330 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/WebApplicationDemo] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a été ignoré
+22-Sep-2019 16:50:33.055 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a pris [824] ms
+22-Sep-2019 16:50:33.057 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/docs]
+22-Sep-2019 16:50:33.115 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/docs] de l'application web s'est terminé en [58] ms
+22-Sep-2019 16:50:33.121 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/examples]
+22-Sep-2019 16:50:33.929 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/examples] de l'application web s'est terminé en [809] ms
+22-Sep-2019 16:50:33.929 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/host-manager]
+22-Sep-2019 16:50:33.996 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/host-manager] de l'application web s'est terminé en [66] ms
+22-Sep-2019 16:50:33.997 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/manager]
+22-Sep-2019 16:50:34.144 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/manager] de l'application web s'est terminé en [148] ms
+22-Sep-2019 16:50:34.146 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/ROOT]
+22-Sep-2019 16:50:34.183 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/ROOT] de l'application web s'est terminé en [37] ms
+22-Sep-2019 16:50:34.200 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+22-Sep-2019 16:50:34.230 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["ajp-nio-8009"]
+22-Sep-2019 16:50:34.239 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [2 156] millisecondes
+22-Sep-2019 16:50:36.541 INFOS [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/A1-Airi.xml]
+22-Sep-2019 16:50:36.542 AVERTISSEMENT [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/A1-Airi] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/A1-Airi.xml] a été ignoré
+22-Sep-2019 16:50:36.618 INFOS [http-nio-8080-exec-8] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/A1-Airi.xml] a pris [77] ms
+22-Sep-2019 16:50:36.667 INFOS [http-nio-8080-exec-10] org.apache.catalina.util.LifecycleBase.start La méthode start() a été appelée sur le composant [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/A1-Airi]] après que start() ait déjà été appelé, le deuxième appel sera ignoré
+22-Sep-2019 16:51:24.171 INFOS [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt valide a été reçue sur le port d'arrêt, arrêt de l'instance du serveur
+22-Sep-2019 16:51:24.172 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+22-Sep-2019 16:51:24.181 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+22-Sep-2019 16:51:24.188 INFOS [main] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+22-Sep-2019 16:51:24.243 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+22-Sep-2019 16:51:24.248 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+22-Sep-2019 16:51:24.250 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+22-Sep-2019 16:51:24.252 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]

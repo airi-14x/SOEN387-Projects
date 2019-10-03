@@ -23,10 +23,8 @@ public class SoenServer {
       public static void main(String[] args) throws IOException {
       HttpServer server = HttpServer.create(new InetSocketAddress(8009), 0);
       HttpContext context = server.createContext("/");
-      HttpContext indexContext1 = server.createContext("/index1");
+      HttpContext indexContext1 = server.createContext("/index");
       HttpContext indexContext2 = server.createContext("/index2");
-      HttpContext cssContext1 = server.createContext("/css1");
-      HttpContext cssContext2 = server.createContext("/css2");
       
       context.setHandler(SoenServer::handleRequest1);
       indexContext1.setHandler(SoenServer::handleRequest1);
@@ -44,7 +42,6 @@ public class SoenServer {
     File index1File = new File(path + "/web/index.html");
     String response = read(index1File);
     String requestURL = t.getRequestURI().toString();
-    System.out.println(requestURL);
     
     if(requestURL.equals("/")||requestURL.equals("/index")||requestURL.equals("/index.html")){
         sendOkResponse(t, response);
@@ -67,7 +64,6 @@ public class SoenServer {
        sendNotFoundResponse(t);
     }
   }
-  
   
   private static String read(File f) throws FileNotFoundException, IOException{
       String content = "", line;  
@@ -99,7 +95,7 @@ public class SoenServer {
   
   private static void sendNotFoundResponse(HttpExchange t) throws IOException{
         String response = "<h1>404 NOT FOUND</h1>";
-        t.getResponseHeaders().set("Context", "text/html; charset UTF-8");
+        t.getResponseHeaders().set("Content-Type", "text/html; charset UTF-8");
         t.sendResponseHeaders(200, response.getBytes().length);
         try (OutputStream os = t.getResponseBody()) {
             os.write(response.getBytes());

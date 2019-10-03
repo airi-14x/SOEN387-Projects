@@ -1,29 +1,36 @@
-<!DOCTYPE xhtml>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>Index 2</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./css-file2.css">
+        <link rel="stylesheet" type="text/css" href="./css-file2.css"></link>
     </head>
     <body>
         <div class="container">
             <h2>Index 2</h2>
-            <p>This is the index 2 page</p>
-            <hr>
-            <form method="post">
+            <p>This is the index 2 page with the POST method</p>
+            <hr></hr>
+            <form name="post-form" method="post">
                 <label for="name"><b>Name</b></label>
-                <input type="text" placeholder="Enter Name" name="name" required>
+                <input type="text" placeholder="Enter Name" name="name" required></input>
                 
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
+                <input type="text" placeholder="Enter Email" name="email" required></input>
                 
-                 <hr>
+                <p><b>Format</b>
+                    <select name = "formats">
+                        <option value="not specified"></option>
+                        <option value="html">html</option>
+                        <option value="text">plain text</option>
+                        <option value="xml">xml</option>
+                    </select> 
+                </p>
+                <hr></hr>
 
                 <button type="submit" class="btn">Send Data</button>
             </form>

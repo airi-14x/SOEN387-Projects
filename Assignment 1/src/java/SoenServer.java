@@ -67,11 +67,10 @@ public class SoenServer {
   
   private static String read(File f) throws FileNotFoundException, IOException{
       String content = "", line;  
-      BufferedReader br = new BufferedReader(new FileReader(f));
-      
-      while((line = br.readLine()) != null){
-          content += line;
-      }
+          try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+              while((line = br.readLine()) != null){
+                  content += line;
+              }   }
       return content;
   }
   

@@ -36,46 +36,45 @@ public class SoenServlet extends HttpServlet {
         String requestMethod = request.getMethod();
         String queryString = "";
         String[] arrayOfQueryString;
-        
-        try{
+
+        try {
             arrayOfQueryString = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
-            for(String a : arrayOfQueryString){
+            for (String a : arrayOfQueryString) {
                 queryString += a;
             }
-        }
-        catch(NullPointerException e){
+        } catch (NullPointerException e) {
             queryString = "No query string found";
         }
-        String docType =
-            "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
-        
-        out.println(docType +
-            "<html>\n" +
-            "<head><title>" + title + "</title></head>\n"+
-            "<body bgcolor = \"#f0f0f0\">\n" +
-            "<h1 align = \"center\">" + title + "</h1>\n" +
-            "<h3> Request Method: " +  requestMethod + "</h3>\n" +
-            "<h3> Query String: " +  queryString + "</h3>\n" +
-            "<table width = \"100%\" border = \"1\" align = \"center\">\n" +
-            "<tr bgcolor = \"#949494\">\n" +
-            "<th>Header Name</th><th>Header Value(s)</th>\n"+
-            "</tr>\n"
+        String docType
+                = "<!doctype html public \"-//w3c//dtd html 4.0 " + "transitional//en\">\n";
+
+        out.println(docType
+                + "<html>\n"
+                + "<head><title>" + title + "</title></head>\n"
+                + "<body bgcolor = \"#f0f0f0\">\n"
+                + "<h1 align = \"center\">" + title + "</h1>\n"
+                + "<h3> Request Method: " + requestMethod + "</h3>\n"
+                + "<h3> Query String: " + queryString + "</h3>\n"
+                + "<table width = \"100%\" border = \"1\" align = \"center\">\n"
+                + "<tr bgcolor = \"#949494\">\n"
+                + "<th>Header Name</th><th>Header Value(s)</th>\n"
+                + "</tr>\n"
         );
-       
+
         Enumeration headerNames = request.getHeaderNames();
-    
-        while(headerNames.hasMoreElements()) {
-            String paramName = (String)headerNames.nextElement();
+
+        while (headerNames.hasMoreElements()) {
+            String paramName = (String) headerNames.nextElement();
             out.print("<tr><td>" + paramName + "</td>\n");
             String paramValue = request.getHeader(paramName);
             out.println("<td> " + paramValue + "</td></tr>\n");
         }
-        
+
         Enumeration queryParams = request.getParameterNames();
-        
+
         out.println("<tr bgcolor = \"#949494\"><th>Query String</th><th bgcolor = \"#949494\">Parameter Values</th></tr>\n");
-        
-        while(queryParams.hasMoreElements()) {
+
+        while (queryParams.hasMoreElements()) {
             String paramName = (String) queryParams.nextElement();
             out.print("<tr><td>" + paramName + "</td> \n");
             String paramValue = request.getParameter(paramName);
@@ -96,6 +95,7 @@ public class SoenServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         processRequest(request, response);
     }
 

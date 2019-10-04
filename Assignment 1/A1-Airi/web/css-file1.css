@@ -8,6 +8,7 @@ and open the template in the editor.
     Author     : Airi
 */
 
+@charset "UTF-8"; 
 h2{
     color: greenyellow;
 }

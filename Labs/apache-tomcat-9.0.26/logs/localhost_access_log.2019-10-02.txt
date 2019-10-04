@@ -339,3 +339,9 @@
 0:0:0:0:0:0:0:1 - - [02/Oct/2019:09:18:22 -0400] "GET /A1-Airi/index2.html HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [02/Oct/2019:09:18:25 -0400] "GET /A1-Airi/HomePage.html HTTP/1.1" 304 -
 0:0:0:0:0:0:0:1 - - [02/Oct/2019:09:18:26 -0400] "GET /A1-Airi/HelloWorldServlet HTTP/1.1" 500 882
+127.0.0.1 - - [02/Oct/2019:09:39:03 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [02/Oct/2019:09:39:03 -0400] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [02/Oct/2019:09:39:03 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [02/Oct/2019:09:39:03 -0400] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [02/Oct/2019:09:39:03 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [02/Oct/2019:09:39:03 -0400] "GET /manager/text/ HTTP/1.1" 200 41

@@ -39,8 +39,9 @@ public class BasicHttpServerExample {
         while (scanner.hasNext()) {
             temp_input += scanner.next();
         }
+        System.out.println(temp_input);
         scanner.close();
-        exchange.sendResponseHeaders(200, temp_input.getBytes().length);
+        //exchange.sendResponseHeaders(200, temp_input.getBytes().length);
         //exchange.sendResponseHeaders(200, response.getBytes().length);//response code and length
         OutputStream os = exchange.getResponseBody();
         os.write(temp_input.getBytes());

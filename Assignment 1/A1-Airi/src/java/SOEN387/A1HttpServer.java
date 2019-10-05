@@ -28,8 +28,8 @@ public class A1HttpServer {
         HttpContext index_context = server.createContext("/");
         HttpContext another_index_context = server.createContext("/index.html");
         HttpContext index2_context = server.createContext("/index2.html");
-        HttpContext css_context = server.createContext("/css/css-file1_1.css");
-        HttpContext css2_context = server.createContext("/css/css-file2_1.css");
+        HttpContext css_context = server.createContext("/css/css-file1.css");
+        HttpContext css2_context = server.createContext("/css/css-file2.css");
 
         index_context.setHandler(A1HttpServer::handleIndexRequest);
         another_index_context.setHandler(A1HttpServer::handleIndexRequest);
@@ -126,8 +126,7 @@ public class A1HttpServer {
         // Get current path //
         String current_path = System.getProperty("user.dir");
         String response = "";
-        // Find css-file1_1 file --> /web/css/css-file1_1.css //
-        try (FileReader index_file = new FileReader(current_path + "/web/css/css-file1_1.css");
+        try (FileReader index_file = new FileReader(current_path + "/web/css/css-file1.css");
                 BufferedReader bufferedReader = new BufferedReader(index_file);) {
 
             // Read File //
@@ -165,8 +164,7 @@ public class A1HttpServer {
         // Get current path //
         String current_path = System.getProperty("user.dir");
         String response = "";
-        // Find css-file1_1 file --> /web/css/css-file1_1.css //
-        try (FileReader index_file = new FileReader(current_path + "/web/css/css-file2_1.css");
+        try (FileReader index_file = new FileReader(current_path + "/web/css/css-file2.css");
                 BufferedReader bufferedReader = new BufferedReader(index_file);) {
 
             // Read File //
@@ -198,5 +196,4 @@ public class A1HttpServer {
             e.printStackTrace();
         }
     }
-
 }

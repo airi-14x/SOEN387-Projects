@@ -12,17 +12,18 @@ and open the template in the editor.
     </head>
     <body>
         <h2>Index - GET method</h2>
-        <form name = "GETForm" method = "get" action="">
+        <form name = "GETForm" method = "get" action="HelloWorldServlet">
             <p>Name:&emsp;<input type = "text" name = "name"></input></p>
             <p>Email:&emsp;<input type = "text" name = "email"></input></p>
             <p>Format:&emsp;
-                <select name = "formats">
+                <select name = "format">
                     <option value = "not specified"></option>
                     <option value = "html">html</option>
                     <option value = "text">plain text</option>
                     <option value = "xml">xml</option>
                 </select> 
             </p>
+            <p><button type="submit" class="btn">Submit</button></p>
         </form>
         <p>Go to <a href="index2.html">POST's</a> page.</p>
         <p>Go to <a href="HomePage.html">Servelet's</a> Home page.</p>

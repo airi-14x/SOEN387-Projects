@@ -82,15 +82,18 @@ public class HelloWorldServlet extends HttpServlet {
                 out.println("<h4> - Accept: " + request.getHeader("accept") + "</h4>");
                 out.println("<h4> - Query String: </h4>");
 
-                String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
+                if (request.getMethod() == "GET") {
+                    String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
 
-                int index = 0;
-                for (String temp_str : query_strings) {
-                    temp_str = temp_str.replace("=", ": ");
-                    query_strings[index] = temp_str;
-                    index++;
-                    out.println("<h4>&nbsp &nbsp &nbsp &nbsp" + temp_str + "</h4>");
+                    int index = 0;
+                    for (String temp_str : query_strings) {
+                        temp_str = temp_str.replace("=", ": ");
+                        query_strings[index] = temp_str;
+                        index++;
+                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp" + temp_str + "</h4>");
+                    }
                 }
+
             }
 
             // === Default === //
@@ -153,16 +156,18 @@ public class HelloWorldServlet extends HttpServlet {
                 out.println("<th>&nbspQuery String:" + "&nbsp</th>");
                 out.println("</tr>");
 
-                String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
-                for (String temp_str : query_strings) {
-                    String[] temp_query_string_pair = new String[2]; //Storing 1 key-value
-                    temp_str = temp_str.replace("=", " ");
-                    temp_query_string_pair = temp_str.split(" ");
-                    if (temp_query_string_pair.length == 2) {   // Ignore malformed string
-                        out.println("<tr>");
-                        out.println("<td>&nbsp" + temp_query_string_pair[0] + "&nbsp</td>");
-                        out.println("<td>&nbsp" + temp_query_string_pair[1] + "&nbsp</td>");
-                        out.println("</tr>");
+                if (request.getMethod() == "GET") {
+                    String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
+                    for (String temp_str : query_strings) {
+                        String[] temp_query_string_pair = new String[2]; //Storing 1 key-value
+                        temp_str = temp_str.replace("=", " ");
+                        temp_query_string_pair = temp_str.split(" ");
+                        if (temp_query_string_pair.length == 2) {   // Ignore malformed string
+                            out.println("<tr>");
+                            out.println("<td>&nbsp" + temp_query_string_pair[0] + "&nbsp</td>");
+                            out.println("<td>&nbsp" + temp_query_string_pair[1] + "&nbsp</td>");
+                            out.println("</tr>");
+                        }
                     }
                 }
 
@@ -189,14 +194,16 @@ public class HelloWorldServlet extends HttpServlet {
                 out.println("</request-headers>");
                 out.println("<query-string>");
 
-                String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
-                for (String temp_str : query_strings) {
-                    String[] temp_query_string_pair = new String[2]; //Storing 1 key-value
-                    temp_str = temp_str.replace("=", " ");
-                    temp_query_string_pair = temp_str.split(" ");
-                    if (temp_query_string_pair.length == 2) {   // Ignore malformed string
-                        out.println("<" + temp_query_string_pair[0] + ">" + temp_query_string_pair[1]
-                                + "</" + temp_query_string_pair[0] + ">");
+                if (request.getMethod() == "GET") {
+                    String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
+                    for (String temp_str : query_strings) {
+                        String[] temp_query_string_pair = new String[2]; //Storing 1 key-value
+                        temp_str = temp_str.replace("=", " ");
+                        temp_query_string_pair = temp_str.split(" ");
+                        if (temp_query_string_pair.length == 2) {   // Ignore malformed string
+                            out.println("<" + temp_query_string_pair[0] + ">" + temp_query_string_pair[1]
+                                    + "</" + temp_query_string_pair[0] + ">");
+                        }
                     }
                 }
                 out.println("</query-string>");

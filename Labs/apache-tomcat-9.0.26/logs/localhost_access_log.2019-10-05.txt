@@ -33,3 +33,9 @@
 127.0.0.1 - airi14x [05/Oct/2019:12:03:34 -0400] "GET /manager/text/ HTTP/1.1" 200 41
 127.0.0.1 - - [05/Oct/2019:12:03:34 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
 127.0.0.1 - airi14x [05/Oct/2019:12:03:34 -0400] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [05/Oct/2019:12:05:01 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [05/Oct/2019:12:05:01 -0400] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [05/Oct/2019:12:05:01 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [05/Oct/2019:12:05:01 -0400] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [05/Oct/2019:12:05:01 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [05/Oct/2019:12:05:01 -0400] "GET /manager/text/ HTTP/1.1" 200 41

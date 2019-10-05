@@ -44,6 +44,8 @@ public class A1HttpServer {
         server.stop(0);
     }
 
+    // http://localhost:8500/
+    // http://localhost:8500/index.html
     private static void handleIndexRequest(HttpExchange exchange) throws IOException {
 
         // Get current path //
@@ -71,17 +73,23 @@ public class A1HttpServer {
         // Get Context URI //
         String request_URI = exchange.getRequestURI().toString();
 
-        exchange.getResponseHeaders().set("Content-Type", "text/html");
+        if ((request_URI.equals("/") || request_URI.equals("/index.html"))) {
+            exchange.getResponseHeaders().set("Content-Type", "text/html");
 
-        exchange.sendResponseHeaders(200, response.getBytes().length);
-        try (OutputStream os = exchange.getResponseBody()) {
-            os.write(response.getBytes());
-        } catch (Exception e) {
-            System.out.println("Error with OutputStream");
-            e.printStackTrace();
+            exchange.sendResponseHeaders(200, response.getBytes().length);
+            try (OutputStream os = exchange.getResponseBody()) {
+                os.write(response.getBytes());
+            } catch (Exception e) {
+                System.out.println("Error with OutputStream");
+                e.printStackTrace();
+            }
+        } else {
+            invalidURI(exchange);
         }
+
     }
 
+    // http://localhost:8500/index2.html
     private static void handleIndex2Request(HttpExchange exchange) throws IOException {
 
         // Get current path //
@@ -110,17 +118,23 @@ public class A1HttpServer {
         // Get Context URI //
         String request_URI = exchange.getRequestURI().toString();
 
-        exchange.getResponseHeaders().set("Content-Type", "text/html");
+        if (request_URI.equals("/index2.html")) {
+            exchange.getResponseHeaders().set("Content-Type", "text/html");
 
-        exchange.sendResponseHeaders(200, response.getBytes().length);
-        try (OutputStream os = exchange.getResponseBody()) {
-            os.write(response.getBytes());
-        } catch (Exception e) {
-            System.out.println("Error with OutputStream");
-            e.printStackTrace();
+            exchange.sendResponseHeaders(200, response.getBytes().length);
+            try (OutputStream os = exchange.getResponseBody()) {
+                os.write(response.getBytes());
+            } catch (Exception e) {
+                System.out.println("Error with OutputStream");
+                e.printStackTrace();
+            }
+        } else {
+            invalidURI(exchange);
         }
+
     }
 
+    // http://localhost:8500/css/css-file1.css
     private static void handleCSSRequest(HttpExchange exchange) throws IOException {
 
         // Get current path //
@@ -148,17 +162,23 @@ public class A1HttpServer {
         // Get Context URI //
         String request_URI = exchange.getRequestURI().toString();
 
-        exchange.getResponseHeaders().set("Content-Type", "text/css");
+        if (request_URI.equals("/css/css-file1.css")) {
+            exchange.getResponseHeaders().set("Content-Type", "text/css");
 
-        exchange.sendResponseHeaders(200, response.getBytes().length);
-        try (OutputStream os = exchange.getResponseBody()) {
-            os.write(response.getBytes());
-        } catch (Exception e) {
-            System.out.println("Error with OutputStream");
-            e.printStackTrace();
+            exchange.sendResponseHeaders(200, response.getBytes().length);
+            try (OutputStream os = exchange.getResponseBody()) {
+                os.write(response.getBytes());
+            } catch (Exception e) {
+                System.out.println("Error with OutputStream");
+                e.printStackTrace();
+            }
+        } else {
+            invalidURI(exchange);
         }
+
     }
 
+    // http://localhost:8500/css/css-file2.css
     private static void handleCSS2Request(HttpExchange exchange) throws IOException {
 
         // Get current path //
@@ -186,11 +206,32 @@ public class A1HttpServer {
         // Get Context URI //
         String request_URI = exchange.getRequestURI().toString();
 
-        exchange.getResponseHeaders().set("Content-Type", "text/css");
+        if (request_URI.equals("/css/css-file2.css")) {
+            exchange.getResponseHeaders().set("Content-Type", "text/css");
 
-        exchange.sendResponseHeaders(200, response.getBytes().length);
+            exchange.sendResponseHeaders(200, response.getBytes().length);
+            try (OutputStream os = exchange.getResponseBody()) {
+                os.write(response.getBytes());
+            } catch (Exception e) {
+                System.out.println("Error with OutputStream");
+                e.printStackTrace();
+            }
+        } else {
+            invalidURI(exchange);
+        }
+    }
+
+    //http://localhost:8500/in
+    //http://localhost:8500/index3.html
+    //http://localhost:8500/ee/
+    //http://localhost:8500/css/css-file1.cses
+    //http://localhost:8500/css/css-file1_1.cses
+    private static void invalidURI(HttpExchange exchange) throws IOException {
+        exchange.getResponseHeaders().set("Content-Type", "text/html");
+        String error_message = "404 - Not Found";
+        exchange.sendResponseHeaders(404, error_message.getBytes().length);
         try (OutputStream os = exchange.getResponseBody()) {
-            os.write(response.getBytes());
+            os.write(error_message.getBytes());
         } catch (Exception e) {
             System.out.println("Error with OutputStream");
             e.printStackTrace();

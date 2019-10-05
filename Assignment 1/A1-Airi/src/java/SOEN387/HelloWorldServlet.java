@@ -34,8 +34,7 @@ public class HelloWorldServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            //localhost:8080/A1-Airi/HelloWorldServlet?format=text&param1=val1&param2=val2
-            //localhost:8080/A1-Airi/HelloWorldServlet?format=text&param1=１３２&param2=val2
+
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -62,6 +61,17 @@ public class HelloWorldServlet extends HttpServlet {
                 response.setStatus(200);
             }
 
+            // === Sample Cases === //
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=text&param1=val1&param2=val2
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=text&param1=１３２&param2=val2
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=text&param1=恋人&param2=val2
+            // === Edge Cases === //
+            // Displays only the key with : //
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=text&param1=&param2=val2
+            // Displays ':' in place of value due to separator use "="//
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=text&param1==&param2=val2
+            // Displays only the key //
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=text&param1&param2=val2
             if (response.getStatus() == 200 && current_format.equals("text")) {
 
                 out.println("<h4>Request Method: " + request.getMethod() + "</h4>");
@@ -83,7 +93,16 @@ public class HelloWorldServlet extends HttpServlet {
                 }
             }
 
-            //localhost:8080/A1-Airi/HelloWorldServlet?format=html&param1=愛理&param2=val2
+            // === Default === //
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?
+            // === Sample Cases === //
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=html&param1=val1&param2=val2
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=html&param1=愛理&param2=val2
+            // === Edge Cases === //
+            // Ignores invalid parameters //
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=html&param1=&param2=val2
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=html&param1==&param2=val2
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=html&param1&param2=val2
             if (response.getStatus() == 200 && current_format.equals("html")) {
                 response.setContentType("text/html;charset=UTF-8");
                 out.println("<table>");
@@ -150,7 +169,14 @@ public class HelloWorldServlet extends HttpServlet {
                 out.println("</table>");
             }
 
-            //localhost:8080/A1-Airi/HelloWorldServlet?format=xml&param1=１３２&param2=val2
+            // === Sample Cases === //
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=xml&param1=val1&param2=val2
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=xml&param1=愛理&param2=val2
+            // === Edge Cases === //
+            // Ignores invalid parameters //
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=xml&param1=&param2=val2
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=xml&param1==&param2=val2
+            // http://localhost:8080/A1-Airi/HelloWorldServlet?format=xml&param1&param2=val2
             if (response.getStatus() == 200 && current_format.equals("xml")) {
                 response.setContentType("text/xml;charset=UTF-8");
                 out.println("<response>");

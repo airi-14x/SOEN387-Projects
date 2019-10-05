@@ -182,3 +182,16 @@
 127.0.0.1 - Jasmine [04/Oct/2019:20:24:35 -0400] "GET /manager/text/list HTTP/1.1" 200 429
 127.0.0.1 - Jasmine [04/Oct/2019:20:24:35 -0400] "GET /manager/text/reload?path=/Assignment+1 HTTP/1.1" 200 97
 0:0:0:0:0:0:0:1 - - [04/Oct/2019:20:25:32 -0400] "GET /Assignment%201 HTTP/1.1" 302 -
+127.0.0.1 - - [04/Oct/2019:20:38:17 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - Jasmine [04/Oct/2019:20:38:17 -0400] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [04/Oct/2019:20:38:17 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - Jasmine [04/Oct/2019:20:38:17 -0400] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [04/Oct/2019:20:38:17 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - Jasmine [04/Oct/2019:20:38:18 -0400] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [04/Oct/2019:20:38:18 -0400] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - Jasmine [04/Oct/2019:20:38:18 -0400] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - Jasmine [04/Oct/2019:20:38:21 -0400] "GET /manager/text/list HTTP/1.1" 200 429
+127.0.0.1 - Jasmine [04/Oct/2019:20:38:21 -0400] "GET /manager/text/list HTTP/1.1" 200 429
+127.0.0.1 - Jasmine [04/Oct/2019:20:38:22 -0400] "GET /manager/text/undeploy?path=/Assignment+1 HTTP/1.1" 200 86
+127.0.0.1 - Jasmine [04/Oct/2019:20:38:24 -0400] "GET /manager/text/deploy?config=file%3A%2Fvar%2Ffolders%2F7b%2F2lh71l6d5qb4y8t6z6w0hmyr0000gn%2FT%2Fcontext5752678131388614228.xml&path=/Assignment+1 HTTP/1.1" 200 82
+127.0.0.1 - Jasmine [04/Oct/2019:20:38:24 -0400] "GET /manager/text/start?path=/Assignment+1 HTTP/1.1" 200 82

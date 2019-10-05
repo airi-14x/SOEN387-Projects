@@ -1,8 +1,27 @@
-CURL COMMAND --- GET request to SoenServlet
+# war File
+
+When deploying the application to Tomcat, a .war file is generated and can be found in the tomcat folder under webbapps/Assignment 1
+
+# Running the HTTP server 
+
+- Navigate to Assigmnment1/src/java/SoenServer.java
+- Right click the SoenServer.java file
+- Select "run"
+- Open http://localhost:8009/ on any web browser 
+- You can now navigate to the index pages index.html and index2.html
+
+# Submitting the form
+
+Once the form is submitted, the request in handled by the Http server. A context for the response is created and uses the class
+RequestHandler. In this class, the handle() method verifies if the request is a POST or GET. It fetches the parameters from the query in case
+of a get and displays them in a new page. For a post request, it sends the data to the server and displays the values on a redirected page. 
+
+
+# CURL COMMAND 1 --- GET request to SoenServlet
 
 curl -v get "http://localhost:8080/Assignment%201/SoenServlet?name=Jasmine+Latendresse&email=latendresse.jasmine%40gmail.com&formats=html"
 
-OUTPUT
+# OUTPUT
 
 * Rebuilt URL to: get/
 * Could not resolve host: get
@@ -59,11 +78,11 @@ curl: (6) Could not resolve host: get
 
 ********************************************
 
-CURL COMMAND --- POST request to SoenServlet
+# CURL COMMAND 2 --- POST request to SoenServlet
 
 curl -v -XPOST "http://localhost:8080/Assignment%201/SoenServlet?name=Jasmine+Latendresse&email=latendresse.jasmine%40gmail.com&formats=xml"
 
-OUTPUT
+# OUTPUT
 
 *   Trying ::1...
 * TCP_NODELAY set
@@ -116,11 +135,11 @@ OUTPUT
 
 *********************************************************
 
-CURL COMMAND --- GET request to index.html on SoenServlet
+# CURL COMMAND 3 --- GET request to index.html on SoenServlet
 
 curl -v get "http://localhost:8080/Assignment%201/index.html"
 
-OUTPUT
+# OUTPUT
 
 * Rebuilt URL to: get/
 * Could not resolve host: get
@@ -184,11 +203,11 @@ and open the template in the editor.
 
 *********************************************
 
-CURL COMMAND ---  POST request on HTTP server
+# CURL COMMAND 4 ---  POST request on HTTP server
 
 curl -v -XPOST "http://localhost:8080/Assignment%201/SoenServlet?name=Jasmine+Latendresse&email=latendresse.jasmine%40gmail.com&formats=text"
 
-OUTPUT
+# OUTPUT
 
 *   Trying ::1...
 * TCP_NODELAY set

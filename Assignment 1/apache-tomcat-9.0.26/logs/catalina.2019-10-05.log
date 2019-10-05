@@ -1,0 +1,14 @@
+05-Oct-2019 14:57:48.848 GRAVE [ajp-nio-8009-exec-21] org.apache.coyote.ajp.AjpMessage.processHeader Message invalide reçu avec la signature [18245]
+05-Oct-2019 14:57:50.328 GRAVE [ajp-nio-8009-exec-22] org.apache.coyote.ajp.AjpMessage.processHeader Message invalide reçu avec la signature [18245]
+05-Oct-2019 14:57:55.455 GRAVE [ajp-nio-8009-exec-23] org.apache.coyote.ajp.AjpMessage.processHeader Message invalide reçu avec la signature [18245]
+05-Oct-2019 14:58:16.521 INFOS [http-nio-8080-exec-26] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+05-Oct-2019 14:58:17.906 INFOS [http-nio-8080-exec-26] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+05-Oct-2019 14:58:17.925 INFOS [http-nio-8080-exec-26] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+05-Oct-2019 14:58:25.596 GRAVE [ajp-nio-8009-exec-24] org.apache.coyote.ajp.AjpMessage.processHeader Message invalide reçu avec la signature [18245]
+05-Oct-2019 14:59:23.836 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+05-Oct-2019 14:59:23.868 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+05-Oct-2019 14:59:23.882 INFOS [Thread-5] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+05-Oct-2019 14:59:24.286 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+05-Oct-2019 14:59:24.300 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+05-Oct-2019 14:59:24.339 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+05-Oct-2019 14:59:24.345 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]

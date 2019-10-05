@@ -29,11 +29,15 @@ public class SoenServer {
         HttpContext indexContext1 = server.createContext("/index.html");
         HttpContext indexContext2 = server.createContext("/index2.html");
         HttpContext httpResponse = server.createContext("/Assignment%201/src/java/SoenServlet.java");
+        HttpContext cssContext1 = server.createContext("/css/css_file1.css");
+        HttpContext cssContext2 = server.createContext("/css/css_file2.css");
 
         context.setHandler(SoenServer::handleRequest1);
         indexContext1.setHandler(SoenServer::handleRequest1);
         indexContext2.setHandler(SoenServer::handleRequest2);
         httpResponse.setHandler(new RequestHandler());
+        cssContext1.setHandler(SoenServer::cssHandler1);
+        cssContext2.setHandler(SoenServer::cssHandler2);
 
         server.start();
         System.out.println("Hit enter to exit");
@@ -50,7 +54,7 @@ public class SoenServer {
 
         if (requestURL.equals("/") || requestURL.equals("/index.html")) {
             response = read(index1File);
-            sendOkResponse(t, response.toString());
+            sendOkResponse(t, response);
         } else if (requestURL.contains("/SoenServlet")) {
             RequestHandler handler = new RequestHandler();
             handler.handle(t);
@@ -76,20 +80,41 @@ public class SoenServer {
         }
     }
 
+    public static void cssHandler1(HttpExchange t) throws FileNotFoundException, IOException {
+        String currentPath = System.getProperty("user.dir");
+        File cssFile = new File(currentPath + "/web/css/css_file1.css");
+        String response = read(cssFile);
+        t.getResponseHeaders().set("Content-Type", "text/css; charset UTF-8");
+        sendOkResponse(t, response);
+    }
+
+    public static void cssHandler2(HttpExchange t) throws FileNotFoundException, IOException {
+        String currentPath = System.getProperty("user.dir");
+        File cssFile = new File(currentPath + "/web/css/css_file2.css");
+        String response = read(cssFile);
+        t.getResponseHeaders().set("Content-Type", "text/css; charset UTF-8");
+        sendOkResponse(t, response);
+    }
+
     private static String read(File f) throws FileNotFoundException, IOException {
         String content = "", line;
         try (BufferedReader br = new BufferedReader(new FileReader(f))) {
             while ((line = br.readLine()) != null) {
                 content += line;
             }
+        } catch (FileNotFoundException e) {
+            System.out.print("<h1>404 NOT FOUND</h1>");
+            e.printStackTrace();
         }
         return content;
     }
 
     public static void sendOkResponse(HttpExchange t, String response) throws IOException {
         t.sendResponseHeaders(200, response.getBytes().length);
-        
-        
+        try (OutputStream os = t.getResponseBody()) {
+            os.write(response.getBytes());
+        }
+
     }
 
     private static void sendNotFoundResponse(HttpExchange t) throws IOException {

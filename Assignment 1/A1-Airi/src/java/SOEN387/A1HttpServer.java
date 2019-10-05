@@ -18,16 +18,27 @@ import java.util.Scanner;
  *
  * @author Airi
  */
-public class BasicHttpServerExample {
+public class A1HttpServer {
 
     public static void main(String[] args) throws IOException {
         HttpServer server = HttpServer.create(new InetSocketAddress(8500), 0);
-        HttpContext context = server.createContext("/");
-        context.setHandler(BasicHttpServerExample::handleRequest);
+
+        HttpContext index_context = server.createContext("/");
+        HttpContext another_index_context = server.createContext("/index.html");
+        HttpContext index2_context = server.createContext("/index2.html");
+        HttpContext css_context = server.createContext("/css/css-file1.css");
+        HttpContext css2_context = server.createContext("/css/css-file2.css");
+
+        index_context.setHandler(A1HttpServer::handleRequest);
+        another_index_context.setHandler(A1HttpServer::handleIndexRequest);
+        index2_context.setHandler(A1HttpServer::handleIndex2Request);
+        css_context.setHandler(A1HttpServer::handleCSSRequest);
+        css_context.setHandler(A1HttpServer::handleCSS2Request);
+
         server.start();
         Scanner reader = new Scanner(System.in);
+        System.out.println("Enter something to stop server: ");
         String input_value = reader.next();
-        //reader.close();
         server.stop(0);
     }
 
@@ -46,5 +57,21 @@ public class BasicHttpServerExample {
         OutputStream os = exchange.getResponseBody();
         os.write(temp_input.getBytes());
         os.close();
+    }
+
+    private static void handleIndexRequest(HttpExchange exchange) throws IOException {
+
+    }
+
+    private static void handleIndex2Request(HttpExchange exchange) throws IOException {
+
+    }
+
+    private static void handleCSSRequest(HttpExchange exchange) throws IOException {
+
+    }
+
+    private static void handleCSS2Request(HttpExchange exchange) throws IOException {
+
     }
 }

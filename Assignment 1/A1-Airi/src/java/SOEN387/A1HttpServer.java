@@ -3,7 +3,10 @@ package SOEN387;
 import com.sun.net.httpserver.HttpContext;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
@@ -29,11 +32,11 @@ public class A1HttpServer {
         HttpContext css_context = server.createContext("/css/css-file1.css");
         HttpContext css2_context = server.createContext("/css/css-file2.css");
 
-        index_context.setHandler(A1HttpServer::handleRequest);
+        index_context.setHandler(A1HttpServer::handleIndexRequest);
         another_index_context.setHandler(A1HttpServer::handleIndexRequest);
         index2_context.setHandler(A1HttpServer::handleIndex2Request);
-        css_context.setHandler(A1HttpServer::handleCSSRequest);
-        css_context.setHandler(A1HttpServer::handleCSS2Request);
+        //css_context.setHandler(A1HttpServer::handleCSSRequest);
+        //css_context.setHandler(A1HttpServer::handleCSS2Request);
 
         server.start();
         Scanner reader = new Scanner(System.in);
@@ -61,10 +64,47 @@ public class A1HttpServer {
 
     private static void handleIndexRequest(HttpExchange exchange) throws IOException {
 
+        // Get current path //
+        String current_path = System.getProperty("user.dir");
+        String response = "";
+        // Find index.html file --> /web/index.html //
+        try (FileReader index_file = new FileReader(current_path + "/web/index.html");
+                BufferedReader bufferedReader = new BufferedReader(index_file);) {
+            //FileReader index_file = new FileReader(current_path + "/web/index.html");
+            //BufferedReader bufferedReader = new BufferedReader(index_file);
+
+            // Read File //
+            String current_line = "";
+
+            while ((current_line = bufferedReader.readLine()) != null) {
+                response += current_line;
+            }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found error!");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Error reading the file!");
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // Get Context URI //
+        String request_URI = exchange.getRequestURI().toString();
+        exchange.getResponseHeaders().set("Content-Type", "text/html");
+        exchange.sendResponseHeaders(200, response.getBytes().length);
+        try (OutputStream os = exchange.getResponseBody()) {
+            os.write(response.getBytes());
+        }
     }
 
     private static void handleIndex2Request(HttpExchange exchange) throws IOException {
 
+        // Get current path //
+        String current_path = System.getProperty("user.dir");
+
+        // Find index.html file --> /web/index2.html //
+        //File index2_file = new File(current_path + "/web/index2.html");
     }
 
     private static void handleCSSRequest(HttpExchange exchange) throws IOException {
@@ -74,4 +114,5 @@ public class A1HttpServer {
     private static void handleCSS2Request(HttpExchange exchange) throws IOException {
 
     }
+
 }

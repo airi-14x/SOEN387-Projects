@@ -88,9 +88,8 @@ public class SoenServer {
 
     public static void sendOkResponse(HttpExchange t, String response) throws IOException {
         t.sendResponseHeaders(200, response.getBytes().length);
-        try (OutputStream os = t.getResponseBody()) {
-            os.write(response.getBytes());
-        }
+        
+        
     }
 
     private static void sendNotFoundResponse(HttpExchange t) throws IOException {

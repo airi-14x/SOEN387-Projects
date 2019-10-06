@@ -1298,3 +1298,8 @@
 		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 		at java.lang.Thread.run(Thread.java:748)
+05-Oct-2019 20:58:59.888 INFOS [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+05-Oct-2019 20:58:59.888 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+05-Oct-2019 21:00:21.399 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+05-Oct-2019 21:00:21.400 INFOS [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+05-Oct-2019 21:00:21.410 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@7d94beb9')

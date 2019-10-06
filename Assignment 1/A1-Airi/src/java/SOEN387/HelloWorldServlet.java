@@ -8,6 +8,7 @@ package SOEN387;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
+import java.net.URLEncoder;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -90,21 +91,21 @@ public class HelloWorldServlet extends HttpServlet {
                         temp_str = temp_str.replace("=", ": ");
                         query_strings[index] = temp_str;
                         index++;
-                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp" + temp_str + "</h4>");
+                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp" + URLDecoder.decode(temp_str, "UTF-8") + "</h4>");
                     }
                 } else if (request.getMethod().equals("POST")) {
-                    String[] name_parameters = URLDecoder.decode(request.getParameter("name"), "UTF-8").split("&");
-                    String[] email_parameters = URLDecoder.decode(request.getParameter("email"), "UTF-8").split("&");
-                    String[] format_parameters = URLDecoder.decode(request.getParameter("format"), "UTF-8").split("&");
+                    String[] name_parameters = URLEncoder.encode(request.getParameter("name"), "UTF-8").split("&");
+                    String[] email_parameters = URLEncoder.encode(request.getParameter("email"), "UTF-8").split("&");
+                    String[] format_parameters = URLEncoder.encode(request.getParameter("format"), "UTF-8").split("&");
 
                     for (String temp_str : name_parameters) {
-                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp Name: " + temp_str + "</h4>");
+                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp Name: " + URLDecoder.decode(temp_str, "UTF-8") + "</h4>");
                     }
                     for (String temp_str : email_parameters) {
-                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp Email: " + temp_str + "</h4>");
+                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp Email: " + URLDecoder.decode(temp_str, "UTF-8") + "</h4>");
                     }
                     for (String temp_str : format_parameters) {
-                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp Format: " + temp_str + "</h4>");
+                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp Format: " + URLDecoder.decode(temp_str, "UTF-8") + "</h4>");
                     }
 
                 }
@@ -185,26 +186,26 @@ public class HelloWorldServlet extends HttpServlet {
                         }
                     }
                 } else if (request.getMethod().equals("POST")) {
-                    String[] name_parameters = URLDecoder.decode(request.getParameter("name"), "UTF-8").split("&");
-                    String[] email_parameters = URLDecoder.decode(request.getParameter("email"), "UTF-8").split("&");
-                    String[] format_parameters = URLDecoder.decode(request.getParameter("format"), "UTF-8").split("&");
+                    String[] name_parameters = URLEncoder.encode(request.getParameter("name"), "UTF-8").split("&");
+                    String[] email_parameters = URLEncoder.encode(request.getParameter("email"), "UTF-8").split("&");
+                    String[] format_parameters = URLEncoder.encode(request.getParameter("format"), "UTF-8").split("&");
 
                     for (String temp_str : name_parameters) {
                         out.println("<tr>");
                         out.println("<td>&nbsp" + "Name" + "&nbsp</td>");
-                        out.println("<td>&nbsp" + temp_str + "&nbsp</td>");
+                        out.println("<td>&nbsp" + URLDecoder.decode(temp_str, "UTF-8") + "&nbsp</td>");
                         out.println("</tr>");
                     }
                     for (String temp_str : email_parameters) {
                         out.println("<tr>");
                         out.println("<td>&nbsp" + "Email" + "&nbsp</td>");
-                        out.println("<td>&nbsp" + temp_str + "&nbsp</td>");
+                        out.println("<td>&nbsp" + URLDecoder.decode(temp_str, "UTF-8") + "&nbsp</td>");
                         out.println("</tr>");
                     }
                     for (String temp_str : format_parameters) {
                         out.println("<tr>");
                         out.println("<td>&nbsp" + "Format" + "&nbsp</td>");
-                        out.println("<td>&nbsp" + temp_str + "&nbsp</td>");
+                        out.println("<td>&nbsp" + URLDecoder.decode(temp_str, "UTF-8") + "&nbsp</td>");
                         out.println("</tr>");
                     }
                 }
@@ -244,18 +245,18 @@ public class HelloWorldServlet extends HttpServlet {
                         }
                     }
                 } else if (request.getMethod().equals("POST")) {
-                    String[] name_parameters = URLDecoder.decode(request.getParameter("name"), "UTF-8").split("&");
-                    String[] email_parameters = URLDecoder.decode(request.getParameter("email"), "UTF-8").split("&");
-                    String[] format_parameters = URLDecoder.decode(request.getParameter("format"), "UTF-8").split("&");
+                    String[] name_parameters = URLEncoder.encode(request.getParameter("name"), "UTF-8").split("&");
+                    String[] email_parameters = URLEncoder.encode(request.getParameter("email"), "UTF-8").split("&");
+                    String[] format_parameters = URLEncoder.encode(request.getParameter("format"), "UTF-8").split("&");
 
                     for (String temp_str : name_parameters) {
-                        out.println("<name> " + temp_str + "</name>");
+                        out.println("<name> " + URLDecoder.decode(temp_str, "UTF-8") + "</name>");
                     }
                     for (String temp_str : email_parameters) {
-                        out.println("<email>" + temp_str + "</email>");
+                        out.println("<email>" + URLDecoder.decode(temp_str, "UTF-8") + "</email>");
                     }
                     for (String temp_str : format_parameters) {
-                        out.println("<format>" + temp_str + "</format>");
+                        out.println("<format>" + URLDecoder.decode(temp_str, "UTF-8") + "</format>");
                     }
                 }
                 out.println("</query-string>");

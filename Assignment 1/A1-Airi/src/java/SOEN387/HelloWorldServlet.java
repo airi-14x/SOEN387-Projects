@@ -82,7 +82,7 @@ public class HelloWorldServlet extends HttpServlet {
                 out.println("<h4> - Accept: " + request.getHeader("accept") + "</h4>");
                 out.println("<h4> - Query String: </h4>");
 
-                if (request.getMethod() == "GET") {
+                if (request.getMethod().equals("GET")) {
                     String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
 
                     int index = 0;
@@ -92,6 +92,21 @@ public class HelloWorldServlet extends HttpServlet {
                         index++;
                         out.println("<h4>&nbsp &nbsp &nbsp &nbsp" + temp_str + "</h4>");
                     }
+                } else if (request.getMethod().equals("POST")) {
+                    String[] name_parameters = URLDecoder.decode(request.getParameter("name"), "UTF-8").split("&");
+                    String[] email_parameters = URLDecoder.decode(request.getParameter("email"), "UTF-8").split("&");
+                    String[] format_parameters = URLDecoder.decode(request.getParameter("format"), "UTF-8").split("&");
+
+                    for (String temp_str : name_parameters) {
+                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp Name: " + temp_str + "</h4>");
+                    }
+                    for (String temp_str : email_parameters) {
+                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp Email: " + temp_str + "</h4>");
+                    }
+                    for (String temp_str : format_parameters) {
+                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp Format: " + temp_str + "</h4>");
+                    }
+
                 }
 
             }
@@ -156,7 +171,7 @@ public class HelloWorldServlet extends HttpServlet {
                 out.println("<th>&nbspQuery String:" + "&nbsp</th>");
                 out.println("</tr>");
 
-                if (request.getMethod() == "GET") {
+                if (request.getMethod().equals("GET")) {
                     String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
                     for (String temp_str : query_strings) {
                         String[] temp_query_string_pair = new String[2]; //Storing 1 key-value
@@ -168,6 +183,29 @@ public class HelloWorldServlet extends HttpServlet {
                             out.println("<td>&nbsp" + temp_query_string_pair[1] + "&nbsp</td>");
                             out.println("</tr>");
                         }
+                    }
+                } else if (request.getMethod().equals("POST")) {
+                    String[] name_parameters = URLDecoder.decode(request.getParameter("name"), "UTF-8").split("&");
+                    String[] email_parameters = URLDecoder.decode(request.getParameter("email"), "UTF-8").split("&");
+                    String[] format_parameters = URLDecoder.decode(request.getParameter("format"), "UTF-8").split("&");
+
+                    for (String temp_str : name_parameters) {
+                        out.println("<tr>");
+                        out.println("<td>&nbsp" + "Name" + "&nbsp</td>");
+                        out.println("<td>&nbsp" + temp_str + "&nbsp</td>");
+                        out.println("</tr>");
+                    }
+                    for (String temp_str : email_parameters) {
+                        out.println("<tr>");
+                        out.println("<td>&nbsp" + "Email" + "&nbsp</td>");
+                        out.println("<td>&nbsp" + temp_str + "&nbsp</td>");
+                        out.println("</tr>");
+                    }
+                    for (String temp_str : format_parameters) {
+                        out.println("<tr>");
+                        out.println("<td>&nbsp" + "Format" + "&nbsp</td>");
+                        out.println("<td>&nbsp" + temp_str + "&nbsp</td>");
+                        out.println("</tr>");
                     }
                 }
 
@@ -194,7 +232,7 @@ public class HelloWorldServlet extends HttpServlet {
                 out.println("</request-headers>");
                 out.println("<query-string>");
 
-                if (request.getMethod() == "GET") {
+                if (request.getMethod().equals("GET")) {
                     String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
                     for (String temp_str : query_strings) {
                         String[] temp_query_string_pair = new String[2]; //Storing 1 key-value
@@ -204,6 +242,20 @@ public class HelloWorldServlet extends HttpServlet {
                             out.println("<" + temp_query_string_pair[0] + ">" + temp_query_string_pair[1]
                                     + "</" + temp_query_string_pair[0] + ">");
                         }
+                    }
+                } else if (request.getMethod().equals("POST")) {
+                    String[] name_parameters = URLDecoder.decode(request.getParameter("name"), "UTF-8").split("&");
+                    String[] email_parameters = URLDecoder.decode(request.getParameter("email"), "UTF-8").split("&");
+                    String[] format_parameters = URLDecoder.decode(request.getParameter("format"), "UTF-8").split("&");
+
+                    for (String temp_str : name_parameters) {
+                        out.println("<name> " + temp_str + "</name>");
+                    }
+                    for (String temp_str : email_parameters) {
+                        out.println("<email>" + temp_str + "</email>");
+                    }
+                    for (String temp_str : format_parameters) {
+                        out.println("<format>" + temp_str + "</format>");
                     }
                 }
                 out.println("</query-string>");

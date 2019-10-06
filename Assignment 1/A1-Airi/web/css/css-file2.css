@@ -1,0 +1,31 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29 sept. 2019, 13:37:06
+    Author     : Airi
+*/
+
+h2{
+    color: lightgray;
+    font-family: cursive;
+}
+
+form{
+    border-style: dashed;
+    color: darkcyan;
+    flex-wrap: wrap;
+}
+
+body{
+    background-color: darkslategray;
+}
+
+p{
+    color: lightgray;
+    padding: 10px;
+    font-family: fantasy;
+}
+

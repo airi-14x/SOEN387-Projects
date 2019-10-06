@@ -1,0 +1,201 @@
+29-Sep-2019 10:52:08.749 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:        Apache Tomcat/9.0.26
+29-Sep-2019 10:52:08.752 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé:       Sep 16 2019 15:51:39 UTC
+29-Sep-2019 10:52:08.752 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:      9.0.26.0
+29-Sep-2019 10:52:08.752 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS:           Mac OS X
+29-Sep-2019 10:52:08.753 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de l'OS:        10.11.6
+29-Sep-2019 10:52:08.753 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+29-Sep-2019 10:52:08.753 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Répertoire de Java:     /Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/jre
+29-Sep-2019 10:52:08.753 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de la JVM:           1.8.0_141-b15
+29-Sep-2019 10:52:08.753 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM:            Oracle Corporation
+29-Sep-2019 10:52:08.753 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+29-Sep-2019 10:52:08.753 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+29-Sep-2019 10:52:08.760 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.config.file=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/logging.properties
+29-Sep-2019 10:52:08.760 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+29-Sep-2019 10:52:08.760 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Airis-MBP
+29-Sep-2019 10:52:08.761 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djdk.tls.ephemeralDHKeySize=2048
+29-Sep-2019 10:52:08.761 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+29-Sep-2019 10:52:08.761 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+29-Sep-2019 10:52:08.762 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dignore.endorsed.dirs=
+29-Sep-2019 10:52:08.762 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.base=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+29-Sep-2019 10:52:08.763 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.home=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26
+29-Sep-2019 10:52:08.763 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.io.tmpdir=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/temp
+29-Sep-2019 10:52:08.763 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path: [/Users/Airi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+29-Sep-2019 10:52:09.709 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+29-Sep-2019 10:52:09.880 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["ajp-nio-8009"]
+29-Sep-2019 10:52:09.888 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [1 915] millisecondes
+29-Sep-2019 10:52:10.014 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+29-Sep-2019 10:52:10.016 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets: [Apache Tomcat/9.0.26]
+29-Sep-2019 10:52:10.078 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/A1-Airi.xml]
+29-Sep-2019 10:52:10.185 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/A1-Airi] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/A1-Airi.xml] a été ignoré
+29-Sep-2019 10:52:10.900 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/A1-Airi.xml] a pris [822] ms
+29-Sep-2019 10:52:10.901 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+29-Sep-2019 10:52:10.902 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/WebApplicationDemo] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a été ignoré
+29-Sep-2019 10:52:11.018 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a pris [117] ms
+29-Sep-2019 10:52:11.019 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/docs]
+29-Sep-2019 10:52:11.142 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/docs] de l'application web s'est terminé en [123] ms
+29-Sep-2019 10:52:11.145 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/examples]
+29-Sep-2019 10:52:11.896 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/examples] de l'application web s'est terminé en [751] ms
+29-Sep-2019 10:52:11.896 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/host-manager]
+29-Sep-2019 10:52:12.013 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/host-manager] de l'application web s'est terminé en [116] ms
+29-Sep-2019 10:52:12.013 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/manager]
+29-Sep-2019 10:52:12.102 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/manager] de l'application web s'est terminé en [88] ms
+29-Sep-2019 10:52:12.103 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/ROOT]
+29-Sep-2019 10:52:12.205 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/apache-tomcat-9.0.26/webapps/ROOT] de l'application web s'est terminé en [101] ms
+29-Sep-2019 10:52:12.220 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+29-Sep-2019 10:52:12.274 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["ajp-nio-8009"]
+29-Sep-2019 10:52:12.278 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [2 389] millisecondes
+29-Sep-2019 10:52:15.414 INFOS [http-nio-8080-exec-10] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 10:52:15.459 INFOS [http-nio-8080-exec-10] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 10:56:09.322 INFOS [http-nio-8080-exec-12] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 10:56:09.371 INFOS [http-nio-8080-exec-12] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 10:57:42.029 INFOS [http-nio-8080-exec-15] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 10:57:42.063 INFOS [http-nio-8080-exec-15] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 10:59:02.125 INFOS [http-nio-8080-exec-25] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 10:59:02.179 INFOS [http-nio-8080-exec-25] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:06:23.165 INFOS [http-nio-8080-exec-30] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:06:23.271 INFOS [http-nio-8080-exec-30] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:14:53.635 INFOS [http-nio-8080-exec-37] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:14:53.726 INFOS [http-nio-8080-exec-37] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:15:05.985 INFOS [http-nio-8080-exec-44] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:15:06.051 INFOS [http-nio-8080-exec-44] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:15:09.513 INFOS [http-nio-8080-exec-35] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:15:09.566 INFOS [http-nio-8080-exec-35] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:19:55.294 INFOS [http-nio-8080-exec-48] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:19:55.381 INFOS [http-nio-8080-exec-48] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:21:47.107 INFOS [http-nio-8080-exec-56] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:21:47.148 INFOS [http-nio-8080-exec-56] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:22:36.267 INFOS [http-nio-8080-exec-55] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:22:36.389 INFOS [http-nio-8080-exec-55] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:22:51.747 INFOS [http-nio-8080-exec-57] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:22:51.791 INFOS [http-nio-8080-exec-57] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:25:03.148 INFOS [http-nio-8080-exec-64] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:25:03.198 INFOS [http-nio-8080-exec-64] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:25:28.104 INFOS [http-nio-8080-exec-51] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:25:28.158 INFOS [http-nio-8080-exec-51] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:35:51.476 INFOS [http-nio-8080-exec-74] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:35:51.553 INFOS [http-nio-8080-exec-74] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:35:56.323 INFOS [http-nio-8080-exec-76] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:35:56.357 INFOS [http-nio-8080-exec-76] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:36:32.424 INFOS [http-nio-8080-exec-72] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:36:32.476 INFOS [http-nio-8080-exec-72] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:41:48.345 INFOS [http-nio-8080-exec-90] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:41:48.397 INFOS [http-nio-8080-exec-90] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:42:33.015 INFOS [http-nio-8080-exec-94] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:42:33.068 INFOS [http-nio-8080-exec-94] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:44:15.703 INFOS [http-nio-8080-exec-89] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:44:15.741 INFOS [http-nio-8080-exec-89] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:44:52.048 INFOS [http-nio-8080-exec-92] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:44:52.093 INFOS [http-nio-8080-exec-92] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:48:10.630 INFOS [http-nio-8080-exec-105] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:48:10.665 INFOS [http-nio-8080-exec-105] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:48:13.636 INFOS [http-nio-8080-exec-107] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:48:13.680 INFOS [http-nio-8080-exec-107] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:57:52.120 INFOS [http-nio-8080-exec-112] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:57:52.165 INFOS [http-nio-8080-exec-112] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:58:10.121 INFOS [http-nio-8080-exec-111] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:58:10.157 INFOS [http-nio-8080-exec-111] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:58:15.703 INFOS [http-nio-8080-exec-116] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:58:15.749 INFOS [http-nio-8080-exec-116] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:58:22.732 INFOS [http-nio-8080-exec-121] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:58:22.784 INFOS [http-nio-8080-exec-121] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:58:26.785 INFOS [http-nio-8080-exec-120] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:58:26.809 INFOS [http-nio-8080-exec-120] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 11:58:37.071 INFOS [http-nio-8080-exec-121] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 11:58:37.121 INFOS [http-nio-8080-exec-121] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 12:10:04.514 INFOS [http-nio-8080-exec-126] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 12:10:04.867 INFOS [http-nio-8080-exec-126] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 12:10:23.271 INFOS [http-nio-8080-exec-127] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 12:10:23.336 INFOS [http-nio-8080-exec-127] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 12:10:27.285 INFOS [http-nio-8080-exec-132] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 12:10:27.331 INFOS [http-nio-8080-exec-132] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 12:10:28.832 INFOS [http-nio-8080-exec-131] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 12:10:28.865 INFOS [http-nio-8080-exec-131] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 12:10:34.993 INFOS [http-nio-8080-exec-132] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 12:10:35.058 INFOS [http-nio-8080-exec-132] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 12:10:38.835 INFOS [http-nio-8080-exec-130] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 12:10:38.863 INFOS [http-nio-8080-exec-130] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 12:12:02.804 INFOS [http-nio-8080-exec-143] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 12:12:02.830 INFOS [http-nio-8080-exec-143] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 12:12:33.856 INFOS [http-nio-8080-exec-143] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 12:12:33.906 INFOS [http-nio-8080-exec-143] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:01:11.716 INFOS [http-nio-8080-exec-151] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:01:11.783 INFOS [http-nio-8080-exec-151] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:01:27.171 INFOS [http-nio-8080-exec-149] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:01:27.204 INFOS [http-nio-8080-exec-149] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:01:56.313 INFOS [http-nio-8080-exec-159] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:01:56.342 INFOS [http-nio-8080-exec-159] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:03:24.711 INFOS [http-nio-8080-exec-153] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:03:24.748 INFOS [http-nio-8080-exec-153] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:04:01.378 INFOS [http-nio-8080-exec-159] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:04:01.437 INFOS [http-nio-8080-exec-159] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:04:19.232 INFOS [http-nio-8080-exec-153] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:04:19.278 INFOS [http-nio-8080-exec-153] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:04:26.019 INFOS [http-nio-8080-exec-160] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:04:26.053 INFOS [http-nio-8080-exec-160] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:04:37.047 INFOS [http-nio-8080-exec-153] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:04:37.115 INFOS [http-nio-8080-exec-153] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:04:44.794 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:04:44.818 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:05:04.809 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:05:04.839 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:05:29.775 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:05:29.808 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:06:02.210 INFOS [http-nio-8080-exec-153] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:06:02.257 INFOS [http-nio-8080-exec-153] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:06:32.826 INFOS [http-nio-8080-exec-154] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:06:32.853 INFOS [http-nio-8080-exec-154] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:06:57.846 INFOS [http-nio-8080-exec-154] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:06:57.873 INFOS [http-nio-8080-exec-154] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:07:03.998 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:07:04.045 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:07:05.755 INFOS [http-nio-8080-exec-181] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:07:05.772 INFOS [http-nio-8080-exec-181] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:07:14.729 INFOS [http-nio-8080-exec-187] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:07:14.749 INFOS [http-nio-8080-exec-187] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:08:04.902 INFOS [http-nio-8080-exec-187] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:08:04.921 INFOS [http-nio-8080-exec-187] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:09:11.113 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:09:11.181 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:09:21.847 INFOS [http-nio-8080-exec-187] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:09:21.938 INFOS [http-nio-8080-exec-187] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:09:37.939 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:09:37.970 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:10:11.700 INFOS [http-nio-8080-exec-183] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:10:11.716 INFOS [http-nio-8080-exec-183] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:11:25.916 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:11:26.007 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:11:38.085 INFOS [http-nio-8080-exec-183] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:11:38.128 INFOS [http-nio-8080-exec-183] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:11:57.218 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:11:57.264 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:12:43.370 INFOS [http-nio-8080-exec-183] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:12:43.411 INFOS [http-nio-8080-exec-183] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:14:14.028 INFOS [http-nio-8080-exec-206] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:14:14.065 INFOS [http-nio-8080-exec-206] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:14:35.621 INFOS [http-nio-8080-exec-212] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:14:35.676 INFOS [http-nio-8080-exec-212] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:15:38.327 INFOS [http-nio-8080-exec-220] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:15:38.354 INFOS [http-nio-8080-exec-220] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:16:08.865 INFOS [http-nio-8080-exec-154] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:16:08.915 INFOS [http-nio-8080-exec-154] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:16:20.448 INFOS [http-nio-8080-exec-224] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:16:20.509 INFOS [http-nio-8080-exec-224] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:16:54.441 INFOS [http-nio-8080-exec-224] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:16:54.466 INFOS [http-nio-8080-exec-224] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:28:36.411 INFOS [http-nio-8080-exec-234] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:28:36.446 INFOS [http-nio-8080-exec-234] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:28:38.241 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Rechargement du contexte [/A1-Airi]
+29-Sep-2019 13:28:38.241 INFOS [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:28:38.276 INFOS [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:44:29.558 INFOS [http-nio-8080-exec-245] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:44:29.626 INFOS [http-nio-8080-exec-245] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:44:56.936 INFOS [http-nio-8080-exec-244] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A1-Airi] a démarré
+29-Sep-2019 13:44:56.988 INFOS [http-nio-8080-exec-244] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+29-Sep-2019 13:59:48.779 INFOS [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt valide a été reçue sur le port d'arrêt, arrêt de l'instance du serveur
+29-Sep-2019 13:59:48.784 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+29-Sep-2019 13:59:48.809 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+29-Sep-2019 13:59:48.817 INFOS [main] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+29-Sep-2019 13:59:48.896 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+29-Sep-2019 13:59:48.901 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+29-Sep-2019 13:59:48.908 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+29-Sep-2019 13:59:48.910 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]

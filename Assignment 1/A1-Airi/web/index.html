@@ -1,16 +1,31 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Index - GET method</title>
+        <link rel = "stylesheet" type = "text/css" href="css/css-file1.css"></link>
     </head>
     <body>
-        <div>TODO write content</div>
+        <h2>Index - GET method</h2>
+        <form name = "GETForm" method = "get" action="HelloWorldServlet">
+            <p>Name:&emsp;<input type = "text" name = "name"></input></p>
+            <p>Email:&emsp;<input type = "text" name = "email"></input></p>
+            <p>Format:&emsp;
+                <select name = "format">
+                    <option value = "not specified"></option>
+                    <option value = "html">html</option>
+                    <option value = "text">plain text</option>
+                    <option value = "xml">xml</option>
+                </select> 
+            </p>
+            <p><button type="submit" class="btn">Submit</button></p>
+        </form>
+        <p>Go to <a href="index2.html">POST's</a> page.</p>
+        <p>Go to <a href="HomePage.html">Servelet's</a> Home page.</p>
     </body>
 </html>

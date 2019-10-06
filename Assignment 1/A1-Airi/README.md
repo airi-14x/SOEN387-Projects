@@ -8,24 +8,23 @@
 
 *****
 #### Task 3 Questions
-- Examine if a war file is generated for your project. How was it generated?
-Where is the location of the generated war file?
-> War file is created when the web application is compiled successfully. It is located in the dist folder.
+Examine if a war file is generated for your project. How was it generated? Where is the location of the generated war file?
+- War file is created when the web application is compiled successfully. It is located in the dist folder.
 
-- How do you run the HttpServer class in Task 3? What are the deployment
+How do you run the HttpServer class in Task 3? What are the deployment
 requirements (i.e. in case the application is run on a different machine)?
-> Right-Click and select "Run File". Open a web browser and type: localhost:8500
-> On another machine, it should still run on localhost:8500 unless that port is in use. If that is the case,
+- Right-Click and select "Run File". Open a web browser and type: localhost:8500
+- On another machine, it should still run on localhost:8500 unless that port is in use. If that is the case,
   InetSocketAddress(8500) should be changed to another 4-digit port number.
 
-- What happens when you submit the html forms in Task 3?
-> The form is submitted to HelloWorldServlet to be processed. The output will vary based on the request method,
+What happens when you submit the html forms in Task 3?
+- The form is submitted to HelloWorldServlet to be processed. The output will vary based on the request method,
   the parameters submitted and the format chosen.
 
 *****
 #### Task 4 Curl Outputs
 
-- Provide the four curl outputs in Task 4.
+Provide the four curl outputs in Task 4.
 
 1. `curl get -v -H "format:html" http://localhost:8080/A1-Airi/HelloWorldServlet`
 

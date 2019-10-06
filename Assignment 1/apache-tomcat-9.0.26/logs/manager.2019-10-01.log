@@ -1,0 +1,9 @@
+01-Oct-2019 14:40:23.212 INFOS [http-nio-8089-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
+01-Oct-2019 14:40:23.219 INFOS [http-nio-8089-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
+01-Oct-2019 14:40:23.411 INFOS [http-nio-8089-exec-7] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+01-Oct-2019 14:40:23.436 INFOS [http-nio-8089-exec-7] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+01-Oct-2019 14:40:23.492 INFOS [http-nio-8089-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: undeploy: Undeploying web application at '/Assignment 1'
+01-Oct-2019 14:40:24.080 INFOS [http-nio-8089-exec-9] org.apache.catalina.core.ApplicationContext.log Manager: install: Installing context configuration at 'file:/var/folders/7b/2lh71l6d5qb4y8t6z6w0hmyr0000gn/T/context8202605466688302833.xml'
+01-Oct-2019 14:40:24.267 INFOS [http-nio-8089-exec-9] org.apache.catalina.core.ApplicationContext.log Manager: start: Starting web application '/Assignment 1'
+01-Oct-2019 14:41:20.413 INFOS [http-nio-8089-exec-12] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
+01-Oct-2019 14:41:20.464 INFOS [http-nio-8089-exec-15] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/Assignment 1'

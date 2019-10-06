@@ -1,30 +1,35 @@
-<!DOCTYPE xhtml>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
     <head>
+        <link rel="stylesheet" href="css/css_file1.css" type="text/css" media="all"></link>
         <title>Index 1</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./css-file1.css">
     </head>
     <body>
         <div class="container">
             <h2>Index 1</h2>
-            <p>This is the index 1 page</p>
-            <hr>
-            <form method="get">
+            <p>This is the index 1 page with the GET method</p>
+            <hr></hr>
+            <form name="get-form" method="get" action="/Assignment 1/SoenServlet">
                 <label for="name"><b>Name</b></label>
-                <input type="text" placeholder="Enter Name" name="name" required>
+                <input type="text" placeholder="Enter Name" name="name" required></input>
                 
                 <label for="email"><b>Email</b></label>
-                <input type="text" placeholder="Enter Email" name="email" required>
-                
-                 <hr>
-
+                <input type="text" placeholder="Enter Email" name="email" required></input>
+                <p><b>Format</b>
+                    <select name = "formats">
+                        <option value="not specified"></option>
+                        <option value="html">html</option>
+                        <option value="text">plain text</option>
+                        <option value="xml">xml</option>
+                    </select> 
+                </p>
+                <hr></hr>
                 <button type="submit" class="btn">Send Data</button>
             </form>
             <p>Go to <a href="./index2.html">Index 2</a> page</p>

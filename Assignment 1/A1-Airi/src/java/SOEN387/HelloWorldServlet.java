@@ -8,6 +8,7 @@ package SOEN387;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.URLDecoder;
+import java.net.URLEncoder;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -82,15 +83,33 @@ public class HelloWorldServlet extends HttpServlet {
                 out.println("<h4> - Accept: " + request.getHeader("accept") + "</h4>");
                 out.println("<h4> - Query String: </h4>");
 
-                String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
+                if (request.getMethod().equals("GET")) {
+                    String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
 
-                int index = 0;
-                for (String temp_str : query_strings) {
-                    temp_str = temp_str.replace("=", ": ");
-                    query_strings[index] = temp_str;
-                    index++;
-                    out.println("<h4>&nbsp &nbsp &nbsp &nbsp" + temp_str + "</h4>");
+                    int index = 0;
+                    for (String temp_str : query_strings) {
+                        temp_str = temp_str.replace("=", ": ");
+                        query_strings[index] = temp_str;
+                        index++;
+                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp" + URLDecoder.decode(temp_str, "UTF-8") + "</h4>");
+                    }
+                } else if (request.getMethod().equals("POST")) {
+                    String[] name_parameters = URLEncoder.encode(request.getParameter("name"), "UTF-8").split("&");
+                    String[] email_parameters = URLEncoder.encode(request.getParameter("email"), "UTF-8").split("&");
+                    String[] format_parameters = URLEncoder.encode(request.getParameter("format"), "UTF-8").split("&");
+
+                    for (String temp_str : name_parameters) {
+                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp Name: " + URLDecoder.decode(temp_str, "UTF-8") + "</h4>");
+                    }
+                    for (String temp_str : email_parameters) {
+                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp Email: " + URLDecoder.decode(temp_str, "UTF-8") + "</h4>");
+                    }
+                    for (String temp_str : format_parameters) {
+                        out.println("<h4>&nbsp &nbsp &nbsp &nbsp Format: " + URLDecoder.decode(temp_str, "UTF-8") + "</h4>");
+                    }
+
                 }
+
             }
 
             // === Default === //
@@ -153,15 +172,40 @@ public class HelloWorldServlet extends HttpServlet {
                 out.println("<th>&nbspQuery String:" + "&nbsp</th>");
                 out.println("</tr>");
 
-                String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
-                for (String temp_str : query_strings) {
-                    String[] temp_query_string_pair = new String[2]; //Storing 1 key-value
-                    temp_str = temp_str.replace("=", " ");
-                    temp_query_string_pair = temp_str.split(" ");
-                    if (temp_query_string_pair.length == 2) {   // Ignore malformed string
+                if (request.getMethod().equals("GET")) {
+                    String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
+                    for (String temp_str : query_strings) {
+                        String[] temp_query_string_pair = new String[2]; //Storing 1 key-value
+                        temp_str = temp_str.replace("=", " ");
+                        temp_query_string_pair = temp_str.split(" ");
+                        if (temp_query_string_pair.length == 2) {   // Ignore malformed string
+                            out.println("<tr>");
+                            out.println("<td>&nbsp" + temp_query_string_pair[0] + "&nbsp</td>");
+                            out.println("<td>&nbsp" + temp_query_string_pair[1] + "&nbsp</td>");
+                            out.println("</tr>");
+                        }
+                    }
+                } else if (request.getMethod().equals("POST")) {
+                    String[] name_parameters = URLEncoder.encode(request.getParameter("name"), "UTF-8").split("&");
+                    String[] email_parameters = URLEncoder.encode(request.getParameter("email"), "UTF-8").split("&");
+                    String[] format_parameters = URLEncoder.encode(request.getParameter("format"), "UTF-8").split("&");
+
+                    for (String temp_str : name_parameters) {
                         out.println("<tr>");
-                        out.println("<td>&nbsp" + temp_query_string_pair[0] + "&nbsp</td>");
-                        out.println("<td>&nbsp" + temp_query_string_pair[1] + "&nbsp</td>");
+                        out.println("<td>&nbsp" + "Name" + "&nbsp</td>");
+                        out.println("<td>&nbsp" + URLDecoder.decode(temp_str, "UTF-8") + "&nbsp</td>");
+                        out.println("</tr>");
+                    }
+                    for (String temp_str : email_parameters) {
+                        out.println("<tr>");
+                        out.println("<td>&nbsp" + "Email" + "&nbsp</td>");
+                        out.println("<td>&nbsp" + URLDecoder.decode(temp_str, "UTF-8") + "&nbsp</td>");
+                        out.println("</tr>");
+                    }
+                    for (String temp_str : format_parameters) {
+                        out.println("<tr>");
+                        out.println("<td>&nbsp" + "Format" + "&nbsp</td>");
+                        out.println("<td>&nbsp" + URLDecoder.decode(temp_str, "UTF-8") + "&nbsp</td>");
                         out.println("</tr>");
                     }
                 }
@@ -189,14 +233,30 @@ public class HelloWorldServlet extends HttpServlet {
                 out.println("</request-headers>");
                 out.println("<query-string>");
 
-                String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
-                for (String temp_str : query_strings) {
-                    String[] temp_query_string_pair = new String[2]; //Storing 1 key-value
-                    temp_str = temp_str.replace("=", " ");
-                    temp_query_string_pair = temp_str.split(" ");
-                    if (temp_query_string_pair.length == 2) {   // Ignore malformed string
-                        out.println("<" + temp_query_string_pair[0] + ">" + temp_query_string_pair[1]
-                                + "</" + temp_query_string_pair[0] + ">");
+                if (request.getMethod().equals("GET")) {
+                    String[] query_strings = URLDecoder.decode(request.getQueryString(), "UTF-8").split("&");
+                    for (String temp_str : query_strings) {
+                        String[] temp_query_string_pair = new String[2]; //Storing 1 key-value
+                        temp_str = temp_str.replace("=", " ");
+                        temp_query_string_pair = temp_str.split(" ");
+                        if (temp_query_string_pair.length == 2) {   // Ignore malformed string
+                            out.println("<" + temp_query_string_pair[0] + ">" + temp_query_string_pair[1]
+                                    + "</" + temp_query_string_pair[0] + ">");
+                        }
+                    }
+                } else if (request.getMethod().equals("POST")) {
+                    String[] name_parameters = URLEncoder.encode(request.getParameter("name"), "UTF-8").split("&");
+                    String[] email_parameters = URLEncoder.encode(request.getParameter("email"), "UTF-8").split("&");
+                    String[] format_parameters = URLEncoder.encode(request.getParameter("format"), "UTF-8").split("&");
+
+                    for (String temp_str : name_parameters) {
+                        out.println("<name> " + URLDecoder.decode(temp_str, "UTF-8") + "</name>");
+                    }
+                    for (String temp_str : email_parameters) {
+                        out.println("<email>" + URLDecoder.decode(temp_str, "UTF-8") + "</email>");
+                    }
+                    for (String temp_str : format_parameters) {
+                        out.println("<format>" + URLDecoder.decode(temp_str, "UTF-8") + "</format>");
                     }
                 }
                 out.println("</query-string>");

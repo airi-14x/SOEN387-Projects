@@ -11,6 +11,9 @@
 ### Assignment 2: Deadline - November 1st 2019
 
 ```
-- The Repository Core (implementing the business logic tier with no assumptions on the front-end platform.)
-- The front-end Web Project (implementing the front-end UI using servlets and jsp)
+- The Repository Core 
+  (implementing the business logic tier with no assumptions
+   on the front-end platform.)
+- The front-end Web Project 
+  (implementing the front-end UI using servlets and jsp)
 ```

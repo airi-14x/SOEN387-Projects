@@ -72,7 +72,7 @@ public class SoenServlet extends HttpServlet {
 
         Enumeration queryParams = request.getParameterNames();
 
-        out.println("<tr bgcolor = \"#949494\"><th>Query String</th><th bgcolor = \"#949494\">Parameter Values</th></tr>\n");
+        out.println("<tr bgcolor = \"#949494\"><th>Parameters</th><th bgcolor = \"#949494\">Parameter Values</th></tr>\n");
 
         while (queryParams.hasMoreElements()) {
             String paramName = (String) queryParams.nextElement();

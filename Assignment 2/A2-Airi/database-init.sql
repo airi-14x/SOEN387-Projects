@@ -1,5 +1,5 @@
 CREATE TABLE `book`(
-	`id` VARCHAR(11) NOT NULL,
+	`id` INT  NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(64) DEFAULT NULL,
     `description` VARCHAR(256) DEFAULT NULL,
     `isbn` VARCHAR(64) DEFAULT NULL,
@@ -8,13 +8,24 @@ CREATE TABLE `book`(
     `publisher_company` VARCHAR(64) DEFAULT NULL,
     `address` VARCHAR(64) DEFAULT NULL,
     `image_mime` VARCHAR(256) DEFAULT NULL,
-    `image_data` BLOB
-);
+    `image_data` BLOB,
+    PRIMARY KEY(`id`)
+)AUTO_INCREMENT=1;
 
-CREATE PROCEDURE updateidCounter (
-id VARCHAR(11)
-)
+-- Implement AUTO_INCREMENT with PROCEDURE if time exists
+DELIMITER //
+CREATE PROCEDURE autoIncrementId (p_id INT, p_isbn VARCHAR(11))
 BEGIN
-	SELECT id, title FROM book
-    WHERE this.id = id;
-END;
+	SELECT id, isbn
+    FROM book
+    WHERE id = p_id AND isbn = p_isbn;
+END
+
+CREATE PROCEDURE `new_procedure` ()
+BEGIN
+	SELECT id, isbn
+    FROM book
+END
+DELIMITER ;
+-- INSERT INTO `book`(`id`,`title`, `description`, `isbn`, `last_name`, `first_name`, `publisher_company`, `address`, `image_mime`, `image_data`) VALUES (1,d,e,23)
+

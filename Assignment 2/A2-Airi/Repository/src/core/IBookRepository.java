@@ -5,10 +5,28 @@
  */
 package core;
 
+import java.util.List;
+
 /**
  *
  * @author Airi
  */
 public interface IBookRepository {
+
+    List<Book> listAllBooks();
+
+    Book getBookInfoID(int book_id);
+
+    Book getBookInfoISBN(String book_isbn);
+
+    int addBook(Book book);
+
+    void updateBookInfo(int book_id, String book_parameters);
+
+    void setBookCoverImage(); // Reset and Set function. Need to pick out image type!
+
+    void deleteBook(int id);
+
+    void deleteAllBooks();
 
 }

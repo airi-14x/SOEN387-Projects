@@ -1,7 +1,0 @@
-05-Oct-2019 12:01:46.671 INFOS [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: init: Associated with Deployer 'Catalina:type=Deployer,host=localhost'
-05-Oct-2019 12:01:46.673 INFOS [http-nio-8080-exec-5] org.apache.catalina.core.ApplicationContext.log Manager: init: Global resources are available
-05-Oct-2019 12:01:46.811 INFOS [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-05-Oct-2019 12:01:46.843 INFOS [http-nio-8080-exec-4] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-05-Oct-2019 12:01:46.919 INFOS [http-nio-8080-exec-8] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/A1-Airi'
-05-Oct-2019 12:02:38.482 INFOS [http-nio-8080-exec-7] org.apache.catalina.core.ApplicationContext.log Manager: list: Listing contexts for virtual host 'localhost'
-05-Oct-2019 12:02:38.514 INFOS [http-nio-8080-exec-2] org.apache.catalina.core.ApplicationContext.log Manager: restart: Reloading web application '/A1-Airi'

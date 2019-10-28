@@ -1,10 +1,31 @@
 CREATE TABLE `book`(
-	`id` int(11) NOT NULL,
-    `title` varchar(64) DEFAULT NULL,
-    `description` varchar(256) DEFAULT NULL,
-    `isbn` varchar(64) DEFAULT NULL,
-    `last_name` varchar(64) DEFAULT NULL,
-    `first_name` varchar(64) DEFAULT NULL,
-    `publisher_company` varchar(64) DEFAULT NULL,
-    `address` varchar(64) DEFAULT NULL
-)
+	`id` INT  NOT NULL AUTO_INCREMENT,
+    `title` VARCHAR(64) DEFAULT NULL,
+    `description` VARCHAR(256) DEFAULT NULL,
+    `isbn` VARCHAR(64) DEFAULT NULL,
+    `last_name` VARCHAR(64) DEFAULT NULL,
+    `first_name` VARCHAR(64) DEFAULT NULL,
+    `publisher_company` VARCHAR(64) DEFAULT NULL,
+    `address` VARCHAR(64) DEFAULT NULL,
+    `image_mime` VARCHAR(256) DEFAULT NULL,
+    `image_data` BLOB,
+    PRIMARY KEY(`id`)
+)AUTO_INCREMENT=1;
+
+-- Implement AUTO_INCREMENT with PROCEDURE if time exists
+DELIMITER //
+CREATE PROCEDURE autoIncrementId (p_id INT, p_isbn VARCHAR(11))
+BEGIN
+	SELECT id, isbn
+    FROM book
+    WHERE id = p_id AND isbn = p_isbn;
+END
+
+CREATE PROCEDURE `new_procedure` ()
+BEGIN
+	SELECT id, isbn
+    FROM book
+END
+DELIMITER ;
+-- INSERT INTO `book`(`id`,`title`, `description`, `isbn`, `last_name`, `first_name`, `publisher_company`, `address`, `image_mime`, `image_data`) VALUES (1,d,e,23)
+

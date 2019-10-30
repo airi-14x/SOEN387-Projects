@@ -28,6 +28,7 @@ public class RequestHandler implements HttpHandler {
     @Override
     public void handle(HttpExchange t) throws IOException {
         StringBuilder response = new StringBuilder();
+        
         if (t.getRequestMethod().equalsIgnoreCase("POST")) {
             try {
                 // REQUEST Headers

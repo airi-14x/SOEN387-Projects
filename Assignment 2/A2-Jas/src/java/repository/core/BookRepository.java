@@ -6,13 +6,28 @@
 package repository.core;
 
 import java.util.ArrayList;
+import java.sql.*;
 
 /**
  *
  * @author jasminelatendresse
  */
 public class BookRepository implements IBookRepository {
+    private ArrayList<Book> books;
+    private Database conn;
+    private static BookRepository instance = null;
 
+    private BookRepository() {
+        conn = Database.getInstance();
+        books = new ArrayList<Book>();
+    }
+    public static synchronized BookRepository getInstance(){
+        if(instance == null){
+            instance = new BookRepository();
+        }
+        return instance;
+    }
+    
     @Override
     public ArrayList<Book> listAllBooks() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

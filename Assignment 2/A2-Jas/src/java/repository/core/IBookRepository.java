@@ -5,10 +5,19 @@
  */
 package repository.core;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author jasminelatendresse
  */
-public class IBookRepository {
+public interface IBookRepository {
+    ArrayList<Book> listAllBooks();
+    Book getBookInfo(int id);
+    Book getBookInfo(String isbn);
+    int addNewBook(Book book);
+    void updateBookInfo(int id, String title, String description, Author author);
+    void setBookCoverImage();
+    void deleteBook(int id);
     
 }

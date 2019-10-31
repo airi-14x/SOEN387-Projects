@@ -9,21 +9,20 @@ import java.sql.Blob;
 
 /**
  *
- * @author Airi
+ * @author Jasmine Latendresse and Airi Chow
  */
 public class CoverImage {
 
-    private String mime_type;
-    private Blob image_data;
+    private String mimeType;
+    private Blob image;
 
-    public CoverImage(String mime_type, Blob image_data) {
-        this.mime_type = mime_type;
-        this.image_data = image_data;
+    public CoverImage(String mimeType, Blob image) {
+        this.mimeType = mimeType;
+        this.image = image;
     }
 
     @Override
     public String toString() {
-        return "CoverImage{" + "mime_type=" + mime_type + ", image_data=" + image_data + '}';
+        return "CoverImage{mimeType=" + mimeType + "}";
     }
-
 }

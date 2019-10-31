@@ -7,8 +7,8 @@ package repository.core;
 
 /**
  *
- * @author Airi
+ * @author Jasmine Latendresse and Airi Chow
  */
-public class SessionClass {
+public class RepositoryException {
 
 }

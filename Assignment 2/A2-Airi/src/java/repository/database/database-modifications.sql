@@ -1,0 +1,1 @@
+INSERT INTO `book`(`id`,`title`, `description`, `isbn`) VALUES (1,'d','e',23)

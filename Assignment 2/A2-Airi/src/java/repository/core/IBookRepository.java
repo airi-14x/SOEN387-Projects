@@ -5,7 +5,7 @@
  */
 package repository.core;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
@@ -13,7 +13,7 @@ import java.util.List;
  */
 public interface IBookRepository {
 
-    List<Book> listAllBooks();
+    ArrayList<Book> listAllBooks();
 
     Book getBookInfoID(int book_id);
 

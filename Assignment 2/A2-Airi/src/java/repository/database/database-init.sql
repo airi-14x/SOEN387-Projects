@@ -27,5 +27,4 @@ BEGIN
     FROM book
 END
 DELIMITER ;
--- INSERT INTO `book`(`id`,`title`, `description`, `isbn`, `last_name`, `first_name`, `publisher_company`, `address`, `image_mime`, `image_data`) VALUES (1,d,e,23)
 

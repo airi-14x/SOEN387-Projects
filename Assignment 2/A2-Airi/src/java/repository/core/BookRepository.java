@@ -5,31 +5,34 @@
  */
 package repository.core;
 
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  *
  * @author Airi
  */
-public class Repository implements IBookRepository {
+public class BookRepository implements IBookRepository {
 
-    // NEED TO IMPLEMENT SINGLETON pattern
-    // WIP
-    private int id; //AUTO-GENERATED??
-    private String title;
-    private String description;
-    private String isbn;
-
-    private String author_first_name;
-    private String author_last_name;
-    private String publisher_company;
-    private String publisher_address;
-
-    private List<Book> books; //? Need to go into database to fetch it?
+    private ArrayList<Book> books; //? Need to go into database to fetch it?
     private Book book;
+    private RepositoryDatabase connection;
+
+    private static BookRepository instance = null;
+
+    private BookRepository() {
+        connection = RepositoryDatabase.getInstance();
+        books = new ArrayList<Book>();
+    }
+
+    public static synchronized IBookRepository getInstance() {
+        if (instance == null) {
+            instance = new BookRepository();
+        }
+        return instance;
+    }
 
     // private IMAGE-type(Choose one??) cover;
-    public List<Book> listAllBooks() {
+    public ArrayList<Book> listAllBooks() {
         return books;
     }
 
@@ -45,7 +48,7 @@ public class Repository implements IBookRepository {
     public int addBook(Book book) {
         // Add book to database?
         // Return ID
-        return id;
+        return book.getId();
     }
 
     public void updateBookInfo(int book_id, String title, String description, Author author) {

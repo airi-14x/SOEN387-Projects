@@ -25,7 +25,7 @@ public class RepositoryDatabase {
     private ResultSet result_set = null;
 
     private String user = "root";
-    private String pass = "12345678";
+    private String pass = "root1234";
 
     private RepositoryDatabase() {
 

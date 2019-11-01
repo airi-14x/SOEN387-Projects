@@ -14,13 +14,13 @@ import java.util.ArrayList;
 public class BookRepository implements IBookRepository {
 
     private ArrayList<Book> books;
-    private Database conn;
+    private RepositoryDatabase conn;
     private static BookRepository instance = null;
     //private static RepositoryDatabase connection = null;
     //private static BookRepository instance = null;
 
     private BookRepository() {
-        conn = Database.getInstance();
+        conn = RepositoryDatabase.getInstance();
         books = new ArrayList<Book>();
 
         //connection = RepositoryDatabase.getInstance();

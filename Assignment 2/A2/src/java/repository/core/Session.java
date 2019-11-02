@@ -7,7 +7,11 @@ package repository.core;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.io.FileWriter;
+import java.io.IOException;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 /**
  *
  * @author Jasmine Latendresse and Airi Chow
@@ -51,6 +55,10 @@ public class Session {
     
     public boolean logout() {
         return false; 
+    }
+    
+    public void createJsonObject(String userId, String password) {
+        JSONObject obj = new JSONObject();
     }
     
     public static void main(String[] args) {

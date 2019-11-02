@@ -58,8 +58,12 @@ public class Session {
     }
     
     public static void createJsonObject(String userId, String password) throws IOException {
+        JSONObject userInfo = new JSONObject();
+        userInfo.put("userId", userId);
+        userInfo.put("password", hashPassword(password));
+        
         JSONObject user = new JSONObject();
-        user.put(userId, hashPassword(password));
+        user.put("user", userInfo);
         
         try (FileWriter file = new FileWriter("./users.json")) {
             file.write(user.toJSONString());

@@ -6,6 +6,7 @@
 package repository.core;
 
 import java.util.ArrayList;
+import java.sql.*;
 
 /**
  *
@@ -36,7 +37,29 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public ArrayList<Book> listAllBooks() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            ResultSet resultSet = connection.executeQuery("SELECT * FROM book");
+            
+            while(resultSet.next()){
+                int id = resultSet.getInt("id");
+                String title = resultSet.getString("title");
+                String description = resultSet.getString("description");
+                String isbn = resultSet.getString("isbn");
+                String lastName = resultSet.getString("last_name");
+                String firstName = resultSet.getString("first_name");
+                String publisherCompany = resultSet.getString("publisher_company");
+                String address = resultSet.getString("address");
+                String mimeType = resultSet.getString("mime_type");
+                Blob imageData = resultSet.getBlob("image_data");
+                
+                books.add(new Book(id, title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData)));
+            }
+
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        return books;
     }
 
     @Override

@@ -5,8 +5,8 @@
  */
 package repository.core;
 
-import java.util.ArrayList;
 import java.sql.*;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,15 +17,11 @@ public class BookRepository implements IBookRepository {
     private ArrayList<Book> books;
     private RepositoryDatabase connection;
     private static BookRepository instance = null;
-    //private static RepositoryDatabase connection = null;
-    //private static BookRepository instance = null;
 
     private BookRepository() {
         connection = RepositoryDatabase.getInstance();
         books = new ArrayList<Book>();
 
-        //connection = RepositoryDatabase.getInstance();
-        //books = new ArrayList<Book>();
     }
 
     public static synchronized BookRepository getInstance() {
@@ -39,8 +35,8 @@ public class BookRepository implements IBookRepository {
     public ArrayList<Book> listAllBooks() {
         try {
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book");
-            
-            while(resultSet.next()){
+
+            while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String title = resultSet.getString("title");
                 String description = resultSet.getString("description");
@@ -51,12 +47,11 @@ public class BookRepository implements IBookRepository {
                 String address = resultSet.getString("address");
                 String mimeType = resultSet.getString("mime_type");
                 Blob imageData = resultSet.getBlob("image_data");
-                
+
                 books.add(new Book(id, title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData)));
             }
 
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return books;
@@ -65,11 +60,11 @@ public class BookRepository implements IBookRepository {
     @Override
     public Book getBookInfo(int id) {
         Book result = new Book();
-        
+
         try {
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book WHERE id=" + id);
-            
-            while(resultSet.next()){
+
+            while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
                 String description = resultSet.getString("description");
@@ -80,11 +75,10 @@ public class BookRepository implements IBookRepository {
                 String address = resultSet.getString("address");
                 String mimeType = resultSet.getString("mime_type");
                 Blob imageData = resultSet.getBlob("image_data");
-                
+
                 result = new Book(bookId, title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
             }
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return result;
@@ -93,11 +87,11 @@ public class BookRepository implements IBookRepository {
     @Override
     public Book getBookInfo(String isbn) {
         Book result = new Book();
-        
+
         try {
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book WHERE isbn=" + isbn);
-            
-            while(resultSet.next()){
+
+            while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
                 String description = resultSet.getString("description");
@@ -108,11 +102,10 @@ public class BookRepository implements IBookRepository {
                 String address = resultSet.getString("address");
                 String mimeType = resultSet.getString("mime_type");
                 Blob imageData = resultSet.getBlob("image_data");
-                
+
                 result = new Book(bookId, title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
             }
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return result;
@@ -120,11 +113,11 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public int addNewBook(Book book) {
-        int result = connection.executeUpdate("INSERT INTO book(id, title, description, isbn, last_name, first_name, publisher_company, address, mime_type, image_data) " + 
-                "VALUES(\""+ book.getId() + "\", \"" + book.getTitle() + "\", \"" + book.getDescription() + "\", \"" + book.getISBN() + "\",\"" +
-                book.getAuthor().getFirstName() + "\", \"" + book.getAuthor().getLastName() + "\", \"" + book.getPublisher_company() + "\", \"" + book.getPublisher_address() + "\", \"mime_type" + "\", \"image_data"
-                );
-        return result;
+        connection.executeUpdate("INSERT INTO book(id, title, description, isbn, last_name, first_name, publisher_company, address, mime_type, image_data) "
+                + "VALUES(\"" + book.getId() + "\", \"" + book.getTitle() + "\", \"" + book.getDescription() + "\", \"" + book.getISBN() + "\",\""
+                + book.getAuthor().getFirstName() + "\", \"" + book.getAuthor().getLastName() + "\", \"" + book.getPublisherCompany() + "\", \"" + book.getPublisherAddress() + "\", \"mime_type" + "\", \"image_data"
+        );
+        return book.getId(); //Return: Should be ID
     }
 
     @Override
@@ -141,8 +134,7 @@ public class BookRepository implements IBookRepository {
     public void deleteBook(int id) {
         try {
             connection.executeUpdate("DELETE FROM book WHERE id=" + id);
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -150,8 +142,7 @@ public class BookRepository implements IBookRepository {
     public void deleteAllBooks() {
         try {
             connection.executeUpdate("DELETE FROM book");
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

@@ -18,6 +18,8 @@ import org.json.simple.JSONObject;
  */
 public class Session {
     
+    private String currentUser = null;
+    
     public static String hashPassword(String password) {
         String hashedPassword = null;
         
@@ -42,11 +44,16 @@ public class Session {
     }
     
     public String getCurrentUser() {
-        return null;
+        return currentUser;
     }
     
     public boolean isUserLoggedIn() {
-        return false;
+        if (currentUser == null) {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
     
     public boolean login(String userId, String password){
@@ -54,27 +61,49 @@ public class Session {
     }
     
     public boolean logout() {
-        return false; 
+        this.currentUser = null;
+        return true;
     }
     
-    public static void createJsonObject(String userId, String password) throws IOException {
-        JSONObject userInfo = new JSONObject();
-        userInfo.put("userId", userId);
-        userInfo.put("password", hashPassword(password));
+    public static void createJsonObject() throws IOException {
+        //User 1
+        JSONObject userInfo1 = new JSONObject();
+        userInfo1.put("userId", "Jasmine");
+        userInfo1.put("password", hashPassword("Test123"));
         
-        JSONObject user = new JSONObject();
-        user.put("user", userInfo);
+        JSONObject user1 = new JSONObject();
+        user1.put("user", userInfo1);
+        
+        //User 2
+        JSONObject userInfo2 = new JSONObject();
+        userInfo2.put("userId", "Airi");
+        userInfo2.put("password", hashPassword("anotherPassword123"));
+        
+        JSONObject user2 = new JSONObject();
+        user2.put("user", userInfo2);
+        
+        //User 3
+        JSONObject userInfo3 = new JSONObject();
+        userInfo3.put("userId", "Bob");
+        userInfo3.put("password", hashPassword("bobPswd456"));
+        
+        JSONObject user3 = new JSONObject();
+        user3.put("user", userInfo3);
+        
         
         try (FileWriter file = new FileWriter("./users.json")) {
-            file.write(user.toJSONString());
-            System.out.println(user + "successfully written to file!");
+            file.write(user1.toJSONString());
+            file.write(user2.toJSONString());
+            file.write(user3.toJSONString());
+            
+            System.out.println("Users successfully written to JSON file.");
         }
     }
     
     public static void main(String[] args) throws IOException {
         String passwordTest = "thisIsATest123";
-        System.out.println(Session.hashPassword(passwordTest));
+        System.out.println(hashPassword(passwordTest));
         
-        createJsonObject("Jasmine", "test123");
+        createJsonObject();
     }
 }

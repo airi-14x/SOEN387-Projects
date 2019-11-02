@@ -12,6 +12,7 @@ package repository.core;
 public class Book {
 
     private int id;
+    private String title;
     private String isbn;
     private String description;
     private Author author;
@@ -22,8 +23,9 @@ public class Book {
     public Book() {
     }
 
-    public Book(int id, String isbn, String description, Author author, String publisher_company, String publisher_address, CoverImage cover) {
+    public Book(int id, String title, String isbn, String description, Author author, String publisher_company, String publisher_address, CoverImage cover) {
         this.id = id;
+        this.title = title;
         this.isbn = isbn;
         this.description = description;
         this.author = author;
@@ -38,6 +40,14 @@ public class Book {
 
     public void setId(int id) {
         this.id = id;
+    }
+    
+    public String getTitle() {
+        return title;
+    }
+    
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getISBN() {

@@ -4,6 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment%202/A2/src/java/repository/core/RepositoryDatabase.java</file>
+            <file>file:/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment%202/A2/src/java/repository/core/RepositoryDatabase.java</file>
+            <file>file:/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment%202/A2/src/java/repository/core/Database.java</file>
+            <file>file:/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment%202/A2/src/java/repository/core/IBookRepository.java</file>
+            <file>file:/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment%202/A2/src/java/repository/core/CoverImage.java</file>
+            <file>file:/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment%202/A2/src/java/repository/core/Session.java</file>
+            <file>file:/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment%202/A2/src/java/repository/core/RepositoryException.java</file>
         </group>
     </open-files>
 </project-private>

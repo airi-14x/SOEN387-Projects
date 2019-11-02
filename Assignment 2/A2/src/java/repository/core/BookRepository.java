@@ -64,7 +64,30 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public Book getBookInfo(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Book result = new Book();
+        
+        try {
+            ResultSet resultSet = connection.executeQuery("SELECT * FROM book WHERE id = " + id);
+            
+            while(resultSet.next()){
+                int bookId = resultSet.getInt("id");
+                String title = resultSet.getString("title");
+                String description = resultSet.getString("description");
+                String isbn = resultSet.getString("isbn");
+                String lastName = resultSet.getString("last_name");
+                String firstName = resultSet.getString("first_name");
+                String publisherCompany = resultSet.getString("publisher_company");
+                String address = resultSet.getString("address");
+                String mimeType = resultSet.getString("mime_type");
+                Blob imageData = resultSet.getBlob("image_data");
+                
+                result = new Book(bookId, title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
+            }
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override

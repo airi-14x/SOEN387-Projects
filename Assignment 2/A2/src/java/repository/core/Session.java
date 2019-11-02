@@ -6,6 +6,7 @@
 package repository.core;
 
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /**
  *
@@ -31,8 +32,7 @@ public class Session {
             
             hashedPassword = sb.toString();
         }
-        catch(Exception e) {
-            e.printStackTrace();
+        catch(NoSuchAlgorithmException e) {
         }
         return hashedPassword;
     }

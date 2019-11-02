@@ -16,21 +16,21 @@ public class Book {
     private String isbn;
     private String description;
     private Author author;
-    private String publisher_company;
-    private String publisher_address;
+    private String publisherCompany;
+    private String publisherAddress;
     private CoverImage cover;
 
     public Book() {
     }
 
-    public Book(int id, String title, String isbn, String description, Author author, String publisher_company, String publisher_address, CoverImage cover) {
+    public Book(int id, String title, String isbn, String description, Author author, String publisherCompany, String publisherAddress, CoverImage cover) {
         this.id = id;
         this.title = title;
         this.isbn = isbn;
         this.description = description;
         this.author = author;
-        this.publisher_company = publisher_company;
-        this.publisher_address = publisher_address;
+        this.publisherCompany = publisherCompany;
+        this.publisherAddress = publisherAddress;
         this.cover = cover;
     }
 
@@ -41,11 +41,11 @@ public class Book {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getTitle() {
         return title;
     }
-    
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -74,20 +74,20 @@ public class Book {
         this.author = author;
     }
 
-    public String getPublisher_company() {
-        return publisher_company;
+    public String getPublisherCompany() {
+        return publisherCompany;
     }
 
-    public void setPublisher_company(String publisher_company) {
-        this.publisher_company = publisher_company;
+    public void setPublisherCompany(String publisherCompany) {
+        this.publisherCompany = publisherCompany;
     }
 
-    public String getPublisher_address() {
-        return publisher_address;
+    public String getPublisherAddress() {
+        return publisherAddress;
     }
 
-    public void setPublisher_address(String publisher_address) {
-        this.publisher_address = publisher_address;
+    public void setPublisherAddress(String publisherAddress) {
+        this.publisherAddress = publisherAddress;
     }
 
     public CoverImage getCover() {
@@ -100,7 +100,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" + "id=" + id + ", isbn=" + isbn + ", description=" + description + ", author=" + author + ", publisher_company=" + publisher_company + ", publisher_address=" + publisher_address + ", cover=" + cover + '}';
+        return "Book{" + "id=" + id + ", isbn=" + isbn + ", description=" + description + ", author=" + author + ", publisher_company=" + publisherCompany + ", publisher_address=" + publisherAddress + ", cover=" + cover + '}';
     }
 
 }

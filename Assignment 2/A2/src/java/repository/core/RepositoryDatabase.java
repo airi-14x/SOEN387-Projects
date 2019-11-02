@@ -98,7 +98,7 @@ public class RepositoryDatabase {
     public static void main(String[] args) throws SQLException {
         RepositoryDatabase database = new RepositoryDatabase();
         database.createStatement();
-        //database.executeQuery();
+        database.executeQuery("SELECT * FROM book");
         database.cleanup();
     }
 

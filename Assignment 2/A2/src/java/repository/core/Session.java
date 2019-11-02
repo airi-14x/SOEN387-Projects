@@ -57,12 +57,20 @@ public class Session {
         return false; 
     }
     
-    public void createJsonObject(String userId, String password) {
-        JSONObject obj = new JSONObject();
+    public static void createJsonObject(String userId, String password) throws IOException {
+        JSONObject user = new JSONObject();
+        user.put(userId, hashPassword(password));
+        
+        try (FileWriter file = new FileWriter("./users.json")) {
+            file.write(user.toJSONString());
+            System.out.println(user + "successfully written to file!");
+        }
     }
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String passwordTest = "thisIsATest123";
-        System.out.print(Session.hashPassword(passwordTest));
+        System.out.println(Session.hashPassword(passwordTest));
+        
+        createJsonObject("Jasmine", "test123");
     }
 }

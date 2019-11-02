@@ -73,7 +73,6 @@ public class RepositoryDatabase {
 
     public int executeUpdate(String query) {
         int update = 0;
-
         try {
             update = statement.executeUpdate(query);
         } catch (SQLException ex) {
@@ -102,6 +101,9 @@ public class RepositoryDatabase {
     public static void main(String[] args) throws SQLException {
         RepositoryDatabase database = new RepositoryDatabase();
         database.createStatement();
+        database.executeUpdate("UPDATE `BookRepo`.`book` SET `last_name` = 'Hello' WHERE (`id` = '2')");
+        //database.executeQuery("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('src/java/repository/database/endofownership_photo_final.jpeg') WHERE (`id` = '2')");
+        //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('endofownership_photo_final.jpeg') WHERE (`id` = '2');");
         database.executeQuery("SELECT * FROM book");
         database.cleanup();
     }

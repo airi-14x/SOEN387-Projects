@@ -58,9 +58,7 @@ public class RepositoryDatabase {
 
     public ResultSet executeQuery(String query) {
         try {
-            // 3. Execute SQL query
-            result_set = statement.executeQuery("select * from book");
-            // 4. Process the result set
+            result_set = statement.executeQuery(query);
             while (result_set.next()) {
                 System.out.println(result_set.getString("id") + ", "
                         + result_set.getString("title"));
@@ -72,10 +70,10 @@ public class RepositoryDatabase {
         }
         return result_set;
     }
-    
+
     public int executeUpdate(String query) {
         int update = 0;
-        
+
         try {
             update = statement.executeUpdate(query);
         } catch (SQLException ex) {
@@ -104,7 +102,7 @@ public class RepositoryDatabase {
     public static void main(String[] args) throws SQLException {
         RepositoryDatabase database = new RepositoryDatabase();
         database.createStatement();
-        //database.executeQuery();
+        database.executeQuery("select * from book");
         database.cleanup();
     }
 

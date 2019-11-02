@@ -25,7 +25,7 @@ public class RepositoryDatabase {
     private ResultSet result_set = null;
 
     private String user = "root";
-    private String pass = "12345678";
+    private String pass = "root1234";
 
     private RepositoryDatabase() {
 
@@ -56,19 +56,26 @@ public class RepositoryDatabase {
         return statement;
     }
 
-    public ResultSet executeQuery() {
+    public ResultSet executeQuery(String query) {
         try {
             // 3. Execute SQL query
-            result_set = statement.executeQuery("select * from book");
-            // 4. Process the result set
-            while (result_set.next()) {
-                System.out.println(result_set.getString("id") + ", "
-                        + result_set.getString("title"));
-            }
+            result_set = statement.executeQuery(query);
+           
         } catch (SQLException ex) {
             Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result_set;
+    }
+    
+    public int executeUpdate(String query) {
+        int update = 0;
+        
+        try {
+            update = statement.executeUpdate(query);
+        } catch (SQLException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return update;
     }
 
     public void cleanup() {
@@ -91,7 +98,7 @@ public class RepositoryDatabase {
     public static void main(String[] args) throws SQLException {
         RepositoryDatabase database = new RepositoryDatabase();
         database.createStatement();
-        database.executeQuery();
+        //database.executeQuery();
         database.cleanup();
     }
 

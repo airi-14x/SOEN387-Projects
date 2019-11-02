@@ -14,13 +14,13 @@ import java.util.ArrayList;
 public class BookRepository implements IBookRepository {
 
     private ArrayList<Book> books;
-    private RepositoryDatabase conn;
+    private RepositoryDatabase connection;
     private static BookRepository instance = null;
     //private static RepositoryDatabase connection = null;
     //private static BookRepository instance = null;
 
     private BookRepository() {
-        conn = RepositoryDatabase.getInstance();
+        connection = RepositoryDatabase.getInstance();
         books = new ArrayList<Book>();
 
         //connection = RepositoryDatabase.getInstance();
@@ -51,7 +51,11 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public int addNewBook(Book book) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int result = connection.executeUpdate("INSERT INTO book(id, title, description, isbn, last_name, first_name, publisher_company, address, mime_type, image_data) " + 
+                "VALUES(\""+ book.getId() + "\", \"" + book.getTitle() + "\", \"" + book.getDescription() + "\", \"" + book.getISBN() + "\",\"" +
+                book.getAuthor().getFirstName() + "\", \"" + book.getAuthor().getLastName() + "\", \"" + book.getPublisher_company() + "\", \"" + book.getPublisher_address() + "\", \"mime_type" + "\", \"image_data"
+                );
+        return result;
     }
 
     @Override

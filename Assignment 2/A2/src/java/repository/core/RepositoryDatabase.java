@@ -41,6 +41,7 @@ public class RepositoryDatabase {
     public static RepositoryDatabase getInstance() {
         if (database_instance == null) {
             database_instance = new RepositoryDatabase();
+            System.out.println("RepositoryDatabase - Instance is created!");
         }
         return database_instance;
     }
@@ -58,6 +59,7 @@ public class RepositoryDatabase {
 
     public ResultSet executeQuery(String query) {
         try {
+            createStatement();
             result_set = statement.executeQuery(query);
             while (result_set.next()) {
                 System.out.println(result_set.getString("id") + ", "
@@ -74,6 +76,7 @@ public class RepositoryDatabase {
     public int executeUpdate(String query) {
         int update = 0;
         try {
+            createStatement();
             update = statement.executeUpdate(query);
         } catch (SQLException ex) {
             Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
@@ -99,13 +102,30 @@ public class RepositoryDatabase {
     }
 
     public static void main(String[] args) throws SQLException {
-        RepositoryDatabase database = new RepositoryDatabase();
-        database.createStatement();
-        database.executeUpdate("UPDATE `BookRepo`.`book` SET `last_name` = 'Hello' WHERE (`id` = '2')");
-        //database.executeQuery("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('src/java/repository/database/endofownership_photo_final.jpeg') WHERE (`id` = '2')");
+        //RepositoryDatabase database = new RepositoryDatabase();
+        //database.createStatement();
+        //database.executeUpdate("UPDATE book SET last_name = 'Hello2', first_name = 'Hello' WHERE (id = '2')");
+        //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('src/java/repository/database/endofownership_photo_final.jpeg') WHERE (`id` = '2')");
         //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('endofownership_photo_final.jpeg') WHERE (`id` = '2');");
-        database.executeQuery("SELECT * FROM book");
-        database.cleanup();
+        //database.executeQuery("SELECT * FROM book");
+
+        BookRepository b1 = BookRepository.getInstance();
+
+        Author author = new Author("Laurent", "Deversa");
+        /*int book_id = 2;
+        String first_name = author.getFirstName();
+        String last_name = author.getLastName();
+        String book_title = "New_title";
+        String book_description = "New_description";
+        String statement = "UPDATE book SET title = '" + book_title + "', description = '"
+                + book_description + "', last_name = '" + last_name + "', first_name = '"
+                + first_name + "' WHERE id = '" + book_id + "';";
+        database.executeUpdate(statement);
+         */
+        b1.listAllBooks();
+        b1.updateBookInfo(2, "NEW_TITLE2", "UPDATE_Description", author);
+
+        //database.cleanup();
     }
 
 }

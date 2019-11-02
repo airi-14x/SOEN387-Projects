@@ -20,6 +20,7 @@ public class BookRepository implements IBookRepository {
 
     private BookRepository() {
         connection = RepositoryDatabase.getInstance();
+        System.out.println("Connection " + connection);
         books = new ArrayList<Book>();
 
     }
@@ -27,6 +28,8 @@ public class BookRepository implements IBookRepository {
     public static synchronized BookRepository getInstance() {
         if (instance == null) {
             instance = new BookRepository();
+            System.out.println("BookRepository - Instance is Created!");
+            System.out.println("Instance " + instance);
         }
         return instance;
     }
@@ -122,7 +125,17 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public void updateBookInfo(int id, String title, String description, Author author) {
-        // USE ID T
+        int book_id = id;
+        String first_name = author.getFirstName();
+        String last_name = author.getLastName();
+        String book_title = title;
+        String book_description = description;
+        String statement = "UPDATE book SET title = '" + book_title + "', description = '"
+                + book_description + "', last_name = '" + last_name + "', first_name = '"
+                + first_name + "' WHERE id = '" + book_id + "';";
+        System.out.println("STATEMENT: " + statement);
+        connection.executeUpdate(statement);
+
     }
 
     @Override

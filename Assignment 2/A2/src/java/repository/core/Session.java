@@ -5,20 +5,29 @@
  */
 package repository.core;
 
+import java.io.FileReader;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 /**
  *
  * @author Jasmine Latendresse and Airi Chow
  */
 public class Session {
     
-    private String currentUser = null;
+    public Session() throws IOException {
+        createJsonObject();
+    }
+    
+    private static JSONObject currentUser = null;
     
     public static String hashPassword(String password) {
         String hashedPassword = null;
@@ -44,24 +53,47 @@ public class Session {
     }
     
     public String getCurrentUser() {
-        return currentUser;
+        return currentUser.toString();
     }
     
     public boolean isUserLoggedIn() {
-        if (currentUser == null) {
-            return false;
-        }
-        else {
-            return true;
-        }
+        return currentUser != null;
     }
     
-    public boolean login(String userId, String password){
-        return false;
+    public static boolean login(String uId, String uPassword) throws IOException, ParseException{  
+        JSONParser parser = new JSONParser();
+        
+        try(FileReader reader = new FileReader("./users.json")) {
+            Object usr = parser.parse(reader);
+            JSONArray users = (JSONArray) usr;
+            
+            for(Object obj : users){
+                JSONObject user = (JSONObject) obj;
+                JSONObject userObject = (JSONObject) user.get("user");
+                
+                String userId = (String) userObject.get("userId");
+                
+                String password = (String) userObject.get("password");
+                
+                if(userId.equals(uId)){
+                    String psw = hashPassword(uPassword);
+                    
+                    if(psw.equals(password)){
+                        currentUser = (JSONObject) obj;
+                        System.out.println("Success");
+                        return true;
+                    }
+                    else {
+                        System.out.println("Could not login");
+                    }
+                }
+            }     
+        }
+        return false; 
     }
     
     public boolean logout() {
-        this.currentUser = null;
+        currentUser = null;
         return true;
     }
     
@@ -90,20 +122,27 @@ public class Session {
         JSONObject user3 = new JSONObject();
         user3.put("user", userInfo3);
         
+        JSONArray userList = new JSONArray();
+        userList.add(user1);
+        userList.add(user2);
+        userList.add(user3);
+        
         
         try (FileWriter file = new FileWriter("./users.json")) {
-            file.write(user1.toJSONString());
-            file.write(user2.toJSONString());
-            file.write(user3.toJSONString());
+            file.write(userList.toJSONString());
             
             System.out.println("Users successfully written to JSON file.");
         }
     }
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, ParseException {
         String passwordTest = "thisIsATest123";
         System.out.println(hashPassword(passwordTest));
         
         createJsonObject();
+        
+        login("Jasmine", "Test123");
+        login("Jasmine", "Test1234");
+        
     }
 }

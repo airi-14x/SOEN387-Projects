@@ -64,6 +64,8 @@ public class RepositoryDatabase {
             while (result_set.next()) {
                 System.out.println(result_set.getString("id") + ", "
                         + result_set.getString("title"));
+                System.out.println(result_set.getString("image_mime"));
+                System.out.println(result_set.getBlob("image_data"));
             }
         } catch (SQLException ex) {
             Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);

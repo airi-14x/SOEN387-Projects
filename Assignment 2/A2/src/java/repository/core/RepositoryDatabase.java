@@ -123,7 +123,7 @@ public class RepositoryDatabase {
         database.executeUpdate(statement);
          */
         b1.listAllBooks();
-        b1.updateBookInfo(2, "NEW_TITLE2", "UPDATE_Description", author);
+        b1.updateBookInfo(2, "Margin", "1232", author);
 
         //database.cleanup();
     }

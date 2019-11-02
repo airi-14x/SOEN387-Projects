@@ -125,17 +125,11 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public void updateBookInfo(int id, String title, String description, Author author) {
-        int book_id = id;
-        String first_name = author.getFirstName();
-        String last_name = author.getLastName();
-        String book_title = title;
-        String book_description = description;
-        String statement = "UPDATE book SET title = '" + book_title + "', description = '"
-                + book_description + "', last_name = '" + last_name + "', first_name = '"
-                + first_name + "' WHERE id = '" + book_id + "';";
+        String statement = "UPDATE book SET title = '" + title + "', description = '"
+                + description + "', last_name = '" + author.getLastName() + "', first_name = '"
+                + author.getFirstName() + "' WHERE id = '" + id + "';";
         System.out.println("STATEMENT: " + statement);
         connection.executeUpdate(statement);
-
     }
 
     @Override

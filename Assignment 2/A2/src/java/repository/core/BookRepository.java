@@ -67,7 +67,7 @@ public class BookRepository implements IBookRepository {
         Book result = new Book();
         
         try {
-            ResultSet resultSet = connection.executeQuery("SELECT * FROM book WHERE id = " + id);
+            ResultSet resultSet = connection.executeQuery("SELECT * FROM book WHERE id=" + id);
             
             while(resultSet.next()){
                 int bookId = resultSet.getInt("id");
@@ -92,7 +92,30 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public Book getBookInfo(String isbn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Book result = new Book();
+        
+        try {
+            ResultSet resultSet = connection.executeQuery("SELECT * FROM book WHERE isbn=" + isbn);
+            
+            while(resultSet.next()){
+                int bookId = resultSet.getInt("id");
+                String title = resultSet.getString("title");
+                String description = resultSet.getString("description");
+                String bookIsbn = resultSet.getString("isbn");
+                String lastName = resultSet.getString("last_name");
+                String firstName = resultSet.getString("first_name");
+                String publisherCompany = resultSet.getString("publisher_company");
+                String address = resultSet.getString("address");
+                String mimeType = resultSet.getString("mime_type");
+                Blob imageData = resultSet.getBlob("image_data");
+                
+                result = new Book(bookId, title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
+            }
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     @Override
@@ -116,10 +139,20 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public void deleteBook(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        try {
+            connection.executeUpdate("DELETE FROM book WHERE id=" + id);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     public void deleteAllBooks() {
-        // Drop Database
+        try {
+            connection.executeUpdate("DELETE FROM book");
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
     }
 }

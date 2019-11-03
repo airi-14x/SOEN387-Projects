@@ -9,6 +9,6 @@ package repository.core;
  *
  * @author Jasmine Latendresse and Airi Chow
  */
-public class RepositoryException {
+public class RepositoryException extends Exception {
 
 }

@@ -105,22 +105,32 @@ public class RepositoryDatabase {
         //database.executeQuery("SELECT * FROM book");
 
         BookRepository b1 = BookRepository.getInstance();
+        b1.dropBookTable();
+        b1.createBookTable();
+        ArrayList<Book> books;
 
-        b1.deleteAllBooks();
+        //b1.deleteAllBooks();
         Author author = new Author("Aurelius", "Marcus");
         Book book1 = new Book("Meditations", "Written in Greek, without any intention of publication, by the only Roman emperor", "0140449337", author,
                 "Penguin Classic", "England");
 
+        //System.out.println("BEFORE adding Book 1:");
+        //books = b1.listAllBooks();
         System.out.println(b1.addNewBook(book1)); // GET ID
 
         Author author2 = new Author("Epictetus", "Unknown");
         Book book2 = new Book("Discourses, Fragments, Handbook", "About things that are within our power and those that are not.", "0199595186",
                 author2, "Oxford University Press", "England");
 
+        //System.out.println("BEFORE adding Book 2:");
+        //books = b1.listAllBooks();
         System.out.println(b1.addNewBook(book2)); // GET ID
 
         Author author3 = new Author("Kishimi", "Ichiro");
         Book book3 = new Book("Courage to be Happy", "The Courage to be Happy is a profound insight into the way we should live our lives that has already sold more than one million copies in Japan.", "1911630210", author3, "Allen & Unwin", "London, England");
+
+        //System.out.println("BEFORE adding Book 3:");
+        //books = b1.listAllBooks();
         System.out.println(b1.addNewBook(book3)); // Get ID
 
         /*
@@ -144,23 +154,24 @@ public class RepositoryDatabase {
         database.executeUpdate(statement);
          */
 
-        ArrayList<Book> books;
-
-        System.out.println("BEFORE:");
-        books = b1.listAllBooks();
-        System.out.println(books);
+        //System.out.println("BEFORE:");
+        //books = b1.listAllBooks();
+        //System.out.println(books);
         b1.updateBookInfo(2, "Margin", "1232", author4); // UPDATE
 
-        System.out.println("AFTER:");
+        //System.out.println("AFTER:");
+        //books = b1.listAllBooks();
+        //System.out.println(books);
+        //System.out.println("Delete one book:");
+        b1.deleteBook(3);
         books = b1.listAllBooks();
         System.out.println(books);
 
-        System.out.println("Delete one book:");
-        b1.deleteBook(2);
-        books = b1.listAllBooks();
-        System.out.println(books);
+        System.out.println(b1.addNewBook(book3)); // Get ID
 
         //b1.deleteAllBooks();
+        books = b1.listAllBooks();
+        System.out.println(books);
         //database.cleanup();
     }
 

@@ -41,7 +41,7 @@ public class BookRepository implements IBookRepository {
 
             resetBooks();
             while (resultSet.next()) {
-                //int id = resultSet.getInt("id");
+                int id = resultSet.getInt("id");
                 String title = resultSet.getString("title");
                 String description = resultSet.getString("description");
                 String isbn = resultSet.getString("isbn");
@@ -51,7 +51,10 @@ public class BookRepository implements IBookRepository {
                 String address = resultSet.getString("address");
                 //String mimeType = resultSet.getString("mime_type");
                 //Blob imageData = resultSet.getBlob("image_data");
-                books.add(new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address));
+                Book book = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address);
+                book.setId(id);
+                books.add(book);
+
                 //books.add(new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData)));
             }
 
@@ -130,6 +133,7 @@ public class BookRepository implements IBookRepository {
                 + book.getAuthor().getFirstName() + "\", \"" + book.getAuthor().getLastName() + "\", \"" + book.getPublisherCompany() + "\", \"" + book.getPublisherAddress() + "\", \"mime_type" + "\", \"image_data"
         );*/
         book.autoIncrement();
+        books.add(book);
         return book.getId(); //Return: Should be ID
     }
 
@@ -140,6 +144,10 @@ public class BookRepository implements IBookRepository {
                 + author.getFirstName() + "' WHERE id = '" + id + "';";
         System.out.println("STATEMENT: " + statement);
         connection.executeUpdate(statement);
+
+        books.get(id - 1).setTitle(title);
+        books.get(id - 1).setDescription(description);
+        books.get(id - 1).setAuthor(author);
     }
 
     @Override
@@ -168,5 +176,33 @@ public class BookRepository implements IBookRepository {
 
     public void resetBooks() {
         books.removeAll(books);
+    }
+
+    public void createBookTable() {
+        try {
+            connection.executeUpdate("CREATE TABLE `book`(\n"
+                    + "	`id` INT  NOT NULL AUTO_INCREMENT,\n"
+                    + "    `title` VARCHAR(64) DEFAULT NULL,\n"
+                    + "    `description` VARCHAR(256) DEFAULT NULL,\n"
+                    + "    `isbn` VARCHAR(64) DEFAULT NULL,\n"
+                    + "    `last_name` VARCHAR(64) DEFAULT NULL,\n"
+                    + "    `first_name` VARCHAR(64) DEFAULT NULL,\n"
+                    + "    `publisher_company` VARCHAR(64) DEFAULT NULL,\n"
+                    + "    `address` VARCHAR(64) DEFAULT NULL,\n"
+                    + "    `image_mime` VARCHAR(256) DEFAULT NULL,\n"
+                    + "    `image_data` BLOB,\n"
+                    + "    PRIMARY KEY(`id`)\n"
+                    + ")AUTO_INCREMENT=1;");
+        } catch (Exception e) {
+
+        }
+    }
+
+    public void dropBookTable() {
+        try {
+            connection.executeUpdate("DROP TABLE book");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

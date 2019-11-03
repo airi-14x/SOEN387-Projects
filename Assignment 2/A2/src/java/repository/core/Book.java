@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class Book {
 
     private static final AtomicInteger count = new AtomicInteger(0); // Need to Initialise with #books in DB
-    private static int id;
+    private int id = count.get();
     private String title;
     private String description;
     private String isbn;
@@ -31,7 +31,7 @@ public class Book {
         //this.id = id;
         //System.out.println("Count:");
         //System.out.println(count);
-        id = count.incrementAndGet(); // AUTO-INCREMENT
+        //id = count.incrementAndGet(); // AUTO-INCREMENT
         this.title = title;
         this.description = description;
         this.isbn = isbn;
@@ -60,12 +60,18 @@ public class Book {
         id = count.incrementAndGet();
     }
 
+    public void setCount(int databaseID) {
+        if (databaseID > count.get()) {
+            count.set(databaseID);
+        }
+    }
+
     public void resetCount() {
         count.set(0);
     }
 
-    public void setId(AtomicInteger count) {
-        id = count.get();
+    public void setId(int databaseID) {
+        id = databaseID;
     }
 
     public int getId() {

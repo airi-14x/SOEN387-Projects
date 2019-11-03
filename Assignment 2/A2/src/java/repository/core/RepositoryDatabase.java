@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -61,12 +62,6 @@ public class RepositoryDatabase {
         try {
             createStatement();
             result_set = statement.executeQuery(query);
-            while (result_set.next()) {
-                System.out.println(result_set.getString("id") + ", "
-                        + result_set.getString("title"));
-                System.out.println(result_set.getString("image_mime"));
-                System.out.println(result_set.getBlob("image_data"));
-            }
         } catch (SQLException ex) {
             Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -111,7 +106,33 @@ public class RepositoryDatabase {
 
         BookRepository b1 = BookRepository.getInstance();
 
-        Author author = new Author("Laurent", "Deversa");
+        b1.deleteAllBooks();
+        Author author = new Author("Aurelius", "Marcus");
+        Book book1 = new Book("Meditations", "Written in Greek, without any intention of publication, by the only Roman emperor", "0140449337", author,
+                "Penguin Classic", "England");
+
+        System.out.println(b1.addNewBook(book1)); // GET ID
+
+        Author author2 = new Author("Epictetus", "Unknown");
+        Book book2 = new Book("Discourses, Fragments, Handbook", "About things that are within our power and those that are not.", "0199595186",
+                author2, "Oxford University Press", "England");
+
+        System.out.println(b1.addNewBook(book2)); // GET ID
+
+        Author author3 = new Author("Kishimi", "Ichiro");
+        Book book3 = new Book("Courage to be Happy", "The Courage to be Happy is a profound insight into the way we should live our lives that has already sold more than one million copies in Japan.", "1911630210", author3, "Allen & Unwin", "London, England");
+        System.out.println(b1.addNewBook(book3)); // Get ID
+
+        /*
+        System.out.println(book.getTitle());
+        System.out.println(book.getDescription());
+        System.out.println(book.getISBN());
+        System.out.println(book.getAuthor().getFirstName());
+        System.out.println(book.getAuthor().getLastName());
+        System.out.println(book.getPublisherCompany());
+        System.out.println(book.getPublisherAddress());
+         */
+        Author author4 = new Author("Laurent", "Deversa");
         /*int book_id = 2;
         String first_name = author.getFirstName();
         String last_name = author.getLastName();
@@ -122,9 +143,24 @@ public class RepositoryDatabase {
                 + first_name + "' WHERE id = '" + book_id + "';";
         database.executeUpdate(statement);
          */
-        b1.listAllBooks();
-        b1.updateBookInfo(2, "Margin", "1232", author);
 
+        ArrayList<Book> books;
+
+        System.out.println("BEFORE:");
+        books = b1.listAllBooks();
+        System.out.println(books);
+        b1.updateBookInfo(2, "Margin", "1232", author4); // UPDATE
+
+        System.out.println("AFTER:");
+        books = b1.listAllBooks();
+        System.out.println(books);
+
+        System.out.println("Delete one book:");
+        b1.deleteBook(2);
+        books = b1.listAllBooks();
+        System.out.println(books);
+
+        //b1.deleteAllBooks();
         //database.cleanup();
     }
 

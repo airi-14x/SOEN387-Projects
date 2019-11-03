@@ -5,41 +5,71 @@
  */
 package repository.core;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 /**
  *
  * @author Airi
  */
 public class Book {
 
-    private int id;
+    private static final AtomicInteger count = new AtomicInteger(0); // Need to Initialise with #books in DB
+    private static int id;
     private String title;
-    private String isbn;
     private String description;
+    private String isbn;
     private Author author;
     private String publisherCompany;
     private String publisherAddress;
     private CoverImage cover;
 
     public Book() {
+
     }
 
-    public Book(int id, String title, String isbn, String description, Author author, String publisherCompany, String publisherAddress, CoverImage cover) {
-        this.id = id;
+    public Book(String title, String description, String isbn, Author author, String publisherCompany, String publisherAddress) {
+        //this.id = id;
+        //System.out.println("Count:");
+        //System.out.println(count);
+        id = count.incrementAndGet(); // AUTO-INCREMENT
         this.title = title;
-        this.isbn = isbn;
         this.description = description;
+        this.isbn = isbn;
+        this.author = author;
+        this.publisherCompany = publisherCompany;
+        this.publisherAddress = publisherAddress;
+    }
+
+    public Book(String title, String description, String isbn, Author author, String publisherCompany, String publisherAddress, CoverImage cover) {
+        //this.id = id;
+        //id = count.incrementAndGet(); // AUTO-INCREMENT
+        this.title = title;
+        this.description = description;
+        this.isbn = isbn;
         this.author = author;
         this.publisherCompany = publisherCompany;
         this.publisherAddress = publisherAddress;
         this.cover = cover;
     }
 
-    public int getId() {
-        return id;
+    public AtomicInteger getCount() {
+        return count;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void autoIncrement() {
+        id = count.incrementAndGet();
+    }
+
+    public void resetCount() {
+        count.set(0);
+    }
+
+    public void setId(AtomicInteger count) {
+        id = count.get();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getTitle() {
@@ -100,7 +130,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" + "id=" + id + ", isbn=" + isbn + ", description=" + description + ", author=" + author + ", publisher_company=" + publisherCompany + ", publisher_address=" + publisherAddress + ", cover=" + cover + '}';
+        return "Book{" + "id=" + id + ", isbn=" + isbn + ", description=" + description + ", author=" + author + ", publisher_company=" + publisherCompany + ", publisher_address=" + publisherAddress + ", cover=" + cover + '}' + "\n";
     }
 
 }

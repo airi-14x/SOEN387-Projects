@@ -39,8 +39,9 @@ public class BookRepository implements IBookRepository {
         try {
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book");
 
+            resetBooks();
             while (resultSet.next()) {
-                int id = resultSet.getInt("id");
+                //int id = resultSet.getInt("id");
                 String title = resultSet.getString("title");
                 String description = resultSet.getString("description");
                 String isbn = resultSet.getString("isbn");
@@ -48,10 +49,10 @@ public class BookRepository implements IBookRepository {
                 String firstName = resultSet.getString("first_name");
                 String publisherCompany = resultSet.getString("publisher_company");
                 String address = resultSet.getString("address");
-                String mimeType = resultSet.getString("mime_type");
-                Blob imageData = resultSet.getBlob("image_data");
-
-                books.add(new Book(id, title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData)));
+                //String mimeType = resultSet.getString("mime_type");
+                //Blob imageData = resultSet.getBlob("image_data");
+                books.add(new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address));
+                //books.add(new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData)));
             }
 
         } catch (Exception e) {
@@ -67,8 +68,9 @@ public class BookRepository implements IBookRepository {
         try {
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book WHERE id=" + id);
 
+            resetBooks();
             while (resultSet.next()) {
-                int bookId = resultSet.getInt("id");
+                //int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
                 String description = resultSet.getString("description");
                 String isbn = resultSet.getString("isbn");
@@ -76,10 +78,10 @@ public class BookRepository implements IBookRepository {
                 String firstName = resultSet.getString("first_name");
                 String publisherCompany = resultSet.getString("publisher_company");
                 String address = resultSet.getString("address");
-                String mimeType = resultSet.getString("mime_type");
-                Blob imageData = resultSet.getBlob("image_data");
-
-                result = new Book(bookId, title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
+                //String mimeType = resultSet.getString("mime_type");
+                //Blob imageData = resultSet.getBlob("image_data");
+                result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address);
+                //result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -94,8 +96,9 @@ public class BookRepository implements IBookRepository {
         try {
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book WHERE isbn=" + isbn);
 
+            resetBooks();
             while (resultSet.next()) {
-                int bookId = resultSet.getInt("id");
+                //int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
                 String description = resultSet.getString("description");
                 String bookIsbn = resultSet.getString("isbn");
@@ -103,10 +106,11 @@ public class BookRepository implements IBookRepository {
                 String firstName = resultSet.getString("first_name");
                 String publisherCompany = resultSet.getString("publisher_company");
                 String address = resultSet.getString("address");
-                String mimeType = resultSet.getString("mime_type");
-                Blob imageData = resultSet.getBlob("image_data");
+                //String mimeType = resultSet.getString("mime_type");
+                //Blob imageData = resultSet.getBlob("image_data");
 
-                result = new Book(bookId, title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
+                result = new Book(title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address);
+                //result = new Book(title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -116,10 +120,16 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public int addNewBook(Book book) {
-        connection.executeUpdate("INSERT INTO book(id, title, description, isbn, last_name, first_name, publisher_company, address, mime_type, image_data) "
+
+        connection.executeUpdate("INSERT INTO book(title, description,isbn, first_name, last_name, publisher_company, address) VALUES(\"" + book.getTitle() + "\",\""
+                + book.getDescription() + "\",\"" + book.getISBN() + "\", \"" + book.getAuthor().getFirstName() + "\", \""
+                + book.getAuthor().getLastName() + "\", \"" + book.getPublisherCompany() + "\", \"" + book.getPublisherAddress() + "\")");
+
+        /*connection.executeUpdate("INSERT INTO book(id, title, description, isbn, last_name, first_name, publisher_company, address, mime_type, image_data) "
                 + "VALUES(\"" + book.getId() + "\", \"" + book.getTitle() + "\", \"" + book.getDescription() + "\", \"" + book.getISBN() + "\",\""
                 + book.getAuthor().getFirstName() + "\", \"" + book.getAuthor().getLastName() + "\", \"" + book.getPublisherCompany() + "\", \"" + book.getPublisherAddress() + "\", \"mime_type" + "\", \"image_data"
-        );
+        );*/
+        book.autoIncrement();
         return book.getId(); //Return: Should be ID
     }
 
@@ -149,8 +159,14 @@ public class BookRepository implements IBookRepository {
     public void deleteAllBooks() {
         try {
             connection.executeUpdate("DELETE FROM book");
+            Book book = new Book();
+            book.resetCount();
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void resetBooks() {
+        books.removeAll(books);
     }
 }

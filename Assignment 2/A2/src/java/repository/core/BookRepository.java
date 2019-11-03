@@ -39,7 +39,7 @@ public class BookRepository implements IBookRepository {
         try {
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book");
 
-            resetBooks();
+            resetBooks(); // Reset Arraylist
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String title = resultSet.getString("title");
@@ -52,7 +52,7 @@ public class BookRepository implements IBookRepository {
                 //String mimeType = resultSet.getString("mime_type");
                 //Blob imageData = resultSet.getBlob("image_data");
                 Book book = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address);
-                book.setId(id);
+                book.setId(id); // Set ID of book to match Database ID
                 books.add(book);
 
                 //books.add(new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData)));
@@ -61,7 +61,7 @@ public class BookRepository implements IBookRepository {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return books;
+        return books; // Updated ArrayList of Book
     }
 
     @Override
@@ -71,9 +71,8 @@ public class BookRepository implements IBookRepository {
         try {
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book WHERE id=" + id);
 
-            resetBooks();
             while (resultSet.next()) {
-                //int bookId = resultSet.getInt("id");
+                int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
                 String description = resultSet.getString("description");
                 String isbn = resultSet.getString("isbn");
@@ -83,7 +82,9 @@ public class BookRepository implements IBookRepository {
                 String address = resultSet.getString("address");
                 //String mimeType = resultSet.getString("mime_type");
                 //Blob imageData = resultSet.getBlob("image_data");
+
                 result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address);
+                result.setId(bookId); // Set ID of book to match Database ID
                 //result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
             }
         } catch (Exception e) {
@@ -99,9 +100,8 @@ public class BookRepository implements IBookRepository {
         try {
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book WHERE isbn=" + isbn);
 
-            resetBooks();
             while (resultSet.next()) {
-                //int bookId = resultSet.getInt("id");
+                int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
                 String description = resultSet.getString("description");
                 String bookIsbn = resultSet.getString("isbn");
@@ -113,6 +113,7 @@ public class BookRepository implements IBookRepository {
                 //Blob imageData = resultSet.getBlob("image_data");
 
                 result = new Book(title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address);
+                result.setId(bookId); // Set ID of book to match Database ID
                 //result = new Book(title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
             }
         } catch (Exception e) {
@@ -145,6 +146,7 @@ public class BookRepository implements IBookRepository {
         System.out.println("STATEMENT: " + statement);
         connection.executeUpdate(statement);
 
+        // ID begins at index 1. But books:Arraylist starts at index 0.
         books.get(id - 1).setTitle(title);
         books.get(id - 1).setDescription(description);
         books.get(id - 1).setAuthor(author);
@@ -167,8 +169,7 @@ public class BookRepository implements IBookRepository {
     public void deleteAllBooks() {
         try {
             connection.executeUpdate("DELETE FROM book");
-            Book book = new Book();
-            book.resetCount();
+            Book.resetCount(); //Re-initialise ID assigning counter
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -201,6 +202,7 @@ public class BookRepository implements IBookRepository {
     public void dropBookTable() {
         try {
             connection.executeUpdate("DROP TABLE book");
+            Book.resetCount(); //Re-initialise ID assigning counter
         } catch (Exception e) {
             e.printStackTrace();
         }

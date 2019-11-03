@@ -13,8 +13,8 @@ import java.util.concurrent.atomic.AtomicInteger;
  */
 public class Book {
 
-    private static final AtomicInteger count = new AtomicInteger(0); // Need to Initialise with #books in DB
-    private int id = count.get();
+    private static final AtomicInteger count = new AtomicInteger(0);
+    private int id = count.get(); //AUTO-INCREMENT
     private String title;
     private String description;
     private String isbn;
@@ -28,10 +28,6 @@ public class Book {
     }
 
     public Book(String title, String description, String isbn, Author author, String publisherCompany, String publisherAddress) {
-        //this.id = id;
-        //System.out.println("Count:");
-        //System.out.println(count);
-        //id = count.incrementAndGet(); // AUTO-INCREMENT
         this.title = title;
         this.description = description;
         this.isbn = isbn;
@@ -41,8 +37,6 @@ public class Book {
     }
 
     public Book(String title, String description, String isbn, Author author, String publisherCompany, String publisherAddress, CoverImage cover) {
-        //this.id = id;
-        //id = count.incrementAndGet(); // AUTO-INCREMENT
         this.title = title;
         this.description = description;
         this.isbn = isbn;
@@ -52,24 +46,17 @@ public class Book {
         this.cover = cover;
     }
 
-    public AtomicInteger getCount() {
-        return count;
-    }
-
+    // Called from: addNewBook()
     public void autoIncrement() {
         id = count.incrementAndGet();
     }
 
-    public void setCount(int databaseID) {
-        if (databaseID > count.get()) {
-            count.set(databaseID);
-        }
-    }
-
-    public void resetCount() {
+    // Called from: deleteAllBooks()
+    public static void resetCount() {
         count.set(0);
     }
 
+    // Used to match bookID with databaseID --> Called when a new Book is created.
     public void setId(int databaseID) {
         id = databaseID;
     }
@@ -136,7 +123,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return "Book{" + "id=" + id + ", isbn=" + isbn + ", description=" + description + ", author=" + author + ", publisher_company=" + publisherCompany + ", publisher_address=" + publisherAddress + ", cover=" + cover + '}' + "\n";
+        return "Book{" + "id=" + id + ", title=" + title + ", description=" + description + ", isbn=" + isbn + ", author=" + author + ", publisherCompany=" + publisherCompany + ", publisherAddress=" + publisherAddress + ", cover=" + cover + '}';
     }
 
 }

@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<jsp:useBean id = "bean" class = "com.registration.LoginBean">
+<jsp:useBean id = "bean" class = "registration.LoginBean">
 <% out.print("You are successfully registered! "
         + "Welcome, " + bean.getName()); %>
 </jsp:useBean>

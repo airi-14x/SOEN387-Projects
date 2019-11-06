@@ -97,8 +97,8 @@ public class RepositoryDatabase {
     }
 
     public static void main(String[] args) throws SQLException {
-        //RepositoryDatabase database = new RepositoryDatabase();
-        //database.createStatement();
+        RepositoryDatabase database = new RepositoryDatabase();
+        database.createStatement();
         //database.executeUpdate("UPDATE book SET last_name = 'Hello2', first_name = 'Hello' WHERE (id = '2')");
         //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('src/java/repository/database/endofownership_photo_final.jpeg') WHERE (`id` = '2')");
         //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('endofownership_photo_final.jpeg') WHERE (`id` = '2');");
@@ -180,6 +180,9 @@ public class RepositoryDatabase {
         System.out.println("GetBookInfo with ISBN \"0140449337\"");
         System.out.println(b1.getBookInfo("0140449337"));
 
+        // /Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\ 2/A2/tmp/endofownership_photo_final.jpeg
+        //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\\ 2/A2/tmp/endofownership_photo_final.jpeg') WHERE (`id` = '2')");
+        database.executeUpdate("INSERT INTO `book`(`title`,`image_mime`,`image_data`) VALUES('The End of Ownership', 'image/jpeg', LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\\ 2/A2/tmp/endofownership_photo_final.jpeg')) ");
         System.out.println();
         System.out.println("Book ArrayList: ");
         books = b1.listAllBooks();

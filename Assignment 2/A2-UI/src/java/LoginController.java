@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
@@ -16,7 +15,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.json.simple.parser.ParseException;
-import repository.core.LoginBean;
 import repository.core.Session;
 
 /**
@@ -53,40 +51,35 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        
+
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
-        
-        LoginBean loginBean = new LoginBean();
-        
-        loginBean.setUserName("Jasmine");
-        loginBean.setPassword("test123");
-        boolean login = false;
         Session session = new Session();
+        
         try {
-            login = session.login(loginBean.getUserName(), loginBean.getPassword());
-            if(!login) {
-                request.setAttribute("username", userName);
+            String login = session.login(userName, password);
+            if (login.equals("SUCCESS")) {
+                request.setAttribute("username", login);
                 RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
                 rd.forward(request, response);
-                response.sendRedirect("home.jsp");  
-            }
-            
-            else {
+                response.sendRedirect("home.jsp");
+
+            } else {
                 request.setAttribute("errorMessage", "Login failed");
                 RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
                 rd.forward(request, response);
                 response.sendRedirect("error.jsp");
             }
-            
+
         } catch (ParseException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            doPost(request, response);
+        doPost(request, response);
     }
 }

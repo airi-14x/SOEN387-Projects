@@ -24,13 +24,9 @@ import org.json.simple.parser.ParseException;
  */
 public class Session {
 
-    public Session() throws IOException {
-        createJsonObject();
-    }
+    private JSONObject currentUser = null;
 
-    private static JSONObject currentUser = null;
-
-    public static String hashPassword(String password) {
+    public String hashPassword(String password) {
         String hashedPassword = null;
 
         try {
@@ -60,15 +56,14 @@ public class Session {
         return currentUser != null;
     }
 
-    public static boolean login(String uId, String uPassword) throws IOException, ParseException {
+    public String login(String uId, String uPassword) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
-        InputStream input = null;
         Properties config = new Properties();
-
+        String result = "";
         try {
 
             //(FileReader reader = new FileReader("./users.json"))
-            input = new FileInputStream("config.properties");
+            InputStream input = new FileInputStream("config.properties");
 
             config.load(input);
             //System.out.println(config.getProperty("path"));
@@ -91,17 +86,17 @@ public class Session {
 
                     if (psw.equals(password)) {
                         currentUser = (JSONObject) obj;
-                        System.out.println("Success");
-                        return true;
-                    } else {
-                        System.out.println("Could not login");
+                        result = "SUCCESS";
+                    }
+                    else {
+                        result = "FAIL";
                     }
                 }
             }
-        } catch (Exception e) {
+        } catch (IOException | ParseException e) {
 
         }
-        return false;
+        return result;
     }
 
     public boolean logout() {
@@ -109,11 +104,11 @@ public class Session {
         return true;
     }
 
-    public static void createJsonObject() throws IOException {
+    public void createJsonObject() throws IOException {
         //User 1
         JSONObject userInfo1 = new JSONObject();
         userInfo1.put("userId", "Jasmine");
-        userInfo1.put("password", hashPassword("Test123"));
+        userInfo1.put("password", hashPassword("test123"));
 
         JSONObject user1 = new JSONObject();
         user1.put("user", userInfo1);
@@ -121,7 +116,7 @@ public class Session {
         //User 2
         JSONObject userInfo2 = new JSONObject();
         userInfo2.put("userId", "Airi");
-        userInfo2.put("password", hashPassword("anotherPassword123"));
+        userInfo2.put("password", hashPassword("test456"));
 
         JSONObject user2 = new JSONObject();
         user2.put("user", userInfo2);
@@ -129,7 +124,7 @@ public class Session {
         //User 3
         JSONObject userInfo3 = new JSONObject();
         userInfo3.put("userId", "Bob");
-        userInfo3.put("password", hashPassword("bobPswd456"));
+        userInfo3.put("password", hashPassword("test789"));
 
         JSONObject user3 = new JSONObject();
         user3.put("user", userInfo3);
@@ -145,16 +140,13 @@ public class Session {
             System.out.println("Users successfully written to JSON file.");
         }
     }
-    public static void main(String[] args) throws IOException, ParseException {
-        String passwordTest = "thisIsATest123";
-        System.out.println(hashPassword(passwordTest));
+    /*public static void main(String[] args) throws IOException, ParseException {
 
-        //createJsonObject();
-        login("Jasmine", "Test123");
+        System.out.println(login("Jasmine", "test123"));
         login("Jasmine", "Test1234");
 
         login("Airi", "anotherPassword123");
         login("Airi", "");
 
-    }
+    }*/
 }

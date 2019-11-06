@@ -11,6 +11,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
+    <%
+        String userName = (String) request.getAttribute("username");
+        if (null == userName) {
+            response.sendRedirect("login.jsp");
+        }
+    %>
     <body>
         <h1>Hello World!</h1>
     </body>

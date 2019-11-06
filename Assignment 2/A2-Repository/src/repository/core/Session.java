@@ -6,12 +6,14 @@
 package repository.core;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Properties;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -55,6 +57,20 @@ public class Session {
     public boolean isUserLoggedIn() {
         return currentUser != null;
     }
+    
+    private static String[] getJsonObject(JSONObject user) {
+        String[] userObj = {"",""};
+        
+        JSONObject obj = (JSONObject) user.get("user");
+        String userId = (String) obj.get("userId");
+        String password = (String) obj.get("password");
+        
+        userObj[0] = userId;
+        userObj[1] = password;
+        
+        return userObj;
+    }
+    
 
     public String login(String uId, String uPassword) throws IOException, ParseException {
         JSONParser parser = new JSONParser();

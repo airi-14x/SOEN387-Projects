@@ -39,6 +39,7 @@ public class LoginController extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+        doPost(request, response);
     }
 
     /**

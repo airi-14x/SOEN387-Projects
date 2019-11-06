@@ -1,6 +1,6 @@
 <%-- 
-    Document   : login
-    Created on : 6 nov. 2019, 08:40:18
+    Document   : error
+    Created on : 6 nov. 2019, 09:15:43
     Author     : Airi
 --%>
 
@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1><%=request.getAttribute("login")%></h1>
     </body>
 </html>

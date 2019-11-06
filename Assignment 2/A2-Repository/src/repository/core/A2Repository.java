@@ -9,6 +9,13 @@ package repository.core;
  *
  * @author jasminelatendresse
  */
-public class Session {
+public class A2Repository {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+    }
     
 }

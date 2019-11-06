@@ -5,13 +5,15 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="repository.core.*"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Logout</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>You were successfully logged out.</h1>
+        <p>Click <a href="login.jsp">here</a> to login again.</p>
     </body>
 </html>

@@ -3,27 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package repository.ui;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.json.simple.parser.ParseException;
-import repository.core.LoginBean;
 import repository.core.Session;
 
 /**
  *
  * @author jasminelatendresse
  */
-@WebServlet(name = "loginController", urlPatterns = {"/login"})
-public class loginController extends HttpServlet {
+@WebServlet("/LoginController")
+public class LoginController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -40,6 +39,7 @@ public class loginController extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+        doPost(request, response);
     }
 
     /**
@@ -52,39 +52,35 @@ public class loginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-        
+
         String userName = request.getParameter("username");
         String password = request.getParameter("password");
+        Session session = new Session();
         
-        LoginBean loginBean = new LoginBean();
-        
-        loginBean.setUserName(userName);
-        loginBean.setPassword(password);
-        
-        PrintWriter out = response.getWriter();
-    
         try {
-            boolean login = Session.login(userName, password);
-            
-            if(login) {
-                request.setAttribute("username", userName);
-                request.getRequestDispatcher("/login.jsp");  
-                out.print("Success");
+            String login = session.login(userName, password);
+            if (login.equals("SUCCESS")) {
+                request.setAttribute("username", login);
+                RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("home.jsp");
+
+            } else {
+                request.setAttribute("errorMessage", "Login failed");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("error.jsp");
             }
-            
-            else {
-                request.setAttribute("errMessage", login);
-                request.getRequestDispatcher("/error.jsp");
-            }
-            
+
         } catch (ParseException ex) {
-            Logger.getLogger(loginController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            doPost(request, response);
+        doPost(request, response);
     }
 }

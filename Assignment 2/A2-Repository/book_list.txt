@@ -1,0 +1,10 @@
+Sample Book List:
+
+title, description, isbn, last_name, first_name, publisher_company, address
+
+"Meditations", "Written in Greek, without any intention of publication, by the only Roman emperor who was also a philosopher, the Meditations of Marcus Aurelius (AD 121-180) offer a remarkable series of challenging spiritual reflections and exercises developed as the emperor struggled to understand himself and make sense of the universe. Ranging from doubt and despair to conviction and exaltation, they cover such diverse topics as the nature of moral virtue, human rationality, divine providence, and Marcus' own emotions.", "0140449337", "Aurelius", "Marcus", "Penguin Classic", "England"
+
+"Discourses, Fragments, Handbook", "About things that are within our power and those that are not.' Epictetus' Discourses have been the most widely read and influential of all writings of Stoic philosophy, from antiquity onwards. They set out the core ethical principles of Stoicism in a form designed to help people put them into practice and to use them as a basis for leading a good human life. Epictetus was a teacher, and a freed slave, whose discourses have a vivid informality, animated by anecdotes and dialogue. Forceful, direct, and challenging, their central message is that the basis of happiness is up to us, and that we all have the capacity, through sustained reflection and hard work, of achieving this goal.", "0199595186",
+"Epictetus", "", "Oxford University Press", "England"
+
+"Courage to be Happy", "The Courage to be Happy is a profound insight into the way we should live our lives that has already sold more than one million copies in Japan.", "1911630210", "Kishimi", "Ichiro", "Allen & Unwin", "London, England"

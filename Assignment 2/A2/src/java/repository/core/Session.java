@@ -7,6 +7,7 @@ package repository.core;
 
 import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
@@ -24,7 +25,7 @@ import org.json.simple.parser.ParseException;
 public class Session {
 
     public Session() throws IOException {
-        //createJsonObject();
+        createJsonObject();
     }
 
     private static JSONObject currentUser = null;
@@ -108,7 +109,7 @@ public class Session {
         return true;
     }
 
-    /*public static void createJsonObject() throws IOException {
+    public static void createJsonObject() throws IOException {
         //User 1
         JSONObject userInfo1 = new JSONObject();
         userInfo1.put("userId", "Jasmine");
@@ -143,7 +144,7 @@ public class Session {
 
             System.out.println("Users successfully written to JSON file.");
         }
-    }*/
+    }
     public static void main(String[] args) throws IOException, ParseException {
         String passwordTest = "thisIsATest123";
         System.out.println(hashPassword(passwordTest));

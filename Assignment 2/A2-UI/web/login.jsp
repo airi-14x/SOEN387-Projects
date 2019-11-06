@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="repository.core.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,7 +14,7 @@
     </head>
     <body>
         <h1>Login</h1>
-        <form action="loginController" method="POST">
+        <form action="LoginController" method="POST">
             Username: <input type="text" name="username"><br>
             Password: <input type="password" name="password"><br>
             <input type="submit" value="login"/>

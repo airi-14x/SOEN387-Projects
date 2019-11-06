@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package repository.ui;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,8 +23,8 @@ import repository.core.Session;
  *
  * @author jasminelatendresse
  */
-@WebServlet(name = "loginController", urlPatterns = {"/login"})
-public class loginController extends HttpServlet {
+@WebServlet("/LoginController")
+public class LoginController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -58,27 +59,28 @@ public class loginController extends HttpServlet {
         
         LoginBean loginBean = new LoginBean();
         
-        loginBean.setUserName(userName);
-        loginBean.setPassword(password);
-        
-        PrintWriter out = response.getWriter();
-    
+        loginBean.setUserName("Jasmine");
+        loginBean.setPassword("test123");
+        boolean login = false;
+        Session session = new Session();
         try {
-            boolean login = Session.login(userName, password);
-            
-            if(login) {
+            login = session.login(loginBean.getUserName(), loginBean.getPassword());
+            if(!login) {
                 request.setAttribute("username", userName);
-                request.getRequestDispatcher("/login.jsp");  
-                out.print("Success");
+                RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("home.jsp");  
             }
             
             else {
-                request.setAttribute("errMessage", login);
-                request.getRequestDispatcher("/error.jsp");
+                request.setAttribute("errorMessage", "Login failed");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("error.jsp");
             }
             
         } catch (ParseException ex) {
-            Logger.getLogger(loginController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }

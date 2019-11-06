@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,11 +22,26 @@ import repository.core.Session;
  *
  * @author jasminelatendresse
  */
+@WebServlet(name = "loginController", urlPatterns = {"/login"})
 public class loginController extends HttpServlet {
-    public loginController() {
-        
+
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Login Controller</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Login Controller at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        }
     }
-    
+
     /**
      *
      * @param request
@@ -44,13 +60,16 @@ public class loginController extends HttpServlet {
         
         loginBean.setUserName(userName);
         loginBean.setPassword(password);
+        
+        PrintWriter out = response.getWriter();
     
         try {
             boolean login = Session.login(userName, password);
             
             if(login) {
                 request.setAttribute("username", userName);
-                request.getRequestDispatcher("/home.jsp");  
+                request.getRequestDispatcher("/login.jsp");  
+                out.print("Success");
             }
             
             else {
@@ -62,5 +81,10 @@ public class loginController extends HttpServlet {
             Logger.getLogger(loginController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+    }
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+            doPost(request, response);
     }
 }

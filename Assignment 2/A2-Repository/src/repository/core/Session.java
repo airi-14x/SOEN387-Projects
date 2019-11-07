@@ -23,7 +23,18 @@ import org.json.simple.parser.ParseException;
  */
 public class Session {
 
+<<<<<<< HEAD
     private static JSONObject currentUser = null;
+=======
+    private JSONObject currentUser = null;
+    
+    public Session() throws IOException {
+        createJsonObject();
+        
+    }
+    
+ 
+>>>>>>> 6d33a6e3b6a421d62950c78678002e85c386917f
 
     public String hashPassword(String password) {
         String hashedPassword = null;
@@ -57,7 +68,11 @@ public class Session {
 
     
      private static JSONObject getUser(JSONObject user) {
+<<<<<<< HEAD
         JSONObject currUser = new JSONObject();
+=======
+        JSONObject currentUser = new JSONObject();
+>>>>>>> 6d33a6e3b6a421d62950c78678002e85c386917f
         JSONObject userObject = (JSONObject) user.get("user");
          
         String userName = (String) userObject.get("userId");    
@@ -68,12 +83,21 @@ public class Session {
         userString[0] = userName;
         userString[1] = password;
         
+<<<<<<< HEAD
         currUser.put("userId", userString[0]);
         currUser.put("password", userString[1]);
         
         System.out.println(Arrays.toString(userString));
         
         return currUser;
+=======
+        currentUser.put("userId", userString[0]);
+        currentUser.put("password", userString[1]);
+        
+        System.out.println(Arrays.toString(userString));
+        
+        return currentUser;
+>>>>>>> 6d33a6e3b6a421d62950c78678002e85c386917f
     }
      
      public Boolean login(String uId, String uPassword) {

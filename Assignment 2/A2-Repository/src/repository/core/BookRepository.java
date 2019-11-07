@@ -35,11 +35,10 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public ArrayList<Book> listAllBooks() {
+    public ArrayList<Book> listAllBooks(Session session) {
         try {
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book");
 
-            resetBooks(); // Reset Arraylist
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String title = resultSet.getString("title");
@@ -65,7 +64,7 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public Book getBookInfo(int id) {
+    public Book getBookInfo(Session session, int id) {
         Book result = new Book();
 
         try {
@@ -94,7 +93,7 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public Book getBookInfo(String isbn) {
+    public Book getBookInfo(Session session, String isbn) {
         Book result = new Book();
 
         try {
@@ -123,7 +122,7 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public int addNewBook(Book book) {
+    public int addNewBook(Session session, Book book) {
 
         connection.executeUpdate("INSERT INTO book(title, description,isbn, first_name, last_name, publisher_company, address) VALUES(\"" + book.getTitle() + "\",\""
                 + book.getDescription() + "\",\"" + book.getISBN() + "\", \"" + book.getAuthor().getFirstName() + "\", \""
@@ -139,7 +138,7 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public void updateBookInfo(int id, String title, String description, Author author) {
+    public void updateBookInfo(Session session, int id, String title, String description, Author author) {
         String statement = "UPDATE book SET title = '" + title + "', description = '"
                 + description + "', last_name = '" + author.getLastName() + "', first_name = '"
                 + author.getFirstName() + "' WHERE id = '" + id + "';";
@@ -153,12 +152,12 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public void setBookCoverImage() {
+    public void setBookCoverImage(Session session) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deleteBook(int id) {
+    public void deleteBook(Session session, int id) {
         try {
             connection.executeUpdate("DELETE FROM book WHERE id=" + id);
         } catch (Exception e) {
@@ -166,7 +165,7 @@ public class BookRepository implements IBookRepository {
         }
     }
 
-    public void deleteAllBooks() {
+    public void deleteAllBooks(Session session) {
         try {
             connection.executeUpdate("DELETE FROM book");
             Book.resetCount(); //Re-initialise ID assigning counter
@@ -175,11 +174,11 @@ public class BookRepository implements IBookRepository {
         }
     }
 
-    public void resetBooks() {
+    public void resetBooks(Session session) {
         books.removeAll(books);
     }
 
-    public void createBookTable() {
+    public void createBookTable(Session session) {
         try {
             connection.executeUpdate("CREATE TABLE `book`(\n"
                     + "	`id` INT  NOT NULL AUTO_INCREMENT,\n"

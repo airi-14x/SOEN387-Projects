@@ -6,6 +6,7 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -15,6 +16,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.json.simple.parser.ParseException;
+import repository.core.Author;
+import repository.core.Book;
+import repository.core.BookRepository;
+import repository.core.CoverImage;
 import repository.core.Session;
 
 /**
@@ -52,7 +57,23 @@ public class AddBookController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
-
+        
+        String title = request.getParameter("title");
+        String isbn = request.getParameter("isbn");
+        String description = request.getParameter("description");
+        String fName = request.getParameter("fname");
+        String lName = request.getParameter("lName");
+        String publisherName = request.getParameter("pName");
+        String publisherAddress = request.getParameter("paddress");
+        
+        BookRepository bookRepo = BookRepository.getInstance();
+        ArrayList<Book> books = bookRepo.listAllBooks(new Session());
+        
+        Author author = new Author(fName, lName);
+        Book book = new Book(title, isbn, description, author, publisherName, publisherAddress, new CoverImage());
+        
+        RequestDispatcher rd = request.getRequestDispatcher("/bookView.jsp");
+        rd.forward(request, response);
         
     }
 

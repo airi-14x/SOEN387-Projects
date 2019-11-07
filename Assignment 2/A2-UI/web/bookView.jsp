@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="repository.core.Book"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,6 +20,7 @@
         }
     %>
     <body>
-        <h1>Hello World!</h1>
+        <h1>List of books</h1>
+        ${books}
     </body>
 </html>

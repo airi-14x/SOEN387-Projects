@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>loginController</servlet-name>
+        <servlet-class>LoginController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>logoutController</servlet-name>
+        <servlet-class>LogoutController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addBookController</servlet-name>
+        <servlet-class>AddBookController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>bookViewController</servlet-name>
+        <servlet-class>BookViewController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>loginController</servlet-name>
+        <url-pattern>/login</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>logoutController</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addBookController</servlet-name>
+        <url-pattern>/addBook</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BookViewController</servlet-name>
+        <url-pattern>/viewBook</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>home.jsp</welcome-file>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>login.jsp</welcome-file>
+        <welcome-file>logout.jsp</welcome-file>
+        <welcome-file>updateBook.jsp</welcome-file>
+        <welcome-file>error.jsp</welcome-file>
+        <welcome-file>bookView.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>

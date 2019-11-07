@@ -5,11 +5,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,6 +21,7 @@ import repository.core.Session;
  *
  * @author Airi
  */
+@WebServlet("/BookViewController")
 public class BookViewController extends HttpServlet {
 
     /**
@@ -78,7 +79,7 @@ public class BookViewController extends HttpServlet {
             throws ServletException, IOException {
         BookRepository bookRepo = BookRepository.getInstance();
         ArrayList<Book> bookList = bookRepo.listAllBooks(new Session());
-        
+
         request.setAttribute("books", bookList);
         getServletContext().getRequestDispatcher("/bookView.jsp").forward(request, response);
     }

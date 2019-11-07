@@ -1,0 +1,2 @@
+INSERT INTO `book`(`title`, `description`, `isbn`) VALUES ('d1','Drabble of d1',23);
+INSERT INTO `book`(`title`,`image_mime`,`image_data`) VALUES('The End of Ownership', 'image/jpeg', LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\ 2/A2/tmp/endofownership_photo_final.jpeg')) ;

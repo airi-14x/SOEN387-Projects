@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.parser.ParseException;
 import repository.core.Session;
 
-
 /**
  *
  * @author jasminelatendresse
@@ -54,19 +53,20 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             response.setContentType("text/html");
-            
+
             String userName = request.getParameter("username");
             String password = request.getParameter("password");
-            
+
             Session session = new Session();
-            
+
             String login = session.login(userName, password);
+
             if (login.equals("SUCCESS")) {
                 request.setAttribute("username", userName);
                 RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
                 rd.forward(request, response);
                 response.sendRedirect("home.jsp");
-                
+
             } else {
                 request.setAttribute("errorMessage", "Login failed");
                 RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");

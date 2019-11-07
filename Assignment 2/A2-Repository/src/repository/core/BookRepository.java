@@ -36,6 +36,7 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public ArrayList<Book> listAllBooks(Session session) {
+      
         try {
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book");
 

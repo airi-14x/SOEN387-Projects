@@ -8,16 +8,20 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import repository.core.Book;
+import repository.core.BookRepository;
+import repository.core.Session;
 
 /**
  *
  * @author Airi
  */
-public class DisplayServlet extends HttpServlet {
+public class BookViewController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,6 +47,7 @@ public class DisplayServlet extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+        doPost(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -57,7 +62,7 @@ public class DisplayServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        doPost(request, response);
     }
 
     /**
@@ -71,7 +76,11 @@ public class DisplayServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        BookRepository bookRepo = BookRepository.getInstance();
+        ArrayList<Book> bookList = bookRepo.listAllBooks(new Session());
+        
+        request.setAttribute("books", bookList);
+        getServletContext().getRequestDispatcher("/bookView.jsp").forward(request, response);
     }
 
     /**

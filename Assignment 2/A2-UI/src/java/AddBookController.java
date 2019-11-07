@@ -17,13 +17,12 @@ import javax.servlet.http.HttpServletResponse;
 import org.json.simple.parser.ParseException;
 import repository.core.Session;
 
-
 /**
  *
  * @author jasminelatendresse
  */
-@WebServlet("/LoginController")
-public class LoginController extends HttpServlet {
+@WebServlet("/AddBookController")
+public class AddBookController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -33,7 +32,7 @@ public class LoginController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Login Controller</title>");
+            out.println("<title>AddBookController Controller</title>");
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Login Controller at " + request.getContextPath() + "</h1>");
@@ -52,31 +51,9 @@ public class LoginController extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        try {
-            response.setContentType("text/html");
-            
-            String userName = request.getParameter("username");
-            String password = request.getParameter("password");
-            
-            Session session = new Session();
-            
-            String login = session.login(userName, password);
-            if (login.equals("SUCCESS")) {
-                request.setAttribute("username", userName);
-                RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
-                rd.forward(request, response);
-                response.sendRedirect("home.jsp");
-                
-            } else {
-                request.setAttribute("errorMessage", "Login failed");
-                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
-                rd.forward(request, response);
-                response.sendRedirect("error.jsp");
-            }
-        } catch (ParseException ex) {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        response.setContentType("text/html");
 
+        
     }
 
     @Override

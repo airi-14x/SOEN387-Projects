@@ -22,7 +22,7 @@
     <body>
         <h1>Welcome to the Book Store!</h1>
         <a href="bookView">List of books will go here</a><br>
-        <a href="updateBook">Add or Update a book</a><br>
+        <a href="addBook.jsp">Add a book</a><br>
         <form action="LogoutConroller" method="POST">
             <input type="submit" value="Logout"/>
         </form><br>

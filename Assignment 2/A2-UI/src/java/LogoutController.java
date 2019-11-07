@@ -36,6 +36,7 @@ public class LogoutController extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+        doPost(request,response);
     }
 
     /**
@@ -49,10 +50,11 @@ public class LogoutController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         Session session = new Session();
+        System.out.println("HI");
         session.logout();
         RequestDispatcher rd = request.getRequestDispatcher("/logout.jsp");
         rd.forward(request, response);
-        response.sendRedirect("/logout.jsp");
+        response.sendRedirect("logout.jsp");
     }
 
     @Override

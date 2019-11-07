@@ -20,7 +20,7 @@
         }
     %>
     <body>
-        <h1>Welcome to the Book Store! <%=request.getAttribute("username")%> !</h1>
+        <h1>Welcome to the Book Store <%=request.getAttribute("username")%> !</h1>
         <!--<a href="bookView.jsp">View books here</a><br>-->
         <a href="addBook.jsp">Add a book</a><br>
 

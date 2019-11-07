@@ -26,6 +26,6 @@
         <form action="LogoutConroller" method="POST">
             <input type="submit" value="Logout"/>
         </form><br>
-        <%=request.getAttribute("username")%>
+        <p>Welcome <%=request.getAttribute("username")%> ! </p>
     </body>
 </html>

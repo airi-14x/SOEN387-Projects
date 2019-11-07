@@ -23,7 +23,7 @@ import org.json.simple.parser.ParseException;
  */
 public class Session {
 
-    private JSONObject currentUser = null;
+    private static JSONObject currentUser = null;
     
     public Session() throws IOException {
         createJsonObject();
@@ -54,7 +54,7 @@ public class Session {
         return hashedPassword;
     }
 
-    public String getCurrentUser() {
+    public static String getCurrentUser() {
         return currentUser.toString();
     }
 

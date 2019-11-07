@@ -21,8 +21,13 @@
     %>
     <body>
         <h1>Welcome to the Book Store!</h1>
-        <a href="bookView">View books here</a><br>
+        <!--<a href="bookView.jsp">View books here</a><br>-->
         <a href="addBook.jsp">Add a book</a><br>
+
+        <form action="DeleteBookController" method="DELETE">Provide bookID to delete: <input type="text" name="bookID">
+        <button name="deleteBook" value="submit">Submit</button><br>
+        Delete All <button name="deleteAll" value="submit">Submit</button></form>
+        
         <form action="LogoutController" method="POST">
             <input type="submit" value="Logout"/>
         </form><br>

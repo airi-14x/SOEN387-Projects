@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import repository.core.Session;
 
-
 /**
  *
  * @author jasminelatendresse
@@ -66,7 +65,6 @@ public class LoginController extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
             rd.forward(request, response);
             response.sendRedirect("error.jsp");
-        }
 
     }
 

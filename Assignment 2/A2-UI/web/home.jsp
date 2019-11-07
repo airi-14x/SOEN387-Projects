@@ -20,20 +20,17 @@
         }
     %>
     <body>
-        <h1>Welcome to the Book Store!</h1>
+        <h1>Welcome to the Book Store! <%=request.getAttribute("username")%> !</h1>
         <!--<a href="bookView.jsp">View books here</a><br>-->
         <a href="addBook.jsp">Add a book</a><br>
-<<<<<<< HEAD
-=======
 
         <form action="DeleteBookController" method="DELETE">Provide bookID to delete: <input type="text" name="bookID">
         <button name="deleteBook" value="submit">Submit</button><br>
         Delete All <button name="deleteAll" value="submit">Submit</button></form>
         
->>>>>>> 6d33a6e3b6a421d62950c78678002e85c386917f
         <form action="LogoutController" method="POST">
             <input type="submit" value="Logout"/>
         </form><br>
-        <p>Welcome <%=request.getAttribute("username")%> ! </p>
+        
     </body>
 </html>

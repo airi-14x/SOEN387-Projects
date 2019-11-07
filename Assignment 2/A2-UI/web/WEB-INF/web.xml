@@ -8,6 +8,10 @@
         <servlet-name>logoutController</servlet-name>
         <servlet-class>LogoutController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>addBookController</servlet-name>
+        <servlet-class>AddBookController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -16,6 +20,10 @@
         <servlet-name>logoutController</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
+     <servlet>
+        <servlet-name>addBookController</servlet-name>
+        <servlet-class>/addBook</servlet-class>
+    </servlet>
     <session-config>
         
     </session-config>

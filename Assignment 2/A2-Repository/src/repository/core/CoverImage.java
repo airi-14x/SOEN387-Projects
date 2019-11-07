@@ -21,6 +21,10 @@ public class CoverImage {
         this.image = image;
     }
 
+    public CoverImage() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     @Override
     public String toString() {
         return "CoverImage{mimeType=" + mimeType + "}";

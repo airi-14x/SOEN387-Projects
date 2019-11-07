@@ -96,7 +96,7 @@ public class RepositoryDatabase {
         }
     }
 
-    public static void main(String[] args) throws SQLException {
+    /*public static void main(String[] args) throws SQLException {
         RepositoryDatabase database = new RepositoryDatabase();
         database.createStatement();
         //database.executeUpdate("UPDATE book SET last_name = 'Hello2', first_name = 'Hello' WHERE (id = '2')");
@@ -190,6 +190,6 @@ public class RepositoryDatabase {
             System.out.println(book);
         }
         //database.cleanup();
-    }
+    }*/
 
 }

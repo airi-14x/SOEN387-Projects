@@ -12,6 +12,10 @@
         <servlet-name>addBookController</servlet-name>
         <servlet-class>AddBookController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>bookViewController</servlet-name>
+        <servlet-class>BookViewController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -20,10 +24,14 @@
         <servlet-name>logoutController</servlet-name>
         <url-pattern>/logout</url-pattern>
     </servlet-mapping>
-     <servlet>
+    <servlet-mapping>
         <servlet-name>addBookController</servlet-name>
-        <servlet-class>/addBook</servlet-class>
-    </servlet>
+        <url-pattern>/addBook</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BookViewController</servlet-name>
+        <url-pattern>/viewBook</url-pattern>
+    </servlet-mapping>
     <session-config>
         
     </session-config>

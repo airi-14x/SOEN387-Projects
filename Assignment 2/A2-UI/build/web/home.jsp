@@ -13,12 +13,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Book Store</title>
     </head>
-    <%--
+    <%
         String userName = (String) request.getAttribute("username");
         if (null == userName) {
             response.sendRedirect("login.jsp");
         }
-    --%>
+    %>
     <body>
         <h1>Welcome to the Book Store!</h1>
         <!--<a href="bookView.jsp">View books here</a><br>-->

@@ -23,14 +23,7 @@ import org.json.simple.parser.ParseException;
  */
 public class Session {
 
-    private JSONObject currentUser = null;
-    
-    public Session() throws IOException {
-        createJsonObject();
-        
-    }
-    
- 
+    private static JSONObject currentUser = null;
 
     public String hashPassword(String password) {
         String hashedPassword = null;
@@ -54,7 +47,7 @@ public class Session {
         return hashedPassword;
     }
 
-    public String getCurrentUser() {
+    public static String getCurrentUser() {
         return currentUser.toString();
     }
 
@@ -64,7 +57,7 @@ public class Session {
 
     
      private static JSONObject getUser(JSONObject user) {
-        JSONObject currentUser = new JSONObject();
+        JSONObject currUser = new JSONObject();
         JSONObject userObject = (JSONObject) user.get("user");
          
         String userName = (String) userObject.get("userId");    
@@ -75,12 +68,12 @@ public class Session {
         userString[0] = userName;
         userString[1] = password;
         
-        currentUser.put("userId", userString[0]);
-        currentUser.put("password", userString[1]);
+        currUser.put("userId", userString[0]);
+        currUser.put("password", userString[1]);
         
         System.out.println(Arrays.toString(userString));
         
-        return currentUser;
+        return currUser;
     }
      
      public Boolean login(String uId, String uPassword) {

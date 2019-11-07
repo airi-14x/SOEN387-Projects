@@ -4,6 +4,7 @@
     Author     : Airi
 --%>
 
+<%@page import="repository.core.Session"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,9 +12,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <%
-        String userName = (String) request.getAttribute("username");
-        if (null == userName) {
+   <%
+        String user = (String) Session.getCurrentUser();
+        if (null == user) {
             response.sendRedirect("login.jsp");
         }
     %>

@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import repository.core.Author;
 import repository.core.Book;
 import repository.core.BookRepository;
-import repository.core.CoverImage;
 import repository.core.Session;
 
 /**
@@ -63,14 +62,16 @@ public class AddBookController extends HttpServlet {
         String publisherName = request.getParameter("pName");
         String publisherAddress = request.getParameter("paddress");
 
-        BookRepository bookRepo = BookRepository.getInstance(new Session());
+        BookRepository bookRepo = BookRepository.getInstance();
         ArrayList<Book> books = bookRepo.listAllBooks(new Session());
 
         Author author = new Author(fName, lName);
-        Book book = new Book(title, isbn, description, author, publisherName, publisherAddress, new CoverImage());
+        Book book = new Book(title, isbn, description, author, publisherName, publisherAddress);
+        //Book book = new Book(title, isbn, description, author, publisherName, publisherAddress, new CoverImage());
 
-        //bookRepo.addNewBook(session, book);
-        RequestDispatcher rd = request.getRequestDispatcher("/bookView.jsp");
+        bookRepo.addNewBook(new Session(), book);
+        request.setAttribute("books", books);
+        RequestDispatcher rd = request.getRequestDispatcher("/displayAll.jsp");
         rd.forward(request, response);
 
     }

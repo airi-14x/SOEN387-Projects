@@ -62,10 +62,12 @@ public class DisplayAllController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        BookRepository bookRepo = BookRepository.getInstance(new Session());
-        ArrayList<Book> bookList = bookRepo.listAllBooks(new Session());
-        request.setAttribute("books", bookList);
+        BookRepository bookRepo = BookRepository.getInstance();
+        ArrayList<Book> books = bookRepo.listAllBooks(new Session());
+        request.setAttribute("books", books);
         RequestDispatcher rd = request.getRequestDispatcher("/displayAll.jsp");
+        // Temporary at displayAll jsp --> Need to figure out how to move it to home
+        // without showing Login page because username would be null if sent from here at the moment.
         rd.forward(request, response);
     }
 

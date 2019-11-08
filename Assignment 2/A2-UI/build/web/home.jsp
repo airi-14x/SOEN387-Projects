@@ -28,7 +28,6 @@
                  View All Books <input type="submit" name="displayAll" value="Submit"/><br>
             </form>
             
-            
             <a href="addBook.jsp">Add/Update a book</a><br>
 
             <form action="DeleteBookController" method="DELETE">Provide bookID to delete: <input type="text" name="bookID">

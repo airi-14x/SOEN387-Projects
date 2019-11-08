@@ -1387,3 +1387,308 @@
 08-Nov-2019 12:22:39.888 INFOS [http-nio-8080-exec-29] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
 08-Nov-2019 12:22:40.502 INFOS [http-nio-8080-exec-29] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
 08-Nov-2019 12:22:40.507 INFOS [http-nio-8080-exec-29] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:27:11.544 AVERTISSEMENT [http-nio-8080-exec-36] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:27:11.562 AVERTISSEMENT [http-nio-8080-exec-39] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:27:11.586 AVERTISSEMENT [http-nio-8080-exec-32] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:27:11.592 INFOS [http-nio-8080-exec-33] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:27:11.608 AVERTISSEMENT [http-nio-8080-exec-33] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc L'application web [A2-UI] a enregistré un pilote JDBC [com.mysql.cj.jdbc.Driver], mais ne l'a pas désenregistré avant l'arrêt de l'application.  Pour éviter une fuite de mémoire, le pilote JDBC a été désenregistré de force.
+08-Nov-2019 12:27:11.610 AVERTISSEMENT [http-nio-8080-exec-33] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [A2-UI] semble avoir démarré un thread nommé [mysql-cj-abandoned-connection-cleanup] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire; la trace du thread est: 
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:27:12.125 INFOS [http-nio-8080-exec-33] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:27:12.128 INFOS [http-nio-8080-exec-33] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:27:15.659 INFOS [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Impossible de charger [], ce chargeur de classes a déjà été arrêté
+	java.lang.IllegalStateException: Impossible de charger [], ce chargeur de classes a déjà été arrêté
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:27:57.089 AVERTISSEMENT [http-nio-8080-exec-27] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:27:57.111 AVERTISSEMENT [http-nio-8080-exec-42] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:35:21.657 INFOS [http-nio-8080-exec-42] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:35:21.669 AVERTISSEMENT [http-nio-8080-exec-42] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc L'application web [A2-UI] a enregistré un pilote JDBC [com.mysql.cj.jdbc.Driver], mais ne l'a pas désenregistré avant l'arrêt de l'application.  Pour éviter une fuite de mémoire, le pilote JDBC a été désenregistré de force.
+08-Nov-2019 12:35:21.670 AVERTISSEMENT [http-nio-8080-exec-42] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [A2-UI] semble avoir démarré un thread nommé [mysql-cj-abandoned-connection-cleanup] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire; la trace du thread est: 
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:35:23.206 INFOS [http-nio-8080-exec-42] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:35:23.222 INFOS [http-nio-8080-exec-42] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:35:24.116 INFOS [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Impossible de charger [], ce chargeur de classes a déjà été arrêté
+	java.lang.IllegalStateException: Impossible de charger [], ce chargeur de classes a déjà été arrêté
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:35:46.539 INFOS [http-nio-8080-exec-41] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:35:47.941 INFOS [http-nio-8080-exec-41] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:35:47.980 INFOS [http-nio-8080-exec-41] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:35:53.009 AVERTISSEMENT [http-nio-8080-exec-40] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:35:53.022 AVERTISSEMENT [http-nio-8080-exec-47] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:35:53.027 INFOS [http-nio-8080-exec-52] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:35:54.462 INFOS [http-nio-8080-exec-52] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:35:54.497 INFOS [http-nio-8080-exec-52] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:36:03.685 AVERTISSEMENT [http-nio-8080-exec-53] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:36:03.702 AVERTISSEMENT [http-nio-8080-exec-40] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:36:03.708 INFOS [http-nio-8080-exec-48] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:36:05.664 INFOS [http-nio-8080-exec-48] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:36:05.669 INFOS [http-nio-8080-exec-48] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:36:09.900 AVERTISSEMENT [http-nio-8080-exec-46] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:36:09.909 AVERTISSEMENT [http-nio-8080-exec-53] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:36:09.955 AVERTISSEMENT [http-nio-8080-exec-57] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:36:09.966 INFOS [http-nio-8080-exec-55] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:36:10.588 INFOS [http-nio-8080-exec-55] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:36:10.591 INFOS [http-nio-8080-exec-55] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:36:11.739 AVERTISSEMENT [http-nio-8080-exec-53] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:36:11.770 AVERTISSEMENT [http-nio-8080-exec-56] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:36:11.774 INFOS [http-nio-8080-exec-50] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:36:12.298 INFOS [http-nio-8080-exec-50] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:36:12.301 INFOS [http-nio-8080-exec-50] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:37:37.594 AVERTISSEMENT [http-nio-8080-exec-62] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:37:37.605 AVERTISSEMENT [http-nio-8080-exec-63] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:37:37.608 INFOS [http-nio-8080-exec-52] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:37:37.611 AVERTISSEMENT [http-nio-8080-exec-52] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc L'application web [A2-UI] a enregistré un pilote JDBC [com.mysql.cj.jdbc.Driver], mais ne l'a pas désenregistré avant l'arrêt de l'application.  Pour éviter une fuite de mémoire, le pilote JDBC a été désenregistré de force.
+08-Nov-2019 12:37:37.612 AVERTISSEMENT [http-nio-8080-exec-52] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [A2-UI] semble avoir démarré un thread nommé [mysql-cj-abandoned-connection-cleanup] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire; la trace du thread est: 
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:37:39.379 INFOS [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Impossible de charger [], ce chargeur de classes a déjà été arrêté
+	java.lang.IllegalStateException: Impossible de charger [], ce chargeur de classes a déjà été arrêté
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:37:39.434 INFOS [http-nio-8080-exec-52] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:37:39.452 INFOS [http-nio-8080-exec-52] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:37:53.894 AVERTISSEMENT [http-nio-8080-exec-64] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:38:04.180 AVERTISSEMENT [http-nio-8080-exec-56] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:38:04.196 AVERTISSEMENT [http-nio-8080-exec-61] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:38:04.243 AVERTISSEMENT [http-nio-8080-exec-40] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:38:04.247 INFOS [http-nio-8080-exec-63] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:38:04.713 INFOS [http-nio-8080-exec-63] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:38:04.716 INFOS [http-nio-8080-exec-63] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:39:22.230 AVERTISSEMENT [http-nio-8080-exec-70] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:41:06.761 AVERTISSEMENT [http-nio-8080-exec-70] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:41:06.772 AVERTISSEMENT [http-nio-8080-exec-72] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:41:06.774 INFOS [http-nio-8080-exec-73] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:41:06.777 AVERTISSEMENT [http-nio-8080-exec-73] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc L'application web [A2-UI] a enregistré un pilote JDBC [com.mysql.cj.jdbc.Driver], mais ne l'a pas désenregistré avant l'arrêt de l'application.  Pour éviter une fuite de mémoire, le pilote JDBC a été désenregistré de force.
+08-Nov-2019 12:41:06.777 AVERTISSEMENT [http-nio-8080-exec-73] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [A2-UI] semble avoir démarré un thread nommé [mysql-cj-abandoned-connection-cleanup] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire; la trace du thread est: 
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:41:08.312 INFOS [http-nio-8080-exec-73] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:41:08.326 INFOS [http-nio-8080-exec-73] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:41:10.637 INFOS [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Impossible de charger [], ce chargeur de classes a déjà été arrêté
+	java.lang.IllegalStateException: Impossible de charger [], ce chargeur de classes a déjà été arrêté
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:41:16.835 AVERTISSEMENT [http-nio-8080-exec-68] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:41:16.848 AVERTISSEMENT [http-nio-8080-exec-74] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:41:16.888 AVERTISSEMENT [http-nio-8080-exec-70] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:41:16.894 INFOS [http-nio-8080-exec-78] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:41:17.889 INFOS [http-nio-8080-exec-78] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:41:17.891 INFOS [http-nio-8080-exec-78] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:44:33.200 AVERTISSEMENT [http-nio-8080-exec-84] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:45:11.968 AVERTISSEMENT [http-nio-8080-exec-84] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:45:11.983 AVERTISSEMENT [http-nio-8080-exec-86] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:45:11.985 INFOS [http-nio-8080-exec-81] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:45:11.992 AVERTISSEMENT [http-nio-8080-exec-81] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc L'application web [A2-UI] a enregistré un pilote JDBC [com.mysql.cj.jdbc.Driver], mais ne l'a pas désenregistré avant l'arrêt de l'application.  Pour éviter une fuite de mémoire, le pilote JDBC a été désenregistré de force.
+08-Nov-2019 12:45:11.993 AVERTISSEMENT [http-nio-8080-exec-81] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [A2-UI] semble avoir démarré un thread nommé [mysql-cj-abandoned-connection-cleanup] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire; la trace du thread est: 
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:45:13.394 INFOS [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Impossible de charger [], ce chargeur de classes a déjà été arrêté
+	java.lang.IllegalStateException: Impossible de charger [], ce chargeur de classes a déjà été arrêté
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:45:13.927 INFOS [http-nio-8080-exec-81] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:45:13.950 INFOS [http-nio-8080-exec-81] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:45:22.997 AVERTISSEMENT [http-nio-8080-exec-86] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:45:23.011 AVERTISSEMENT [http-nio-8080-exec-80] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:45:23.014 INFOS [http-nio-8080-exec-90] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:45:23.956 INFOS [http-nio-8080-exec-90] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:45:23.975 INFOS [http-nio-8080-exec-90] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:45:31.912 AVERTISSEMENT [http-nio-8080-exec-89] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:45:31.934 AVERTISSEMENT [http-nio-8080-exec-81] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:45:32.021 AVERTISSEMENT [http-nio-8080-exec-93] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:45:32.028 INFOS [http-nio-8080-exec-86] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:45:32.661 INFOS [http-nio-8080-exec-86] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:45:32.662 INFOS [http-nio-8080-exec-86] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:46:07.646 AVERTISSEMENT [http-nio-8080-exec-94] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:46:07.664 AVERTISSEMENT [http-nio-8080-exec-81] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:46:07.671 INFOS [http-nio-8080-exec-87] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:46:07.683 AVERTISSEMENT [http-nio-8080-exec-87] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc L'application web [A2-UI] a enregistré un pilote JDBC [com.mysql.cj.jdbc.Driver], mais ne l'a pas désenregistré avant l'arrêt de l'application.  Pour éviter une fuite de mémoire, le pilote JDBC a été désenregistré de force.
+08-Nov-2019 12:46:07.684 AVERTISSEMENT [http-nio-8080-exec-87] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [A2-UI] semble avoir démarré un thread nommé [mysql-cj-abandoned-connection-cleanup] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire; la trace du thread est: 
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:46:08.402 INFOS [http-nio-8080-exec-87] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:46:08.405 INFOS [http-nio-8080-exec-87] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:46:09.079 INFOS [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Impossible de charger [], ce chargeur de classes a déjà été arrêté
+	java.lang.IllegalStateException: Impossible de charger [], ce chargeur de classes a déjà été arrêté
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:46:31.312 AVERTISSEMENT [http-nio-8080-exec-82] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:46:31.326 AVERTISSEMENT [http-nio-8080-exec-86] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:46:31.330 INFOS [http-nio-8080-exec-98] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:46:31.990 INFOS [http-nio-8080-exec-98] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:46:31.996 INFOS [http-nio-8080-exec-98] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:47:02.109 AVERTISSEMENT [http-nio-8080-exec-86] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:47:02.122 AVERTISSEMENT [http-nio-8080-exec-99] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:47:02.126 INFOS [http-nio-8080-exec-94] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:47:03.114 INFOS [http-nio-8080-exec-94] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:47:03.127 INFOS [http-nio-8080-exec-94] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:47:20.070 AVERTISSEMENT [http-nio-8080-exec-86] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:47:20.081 AVERTISSEMENT [http-nio-8080-exec-101] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:47:20.083 INFOS [http-nio-8080-exec-99] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:47:21.017 INFOS [http-nio-8080-exec-99] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:47:21.037 INFOS [http-nio-8080-exec-99] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:47:28.908 AVERTISSEMENT [http-nio-8080-exec-103] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:47:28.927 AVERTISSEMENT [http-nio-8080-exec-99] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:47:28.970 AVERTISSEMENT [http-nio-8080-exec-86] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:47:28.972 INFOS [http-nio-8080-exec-87] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:47:29.743 INFOS [http-nio-8080-exec-87] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:47:29.745 INFOS [http-nio-8080-exec-87] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:48:29.112 AVERTISSEMENT [http-nio-8080-exec-96] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:48:29.133 AVERTISSEMENT [http-nio-8080-exec-101] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:48:29.139 INFOS [http-nio-8080-exec-86] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:48:29.153 AVERTISSEMENT [http-nio-8080-exec-86] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc L'application web [A2-UI] a enregistré un pilote JDBC [com.mysql.cj.jdbc.Driver], mais ne l'a pas désenregistré avant l'arrêt de l'application.  Pour éviter une fuite de mémoire, le pilote JDBC a été désenregistré de force.
+08-Nov-2019 12:48:29.167 AVERTISSEMENT [http-nio-8080-exec-86] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [A2-UI] semble avoir démarré un thread nommé [mysql-cj-abandoned-connection-cleanup] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire; la trace du thread est: 
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:48:30.654 INFOS [http-nio-8080-exec-86] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:48:30.660 INFOS [http-nio-8080-exec-86] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:48:32.582 INFOS [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Impossible de charger [], ce chargeur de classes a déjà été arrêté
+	java.lang.IllegalStateException: Impossible de charger [], ce chargeur de classes a déjà été arrêté
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:48:35.129 AVERTISSEMENT [http-nio-8080-exec-107] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:48:35.138 AVERTISSEMENT [http-nio-8080-exec-108] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:48:35.169 AVERTISSEMENT [http-nio-8080-exec-105] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:48:35.171 INFOS [http-nio-8080-exec-106] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:48:35.741 INFOS [http-nio-8080-exec-106] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:48:35.750 INFOS [http-nio-8080-exec-106] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:50:25.176 AVERTISSEMENT [http-nio-8080-exec-115] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:50:25.192 AVERTISSEMENT [http-nio-8080-exec-117] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:50:25.197 INFOS [http-nio-8080-exec-119] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:50:25.201 AVERTISSEMENT [http-nio-8080-exec-119] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc L'application web [A2-UI] a enregistré un pilote JDBC [com.mysql.cj.jdbc.Driver], mais ne l'a pas désenregistré avant l'arrêt de l'application.  Pour éviter une fuite de mémoire, le pilote JDBC a été désenregistré de force.
+08-Nov-2019 12:50:25.201 AVERTISSEMENT [http-nio-8080-exec-119] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [A2-UI] semble avoir démarré un thread nommé [mysql-cj-abandoned-connection-cleanup] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire; la trace du thread est: 
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:50:26.205 INFOS [http-nio-8080-exec-119] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:50:26.237 INFOS [http-nio-8080-exec-119] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:50:28.616 INFOS [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Impossible de charger [], ce chargeur de classes a déjà été arrêté
+	java.lang.IllegalStateException: Impossible de charger [], ce chargeur de classes a déjà été arrêté
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:50:32.344 AVERTISSEMENT [http-nio-8080-exec-118] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:50:32.379 AVERTISSEMENT [http-nio-8080-exec-117] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:50:32.394 INFOS [http-nio-8080-exec-121] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:50:33.778 INFOS [http-nio-8080-exec-121] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:50:33.784 INFOS [http-nio-8080-exec-121] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:50:47.029 AVERTISSEMENT [http-nio-8080-exec-116] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:50:47.043 AVERTISSEMENT [http-nio-8080-exec-113] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:50:47.050 INFOS [http-nio-8080-exec-105] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:50:47.958 INFOS [http-nio-8080-exec-105] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:50:47.963 INFOS [http-nio-8080-exec-105] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:50:56.278 AVERTISSEMENT [http-nio-8080-exec-114] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:50:56.293 AVERTISSEMENT [http-nio-8080-exec-118] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:50:56.331 AVERTISSEMENT [http-nio-8080-exec-112] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:50:56.337 INFOS [http-nio-8080-exec-117] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:50:57.347 INFOS [http-nio-8080-exec-117] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:50:57.369 INFOS [http-nio-8080-exec-117] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:52:43.742 AVERTISSEMENT [http-nio-8080-exec-130] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:52:43.771 AVERTISSEMENT [http-nio-8080-exec-132] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:52:43.784 INFOS [http-nio-8080-exec-133] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/A2-UI] a démarré
+08-Nov-2019 12:52:43.798 AVERTISSEMENT [http-nio-8080-exec-133] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc L'application web [A2-UI] a enregistré un pilote JDBC [com.mysql.cj.jdbc.Driver], mais ne l'a pas désenregistré avant l'arrêt de l'application.  Pour éviter une fuite de mémoire, le pilote JDBC a été désenregistré de force.
+08-Nov-2019 12:52:43.805 AVERTISSEMENT [http-nio-8080-exec-133] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [A2-UI] semble avoir démarré un thread nommé [mysql-cj-abandoned-connection-cleanup] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire; la trace du thread est: 
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:52:45.636 INFOS [mysql-cj-abandoned-connection-cleanup] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Impossible de charger [], ce chargeur de classes a déjà été arrêté
+	java.lang.IllegalStateException: Impossible de charger [], ce chargeur de classes a déjà été arrêté
+		at org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading(WebappClassLoaderBase.java:1385)
+		at org.apache.catalina.loader.WebappClassLoaderBase.getResource(WebappClassLoaderBase.java:1038)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.checkThreadContextClassLoader(AbandonedConnectionCleanupThread.java:117)
+		at com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:84)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at java.lang.Thread.run(Thread.java:748)
+08-Nov-2019 12:52:45.910 INFOS [http-nio-8080-exec-133] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:52:45.921 INFOS [http-nio-8080-exec-133] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+08-Nov-2019 12:52:57.783 AVERTISSEMENT [http-nio-8080-exec-130] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:52:57.813 AVERTISSEMENT [http-nio-8080-exec-128] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:52:58.332 INFOS [http-nio-8080-exec-134] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/A2-UI]
+08-Nov-2019 12:53:02.257 AVERTISSEMENT [http-nio-8080-exec-129] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:53:07.249 AVERTISSEMENT [http-nio-8080-exec-126] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:53:07.258 AVERTISSEMENT [http-nio-8080-exec-130] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:53:07.317 AVERTISSEMENT [http-nio-8080-exec-128] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:53:07.329 INFOS [http-nio-8080-exec-127] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 2/apache-tomcat-9.0.26/conf/Catalina/localhost/A2-UI.xml]
+08-Nov-2019 12:53:07.331 AVERTISSEMENT [http-nio-8080-exec-127] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/A2-UI] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 2/apache-tomcat-9.0.26/conf/Catalina/localhost/A2-UI.xml] a été ignoré
+08-Nov-2019 12:53:08.584 INFOS [http-nio-8080-exec-127] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+08-Nov-2019 12:53:08.587 INFOS [http-nio-8080-exec-127] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 2/apache-tomcat-9.0.26/conf/Catalina/localhost/A2-UI.xml] a pris [1 257] ms
+08-Nov-2019 12:53:08.595 AVERTISSEMENT [http-nio-8080-exec-137] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+08-Nov-2019 12:53:08.601 INFOS [http-nio-8080-exec-126] org.apache.catalina.util.LifecycleBase.start La méthode start() a été appelée sur le composant [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/A2-UI]] après que start() ait déjà été appelé, le deuxième appel sera ignoré

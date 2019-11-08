@@ -116,7 +116,7 @@ public class RepositoryDatabase {
             Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        BookRepository b1 = BookRepository.getInstance(session);
+        BookRepository b1 = BookRepository.getInstance();
         System.out.println();
         System.out.println("DROP TABLE");
         System.out.println();

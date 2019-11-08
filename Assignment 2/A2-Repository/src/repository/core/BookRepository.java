@@ -14,21 +14,19 @@ import java.util.ArrayList;
  */
 public class BookRepository implements IBookRepository {
 
-    private static Session session = null;
     private ArrayList<Book> books;
     private RepositoryDatabase connection;
     private static BookRepository instance = null;
 
-    private BookRepository(Session session) {
+    private BookRepository() {
         connection = RepositoryDatabase.getInstance();
         System.out.println("Connection " + connection);
         books = new ArrayList<Book>();
-        this.session = session;
     }
 
-    public static synchronized BookRepository getInstance(Session session) {
+    public static synchronized BookRepository getInstance() {
         if (instance == null) {
-            instance = new BookRepository(session);
+            instance = new BookRepository();
             System.out.println("BookRepository - Instance is Created!");
             System.out.println("Instance " + instance);
         }
@@ -39,7 +37,7 @@ public class BookRepository implements IBookRepository {
     public ArrayList<Book> listAllBooks(Session session) {
 
         try {
-            resetBooks(this.session);
+            resetBooks(session);
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book");
 
             while (resultSet.next()) {

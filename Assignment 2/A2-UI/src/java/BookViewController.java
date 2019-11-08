@@ -77,7 +77,7 @@ public class BookViewController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        BookRepository bookRepo = BookRepository.getInstance(new Session());
+        BookRepository bookRepo = BookRepository.getInstance();
         ArrayList<Book> bookList = bookRepo.listAllBooks(new Session());
 
         request.setAttribute("books", bookList);

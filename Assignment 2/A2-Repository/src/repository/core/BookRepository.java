@@ -22,7 +22,6 @@ public class BookRepository implements IBookRepository {
         connection = RepositoryDatabase.getInstance();
         System.out.println("Connection " + connection);
         books = new ArrayList<Book>();
-
     }
 
     public static synchronized BookRepository getInstance() {

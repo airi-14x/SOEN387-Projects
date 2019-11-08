@@ -1,0 +1,853 @@
+28-Sep-2019 11:35:23.358 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:        Apache Tomcat/9.0.26
+28-Sep-2019 11:35:23.504 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé:       Sep 16 2019 15:51:39 UTC
+28-Sep-2019 11:35:23.507 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:      9.0.26.0
+28-Sep-2019 11:35:23.507 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS:           Mac OS X
+28-Sep-2019 11:35:23.507 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de l'OS:        10.14.6
+28-Sep-2019 11:35:23.507 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+28-Sep-2019 11:35:23.507 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Répertoire de Java:     /Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre
+28-Sep-2019 11:35:23.515 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de la JVM:           1.8.0_101-b13
+28-Sep-2019 11:35:23.515 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM:            Oracle Corporation
+28-Sep-2019 11:35:23.516 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 11:35:23.516 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 11:35:23.539 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.config.file=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/logging.properties
+28-Sep-2019 11:35:23.547 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+28-Sep-2019 11:35:23.548 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Jasmines-Air
+28-Sep-2019 11:35:23.549 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djdk.tls.ephemeralDHKeySize=2048
+28-Sep-2019 11:35:23.549 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+28-Sep-2019 11:35:23.549 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+28-Sep-2019 11:35:23.551 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dignore.endorsed.dirs=
+28-Sep-2019 11:35:23.551 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.base=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 11:35:23.570 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.home=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 11:35:23.571 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.io.tmpdir=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/temp
+28-Sep-2019 11:35:23.571 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path: [/Users/jasminelatendresse/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+28-Sep-2019 11:35:27.343 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 11:35:28.068 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 11:35:28.176 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [7 867] millisecondes
+28-Sep-2019 11:35:28.589 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+28-Sep-2019 11:35:28.591 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets: [Apache Tomcat/9.0.26]
+28-Sep-2019 11:35:28.819 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml]
+28-Sep-2019 11:35:29.012 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/Assignment 1] dans le descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a été ignoré
+28-Sep-2019 11:35:31.529 AVERTISSEMENT [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom La création de l'instance de SecureRandom pour le générateur d'id de session en utilisant [SHA1PRNG] a pris [184] millisecondes
+28-Sep-2019 11:35:31.691 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a pris [2 872] ms
+28-Sep-2019 11:35:31.691 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+28-Sep-2019 11:35:31.701 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/WebApplicationDemo] dans le descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a été ignoré
+28-Sep-2019 11:35:31.768 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Erreur lors du déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+	java.lang.IllegalStateException: Erreur lors du démarrage du conteneur fils
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1831)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:633)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+	Caused by: org.apache.catalina.LifecycleException: Echec de démarrage du composant [org.apache.catalina.webresources.StandardRoot@15b204a1]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4800)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4935)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: L'ensemble de ressources principal [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/WebApplicationDemo/build/web] est invalide
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:752)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:709)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+28-Sep-2019 11:35:31.871 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a pris [107] ms
+28-Sep-2019 11:35:31.872 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs]
+28-Sep-2019 11:35:32.176 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs] de l'application web s'est terminé en [303] ms
+28-Sep-2019 11:35:32.202 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager]
+28-Sep-2019 11:35:32.639 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager] de l'application web s'est terminé en [437] ms
+28-Sep-2019 11:35:32.640 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples]
+28-Sep-2019 11:35:36.226 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples] de l'application web s'est terminé en [3 586] ms
+28-Sep-2019 11:35:36.227 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT]
+28-Sep-2019 11:35:36.653 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT] de l'application web s'est terminé en [425] ms
+28-Sep-2019 11:35:36.654 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager]
+28-Sep-2019 11:35:37.039 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager] de l'application web s'est terminé en [384] ms
+28-Sep-2019 11:35:37.097 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 11:35:37.254 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 11:35:37.290 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [9 113] millisecondes
+28-Sep-2019 11:36:09.663 INFOS [http-nio-8080-exec-3] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:36:10.599 INFOS [http-nio-8080-exec-3] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:38:52.474 INFOS [http-nio-8080-exec-12] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:38:52.804 INFOS [http-nio-8080-exec-12] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:39:24.901 INFOS [http-nio-8080-exec-7] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:39:25.240 INFOS [http-nio-8080-exec-7] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:39:42.485 INFOS [http-nio-8080-exec-15] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:39:42.818 INFOS [http-nio-8080-exec-15] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:40:40.157 INFOS [http-nio-8080-exec-14] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:40:40.617 INFOS [http-nio-8080-exec-14] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:42:05.231 INFOS [http-nio-8080-exec-24] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:42:05.589 INFOS [http-nio-8080-exec-24] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:42:26.666 INFOS [http-nio-8080-exec-18] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:42:26.781 INFOS [http-nio-8080-exec-18] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:42:30.054 INFOS [http-nio-8080-exec-32] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:42:30.137 INFOS [http-nio-8080-exec-32] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:42:51.884 INFOS [http-nio-8080-exec-32] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:42:51.999 INFOS [http-nio-8080-exec-32] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:46:23.143 INFOS [http-nio-8080-exec-39] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:46:23.839 INFOS [http-nio-8080-exec-39] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:47:04.926 INFOS [http-nio-8080-exec-35] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:47:04.975 INFOS [http-nio-8080-exec-35] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:47:22.686 INFOS [http-nio-8080-exec-38] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:47:22.752 INFOS [http-nio-8080-exec-38] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:48:43.272 INFOS [http-nio-8080-exec-45] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:48:43.353 INFOS [http-nio-8080-exec-45] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:49:25.830 INFOS [http-nio-8080-exec-45] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:49:25.920 INFOS [http-nio-8080-exec-45] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:50:20.982 INFOS [http-nio-8080-exec-37] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:50:21.085 INFOS [http-nio-8080-exec-37] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:52:18.175 INFOS [http-nio-8080-exec-62] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:52:18.283 INFOS [http-nio-8080-exec-62] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 11:59:42.791 INFOS [http-nio-8080-exec-68] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 11:59:43.242 INFOS [http-nio-8080-exec-68] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:05:56.503 INFOS [http-nio-8080-exec-76] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:05:56.969 INFOS [http-nio-8080-exec-76] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:08:19.995 INFOS [http-nio-8080-exec-88] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:08:20.190 INFOS [http-nio-8080-exec-88] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:12:02.538 INFOS [http-nio-8080-exec-97] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:12:03.077 INFOS [http-nio-8080-exec-97] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:13:29.153 INFOS [http-nio-8080-exec-106] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:13:29.612 INFOS [http-nio-8080-exec-106] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:13:52.173 INFOS [http-nio-8080-exec-109] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:13:52.313 INFOS [http-nio-8080-exec-109] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:14:00.385 INFOS [http-nio-8080-exec-109] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:14:00.436 INFOS [http-nio-8080-exec-109] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:14:06.351 INFOS [http-nio-8080-exec-111] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:14:06.484 INFOS [http-nio-8080-exec-111] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:14:18.990 INFOS [http-nio-8080-exec-116] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:14:19.101 INFOS [http-nio-8080-exec-116] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:14:37.319 INFOS [http-nio-8080-exec-115] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:14:37.497 INFOS [http-nio-8080-exec-115] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:14:40.736 INFOS [http-nio-8080-exec-125] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:14:40.798 INFOS [http-nio-8080-exec-125] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:15:04.574 INFOS [http-nio-8080-exec-119] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:15:04.805 INFOS [http-nio-8080-exec-119] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:15:07.667 INFOS [http-nio-8080-exec-114] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:15:07.776 INFOS [http-nio-8080-exec-114] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:15:14.751 INFOS [http-nio-8080-exec-114] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:15:14.843 INFOS [http-nio-8080-exec-114] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:15:22.186 INFOS [http-nio-8080-exec-114] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:15:22.238 INFOS [http-nio-8080-exec-114] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:15:50.888 INFOS [http-nio-8080-exec-125] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:15:50.939 INFOS [http-nio-8080-exec-125] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:16:25.851 INFOS [http-nio-8080-exec-134] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:16:25.915 INFOS [http-nio-8080-exec-134] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:16:52.017 INFOS [http-nio-8080-exec-137] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:16:52.115 INFOS [http-nio-8080-exec-137] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:17:11.267 INFOS [http-nio-8080-exec-137] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:17:11.574 INFOS [http-nio-8080-exec-137] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:17:31.687 INFOS [http-nio-8080-exec-137] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:17:31.875 INFOS [http-nio-8080-exec-137] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:17:43.317 INFOS [http-nio-8080-exec-131] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:17:43.546 INFOS [http-nio-8080-exec-131] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:17:56.680 INFOS [http-nio-8080-exec-147] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:17:56.787 INFOS [http-nio-8080-exec-147] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:18:30.014 INFOS [http-nio-8080-exec-155] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:18:30.137 INFOS [http-nio-8080-exec-155] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:56:34.844 INFOS [http-nio-8080-exec-167] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:56:35.160 INFOS [http-nio-8080-exec-167] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:56:36.808 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:56:36.858 INFOS [http-nio-8080-exec-166] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:56:52.121 INFOS [http-nio-8080-exec-160] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:56:52.249 INFOS [http-nio-8080-exec-160] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 12:57:52.556 INFOS [http-nio-8080-exec-168] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 12:57:52.964 INFOS [http-nio-8080-exec-168] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:01:32.307 INFOS [http-nio-8080-exec-175] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:01:32.874 INFOS [http-nio-8080-exec-175] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:02:34.876 INFOS [http-nio-8080-exec-164] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:02:35.126 INFOS [http-nio-8080-exec-164] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:02:50.587 INFOS [http-nio-8080-exec-170] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:02:50.872 INFOS [http-nio-8080-exec-170] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:02:56.194 INFOS [http-nio-8080-exec-184] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:02:56.529 INFOS [http-nio-8080-exec-184] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:03:53.466 INFOS [http-nio-8080-exec-184] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:03:53.842 INFOS [http-nio-8080-exec-184] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:13:35.836 INFOS [http-nio-8080-exec-192] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:13:36.328 INFOS [http-nio-8080-exec-192] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:13:41.038 INFOS [http-nio-8080-exec-195] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:13:41.113 INFOS [http-nio-8080-exec-195] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:14:10.621 INFOS [http-nio-8080-exec-200] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:14:10.743 INFOS [http-nio-8080-exec-200] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:14:30.619 INFOS [http-nio-8080-exec-194] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:14:30.820 INFOS [http-nio-8080-exec-194] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:14:50.272 INFOS [http-nio-8080-exec-195] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:14:50.431 INFOS [http-nio-8080-exec-195] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:15:19.251 INFOS [http-nio-8080-exec-200] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:15:19.329 INFOS [http-nio-8080-exec-200] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:15:35.555 INFOS [http-nio-8080-exec-190] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:15:35.815 INFOS [http-nio-8080-exec-190] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:24:19.421 INFOS [http-nio-8080-exec-212] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:24:19.792 INFOS [http-nio-8080-exec-212] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:31:03.920 INFOS [http-nio-8080-exec-225] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:31:04.905 INFOS [http-nio-8080-exec-225] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:32:02.470 INFOS [http-nio-8080-exec-228] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:32:02.699 INFOS [http-nio-8080-exec-228] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:34:06.697 INFOS [http-nio-8080-exec-238] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:34:07.337 INFOS [http-nio-8080-exec-238] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:34:11.091 AVERTISSEMENT [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt invalide [GET / HTTP/1.1] a été reçue
+28-Sep-2019 13:34:12.548 AVERTISSEMENT [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt invalide [GET / HTTP/1.1] a été reçue
+28-Sep-2019 13:34:17.697 AVERTISSEMENT [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt invalide [GET / HTTP/1.1] a été reçue
+28-Sep-2019 13:34:22.277 INFOS [http-nio-8080-exec-241] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:34:22.379 INFOS [http-nio-8080-exec-241] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:48:29.579 INFOS [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt valide a été reçue sur le port d'arrêt, arrêt de l'instance du serveur
+28-Sep-2019 13:48:29.637 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+28-Sep-2019 13:48:29.709 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+28-Sep-2019 13:48:29.726 INFOS [main] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+28-Sep-2019 13:48:30.088 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 13:48:30.110 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 13:48:30.129 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 13:48:30.137 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 13:48:51.166 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:        Apache Tomcat/9.0.26
+28-Sep-2019 13:48:51.203 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé:       Sep 16 2019 15:51:39 UTC
+28-Sep-2019 13:48:51.203 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:      9.0.26.0
+28-Sep-2019 13:48:51.203 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS:           Mac OS X
+28-Sep-2019 13:48:51.203 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de l'OS:        10.14.6
+28-Sep-2019 13:48:51.204 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+28-Sep-2019 13:48:51.204 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Répertoire de Java:     /Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre
+28-Sep-2019 13:48:51.204 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de la JVM:           1.8.0_101-b13
+28-Sep-2019 13:48:51.205 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM:            Oracle Corporation
+28-Sep-2019 13:48:51.205 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 13:48:51.205 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 13:48:51.291 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.config.file=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/logging.properties
+28-Sep-2019 13:48:51.292 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+28-Sep-2019 13:48:51.292 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Jasmines-Air
+28-Sep-2019 13:48:51.292 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djdk.tls.ephemeralDHKeySize=2048
+28-Sep-2019 13:48:51.292 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+28-Sep-2019 13:48:51.292 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+28-Sep-2019 13:48:51.293 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dignore.endorsed.dirs=
+28-Sep-2019 13:48:51.293 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.base=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 13:48:51.294 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.home=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 13:48:51.294 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.io.tmpdir=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/temp
+28-Sep-2019 13:48:51.294 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path: [/Users/jasminelatendresse/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+28-Sep-2019 13:48:54.908 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 13:48:55.258 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 13:48:55.367 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [7 251] millisecondes
+28-Sep-2019 13:48:55.624 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+28-Sep-2019 13:48:55.624 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets: [Apache Tomcat/9.0.26]
+28-Sep-2019 13:48:55.876 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml]
+28-Sep-2019 13:48:56.211 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/Assignment 1] dans le descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a été ignoré
+28-Sep-2019 13:48:59.876 AVERTISSEMENT [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom La création de l'instance de SecureRandom pour le générateur d'id de session en utilisant [SHA1PRNG] a pris [198] millisecondes
+28-Sep-2019 13:49:00.244 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a pris [4 369] ms
+28-Sep-2019 13:49:00.245 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+28-Sep-2019 13:49:00.249 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/WebApplicationDemo] dans le descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a été ignoré
+28-Sep-2019 13:49:00.279 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Erreur lors du déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+	java.lang.IllegalStateException: Erreur lors du démarrage du conteneur fils
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1831)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:633)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+	Caused by: org.apache.catalina.LifecycleException: Echec de démarrage du composant [org.apache.catalina.webresources.StandardRoot@15b204a1]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4800)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4935)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: L'ensemble de ressources principal [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/WebApplicationDemo/build/web] est invalide
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:752)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:709)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+28-Sep-2019 13:49:00.437 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a pris [67] ms
+28-Sep-2019 13:49:00.447 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs]
+28-Sep-2019 13:49:00.778 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs] de l'application web s'est terminé en [331] ms
+28-Sep-2019 13:49:00.780 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager]
+28-Sep-2019 13:49:01.279 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager] de l'application web s'est terminé en [500] ms
+28-Sep-2019 13:49:01.293 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples]
+28-Sep-2019 13:49:05.518 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples] de l'application web s'est terminé en [4 224] ms
+28-Sep-2019 13:49:05.520 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT]
+28-Sep-2019 13:49:05.761 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT] de l'application web s'est terminé en [241] ms
+28-Sep-2019 13:49:05.761 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager]
+28-Sep-2019 13:49:05.995 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager] de l'application web s'est terminé en [234] ms
+28-Sep-2019 13:49:06.008 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 13:49:06.216 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 13:49:06.238 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [10 869] millisecondes
+28-Sep-2019 13:49:06.950 INFOS [http-nio-8080-exec-5] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:49:07.413 INFOS [http-nio-8080-exec-5] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:55:16.570 INFOS [http-nio-8080-exec-11] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:55:17.116 INFOS [http-nio-8080-exec-11] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:56:22.400 INFOS [http-nio-8080-exec-26] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:56:23.043 INFOS [http-nio-8080-exec-26] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 13:56:35.402 INFOS [http-nio-8080-exec-12] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 13:56:35.551 INFOS [http-nio-8080-exec-12] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:02:33.168 INFOS [http-nio-8080-exec-33] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:02:34.138 INFOS [http-nio-8080-exec-33] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:05:59.905 INFOS [http-nio-8080-exec-39] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:06:00.636 INFOS [http-nio-8080-exec-39] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:08:31.013 INFOS [http-nio-8080-exec-49] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:08:31.547 INFOS [http-nio-8080-exec-49] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:12:25.676 INFOS [http-nio-8080-exec-54] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:12:26.311 INFOS [http-nio-8080-exec-54] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:13:57.387 INFOS [http-nio-8080-exec-62] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:13:57.908 INFOS [http-nio-8080-exec-62] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:14:15.193 INFOS [http-nio-8080-exec-57] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:14:15.525 INFOS [http-nio-8080-exec-57] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:16:32.658 INFOS [http-nio-8080-exec-56] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:16:32.828 INFOS [http-nio-8080-exec-56] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:20:23.894 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+28-Sep-2019 14:20:23.984 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+28-Sep-2019 14:20:23.998 INFOS [Thread-5] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+28-Sep-2019 14:20:24.310 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 14:20:24.322 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 14:20:24.378 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 14:20:24.410 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 14:20:57.406 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:        Apache Tomcat/9.0.26
+28-Sep-2019 14:20:57.446 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé:       Sep 16 2019 15:51:39 UTC
+28-Sep-2019 14:20:57.447 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:      9.0.26.0
+28-Sep-2019 14:20:57.447 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS:           Mac OS X
+28-Sep-2019 14:20:57.447 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de l'OS:        10.14.6
+28-Sep-2019 14:20:57.447 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+28-Sep-2019 14:20:57.447 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Répertoire de Java:     /Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre
+28-Sep-2019 14:20:57.447 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de la JVM:           1.8.0_101-b13
+28-Sep-2019 14:20:57.448 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM:            Oracle Corporation
+28-Sep-2019 14:20:57.448 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 14:20:57.448 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 14:20:57.456 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.config.file=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/logging.properties
+28-Sep-2019 14:20:57.462 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+28-Sep-2019 14:20:57.462 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Jasmines-Air
+28-Sep-2019 14:20:57.462 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djdk.tls.ephemeralDHKeySize=2048
+28-Sep-2019 14:20:57.462 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+28-Sep-2019 14:20:57.463 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+28-Sep-2019 14:20:57.463 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dignore.endorsed.dirs=
+28-Sep-2019 14:20:57.463 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.base=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 14:20:57.463 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.home=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 14:20:57.463 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.io.tmpdir=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/temp
+28-Sep-2019 14:20:57.481 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path: [/Users/jasminelatendresse/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+28-Sep-2019 14:21:00.992 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 14:21:01.537 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 14:21:01.601 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [6 362] millisecondes
+28-Sep-2019 14:21:02.028 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+28-Sep-2019 14:21:02.029 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets: [Apache Tomcat/9.0.26]
+28-Sep-2019 14:21:02.183 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml]
+28-Sep-2019 14:21:02.365 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/Assignment 1] dans le descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a été ignoré
+28-Sep-2019 14:21:06.011 AVERTISSEMENT [main] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom La création de l'instance de SecureRandom pour le générateur d'id de session en utilisant [SHA1PRNG] a pris [186] millisecondes
+28-Sep-2019 14:21:06.263 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a pris [4 080] ms
+28-Sep-2019 14:21:06.266 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+28-Sep-2019 14:21:06.292 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/WebApplicationDemo] dans le descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a été ignoré
+28-Sep-2019 14:21:06.317 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Erreur lors du déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+	java.lang.IllegalStateException: Erreur lors du démarrage du conteneur fils
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1831)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:633)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+	Caused by: org.apache.catalina.LifecycleException: Echec de démarrage du composant [org.apache.catalina.webresources.StandardRoot@15b204a1]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4800)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4935)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: L'ensemble de ressources principal [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/WebApplicationDemo/build/web] est invalide
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:752)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:709)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+28-Sep-2019 14:21:06.323 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a pris [57] ms
+28-Sep-2019 14:21:06.328 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs]
+28-Sep-2019 14:21:06.762 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs] de l'application web s'est terminé en [434] ms
+28-Sep-2019 14:21:06.767 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager]
+28-Sep-2019 14:21:07.338 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager] de l'application web s'est terminé en [571] ms
+28-Sep-2019 14:21:07.341 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples]
+28-Sep-2019 14:21:11.298 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples] de l'application web s'est terminé en [3 958] ms
+28-Sep-2019 14:21:11.299 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT]
+28-Sep-2019 14:21:11.692 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT] de l'application web s'est terminé en [393] ms
+28-Sep-2019 14:21:11.692 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager]
+28-Sep-2019 14:21:12.091 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager] de l'application web s'est terminé en [399] ms
+28-Sep-2019 14:21:12.114 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 14:21:12.307 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 14:21:12.317 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [10 714] millisecondes
+28-Sep-2019 14:33:59.805 INFOS [http-nio-8080-exec-6] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:34:00.474 INFOS [http-nio-8080-exec-6] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:35:24.061 INFOS [http-nio-8080-exec-20] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:35:24.454 INFOS [http-nio-8080-exec-20] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:35:35.577 INFOS [http-nio-8080-exec-16] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:35:36.133 INFOS [http-nio-8080-exec-16] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:35:45.347 INFOS [http-nio-8080-exec-11] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:35:45.415 INFOS [http-nio-8080-exec-11] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:36:02.916 INFOS [http-nio-8080-exec-15] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:36:03.010 INFOS [http-nio-8080-exec-15] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:36:07.027 INFOS [http-nio-8080-exec-15] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:36:07.091 INFOS [http-nio-8080-exec-15] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:45:59.111 INFOS [http-nio-8080-exec-33] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:45:59.676 INFOS [http-nio-8080-exec-33] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:49:02.408 INFOS [http-nio-8080-exec-42] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:49:03.534 INFOS [http-nio-8080-exec-42] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:51:22.329 INFOS [http-nio-8080-exec-48] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:51:22.872 INFOS [http-nio-8080-exec-48] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:51:30.939 INFOS [http-nio-8080-exec-41] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:51:31.030 INFOS [http-nio-8080-exec-41] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:51:31.097 INFOS [http-nio-8080-exec-50] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:51:31.166 INFOS [http-nio-8080-exec-50] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:51:57.669 INFOS [http-nio-8080-exec-49] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:51:57.942 INFOS [http-nio-8080-exec-49] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:52:36.513 INFOS [http-nio-8080-exec-46] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:52:36.702 INFOS [http-nio-8080-exec-46] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:56:09.772 INFOS [http-nio-8080-exec-62] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:56:10.160 INFOS [http-nio-8080-exec-62] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:56:52.685 INFOS [http-nio-8080-exec-58] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:56:53.699 INFOS [http-nio-8080-exec-58] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:58:22.324 INFOS [http-nio-8080-exec-70] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:58:22.821 INFOS [http-nio-8080-exec-70] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:58:22.975 INFOS [http-nio-8080-exec-71] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:58:23.022 INFOS [http-nio-8080-exec-71] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:58:51.892 INFOS [http-nio-8080-exec-75] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:58:51.981 INFOS [http-nio-8080-exec-75] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 14:59:43.820 INFOS [http-nio-8080-exec-75] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 14:59:44.522 INFOS [http-nio-8080-exec-75] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:06:32.156 INFOS [http-nio-8080-exec-84] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 15:06:32.428 INFOS [http-nio-8080-exec-84] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:06:36.295 INFOS [http-nio-8080-exec-86] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 15:06:36.449 INFOS [http-nio-8080-exec-86] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:06:40.730 INFOS [http-nio-8080-exec-89] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 15:06:40.817 INFOS [http-nio-8080-exec-89] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:07:57.457 INFOS [http-nio-8080-exec-90] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 15:07:58.097 INFOS [http-nio-8080-exec-90] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:08:34.814 INFOS [http-nio-8080-exec-92] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 15:08:35.010 INFOS [http-nio-8080-exec-92] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:08:50.310 INFOS [http-nio-8080-exec-91] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/Assignment 1]
+28-Sep-2019 15:09:23.350 INFOS [http-nio-8080-exec-102] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml]
+28-Sep-2019 15:09:23.409 AVERTISSEMENT [http-nio-8080-exec-102] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/Assignment 1] dans le descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a été ignoré
+28-Sep-2019 15:09:24.004 INFOS [http-nio-8080-exec-102] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a pris [646] ms
+28-Sep-2019 15:09:24.023 INFOS [http-nio-8080-exec-92] org.apache.catalina.util.LifecycleBase.start La méthode start() a été appelée sur le composant [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/Assignment 1]] après que start() ait déjà été appelé, le deuxième appel sera ignoré
+28-Sep-2019 15:14:04.803 INFOS [http-nio-8080-exec-107] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 15:14:05.485 INFOS [http-nio-8080-exec-107] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:14:10.948 GRAVE [ajp-nio-8009-exec-41] org.apache.coyote.ajp.AjpMessage.processHeader Message invalide reçu avec la signature [18245]
+28-Sep-2019 15:14:15.028 GRAVE [ajp-nio-8009-exec-35] org.apache.coyote.ajp.AjpMessage.processHeader Message invalide reçu avec la signature [18245]
+28-Sep-2019 15:14:20.223 GRAVE [ajp-nio-8009-exec-39] org.apache.coyote.ajp.AjpMessage.processHeader Message invalide reçu avec la signature [18245]
+28-Sep-2019 15:14:50.345 GRAVE [ajp-nio-8009-exec-18] org.apache.coyote.ajp.AjpMessage.processHeader Message invalide reçu avec la signature [18245]
+28-Sep-2019 15:15:04.312 INFOS [http-nio-8080-exec-102] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 15:15:05.107 INFOS [http-nio-8080-exec-102] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:20:17.287 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Rechargement du contexte []
+28-Sep-2019 15:20:17.297 INFOS [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [] a démarré
+28-Sep-2019 15:20:17.938 GRAVE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal Un ou plusieurs filtres n'ont pas pu démarrer, les détails sont dans le fichier log du conteneur
+28-Sep-2019 15:20:17.940 GRAVE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal Erreur de démarrage du contexte [] suite aux erreurs précédentes
+28-Sep-2019 15:20:18.121 INFOS [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:20:18.123 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Rechargement du contexte [/Assignment 1]
+28-Sep-2019 15:20:18.123 INFOS [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/Assignment 1] a démarré
+28-Sep-2019 15:20:18.315 GRAVE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal Un ou plusieurs filtres n'ont pas pu démarrer, les détails sont dans le fichier log du conteneur
+28-Sep-2019 15:20:18.321 GRAVE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal Erreur de démarrage du contexte [/Assignment 1] suite aux erreurs précédentes
+28-Sep-2019 15:20:18.326 INFOS [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:20:18.477 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Rechargement du contexte [/WebApplicationDemo]
+28-Sep-2019 15:20:18.515 GRAVE [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Erreur pendant le redémarrage du contexte [/WebApplicationDemo]
+	org.apache.catalina.LifecycleException: Echec de démarrage du composant [org.apache.catalina.webresources.StandardRoot@15b204a1]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4800)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4935)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.HostConfig.reload(HostConfig.java:1412)
+		at org.apache.catalina.startup.HostConfig.checkResources(HostConfig.java:1376)
+		at org.apache.catalina.startup.HostConfig.check(HostConfig.java:1611)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:305)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.core.ContainerBase.backgroundProcess(ContainerBase.java:1151)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1353)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.processChildren(ContainerBase.java:1357)
+		at org.apache.catalina.core.ContainerBase$ContainerBackgroundProcessor.run(ContainerBase.java:1335)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+		at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+		at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:745)
+	Caused by: java.lang.IllegalArgumentException: L'ensemble de ressources principal [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/WebApplicationDemo/build/web] est invalide
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:752)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:709)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 20 more
+28-Sep-2019 15:20:18.537 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Rechargement du contexte [/examples]
+28-Sep-2019 15:20:18.540 INFOS [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/examples] a démarré
+28-Sep-2019 15:20:20.898 GRAVE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal Un ou plusieurs filtres n'ont pas pu démarrer, les détails sont dans le fichier log du conteneur
+28-Sep-2019 15:20:20.899 GRAVE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal Erreur de démarrage du contexte [/examples] suite aux erreurs précédentes
+28-Sep-2019 15:20:20.911 INFOS [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:20:20.914 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Rechargement du contexte [/host-manager]
+28-Sep-2019 15:20:20.914 INFOS [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/host-manager] a démarré
+28-Sep-2019 15:20:20.944 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:        Apache Tomcat/9.0.26
+28-Sep-2019 15:20:20.975 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé:       Sep 16 2019 15:51:39 UTC
+28-Sep-2019 15:20:20.975 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:      9.0.26.0
+28-Sep-2019 15:20:20.976 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS:           Mac OS X
+28-Sep-2019 15:20:20.976 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de l'OS:        10.14.6
+28-Sep-2019 15:20:20.976 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+28-Sep-2019 15:20:20.976 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Répertoire de Java:     /Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre
+28-Sep-2019 15:20:20.976 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de la JVM:           1.8.0_101-b13
+28-Sep-2019 15:20:20.986 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM:            Oracle Corporation
+28-Sep-2019 15:20:20.992 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 15:20:20.992 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 15:20:21.008 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.config.file=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/logging.properties
+28-Sep-2019 15:20:21.009 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+28-Sep-2019 15:20:21.009 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Jasmines-Air
+28-Sep-2019 15:20:21.009 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djdk.tls.ephemeralDHKeySize=2048
+28-Sep-2019 15:20:21.009 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+28-Sep-2019 15:20:21.009 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+28-Sep-2019 15:20:21.024 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dignore.endorsed.dirs=
+28-Sep-2019 15:20:21.025 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.base=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 15:20:21.025 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.home=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 15:20:21.025 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.io.tmpdir=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/temp
+28-Sep-2019 15:20:21.025 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path: [/Users/jasminelatendresse/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+28-Sep-2019 15:20:21.122 GRAVE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal Un ou plusieurs filtres n'ont pas pu démarrer, les détails sont dans le fichier log du conteneur
+28-Sep-2019 15:20:21.123 GRAVE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal Erreur de démarrage du contexte [/host-manager] suite aux erreurs précédentes
+28-Sep-2019 15:20:21.125 INFOS [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:20:21.126 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Rechargement du contexte [/manager]
+28-Sep-2019 15:20:21.126 INFOS [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/manager] a démarré
+28-Sep-2019 15:20:21.366 GRAVE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal Un ou plusieurs filtres n'ont pas pu démarrer, les détails sont dans le fichier log du conteneur
+28-Sep-2019 15:20:21.422 GRAVE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal Erreur de démarrage du contexte [/manager] suite aux erreurs précédentes
+28-Sep-2019 15:20:21.443 INFOS [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:20:21.444 INFOS [Catalina-utility-2] org.apache.catalina.startup.HostConfig.reload Rechargement du contexte [/docs]
+28-Sep-2019 15:20:21.446 INFOS [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/docs] a démarré
+28-Sep-2019 15:20:21.490 GRAVE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal Un ou plusieurs filtres n'ont pas pu démarrer, les détails sont dans le fichier log du conteneur
+28-Sep-2019 15:20:21.491 GRAVE [Catalina-utility-2] org.apache.catalina.core.StandardContext.startInternal Erreur de démarrage du contexte [/docs] suite aux erreurs précédentes
+28-Sep-2019 15:20:21.498 INFOS [Catalina-utility-2] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+28-Sep-2019 15:20:24.935 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8079"]
+28-Sep-2019 15:20:25.708 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 15:20:25.733 GRAVE [main] org.apache.catalina.util.LifecycleBase.handleSubClassException Echec d'initialisation du composant [Connector[AJP/1.3-8009]]
+	org.apache.catalina.LifecycleException: L'initialisation du gestionnaire de protocole a échoué
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:983)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardService.initInternal(StandardService.java:533)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.core.StandardServer.initInternal(StandardServer.java:1059)
+		at org.apache.catalina.util.LifecycleBase.init(LifecycleBase.java:136)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:584)
+		at org.apache.catalina.startup.Catalina.load(Catalina.java:607)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.load(Bootstrap.java:304)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:474)
+	Caused by: java.net.BindException: Address already in use
+		at sun.nio.ch.Net.bind0(Native Method)
+		at sun.nio.ch.Net.bind(Net.java:433)
+		at sun.nio.ch.Net.bind(Net.java:425)
+		at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+		at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+		at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+		at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+		at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+		at org.apache.tomcat.util.net.AbstractEndpoint.init(AbstractEndpoint.java:1137)
+		at org.apache.coyote.AbstractProtocol.init(AbstractProtocol.java:574)
+		at org.apache.catalina.connector.Connector.initInternal(Connector.java:980)
+		... 13 more
+28-Sep-2019 15:20:25.749 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [8 377] millisecondes
+28-Sep-2019 15:20:26.133 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+28-Sep-2019 15:20:26.134 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets: [Apache Tomcat/9.0.26]
+28-Sep-2019 15:20:26.159 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml]
+28-Sep-2019 15:20:26.208 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/Assignment 1] dans le descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a été ignoré
+28-Sep-2019 15:20:30.097 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Sep-2019 15:20:30.575 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a pris [4 416] ms
+28-Sep-2019 15:20:30.576 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+28-Sep-2019 15:20:30.578 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/WebApplicationDemo] dans le descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a été ignoré
+28-Sep-2019 15:20:30.594 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Erreur lors du déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+	java.lang.IllegalStateException: Erreur lors du démarrage du conteneur fils
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1831)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:633)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+	Caused by: org.apache.catalina.LifecycleException: Echec de démarrage du composant [org.apache.catalina.webresources.StandardRoot@65fb9ffc]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4800)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4935)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: L'ensemble de ressources principal [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/WebApplicationDemo/build/web] est invalide
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:752)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:709)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+28-Sep-2019 15:20:30.642 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a pris [35] ms
+28-Sep-2019 15:20:30.643 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs]
+28-Sep-2019 15:20:31.303 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Sep-2019 15:20:31.329 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs] de l'application web s'est terminé en [685] ms
+28-Sep-2019 15:20:31.336 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager]
+28-Sep-2019 15:20:32.393 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Sep-2019 15:20:32.485 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager] de l'application web s'est terminé en [1 153] ms
+28-Sep-2019 15:20:32.485 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples]
+28-Sep-2019 15:20:34.741 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Sep-2019 15:20:35.068 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples] de l'application web s'est terminé en [2 582] ms
+28-Sep-2019 15:20:35.070 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT]
+28-Sep-2019 15:20:35.690 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Sep-2019 15:20:35.700 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT] de l'application web s'est terminé en [630] ms
+28-Sep-2019 15:20:35.702 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager]
+28-Sep-2019 15:20:36.495 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Sep-2019 15:20:36.586 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager] de l'application web s'est terminé en [884] ms
+28-Sep-2019 15:20:36.638 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8079"]
+28-Sep-2019 15:20:36.767 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [11 016] millisecondes
+28-Sep-2019 15:20:36.779 GRAVE [main] org.apache.catalina.core.StandardServer.await Impossible de créer le sokcet d'arrêt du serveur à l'adresse [localhost] et au port [8005] (port de base [8005] et offset [0])
+	java.net.BindException: Address already in use
+		at java.net.PlainSocketImpl.socketBind(Native Method)
+		at java.net.AbstractPlainSocketImpl.bind(AbstractPlainSocketImpl.java:387)
+		at java.net.ServerSocket.bind(ServerSocket.java:375)
+		at java.net.ServerSocket.<init>(ServerSocket.java:237)
+		at org.apache.catalina.core.StandardServer.await(StandardServer.java:584)
+		at org.apache.catalina.startup.Catalina.await(Catalina.java:721)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:667)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+28-Sep-2019 15:20:36.780 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8079"] est mis en pause
+28-Sep-2019 15:20:36.803 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+28-Sep-2019 15:20:36.804 INFOS [main] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+28-Sep-2019 15:20:37.200 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8079"]
+28-Sep-2019 15:20:37.277 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8079"]
+28-Sep-2019 15:20:37.304 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 15:20:37.307 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 15:22:23.851 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+28-Sep-2019 15:22:23.924 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+28-Sep-2019 15:22:23.943 INFOS [Thread-5] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+28-Sep-2019 15:22:24.009 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 15:22:24.040 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 15:22:24.065 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 15:22:24.079 INFOS [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 15:22:39.598 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:        Apache Tomcat/9.0.26
+28-Sep-2019 15:22:39.653 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé:       Sep 16 2019 15:51:39 UTC
+28-Sep-2019 15:22:39.654 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:      9.0.26.0
+28-Sep-2019 15:22:39.654 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS:           Mac OS X
+28-Sep-2019 15:22:39.654 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de l'OS:        10.14.6
+28-Sep-2019 15:22:39.654 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+28-Sep-2019 15:22:39.655 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Répertoire de Java:     /Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre
+28-Sep-2019 15:22:39.655 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de la JVM:           1.8.0_101-b13
+28-Sep-2019 15:22:39.655 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM:            Oracle Corporation
+28-Sep-2019 15:22:39.656 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 15:22:39.656 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 15:22:39.673 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.config.file=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/logging.properties
+28-Sep-2019 15:22:39.673 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+28-Sep-2019 15:22:39.674 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Jasmines-Air
+28-Sep-2019 15:22:39.674 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djdk.tls.ephemeralDHKeySize=2048
+28-Sep-2019 15:22:39.675 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+28-Sep-2019 15:22:39.683 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+28-Sep-2019 15:22:39.683 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dignore.endorsed.dirs=
+28-Sep-2019 15:22:39.684 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.base=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 15:22:39.687 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.home=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+28-Sep-2019 15:22:39.688 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.io.tmpdir=/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/temp
+28-Sep-2019 15:22:39.688 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path: [/Users/jasminelatendresse/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+28-Sep-2019 15:22:43.375 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 15:22:43.767 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 15:22:43.775 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [6 465] millisecondes
+28-Sep-2019 15:22:44.142 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+28-Sep-2019 15:22:44.144 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets: [Apache Tomcat/9.0.26]
+28-Sep-2019 15:22:44.245 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml]
+28-Sep-2019 15:22:44.405 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/Assignment 1] dans le descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a été ignoré
+28-Sep-2019 15:22:47.542 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Sep-2019 15:22:47.995 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a pris [3 753] ms
+28-Sep-2019 15:22:47.997 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+28-Sep-2019 15:22:48.000 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/WebApplicationDemo] dans le descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a été ignoré
+28-Sep-2019 15:22:48.026 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Erreur lors du déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+	java.lang.IllegalStateException: Erreur lors du démarrage du conteneur fils
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1831)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:633)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+	Caused by: org.apache.catalina.LifecycleException: Echec de démarrage du composant [org.apache.catalina.webresources.StandardRoot@59474f18]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4800)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4935)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: L'ensemble de ressources principal [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/WebApplicationDemo/build/web] est invalide
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:752)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:709)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+28-Sep-2019 15:22:48.031 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a pris [35] ms
+28-Sep-2019 15:22:48.033 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs]
+28-Sep-2019 15:22:48.876 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Sep-2019 15:22:48.882 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs] de l'application web s'est terminé en [849] ms
+28-Sep-2019 15:22:48.888 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager]
+28-Sep-2019 15:22:49.626 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Sep-2019 15:22:49.640 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager] de l'application web s'est terminé en [753] ms
+28-Sep-2019 15:22:49.649 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples]
+28-Sep-2019 15:22:52.614 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Sep-2019 15:22:53.142 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples] de l'application web s'est terminé en [3 494] ms
+28-Sep-2019 15:22:53.175 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT]
+28-Sep-2019 15:22:54.246 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Sep-2019 15:22:54.251 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT] de l'application web s'est terminé en [1 075] ms
+28-Sep-2019 15:22:54.251 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager]
+28-Sep-2019 15:22:55.296 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Sep-2019 15:22:55.304 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager] de l'application web s'est terminé en [1 053] ms
+28-Sep-2019 15:22:55.323 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+28-Sep-2019 15:22:55.490 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["ajp-nio-8009"]
+28-Sep-2019 15:22:55.507 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [11 730] millisecondes
+28-Sep-2019 15:22:58.779 INFOS [http-nio-8080-exec-1] org.apache.catalina.startup.HostConfig.undeploy Retrait de l'application web ayant pour chemin de contexte [/Assignment 1]
+28-Sep-2019 15:22:58.950 INFOS [http-nio-8080-exec-1] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml]
+28-Sep-2019 15:22:58.952 AVERTISSEMENT [http-nio-8080-exec-1] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/Assignment 1] dans le descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a été ignoré
+28-Sep-2019 15:22:59.608 INFOS [http-nio-8080-exec-1] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+28-Sep-2019 15:22:59.616 INFOS [http-nio-8080-exec-1] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a pris [665] ms

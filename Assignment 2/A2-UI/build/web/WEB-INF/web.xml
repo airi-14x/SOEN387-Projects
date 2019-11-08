@@ -20,6 +20,10 @@
         <servlet-name>DeleteBookController</servlet-name>
         <servlet-class>DeleteBookController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DisplayAllController</servlet-name>
+        <servlet-class>DisplayAllController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
         <url-pattern>/login</url-pattern>
@@ -35,6 +39,10 @@
     <servlet-mapping>
         <servlet-name>BookViewController</servlet-name>
         <url-pattern>/viewBook</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayAllController</servlet-name>
+        <url-pattern>/DisplayAllController</url-pattern>
     </servlet-mapping>
     <session-config>
         

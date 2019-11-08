@@ -6,11 +6,14 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import repository.core.BookRepository;
+import repository.core.Session;
 
 /**
  *
@@ -57,7 +60,19 @@ public class DeleteBookController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+
+        BookRepository bookRepo = BookRepository.getInstance();
+
+        // !!! Security Bug --> Enter nothing in bookID will deleteAll as well //
+        if (request.getParameter("deleteBookID").equals("")) {
+            bookRepo.deleteAllBooks(new Session());
+        } else {
+            String bookID = (String) request.getParameter("deleteBookID");
+            bookRepo.deleteBook(new Session(), Integer.parseInt(bookID));
+        }
+
+        RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
+        rd.forward(request, response);
     }
 
     /**

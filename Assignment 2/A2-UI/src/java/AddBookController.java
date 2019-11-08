@@ -63,7 +63,7 @@ public class AddBookController extends HttpServlet {
         String publisherName = request.getParameter("pName");
         String publisherAddress = request.getParameter("paddress");
 
-        BookRepository bookRepo = BookRepository.getInstance();
+        BookRepository bookRepo = BookRepository.getInstance(new Session());
         ArrayList<Book> books = bookRepo.listAllBooks(new Session());
 
         Author author = new Author(fName, lName);

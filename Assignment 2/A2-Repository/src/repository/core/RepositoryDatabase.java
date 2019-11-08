@@ -98,14 +98,22 @@ public class RepositoryDatabase {
     }
 
     public static void main(String[] args) throws SQLException {
-        RepositoryDatabase database = new RepositoryDatabase();
-        database.createStatement();
+        //RepositoryDatabase database = new RepositoryDatabase();
+        //database.createStatement();
         //database.executeUpdate("UPDATE book SET last_name = 'Hello2', first_name = 'Hello' WHERE (id = '2')");
         //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('src/java/repository/database/endofownership_photo_final.jpeg') WHERE (`id` = '2')");
         //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('endofownership_photo_final.jpeg') WHERE (`id` = '2');");
         //database.executeQuery("SELECT * FROM book");
 
-        BookRepository b1 = BookRepository.getInstance();
+        Session session = null;
+        try {
+            session = new Session();
+            session.login("Jasmine", "test123");
+        } catch (IOException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        BookRepository b1 = BookRepository.getInstance(session);
         System.out.println();
         System.out.println("DROP TABLE");
         System.out.println();
@@ -113,12 +121,6 @@ public class RepositoryDatabase {
         System.out.println("CREATE TABLE");
         System.out.println();
 
-        Session session = null;
-        try {
-            session = new Session();
-        } catch (IOException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
-        }
         b1.createBookTable(session);
         ArrayList<Book> books;
 
@@ -190,7 +192,7 @@ public class RepositoryDatabase {
 
         // /Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\ 2/A2/tmp/endofownership_photo_final.jpeg
         //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\\ 2/A2/tmp/endofownership_photo_final.jpeg') WHERE (`id` = '2')");
-        database.executeUpdate("INSERT INTO `book`(`title`,`image_mime`,`image_data`) VALUES('The End of Ownership', 'image/jpeg', LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\\ 2/A2/tmp/endofownership_photo_final.jpeg')) ");
+        //database.executeUpdate("INSERT INTO `book`(`title`,`image_mime`,`image_data`) VALUES('The End of Ownership', 'image/jpeg', LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\\ 2/A2/tmp/endofownership_photo_final.jpeg')) ");
         System.out.println();
         System.out.println("Book ArrayList: ");
         books = b1.listAllBooks(session);

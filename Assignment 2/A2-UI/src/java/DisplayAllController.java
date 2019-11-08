@@ -1,13 +1,13 @@
-
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +21,8 @@ import repository.core.Session;
  *
  * @author Airi
  */
-@WebServlet("/BookViewController")
-public class BookViewController extends HttpServlet {
+@WebServlet("/DisplayAllController")
+public class DisplayAllController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,14 +41,13 @@ public class BookViewController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet DisplayServlet</title>");
+            out.println("<title>Servlet DisplayAllController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet DisplayServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet DisplayAllController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
-        doPost(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -63,7 +62,11 @@ public class BookViewController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        doPost(request, response);
+        BookRepository bookRepo = BookRepository.getInstance(new Session());
+        ArrayList<Book> bookList = bookRepo.listAllBooks(new Session());
+        request.setAttribute("books", bookList);
+        RequestDispatcher rd = request.getRequestDispatcher("/displayAll.jsp");
+        rd.forward(request, response);
     }
 
     /**
@@ -77,11 +80,7 @@ public class BookViewController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        BookRepository bookRepo = BookRepository.getInstance(new Session());
-        ArrayList<Book> bookList = bookRepo.listAllBooks(new Session());
-
-        request.setAttribute("books", bookList);
-        getServletContext().getRequestDispatcher("/bookView.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**

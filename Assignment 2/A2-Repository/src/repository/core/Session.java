@@ -140,7 +140,7 @@ public class Session {
 
         //User 2
         JSONObject userInfo2 = new JSONObject();
-        userInfo2.put("userId", "Airy");
+        userInfo2.put("userId", "Airi");
         userInfo2.put("password", hashPassword("test123"));
 
         JSONObject user2 = new JSONObject();

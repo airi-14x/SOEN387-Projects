@@ -24,6 +24,10 @@
         <h1>Welcome to the Book Store <%=request.getAttribute("username")%> !</h1>
         <div>
             <!--<a href="bookView.jsp">View books here</a><br>-->
+            <form action="DisplayAllController" method="GET">
+                 View All Books <input type="submit" name="displayAll" value="Submit"/><br>
+            </form>
+            
             
             <a href="addBook.jsp">Add/Update a book</a><br>
 

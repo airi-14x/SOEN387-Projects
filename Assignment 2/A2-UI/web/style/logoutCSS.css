@@ -11,5 +11,18 @@ and open the template in the editor.
 body{
     background-color: black;
     color: green;
+    padding: 20px;
+    font-size: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+p{
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  font-size: 20px;
 }
 

@@ -5,6 +5,7 @@
  */
 package repository.core;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -96,7 +97,7 @@ public class RepositoryDatabase {
         }
     }
 
-    /*public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException {
         RepositoryDatabase database = new RepositoryDatabase();
         database.createStatement();
         //database.executeUpdate("UPDATE book SET last_name = 'Hello2', first_name = 'Hello' WHERE (id = '2')");
@@ -111,7 +112,14 @@ public class RepositoryDatabase {
         b1.dropBookTable();
         System.out.println("CREATE TABLE");
         System.out.println();
-        b1.createBookTable();
+
+        Session session = null;
+        try {
+            session = new Session();
+        } catch (IOException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        b1.createBookTable(session);
         ArrayList<Book> books;
 
         Author author = new Author("Aurelius", "Marcus");
@@ -119,8 +127,8 @@ public class RepositoryDatabase {
                 "Penguin Classic", "England");
 
         System.out.println("BEFORE adding Book 1:");
-        books = b1.listAllBooks();
-        System.out.println(b1.addNewBook(book1)); // GET ID
+        books = b1.listAllBooks(session);
+        System.out.println(b1.addNewBook(session, book1)); // GET ID
 
         Author author2 = new Author("Epictetus", "Unknown");
         Book book2 = new Book("Discourses, Fragments, Handbook", "About things that are within our power and those that are not.", "0199595186",
@@ -128,68 +136,68 @@ public class RepositoryDatabase {
 
         System.out.println();
         System.out.println("BEFORE adding Book 2:");
-        books = b1.listAllBooks();
-        System.out.println(b1.addNewBook(book2)); // GET ID
+        books = b1.listAllBooks(session);
+        System.out.println(b1.addNewBook(session, book2)); // GET ID
 
         Author author3 = new Author("Kishimi", "Ichiro");
         Book book3 = new Book("Courage to be Happy", "The Courage to be Happy is a profound insight into the way we should live our lives that has already sold more than one million copies in Japan.", "1911630210", author3, "Allen & Unwin", "London, England");
 
         System.out.println();
         System.out.println("BEFORE adding Book 3:");
-        books = b1.listAllBooks();
-        System.out.println(b1.addNewBook(book3)); // Get ID
+        books = b1.listAllBooks(session);
+        System.out.println(b1.addNewBook(session, book3)); // Get ID
 
         Author author4 = new Author("Laurent", "Deversa");
         System.out.println();
         System.out.println("BEFORE:");
-        books = b1.listAllBooks();
+        books = b1.listAllBooks(session);
         for (Book book : books) {
             System.out.println(book);
         }
-        b1.updateBookInfo(2, "Margin", "1232", author4); // UPDATE
+        b1.updateBookInfo(session, 2, "Margin", "1232", author4); // UPDATE
 
         System.out.println();
         System.out.println("AFTER:");
-        books = b1.listAllBooks();
+        books = b1.listAllBooks(session);
         for (Book book : books) {
             System.out.println(book);
         }
 
         System.out.println();
         System.out.println("Delete one book:");
-        b1.deleteBook(3);
+        b1.deleteBook(session, 3);
 
-        books = b1.listAllBooks();
+        books = b1.listAllBooks(session);
         for (Book book : books) {
             System.out.println(book);
         }
 
         //b1.deleteAllBooks();
-        System.out.println(b1.addNewBook(book3)); // Get ID
+        System.out.println(b1.addNewBook(session, book3)); // Get ID
 
         System.out.println();
         System.out.println("After - Add another book:");
-        books = b1.listAllBooks();
+        books = b1.listAllBooks(session);
         System.out.println(books);
 
         System.out.println();
         System.out.println("GetBookInfo with ID 4");
-        System.out.println(b1.getBookInfo(4));
+        System.out.println(b1.getBookInfo(session, 4));
 
         System.out.println();
         System.out.println("GetBookInfo with ISBN \"0140449337\"");
-        System.out.println(b1.getBookInfo("0140449337"));
+        System.out.println(b1.getBookInfo(session, "0140449337"));
 
         // /Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\ 2/A2/tmp/endofownership_photo_final.jpeg
         //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\\ 2/A2/tmp/endofownership_photo_final.jpeg') WHERE (`id` = '2')");
         database.executeUpdate("INSERT INTO `book`(`title`,`image_mime`,`image_data`) VALUES('The End of Ownership', 'image/jpeg', LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\\ 2/A2/tmp/endofownership_photo_final.jpeg')) ");
         System.out.println();
         System.out.println("Book ArrayList: ");
-        books = b1.listAllBooks();
+        books = b1.listAllBooks(session);
         for (Book book : books) {
             System.out.println(book);
         }
         //database.cleanup();
-    }*/
+    }
 
 }

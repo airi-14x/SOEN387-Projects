@@ -24,11 +24,12 @@
         <h1>Welcome to the Book Store <%=request.getAttribute("username")%> !</h1>
         <div>
             <!--<a href="bookView.jsp">View books here</a><br>-->
-            <a href="addBook.jsp">Add a book</a><br>
+            
+            <a href="addBook.jsp">Add/Update a book</a><br>
 
             <form action="DeleteBookController" method="DELETE">Provide bookID to delete: <input type="text" name="bookID">
                 <input type="submit" name="deleteBook" value="Submit"/><br>
-                Delete All <input type="submit" name="deleteAll" value="Submit"/>
+                Delete All: <input type="submit" name="deleteAll" value="Submit"/>
             </form>
         </div>
         <form action="LogoutController" method="POST">

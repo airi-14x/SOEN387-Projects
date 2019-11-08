@@ -6,7 +6,6 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -63,15 +62,15 @@ public class AddBookController extends HttpServlet {
         String publisherAddress = request.getParameter("paddress");
 
         BookRepository bookRepo = BookRepository.getInstance();
-        ArrayList<Book> books = bookRepo.listAllBooks(new Session());
+        //ArrayList<Book> books = bookRepo.listAllBooks(new Session());
 
         Author author = new Author(fName, lName);
         Book book = new Book(title, isbn, description, author, publisherName, publisherAddress);
         //Book book = new Book(title, isbn, description, author, publisherName, publisherAddress, new CoverImage());
 
         bookRepo.addNewBook(new Session(), book);
-        request.setAttribute("books", books);
-        RequestDispatcher rd = request.getRequestDispatcher("/displayAll.jsp");
+        //request.setAttribute("books", books);
+        RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
         rd.forward(request, response);
 
     }

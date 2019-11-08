@@ -29,16 +29,14 @@
             </form>
             
             <form action="BookViewController" method="GET">
-                View Book with ID:<input type="text" name="bookID">
-                <input type="submit" name="viewBook" value="Submit"/><br>
-                View Book with ISBN:<input type="text" name="ISBN">
+                View Book with ID:<input type="text" name="viewBookID"> or with ISBN: <input type="text" name="ISBN">
                 <input type="submit" name="viewBook" value="Submit"/><br>
             </form>
             
             <a href="addBook.jsp">Add/Update a book</a><br>
 
             <form action="DeleteBookController" method="GET">
-                Delete book with bookID:<input type="text" name="bookID" value = 0>
+                Delete book with bookID:<input type="text" name="deleteBookID" value = 0>
                 <input type="submit" name="deleteBook" value="Submit"/><br>
                 Delete all: 
                 <input type="submit" name="deleteAll" value="Submit"/>

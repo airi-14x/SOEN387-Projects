@@ -19,6 +19,7 @@
         }
     %>
     <body>
+        <h1> Display All Books in Repository Database: </h1><br>
         ${books}
     </body>
 </html>

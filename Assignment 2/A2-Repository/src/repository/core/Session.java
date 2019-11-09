@@ -25,12 +25,6 @@ public class Session {
 
     private static JSONObject currentUser = null;
     
-    public Session() throws IOException {
-        createJsonObject();
-        
-    }
-    
- 
 
     public String hashPassword(String password) {
         String hashedPassword = null;

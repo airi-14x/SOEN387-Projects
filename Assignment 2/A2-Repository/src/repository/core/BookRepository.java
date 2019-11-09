@@ -35,8 +35,13 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public ArrayList<Book> listAllBooks(Session session) {
-      
+    public ArrayList<Book> listAllBooks(Session session) throws RepositoryException {
+
+        String user = (String) Session.getCurrentUser();
+        if (null == user) {
+            throw new RepositoryException("You must be logged in to do this operation.");
+        }
+   
         try {
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book");
 
@@ -122,8 +127,19 @@ public class BookRepository implements IBookRepository {
         return result;
     }
 
+    /**
+     *
+     * @param session
+     * @param book
+     * @return
+     * @throws RepositoryException
+     */
     @Override
-    public int addNewBook(Session session, Book book) {
+    public int addNewBook(Session session, Book book) throws RepositoryException {
+        String user = (String) Session.getCurrentUser();
+        if (null == user) {
+            throw new RepositoryException("You must be logged in to do this operation.");
+        }
 
         connection.executeUpdate("INSERT INTO book(title, description,isbn, first_name, last_name, publisher_company, address) VALUES(\"" + book.getTitle() + "\",\""
                 + book.getDescription() + "\",\"" + book.getISBN() + "\", \"" + book.getAuthor().getFirstName() + "\", \""
@@ -139,7 +155,12 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public void updateBookInfo(Session session, int id, String title, String description, Author author) {
+    public void updateBookInfo(Session session, int id, String title, String description, Author author) throws RepositoryException {
+        String user = (String) Session.getCurrentUser();
+        if (null == user) {
+            throw new RepositoryException("You must be logged in to do this operation.");
+        }
+        
         String statement = "UPDATE book SET title = '" + title + "', description = '"
                 + description + "', last_name = '" + author.getLastName() + "', first_name = '"
                 + author.getFirstName() + "' WHERE id = '" + id + "';";
@@ -153,12 +174,23 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public void setBookCoverImage(Session session) {
+    public void setBookCoverImage(Session session) throws RepositoryException {
+        String user = (String) Session.getCurrentUser();
+        if (null == user) {
+            throw new RepositoryException("You must be logged in to do this operation.");
+        }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deleteBook(Session session, int id) {
+    public void deleteBook(Session session, int id) throws RepositoryException {
+        
+        String user = (String) Session.getCurrentUser();
+        if (null == user) {
+            throw new RepositoryException("You must be logged in to do this operation.");
+        }
+        
+        
         try {
             connection.executeUpdate("DELETE FROM book WHERE id=" + id);
         } catch (Exception e) {

@@ -8,18 +8,18 @@ import java.util.ArrayList;
  */
 public interface IBookRepository {
 
-    ArrayList<Book> listAllBooks(Session session);
+    ArrayList<Book> listAllBooks(Session session) throws RepositoryException;
 
     Book getBookInfo(Session session, int id);
 
     Book getBookInfo(Session session, String isbn);
 
-    int addNewBook(Session session, Book book);
+    int addNewBook(Session session, Book book) throws RepositoryException;
 
-    void updateBookInfo(Session session, int id, String title, String description, Author author);
+    void updateBookInfo(Session session, int id, String title, String description, Author author) throws RepositoryException;
 
-    void setBookCoverImage(Session session); // Reset and Set function. Need to pick out image type!
+    void setBookCoverImage(Session session) throws RepositoryException; // Reset and Set function. Need to pick out image type!
 
-    void deleteBook(Session session, int id);
+    void deleteBook(Session session, int id) throws RepositoryException;
 
 }

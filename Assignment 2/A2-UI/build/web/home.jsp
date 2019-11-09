@@ -36,10 +36,10 @@
             <a href="addBook.jsp">Add/Update a book</a><br>
 
             <form action="DeleteBookController" method="GET">
-                Delete book with bookID:<input type="text" name="deleteBookID" value = 0>
-                <input type="submit" name="deleteBook" value="Submit"/><br>
+                Delete book with bookID:<input type="text" name="deleteBookID">
+                <input type="submit" name="delete" value="deleteBook"/><br>
                 Delete all: 
-                <input type="submit" name="deleteAll" value="Submit"/>
+                <input type="submit" name="delete" value="deleteAll"/>
             </form>
         </div>
         <form action="LogoutController" method="POST">

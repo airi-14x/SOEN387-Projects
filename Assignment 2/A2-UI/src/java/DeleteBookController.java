@@ -63,10 +63,11 @@ public class DeleteBookController extends HttpServlet {
 
         BookRepository bookRepo = BookRepository.getInstance();
 
-        // !!! Security Bug --> Enter nothing in bookID will deleteAll as well //
-        if (request.getParameter("deleteBookID").equals("")) {
+        if (request.getParameter("deleteBookID") == null) {
+
+        } else if (request.getParameter("deleteBookID").equals("") && request.getParameter("delete").equals("deleteAll")) {
             bookRepo.deleteAllBooks(new Session());
-        } else {
+        } else if (request.getParameter("delete").equals("deleteBook") && !(request.getParameter("deleteBookID").equals(""))) {
             String bookID = (String) request.getParameter("deleteBookID");
             bookRepo.deleteBook(new Session(), Integer.parseInt(bookID));
         }

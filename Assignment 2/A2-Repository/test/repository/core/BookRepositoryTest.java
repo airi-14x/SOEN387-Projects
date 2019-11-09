@@ -21,7 +21,8 @@ import static org.junit.Assert.*;
  */
 public class BookRepositoryTest {
     BookRepository bookRepository = null;
-    Book book; 
+    Book book1;
+    Book book2; 
     Author author; 
     Session session;
     JSONObject user;
@@ -35,8 +36,8 @@ public class BookRepositoryTest {
         
         author = new Author("First", "Last");
         
-        book = new Book("Title", "Description", "ISBN", author, "Publisher Company", "Publisher Address");
-        book.setId(1);
+        book1 = new Book("Title1", "Description1", "ISBN1", author, "Publisher Company1", "Publisher Address1");
+        book2 = new Book("Title2", "Description2", "ISBN2", author, "Publisher Company2", "Publisher Address2");
         
         session = new Session();
         user = new JSONObject();
@@ -44,19 +45,43 @@ public class BookRepositoryTest {
         user.put("password", "test123");
         session.setCurrentUser(user);
         
+        bookRepository.addNewBook(session, book1);
+        bookRepository.addNewBook(session, book2);
         
     }
     
     @After
-    public void tearDown() {
+    public void tearDown() throws RepositoryException {
+        bookRepository.resetBooks(session);
+        bookRepository.deleteAllBooks(session);
+        bookRepository = null;
+        author = null;
+        book1 = null;
+        book2 = null;
+        session = null;
+        user = null;  
     }
     
-    @Test
+    //@Test
     public void listAllBooksTest() throws RepositoryException{
-        bookRepository.addNewBook(session, book);
         ArrayList<Book> books = bookRepository.listAllBooks(session);
 
         assertNotNull(books); 
+    }
+    
+    @Test
+    public void getBookInfoTest() {
+        Book resultBook = bookRepository.getBookInfo(session, book1.getId());
+        
+        assertNotNull(resultBook);
+       
+        assertEquals(resultBook.getDescription(), book1.getDescription());
+        assertEquals(resultBook.getTitle(), book1.getTitle());
+        assertEquals(resultBook.getISBN(), book1.getISBN());
+        assertEquals(resultBook.getAuthor().toString(), book1.getAuthor().toString());
+        assertEquals(resultBook.getPublisherCompany(), book1.getPublisherCompany());
+        assertEquals(resultBook.getPublisherAddress(), book1.getPublisherAddress());
+        
     }
 
     

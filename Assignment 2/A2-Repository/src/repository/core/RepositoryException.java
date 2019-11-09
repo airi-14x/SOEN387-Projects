@@ -10,5 +10,9 @@ package repository.core;
  * @author Jasmine Latendresse and Airi Chow
  */
 public class RepositoryException extends Exception {
-
+    
+    RepositoryException(String msg) {
+        super(msg);
+    }
+    
 }

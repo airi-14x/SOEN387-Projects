@@ -1,0 +1,536 @@
+31-Oct-2019 16:46:38.890 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:        Apache Tomcat/9.0.26
+31-Oct-2019 16:46:38.900 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé:       Sep 16 2019 15:51:39 UTC
+31-Oct-2019 16:46:38.905 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:      9.0.26.0
+31-Oct-2019 16:46:38.919 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS:           Mac OS X
+31-Oct-2019 16:46:38.922 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de l'OS:        10.15
+31-Oct-2019 16:46:38.923 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+31-Oct-2019 16:46:38.924 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Répertoire de Java:     /Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/jre
+31-Oct-2019 16:46:38.928 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de la JVM:           1.8.0_141-b15
+31-Oct-2019 16:46:38.929 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM:            Oracle Corporation
+31-Oct-2019 16:46:38.931 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+31-Oct-2019 16:46:38.931 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+31-Oct-2019 16:46:38.934 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.config.file=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/logging.properties
+31-Oct-2019 16:46:38.935 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+31-Oct-2019 16:46:38.936 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Airis-MBP
+31-Oct-2019 16:46:38.938 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djdk.tls.ephemeralDHKeySize=2048
+31-Oct-2019 16:46:38.938 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+31-Oct-2019 16:46:38.938 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+31-Oct-2019 16:46:38.939 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dignore.endorsed.dirs=
+31-Oct-2019 16:46:38.941 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.base=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+31-Oct-2019 16:46:38.945 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.home=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+31-Oct-2019 16:46:38.951 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.io.tmpdir=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/temp
+31-Oct-2019 16:46:38.955 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path: [/Users/Airi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+31-Oct-2019 16:46:40.455 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+31-Oct-2019 16:46:40.654 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["ajp-nio-8009"]
+31-Oct-2019 16:46:40.667 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [2 592] millisecondes
+31-Oct-2019 16:46:40.998 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+31-Oct-2019 16:46:40.999 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets: [Apache Tomcat/9.0.26]
+31-Oct-2019 16:46:41.019 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A1-Airi.xml]
+31-Oct-2019 16:46:41.136 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/A1-Airi] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A1-Airi.xml] a été ignoré
+31-Oct-2019 16:46:42.371 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:46:42.521 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A1-Airi.xml] a pris [1 502] ms
+31-Oct-2019 16:46:42.521 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml]
+31-Oct-2019 16:46:42.523 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/Assignment 1] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a été ignoré
+31-Oct-2019 16:46:42.553 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Erreur lors du déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml]
+	java.lang.IllegalStateException: Erreur lors du démarrage du conteneur fils
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1831)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:633)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+	Caused by: org.apache.catalina.LifecycleException: Echec de démarrage du composant [org.apache.catalina.webresources.StandardRoot@2a65fe7c]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4800)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4935)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: L'ensemble de ressources principal [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/build/web] est invalide
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:752)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:709)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+31-Oct-2019 16:46:42.565 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a pris [42] ms
+31-Oct-2019 16:46:42.566 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+31-Oct-2019 16:46:42.593 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/WebApplicationDemo] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a été ignoré
+31-Oct-2019 16:46:42.613 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Erreur lors du déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+	java.lang.IllegalStateException: Erreur lors du démarrage du conteneur fils
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1831)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:633)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+	Caused by: org.apache.catalina.LifecycleException: Echec de démarrage du composant [org.apache.catalina.webresources.StandardRoot@6302bbb1]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4800)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4935)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: L'ensemble de ressources principal [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/WebApplicationDemo/build/web] est invalide
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:752)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:709)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+31-Oct-2019 16:46:42.633 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a pris [54] ms
+31-Oct-2019 16:46:42.661 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A2-Airi.xml]
+31-Oct-2019 16:46:42.684 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/A2-Airi] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A2-Airi.xml] a été ignoré
+31-Oct-2019 16:46:42.701 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Erreur lors du déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A2-Airi.xml]
+	java.lang.IllegalStateException: Erreur lors du démarrage du conteneur fils
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1831)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:633)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+	Caused by: org.apache.catalina.LifecycleException: Echec de démarrage du composant [org.apache.catalina.webresources.StandardRoot@34a3d150]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4800)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4935)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: L'ensemble de ressources principal [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 2/A2-Airi/build/web] est invalide
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:752)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:709)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+31-Oct-2019 16:46:42.710 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A2-Airi.xml] a pris [69] ms
+31-Oct-2019 16:46:42.712 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs]
+31-Oct-2019 16:46:43.105 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:46:43.108 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs] de l'application web s'est terminé en [397] ms
+31-Oct-2019 16:46:43.109 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager]
+31-Oct-2019 16:46:43.589 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:46:43.613 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager] de l'application web s'est terminé en [505] ms
+31-Oct-2019 16:46:43.613 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples]
+31-Oct-2019 16:46:44.895 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:46:45.000 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples] de l'application web s'est terminé en [1 385] ms
+31-Oct-2019 16:46:45.001 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT]
+31-Oct-2019 16:46:45.439 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:46:45.449 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT] de l'application web s'est terminé en [448] ms
+31-Oct-2019 16:46:45.450 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager]
+31-Oct-2019 16:46:45.717 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:46:45.721 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager] de l'application web s'est terminé en [271] ms
+31-Oct-2019 16:46:45.743 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+31-Oct-2019 16:46:45.864 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["ajp-nio-8009"]
+31-Oct-2019 16:46:45.870 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [5 202] millisecondes
+31-Oct-2019 16:46:48.181 INFOS [http-nio-8080-exec-7] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/MVC-Examples.xml]
+31-Oct-2019 16:46:48.183 AVERTISSEMENT [http-nio-8080-exec-7] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/MVC-Examples] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/MVC-Examples.xml] a été ignoré
+31-Oct-2019 16:46:48.435 INFOS [http-nio-8080-exec-7] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:46:48.442 INFOS [http-nio-8080-exec-7] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/MVC-Examples.xml] a pris [260] ms
+31-Oct-2019 16:46:48.458 INFOS [http-nio-8080-exec-10] org.apache.catalina.util.LifecycleBase.start La méthode start() a été appelée sur le composant [StandardEngine[Catalina].StandardHost[localhost].StandardContext[/MVC-Examples]] après que start() ait déjà été appelé, le deuxième appel sera ignoré
+31-Oct-2019 16:47:04.705 AVERTISSEMENT [http-nio-8080-exec-6] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:47:04.748 AVERTISSEMENT [http-nio-8080-exec-9] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:47:04.831 AVERTISSEMENT [http-nio-8080-exec-10] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:47:05.040 INFOS [http-nio-8080-exec-1] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:47:05.747 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Rechargement du contexte [/MVC-Examples]
+31-Oct-2019 16:47:05.747 INFOS [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/MVC-Examples] a démarré
+31-Oct-2019 16:47:05.823 INFOS [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:47:05.826 INFOS [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+31-Oct-2019 16:47:24.377 AVERTISSEMENT [http-nio-8080-exec-13] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:50:07.138 AVERTISSEMENT [http-nio-8080-exec-15] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:50:07.183 AVERTISSEMENT [http-nio-8080-exec-16] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:50:07.188 INFOS [http-nio-8080-exec-1] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/MVC-Examples] a démarré
+31-Oct-2019 16:50:07.334 INFOS [http-nio-8080-exec-1] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:50:07.349 INFOS [http-nio-8080-exec-1] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+31-Oct-2019 16:51:29.161 AVERTISSEMENT [http-nio-8080-exec-3] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:51:29.176 AVERTISSEMENT [http-nio-8080-exec-1] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:51:29.181 INFOS [http-nio-8080-exec-12] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/MVC-Examples] a démarré
+31-Oct-2019 16:51:29.428 INFOS [http-nio-8080-exec-12] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:51:29.518 INFOS [http-nio-8080-exec-12] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+31-Oct-2019 16:51:37.632 AVERTISSEMENT [http-nio-8080-exec-17] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:51:37.647 AVERTISSEMENT [http-nio-8080-exec-8] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:51:37.651 INFOS [http-nio-8080-exec-3] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/MVC-Examples] a démarré
+31-Oct-2019 16:51:37.746 INFOS [http-nio-8080-exec-3] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:51:37.753 INFOS [http-nio-8080-exec-3] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+31-Oct-2019 16:51:50.992 AVERTISSEMENT [http-nio-8080-exec-13] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:51:51.015 AVERTISSEMENT [http-nio-8080-exec-3] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:51:51.023 INFOS [http-nio-8080-exec-14] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/MVC-Examples] a démarré
+31-Oct-2019 16:51:51.138 INFOS [http-nio-8080-exec-14] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:51:51.226 INFOS [http-nio-8080-exec-14] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+31-Oct-2019 16:54:23.101 AVERTISSEMENT [http-nio-8080-exec-20] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:54:23.127 AVERTISSEMENT [http-nio-8080-exec-13] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:54:23.142 INFOS [http-nio-8080-exec-18] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/MVC-Examples] a démarré
+31-Oct-2019 16:54:23.318 INFOS [http-nio-8080-exec-18] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:54:23.322 INFOS [http-nio-8080-exec-18] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+31-Oct-2019 16:54:51.311 AVERTISSEMENT [http-nio-8080-exec-24] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:54:51.334 AVERTISSEMENT [http-nio-8080-exec-8] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:54:51.338 INFOS [http-nio-8080-exec-22] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/MVC-Examples] a démarré
+31-Oct-2019 16:54:51.417 INFOS [http-nio-8080-exec-22] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 16:54:51.419 INFOS [http-nio-8080-exec-22] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+31-Oct-2019 16:55:13.810 AVERTISSEMENT [http-nio-8080-exec-20] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 16:59:48.459 AVERTISSEMENT [http-nio-8080-exec-28] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:00:39.340 AVERTISSEMENT [http-nio-8080-exec-26] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:02:43.750 AVERTISSEMENT [http-nio-8080-exec-25] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:02:43.768 AVERTISSEMENT [http-nio-8080-exec-30] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:02:43.770 INFOS [http-nio-8080-exec-29] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/MVC-Examples] a démarré
+31-Oct-2019 17:02:43.899 INFOS [http-nio-8080-exec-29] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 17:02:43.902 INFOS [http-nio-8080-exec-29] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+31-Oct-2019 17:02:50.698 AVERTISSEMENT [http-nio-8080-exec-34] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:02:51.339 AVERTISSEMENT [http-nio-8080-exec-25] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:02:53.782 AVERTISSEMENT [http-nio-8080-exec-28] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:04:09.527 AVERTISSEMENT [http-nio-8080-exec-37] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:04:09.543 AVERTISSEMENT [http-nio-8080-exec-25] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:04:09.563 AVERTISSEMENT [http-nio-8080-exec-31] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:04:09.809 INFOS [http-nio-8080-exec-35] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 17:04:11.673 AVERTISSEMENT [http-nio-8080-exec-36] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:04:11.712 AVERTISSEMENT [http-nio-8080-exec-28] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:04:11.727 INFOS [http-nio-8080-exec-31] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/MVC-Examples] a démarré
+31-Oct-2019 17:04:11.908 INFOS [http-nio-8080-exec-31] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 17:04:11.911 INFOS [http-nio-8080-exec-31] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+31-Oct-2019 17:04:16.541 INFOS [Catalina-utility-1] org.apache.catalina.startup.HostConfig.reload Rechargement du contexte [/MVC-Examples]
+31-Oct-2019 17:04:16.541 INFOS [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Le rechargement du contexte [/MVC-Examples] a démarré
+31-Oct-2019 17:04:16.596 INFOS [Catalina-utility-1] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 17:04:16.598 INFOS [Catalina-utility-1] org.apache.catalina.core.StandardContext.reload Le rechargement de ce contexte est terminé
+31-Oct-2019 17:05:22.171 AVERTISSEMENT [http-nio-8080-exec-35] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:08:35.262 AVERTISSEMENT [http-nio-8080-exec-43] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:09:02.695 AVERTISSEMENT [http-nio-8080-exec-43] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:11:21.246 AVERTISSEMENT [http-nio-8080-exec-46] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:11:38.181 AVERTISSEMENT [http-nio-8080-exec-47] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:11:46.187 INFOS [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt valide a été reçue sur le port d'arrêt, arrêt de l'instance du serveur
+31-Oct-2019 17:11:46.188 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+31-Oct-2019 17:11:46.192 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+31-Oct-2019 17:11:46.198 INFOS [main] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+31-Oct-2019 17:11:46.218 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+31-Oct-2019 17:11:46.220 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+31-Oct-2019 17:11:46.222 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+31-Oct-2019 17:11:46.223 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]
+31-Oct-2019 17:12:46.031 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:        Apache Tomcat/9.0.26
+31-Oct-2019 17:12:46.034 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Serveur compilé:       Sep 16 2019 15:51:39 UTC
+31-Oct-2019 17:12:46.035 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version du serveur:      9.0.26.0
+31-Oct-2019 17:12:46.035 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Nom de l'OS:           Mac OS X
+31-Oct-2019 17:12:46.035 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de l'OS:        10.15
+31-Oct-2019 17:12:46.035 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          x86_64
+31-Oct-2019 17:12:46.035 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Répertoire de Java:     /Library/Java/JavaVirtualMachines/jdk1.8.0_141.jdk/Contents/Home/jre
+31-Oct-2019 17:12:46.035 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Version de la JVM:           1.8.0_141-b15
+31-Oct-2019 17:12:46.035 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Fournisseur de la JVM:            Oracle Corporation
+31-Oct-2019 17:12:46.036 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+31-Oct-2019 17:12:46.036 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+31-Oct-2019 17:12:46.045 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.config.file=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/logging.properties
+31-Oct-2019 17:12:46.045 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+31-Oct-2019 17:12:46.046 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dhttp.nonProxyHosts=localhost|127.0.0.1|Airis-MBP
+31-Oct-2019 17:12:46.046 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djdk.tls.ephemeralDHKeySize=2048
+31-Oct-2019 17:12:46.046 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+31-Oct-2019 17:12:46.046 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+31-Oct-2019 17:12:46.046 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dignore.endorsed.dirs=
+31-Oct-2019 17:12:46.046 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.base=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+31-Oct-2019 17:12:46.046 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Dcatalina.home=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26
+31-Oct-2019 17:12:46.046 INFOS [main] org.apache.catalina.startup.VersionLoggerListener.log Argument de la ligne de commande: -Djava.io.tmpdir=/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/temp
+31-Oct-2019 17:12:46.047 INFOS [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent La librairie Apache Tomcat Native basée sur APR qui permet des performances optimales dans les environnements de production n'a pas été trouvée sur le java.library.path: [/Users/Airi/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.]
+31-Oct-2019 17:12:46.669 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["http-nio-8080"]
+31-Oct-2019 17:12:46.755 INFOS [main] org.apache.coyote.AbstractProtocol.init Initialisation du gestionnaire de protocole ["ajp-nio-8009"]
+31-Oct-2019 17:12:46.760 INFOS [main] org.apache.catalina.startup.Catalina.load L'initialisation du serveur a pris [1 097] millisecondes
+31-Oct-2019 17:12:46.829 INFOS [main] org.apache.catalina.core.StandardService.startInternal Démarrage du service [Catalina]
+31-Oct-2019 17:12:46.830 INFOS [main] org.apache.catalina.core.StandardEngine.startInternal Démarrage du moteur de Servlets: [Apache Tomcat/9.0.26]
+31-Oct-2019 17:12:46.851 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A1-Airi.xml]
+31-Oct-2019 17:12:46.898 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/A1-Airi] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A1-Airi.xml] a été ignoré
+31-Oct-2019 17:12:47.709 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 17:12:47.806 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A1-Airi.xml] a pris [955] ms
+31-Oct-2019 17:12:47.807 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/MVC-Examples.xml]
+31-Oct-2019 17:12:47.810 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/MVC-Examples] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/MVC-Examples.xml] a été ignoré
+31-Oct-2019 17:12:47.982 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 17:12:47.986 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/MVC-Examples.xml] a pris [178] ms
+31-Oct-2019 17:12:47.986 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml]
+31-Oct-2019 17:12:47.989 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/Assignment 1] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a été ignoré
+31-Oct-2019 17:12:47.995 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Erreur lors du déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml]
+	java.lang.IllegalStateException: Erreur lors du démarrage du conteneur fils
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1831)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:633)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+	Caused by: org.apache.catalina.LifecycleException: Echec de démarrage du composant [org.apache.catalina.webresources.StandardRoot@13b13b5d]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4800)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4935)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: L'ensemble de ressources principal [/Users/jasminelatendresse/SOEN387-Projects-and-Labs/Assignment 1/build/web] est invalide
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:752)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:709)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+31-Oct-2019 17:12:47.997 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/Assignment 1.xml] a pris [11] ms
+31-Oct-2019 17:12:47.998 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+31-Oct-2019 17:12:47.999 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/WebApplicationDemo] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a été ignoré
+31-Oct-2019 17:12:48.003 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Erreur lors du déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml]
+	java.lang.IllegalStateException: Erreur lors du démarrage du conteneur fils
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1831)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:633)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+	Caused by: org.apache.catalina.LifecycleException: Echec de démarrage du composant [org.apache.catalina.webresources.StandardRoot@29647f75]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4800)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4935)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: L'ensemble de ressources principal [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Labs/WebApplicationDemo/build/web] est invalide
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:752)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:709)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+31-Oct-2019 17:12:48.005 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/WebApplicationDemo.xml] a pris [7] ms
+31-Oct-2019 17:12:48.005 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A2-Airi.xml]
+31-Oct-2019 17:12:48.006 AVERTISSEMENT [main] org.apache.catalina.startup.HostConfig.deployDescriptor L'attribut path avec la valeur [/A2-Airi] dans le descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A2-Airi.xml] a été ignoré
+31-Oct-2019 17:12:48.011 GRAVE [main] org.apache.catalina.startup.HostConfig.deployDescriptor Erreur lors du déploiement du descripteur de configuration [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A2-Airi.xml]
+	java.lang.IllegalStateException: Erreur lors du démarrage du conteneur fils
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:720)
+		at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690)
+		at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705)
+		at org.apache.catalina.startup.HostConfig.deployDescriptor(HostConfig.java:631)
+		at org.apache.catalina.startup.HostConfig$DeployDescriptor.run(HostConfig.java:1831)
+		at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:112)
+		at org.apache.catalina.startup.HostConfig.deployDescriptors(HostConfig.java:526)
+		at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:425)
+		at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576)
+		at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309)
+		at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123)
+		at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423)
+		at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936)
+		at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+		at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+		at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+		at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+		at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+		at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+		at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.startup.Catalina.start(Catalina.java:633)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+		at java.lang.reflect.Method.invoke(Method.java:498)
+		at org.apache.catalina.startup.Bootstrap.start(Bootstrap.java:344)
+		at org.apache.catalina.startup.Bootstrap.main(Bootstrap.java:475)
+	Caused by: org.apache.catalina.LifecycleException: Echec de démarrage du composant [org.apache.catalina.webresources.StandardRoot@482bce4f]
+		at org.apache.catalina.util.LifecycleBase.handleSubClassException(LifecycleBase.java:440)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:198)
+		at org.apache.catalina.core.StandardContext.resourcesStart(StandardContext.java:4800)
+		at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:4935)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717)
+		... 37 more
+	Caused by: java.lang.IllegalArgumentException: L'ensemble de ressources principal [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 2/A2-Airi/build/web] est invalide
+		at org.apache.catalina.webresources.StandardRoot.createMainResourceSet(StandardRoot.java:752)
+		at org.apache.catalina.webresources.StandardRoot.startInternal(StandardRoot.java:709)
+		at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+		... 41 more
+31-Oct-2019 17:12:48.013 INFOS [main] org.apache.catalina.startup.HostConfig.deployDescriptor Le traitement du descripteur de déploiement [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/conf/Catalina/localhost/A2-Airi.xml] a pris [8] ms
+31-Oct-2019 17:12:48.014 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs]
+31-Oct-2019 17:12:48.130 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 17:12:48.133 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/docs] de l'application web s'est terminé en [119] ms
+31-Oct-2019 17:12:48.134 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager]
+31-Oct-2019 17:12:48.306 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 17:12:48.314 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/manager] de l'application web s'est terminé en [180] ms
+31-Oct-2019 17:12:48.315 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples]
+31-Oct-2019 17:12:49.116 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 17:12:49.174 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/examples] de l'application web s'est terminé en [859] ms
+31-Oct-2019 17:12:49.175 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT]
+31-Oct-2019 17:12:49.355 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 17:12:49.362 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/ROOT] de l'application web s'est terminé en [188] ms
+31-Oct-2019 17:12:49.363 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Déploiement du répertoire d'application web [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager]
+31-Oct-2019 17:12:49.512 INFOS [main] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 17:12:49.520 INFOS [main] org.apache.catalina.startup.HostConfig.deployDirectory Le déploiement du répertoire [/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment 1/apache-tomcat-9.0.26/webapps/host-manager] de l'application web s'est terminé en [157] ms
+31-Oct-2019 17:12:49.526 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["http-nio-8080"]
+31-Oct-2019 17:12:49.544 INFOS [main] org.apache.coyote.AbstractProtocol.start Démarrage du gestionnaire de protocole ["ajp-nio-8009"]
+31-Oct-2019 17:12:49.547 INFOS [main] org.apache.catalina.startup.Catalina.start Le démarrage du serveur a pris [2 786] millisecondes
+31-Oct-2019 17:12:53.324 INFOS [http-nio-8080-exec-1] org.apache.jasper.servlet.TldScanner.scanJars Au moins un fichier JAR a été analysé pour trouver des TLDs mais il n'en contenait pas, le mode "debug" du journal peut être activé pour obtenir une liste complète de JAR scannés sans succès; éviter d'analyser des JARs inutilement peut améliorer sensiblement le temps de démarrage et le temps de compilation des JSPs
+31-Oct-2019 17:14:11.010 AVERTISSEMENT [http-nio-8080-exec-12] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:14:24.191 AVERTISSEMENT [http-nio-8080-exec-18] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:14:24.213 AVERTISSEMENT [http-nio-8080-exec-17] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:15:12.692 AVERTISSEMENT [http-nio-8080-exec-19] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:15:37.872 AVERTISSEMENT [http-nio-8080-exec-19] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:15:44.892 AVERTISSEMENT [http-nio-8080-exec-18] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:15:48.489 AVERTISSEMENT [http-nio-8080-exec-16] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:15:48.502 AVERTISSEMENT [http-nio-8080-exec-17] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+31-Oct-2019 17:50:18.898 INFOS [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt valide a été reçue sur le port d'arrêt, arrêt de l'instance du serveur
+31-Oct-2019 17:50:18.899 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+31-Oct-2019 17:50:18.912 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+31-Oct-2019 17:50:18.919 INFOS [main] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+31-Oct-2019 17:50:18.961 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+31-Oct-2019 17:50:18.964 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+31-Oct-2019 17:50:18.965 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+31-Oct-2019 17:50:18.966 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]

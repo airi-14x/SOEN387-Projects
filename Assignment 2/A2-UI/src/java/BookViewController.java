@@ -7,7 +7,7 @@
  */
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -63,7 +63,32 @@ public class BookViewController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        doPost(request, response);
+        BookRepository bookRepo = BookRepository.getInstance();
+        Book resultBook = null;
+        //resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("viewBookID")));
+
+        if (request.getParameter("viewBookID").equals("") == false) {
+            resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("viewBookID")));
+            if (resultBook.getTitle() == null) {
+                request.setAttribute("book", "Sorry there's no book with that ID.");
+            } else {
+                request.setAttribute("book", resultBook);
+            }
+
+        } else if (request.getParameter("ISBN").equals("") == false) {
+            resultBook = bookRepo.getBookInfo(new Session(), request.getParameter("ISBN"));
+            if (resultBook.getTitle() == null) {
+                request.setAttribute("book", "Sorry there's no book with that ISBN.");
+            } else {
+                request.setAttribute("book", resultBook);
+            }
+        } else {
+            request.setAttribute("book", "Please enter ID or ISBN!");
+        }
+
+        RequestDispatcher rd = request.getRequestDispatcher("/bookView.jsp");
+        rd.forward(request, response);
+        //getServletContext().getRequestDispatcher("/bookView.jsp").forward(request, response);
     }
 
     /**
@@ -77,11 +102,7 @@ public class BookViewController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        BookRepository bookRepo = BookRepository.getInstance();
-        ArrayList<Book> bookList = bookRepo.listAllBooks(new Session());
-
-        request.setAttribute("books", bookList);
-        getServletContext().getRequestDispatcher("/bookView.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**

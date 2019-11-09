@@ -33,8 +33,11 @@ public class RepositoryDatabase {
 
         // 1. Get a connection to database
         try {
+            Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/BookRepo?serverTimezone=UTC", user, pass);
         } catch (SQLException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -98,12 +101,20 @@ public class RepositoryDatabase {
     }
 
     public static void main(String[] args) throws SQLException {
-        RepositoryDatabase database = new RepositoryDatabase();
-        database.createStatement();
+        //RepositoryDatabase database = new RepositoryDatabase();
+        //database.createStatement();
         //database.executeUpdate("UPDATE book SET last_name = 'Hello2', first_name = 'Hello' WHERE (id = '2')");
         //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('src/java/repository/database/endofownership_photo_final.jpeg') WHERE (`id` = '2')");
         //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('endofownership_photo_final.jpeg') WHERE (`id` = '2');");
         //database.executeQuery("SELECT * FROM book");
+
+        Session session = null;
+        try {
+            session = new Session();
+            session.login("Jasmine", "test123");
+        } catch (IOException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         BookRepository b1 = BookRepository.getInstance();
         System.out.println();
@@ -113,12 +124,6 @@ public class RepositoryDatabase {
         System.out.println("CREATE TABLE");
         System.out.println();
 
-        Session session = null;
-        try {
-            session = new Session();
-        } catch (IOException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
-        }
         b1.createBookTable(session);
         ArrayList<Book> books;
 
@@ -128,7 +133,11 @@ public class RepositoryDatabase {
 
         System.out.println("BEFORE adding Book 1:");
         books = b1.listAllBooks(session);
-        System.out.println(b1.addNewBook(session, book1)); // GET ID
+        try {
+            System.out.println(b1.addNewBook(session, book1)); // GET ID
+        } catch (RepositoryException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         Author author2 = new Author("Epictetus", "Unknown");
         Book book2 = new Book("Discourses, Fragments, Handbook", "About things that are within our power and those that are not.", "0199595186",
@@ -137,7 +146,11 @@ public class RepositoryDatabase {
         System.out.println();
         System.out.println("BEFORE adding Book 2:");
         books = b1.listAllBooks(session);
-        System.out.println(b1.addNewBook(session, book2)); // GET ID
+        try {
+            System.out.println(b1.addNewBook(session, book2)); // GET ID
+        } catch (RepositoryException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         Author author3 = new Author("Kishimi", "Ichiro");
         Book book3 = new Book("Courage to be Happy", "The Courage to be Happy is a profound insight into the way we should live our lives that has already sold more than one million copies in Japan.", "1911630210", author3, "Allen & Unwin", "London, England");
@@ -145,7 +158,11 @@ public class RepositoryDatabase {
         System.out.println();
         System.out.println("BEFORE adding Book 3:");
         books = b1.listAllBooks(session);
-        System.out.println(b1.addNewBook(session, book3)); // Get ID
+        try {
+            System.out.println(b1.addNewBook(session, book3)); // Get ID
+        } catch (RepositoryException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         Author author4 = new Author("Laurent", "Deversa");
         System.out.println();
@@ -154,7 +171,11 @@ public class RepositoryDatabase {
         for (Book book : books) {
             System.out.println(book);
         }
-        b1.updateBookInfo(session, 2, "Margin", "1232", author4); // UPDATE
+        try {
+            b1.updateBookInfo(session, 2, "Margin", "1232", author4); // UPDATE
+        } catch (RepositoryException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         System.out.println();
         System.out.println("AFTER:");
@@ -165,15 +186,23 @@ public class RepositoryDatabase {
 
         System.out.println();
         System.out.println("Delete one book:");
-        b1.deleteBook(session, 3);
+        try {
+            b1.deleteBook(session, 3);
+        } catch (RepositoryException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         books = b1.listAllBooks(session);
         for (Book book : books) {
             System.out.println(book);
         }
 
-        //b1.deleteAllBooks();
-        System.out.println(b1.addNewBook(session, book3)); // Get ID
+        try {
+            //b1.deleteAllBooks();
+            System.out.println(b1.addNewBook(session, book3)); // Get ID
+        } catch (RepositoryException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         System.out.println();
         System.out.println("After - Add another book:");
@@ -181,16 +210,20 @@ public class RepositoryDatabase {
         System.out.println(books);
 
         System.out.println();
-        System.out.println("GetBookInfo with ID 4");
-        System.out.println(b1.getBookInfo(session, 4));
+        System.out.println("GetBookInfo with ID 3");
+        Book resultBook = b1.getBookInfo(session, 3);
+        System.out.println(b1.getBookInfo(session, 3));
+        System.out.println(resultBook.getTitle() == null);
 
         System.out.println();
         System.out.println("GetBookInfo with ISBN \"0140449337\"");
         System.out.println(b1.getBookInfo(session, "0140449337"));
+        Book resultBook2 = b1.getBookInfo(session, "1212");
+        System.out.println(resultBook2.getTitle() == null);
 
         // /Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\ 2/A2/tmp/endofownership_photo_final.jpeg
         //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\\ 2/A2/tmp/endofownership_photo_final.jpeg') WHERE (`id` = '2')");
-        database.executeUpdate("INSERT INTO `book`(`title`,`image_mime`,`image_data`) VALUES('The End of Ownership', 'image/jpeg', LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\\ 2/A2/tmp/endofownership_photo_final.jpeg')) ");
+        //database.executeUpdate("INSERT INTO `book`(`title`,`image_mime`,`image_data`) VALUES('The End of Ownership', 'image/jpeg', LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\\ 2/A2/tmp/endofownership_photo_final.jpeg')) ");
         System.out.println();
         System.out.println("Book ArrayList: ");
         books = b1.listAllBooks(session);

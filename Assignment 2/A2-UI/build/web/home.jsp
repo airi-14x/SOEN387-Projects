@@ -20,16 +20,26 @@
             response.sendRedirect("login.jsp");
         }
     %>
+    
     <body>
         <h1>Welcome to the Book Store <%=request.getAttribute("username")%> !</h1>
-        <div>
-            <!--<a href="bookView.jsp">View books here</a><br>-->
+        <div> 
+            <form action="DisplayAllController" method="GET">
+                 View All Books <input type="submit" name="displayAll" value="Submit"/><br>
+            </form>
+            
+            <form action="BookViewController" method="GET">
+                View Book with ID:<input type="text" name="viewBookID"> or with ISBN: <input type="text" name="ISBN">
+                <input type="submit" name="viewBook" value="Submit"/><br>
+            </form>
             
             <a href="addBook.jsp">Add/Update a book</a><br>
 
-            <form action="DeleteBookController" method="DELETE">Provide bookID to delete: <input type="text" name="bookID">
-                <input type="submit" name="deleteBook" value="Submit"/><br>
-                Delete All: <input type="submit" name="deleteAll" value="Submit"/>
+            <form action="DeleteBookController" method="GET">
+                Delete book with bookID:<input type="text" name="deleteBookID">
+                <input type="submit" name="delete" value="deleteBook"/><br>
+                Delete all: 
+                <input type="submit" name="delete" value="deleteAll"/>
             </form>
         </div>
         <form action="LogoutController" method="POST">

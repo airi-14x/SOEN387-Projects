@@ -25,11 +25,6 @@ public class Session {
 
     private static JSONObject currentUser = null;
 
-    public Session() throws IOException {
-        createJsonObject();
-
-    }
-
     public String hashPassword(String password) {
         String hashedPassword = null;
 
@@ -140,7 +135,7 @@ public class Session {
 
         //User 2
         JSONObject userInfo2 = new JSONObject();
-        userInfo2.put("userId", "Airy");
+        userInfo2.put("userId", "Airi");
         userInfo2.put("password", hashPassword("test123"));
 
         JSONObject user2 = new JSONObject();

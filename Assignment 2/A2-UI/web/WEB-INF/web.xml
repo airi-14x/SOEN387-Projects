@@ -13,12 +13,16 @@
         <servlet-class>AddBookController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>bookViewController</servlet-name>
+        <servlet-name>BookViewController</servlet-name>
         <servlet-class>BookViewController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>DeleteBookController</servlet-name>
         <servlet-class>DeleteBookController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DisplayAllController</servlet-name>
+        <servlet-class>DisplayAllController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>loginController</servlet-name>
@@ -34,8 +38,13 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>BookViewController</servlet-name>
-        <url-pattern>/viewBook</url-pattern>
+        <url-pattern>/BookViewController</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayAllController</servlet-name>
+        <url-pattern>/DisplayAllController</url-pattern>
+    </servlet-mapping>
+    
     <session-config>
         
     </session-config>

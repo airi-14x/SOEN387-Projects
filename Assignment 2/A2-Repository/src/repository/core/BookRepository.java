@@ -21,7 +21,7 @@ public class BookRepository implements IBookRepository {
     private BookRepository() {
         connection = RepositoryDatabase.getInstance();
         System.out.println("Connection " + connection);
-        books = new ArrayList<>();
+        books = new ArrayList<Book>();
 
     }
 
@@ -38,6 +38,7 @@ public class BookRepository implements IBookRepository {
     public ArrayList<Book> listAllBooks(Session session) {
 
         try {
+            resetBooks(session);
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book");
 
             while (resultSet.next()) {

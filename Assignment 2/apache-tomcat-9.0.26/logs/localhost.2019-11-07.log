@@ -1,0 +1,329 @@
+07-Nov-2019 14:46:26.922 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+07-Nov-2019 14:46:26.923 INFOS [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+07-Nov-2019 14:46:26.926 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@63fdab07')
+07-Nov-2019 14:58:09.115 INFOS [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+07-Nov-2019 14:58:09.115 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+07-Nov-2019 15:01:28.913 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+07-Nov-2019 15:01:28.913 INFOS [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+07-Nov-2019 15:01:28.920 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@2b50150')
+07-Nov-2019 15:03:16.257 GRAVE [http-nio-8080-exec-11] org.apache.catalina.core.StandardWrapperValve.invoke "Servlet.service()" pour la servlet [LoginController] a généré une exception
+	java.lang.IllegalStateException: Impossible d'appeler "sendRedirect()" après que la réponse ait été envoyée
+		at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488)
+		at LoginController.doPost(LoginController.java:74)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
+07-Nov-2019 15:06:28.455 INFOS [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+07-Nov-2019 15:06:28.455 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+07-Nov-2019 15:06:38.184 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+07-Nov-2019 15:06:38.185 INFOS [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+07-Nov-2019 15:06:38.188 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@468be356')
+07-Nov-2019 15:08:49.820 GRAVE [http-nio-8080-exec-11] org.apache.catalina.core.StandardWrapperValve.invoke "Servlet.service()" pour la servlet [LoginController] a généré une exception
+	java.lang.IllegalStateException: Impossible d'appeler "sendRedirect()" après que la réponse ait été envoyée
+		at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488)
+		at LoginController.doPost(LoginController.java:74)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
+07-Nov-2019 15:08:49.822 GRAVE [http-nio-8080-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke "Servlet.service()" pour la servlet [LoginController] a généré une exception
+	java.lang.IllegalStateException: Impossible d'appeler "sendRedirect()" après que la réponse ait été envoyée
+		at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488)
+		at LoginController.doPost(LoginController.java:74)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
+07-Nov-2019 15:11:19.558 GRAVE [http-nio-8080-exec-19] org.apache.catalina.core.StandardWrapperValve.invoke "Servlet.service()" pour la servlet [LoginController] a généré une exception
+	java.lang.IllegalStateException: Impossible d'appeler "sendRedirect()" après que la réponse ait été envoyée
+		at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488)
+		at LoginController.doPost(LoginController.java:74)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
+07-Nov-2019 15:39:32.826 GRAVE [http-nio-8080-exec-98] org.apache.catalina.core.StandardWrapperValve.invoke "Servlet.service()" pour la servlet [LogoutController] a généré une exception
+	java.lang.IllegalStateException: Impossible d'appeler "sendRedirect()" après que la réponse ait été envoyée
+		at org.apache.catalina.connector.ResponseFacade.sendRedirect(ResponseFacade.java:488)
+		at LogoutController.doPost(LogoutController.java:55)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)
+07-Nov-2019 15:43:19.204 INFOS [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextDestroyed()
+07-Nov-2019 15:43:19.204 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextDestroyed()
+07-Nov-2019 15:47:30.241 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: contextInitialized()
+07-Nov-2019 15:47:30.241 INFOS [main] org.apache.catalina.core.ApplicationContext.log SessionListener: contextInitialized()
+07-Nov-2019 15:47:30.243 INFOS [main] org.apache.catalina.core.ApplicationContext.log ContextListener: attributeAdded('StockTicker', 'async.Stockticker@15b986cd')
+07-Nov-2019 15:53:36.187 GRAVE [http-nio-8080-exec-19] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() du Servlet [jsp] dans le contexte au chemin [/A2-UI] a retourné une exception [Impossible de compiler la classe pour la JSP: 
+
+Une erreur s'est produite à la ligne: [15] dans le fichier jsp: [/addBook.jsp]
+Syntax error, insert ")" to complete MethodInvocation
+12:         <title>JSP Page</title>
+13:     </head>
+14:     <%=
+15:         String userName = (String) request.getAttribute("username");
+16:         if (null == userName) {
+17:             response.sendRedirect("login.jsp");
+18:         }
+
+
+Une erreur s'est produite à la ligne: [15] dans le fichier jsp: [/addBook.jsp]
+Syntax error, insert ";" to complete Statement
+12:         <title>JSP Page</title>
+13:     </head>
+14:     <%=
+15:         String userName = (String) request.getAttribute("username");
+16:         if (null == userName) {
+17:             response.sendRedirect("login.jsp");
+18:         }
+
+
+Une erreur s'est produite à la ligne: [15] dans le fichier jsp: [/addBook.jsp]
+String cannot be resolved to a variable
+12:         <title>JSP Page</title>
+13:     </head>
+14:     <%=
+15:         String userName = (String) request.getAttribute("username");
+16:         if (null == userName) {
+17:             response.sendRedirect("login.jsp");
+18:         }
+
+
+Une erreur s'est produite à la ligne: [15] dans le fichier jsp: [/addBook.jsp]
+userName cannot be resolved to a variable
+12:         <title>JSP Page</title>
+13:     </head>
+14:     <%=
+15:         String userName = (String) request.getAttribute("username");
+16:         if (null == userName) {
+17:             response.sendRedirect("login.jsp");
+18:         }
+
+
+Une erreur s'est produite à la ligne: [16] dans le fichier jsp: [/addBook.jsp]
+userName cannot be resolved to a variable
+13:     </head>
+14:     <%=
+15:         String userName = (String) request.getAttribute("username");
+16:         if (null == userName) {
+17:             response.sendRedirect("login.jsp");
+18:         }
+19:     %>
+
+
+Une erreur s'est produite à la ligne: [15] dans le fichier jsp: [/addBook.jsp]
+Syntax error on token ")", delete this token
+12:         <title>JSP Page</title>
+13:     </head>
+14:     <%=
+15:         String userName = (String) request.getAttribute("username");
+16:         if (null == userName) {
+17:             response.sendRedirect("login.jsp");
+18:         }
+
+
+Stacktrace:] avec la cause
+	org.apache.jasper.JasperException: Impossible de compiler la classe pour la JSP: 
+
+Une erreur s'est produite à la ligne: [15] dans le fichier jsp: [/addBook.jsp]
+Syntax error, insert ")" to complete MethodInvocation
+12:         <title>JSP Page</title>
+13:     </head>
+14:     <%=
+15:         String userName = (String) request.getAttribute("username");
+16:         if (null == userName) {
+17:             response.sendRedirect("login.jsp");
+18:         }
+
+
+Une erreur s'est produite à la ligne: [15] dans le fichier jsp: [/addBook.jsp]
+Syntax error, insert ";" to complete Statement
+12:         <title>JSP Page</title>
+13:     </head>
+14:     <%=
+15:         String userName = (String) request.getAttribute("username");
+16:         if (null == userName) {
+17:             response.sendRedirect("login.jsp");
+18:         }
+
+
+Une erreur s'est produite à la ligne: [15] dans le fichier jsp: [/addBook.jsp]
+String cannot be resolved to a variable
+12:         <title>JSP Page</title>
+13:     </head>
+14:     <%=
+15:         String userName = (String) request.getAttribute("username");
+16:         if (null == userName) {
+17:             response.sendRedirect("login.jsp");
+18:         }
+
+
+Une erreur s'est produite à la ligne: [15] dans le fichier jsp: [/addBook.jsp]
+userName cannot be resolved to a variable
+12:         <title>JSP Page</title>
+13:     </head>
+14:     <%=
+15:         String userName = (String) request.getAttribute("username");
+16:         if (null == userName) {
+17:             response.sendRedirect("login.jsp");
+18:         }
+
+
+Une erreur s'est produite à la ligne: [16] dans le fichier jsp: [/addBook.jsp]
+userName cannot be resolved to a variable
+13:     </head>
+14:     <%=
+15:         String userName = (String) request.getAttribute("username");
+16:         if (null == userName) {
+17:             response.sendRedirect("login.jsp");
+18:         }
+19:     %>
+
+
+Une erreur s'est produite à la ligne: [15] dans le fichier jsp: [/addBook.jsp]
+Syntax error on token ")", delete this token
+12:         <title>JSP Page</title>
+13:     </head>
+14:     <%=
+15:         String userName = (String) request.getAttribute("username");
+16:         if (null == userName) {
+17:             response.sendRedirect("login.jsp");
+18:         }
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:103)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:213)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:522)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:392)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:362)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:346)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:603)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:399)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:385)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:329)
+		at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:678)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:860)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1589)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+		at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+		at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+		at java.lang.Thread.run(Thread.java:748)

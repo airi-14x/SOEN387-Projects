@@ -46,6 +46,10 @@ public class Session {
         }
         return hashedPassword;
     }
+    
+    public void setCurrentUser(JSONObject user) {
+        this.currentUser = user;
+    }
 
     public static String getCurrentUser() {
         return currentUser.toString();

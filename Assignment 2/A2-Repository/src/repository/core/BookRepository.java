@@ -234,4 +234,19 @@ public class BookRepository implements IBookRepository {
             e.printStackTrace();
         }
     }
+
+    Book getBookInfo(Session session, Book book) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+    @Override
+    public String toString(){
+        String output = "";
+        for(int i = 0; i < books.size(); i++) {
+            output += "Title: " + books.get(i).getTitle() + ", Description: " + books.get(i).getDescription() + ", ISBN: " + books.get(i).getISBN() + 
+                    ", Author: " + books.get(i).getAuthor() + ", Publisher Company: " + books.get(i).getPublisherCompany() + ", Publisher Address: " + 
+                    books.get(i).getPublisherAddress() + "\n";
+        }
+        return output;
+    }
 }

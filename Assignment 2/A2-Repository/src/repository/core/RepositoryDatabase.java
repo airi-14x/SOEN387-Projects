@@ -5,7 +5,6 @@
  */
 package repository.core;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -109,12 +108,8 @@ public class RepositoryDatabase {
         //database.executeQuery("SELECT * FROM book");
 
         Session session = null;
-        try {
-            session = new Session();
-            session.login("Jasmine", "test123");
-        } catch (IOException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        session = new Session();
+        session.login("Jasmine", "test123");
 
         BookRepository b1 = BookRepository.getInstance();
         System.out.println();

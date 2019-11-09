@@ -6,6 +6,8 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import repository.core.BookRepository;
+import repository.core.RepositoryException;
 import repository.core.Session;
 
 /**
@@ -69,7 +72,11 @@ public class DeleteBookController extends HttpServlet {
             bookRepo.deleteAllBooks(new Session());
         } else if (request.getParameter("delete").equals("deleteBook") && !(request.getParameter("deleteBookID").equals(""))) {
             String bookID = (String) request.getParameter("deleteBookID");
-            bookRepo.deleteBook(new Session(), Integer.parseInt(bookID));
+            try {
+                bookRepo.deleteBook(new Session(), Integer.parseInt(bookID));
+            } catch (RepositoryException ex) {
+                Logger.getLogger(DeleteBookController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
         RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");

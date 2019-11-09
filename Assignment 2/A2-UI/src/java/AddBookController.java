@@ -6,6 +6,8 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,6 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 import repository.core.Author;
 import repository.core.Book;
 import repository.core.BookRepository;
+import repository.core.RepositoryException;
 import repository.core.Session;
 
 /**
@@ -67,8 +70,11 @@ public class AddBookController extends HttpServlet {
         Author author = new Author(fName, lName);
         Book book = new Book(title, isbn, description, author, publisherName, publisherAddress);
         //Book book = new Book(title, isbn, description, author, publisherName, publisherAddress, new CoverImage());
-
-        bookRepo.addNewBook(new Session(), book);
+        try {
+            bookRepo.addNewBook(new Session(), book);
+        } catch (RepositoryException ex) {
+            Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //request.setAttribute("books", books);
         RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
         rd.forward(request, response);

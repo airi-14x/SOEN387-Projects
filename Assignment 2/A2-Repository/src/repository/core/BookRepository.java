@@ -22,6 +22,7 @@ public class BookRepository implements IBookRepository {
         connection = RepositoryDatabase.getInstance();
         System.out.println("Connection " + connection);
         books = new ArrayList<Book>();
+
     }
 
     public static synchronized BookRepository getInstance() {
@@ -58,8 +59,7 @@ public class BookRepository implements IBookRepository {
                 //books.add(new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData)));
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
         }
         return books; // Updated ArrayList of Book
     }
@@ -87,8 +87,7 @@ public class BookRepository implements IBookRepository {
                 result.setId(bookId); // Set ID of book to match Database ID
                 //result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
         }
         return result;
     }
@@ -116,14 +115,24 @@ public class BookRepository implements IBookRepository {
                 result.setId(bookId); // Set ID of book to match Database ID
                 //result = new Book(title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
         }
         return result;
     }
 
+    /**
+     *
+     * @param session
+     * @param book
+     * @return
+     * @throws RepositoryException
+     */
     @Override
-    public int addNewBook(Session session, Book book) {
+    public int addNewBook(Session session, Book book) throws RepositoryException {
+        String user = (String) Session.getCurrentUser();
+        if (null == user) {
+            throw new RepositoryException("You must be logged in to do this operation.");
+        }
 
         connection.executeUpdate("INSERT INTO book(title, description,isbn, first_name, last_name, publisher_company, address) VALUES(\"" + book.getTitle() + "\",\""
                 + book.getDescription() + "\",\"" + book.getISBN() + "\", \"" + book.getAuthor().getFirstName() + "\", \""
@@ -139,7 +148,12 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public void updateBookInfo(Session session, int id, String title, String description, Author author) {
+    public void updateBookInfo(Session session, int id, String title, String description, Author author) throws RepositoryException {
+        String user = (String) Session.getCurrentUser();
+        if (null == user) {
+            throw new RepositoryException("You must be logged in to do this operation.");
+        }
+        
         String statement = "UPDATE book SET title = '" + title + "', description = '"
                 + description + "', last_name = '" + author.getLastName() + "', first_name = '"
                 + author.getFirstName() + "' WHERE id = '" + id + "';";
@@ -153,16 +167,30 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public void setBookCoverImage(Session session) {
+    public void setBookCoverImage(Session session) throws RepositoryException {
+        String user = (String) Session.getCurrentUser();
+        if (null == user) {
+            throw new RepositoryException("You must be logged in to do this operation.");
+        }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deleteBook(Session session, int id) {
+    public void deleteBook(Session session, int id) throws RepositoryException {
+        
+        String user = (String) Session.getCurrentUser();
+        if (null == user) {
+            throw new RepositoryException("You must be logged in to do this operation.");
+        }
+        
+        ResultSet rs = connection.executeQuery("SELECT * FROM book WHERE id=" + id);
+        if(rs == null) {
+            throw new RepositoryException("Book not found in the database");
+        }
+
         try {
             connection.executeUpdate("DELETE FROM book WHERE id=" + id);
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -171,7 +199,6 @@ public class BookRepository implements IBookRepository {
             connection.executeUpdate("DELETE FROM book");
             Book.resetCount(); //Re-initialise ID assigning counter
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 

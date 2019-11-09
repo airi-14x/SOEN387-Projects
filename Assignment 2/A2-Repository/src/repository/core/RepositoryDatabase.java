@@ -133,7 +133,11 @@ public class RepositoryDatabase {
 
         System.out.println("BEFORE adding Book 1:");
         books = b1.listAllBooks(session);
-        System.out.println(b1.addNewBook(session, book1)); // GET ID
+        try {
+            System.out.println(b1.addNewBook(session, book1)); // GET ID
+        } catch (RepositoryException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         Author author2 = new Author("Epictetus", "Unknown");
         Book book2 = new Book("Discourses, Fragments, Handbook", "About things that are within our power and those that are not.", "0199595186",
@@ -142,7 +146,11 @@ public class RepositoryDatabase {
         System.out.println();
         System.out.println("BEFORE adding Book 2:");
         books = b1.listAllBooks(session);
-        System.out.println(b1.addNewBook(session, book2)); // GET ID
+        try {
+            System.out.println(b1.addNewBook(session, book2)); // GET ID
+        } catch (RepositoryException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         Author author3 = new Author("Kishimi", "Ichiro");
         Book book3 = new Book("Courage to be Happy", "The Courage to be Happy is a profound insight into the way we should live our lives that has already sold more than one million copies in Japan.", "1911630210", author3, "Allen & Unwin", "London, England");
@@ -150,7 +158,11 @@ public class RepositoryDatabase {
         System.out.println();
         System.out.println("BEFORE adding Book 3:");
         books = b1.listAllBooks(session);
-        System.out.println(b1.addNewBook(session, book3)); // Get ID
+        try {
+            System.out.println(b1.addNewBook(session, book3)); // Get ID
+        } catch (RepositoryException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         Author author4 = new Author("Laurent", "Deversa");
         System.out.println();
@@ -159,7 +171,11 @@ public class RepositoryDatabase {
         for (Book book : books) {
             System.out.println(book);
         }
-        b1.updateBookInfo(session, 2, "Margin", "1232", author4); // UPDATE
+        try {
+            b1.updateBookInfo(session, 2, "Margin", "1232", author4); // UPDATE
+        } catch (RepositoryException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         System.out.println();
         System.out.println("AFTER:");
@@ -170,15 +186,23 @@ public class RepositoryDatabase {
 
         System.out.println();
         System.out.println("Delete one book:");
-        b1.deleteBook(session, 3);
+        try {
+            b1.deleteBook(session, 3);
+        } catch (RepositoryException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         books = b1.listAllBooks(session);
         for (Book book : books) {
             System.out.println(book);
         }
 
-        //b1.deleteAllBooks();
-        System.out.println(b1.addNewBook(session, book3)); // Get ID
+        try {
+            //b1.deleteAllBooks();
+            System.out.println(b1.addNewBook(session, book3)); // Get ID
+        } catch (RepositoryException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         System.out.println();
         System.out.println("After - Add another book:");

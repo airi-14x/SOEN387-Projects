@@ -69,19 +69,21 @@ public class BookViewController extends HttpServlet {
 
         if (request.getParameter("viewBookID").equals("") == false) {
             resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("viewBookID")));
-            if (String.valueOf(resultBook.getId()).equals("")) {
-                request.setAttribute("book", "Sorry there's no book with that ID");
+            if (resultBook.getTitle() == null) {
+                request.setAttribute("book", "Sorry there's no book with that ID.");
             } else {
                 request.setAttribute("book", resultBook);
             }
 
         } else if (request.getParameter("ISBN").equals("") == false) {
             resultBook = bookRepo.getBookInfo(new Session(), request.getParameter("ISBN"));
-            if (resultBook.getISBN().equals("")) {
-                request.setAttribute("book", "Sorry there's no book with that ISBN");
+            if (resultBook.getTitle() == null) {
+                request.setAttribute("book", "Sorry there's no book with that ISBN.");
             } else {
                 request.setAttribute("book", resultBook);
             }
+        } else {
+            request.setAttribute("book", "Please enter ID or ISBN!");
         }
 
         RequestDispatcher rd = request.getRequestDispatcher("/bookView.jsp");

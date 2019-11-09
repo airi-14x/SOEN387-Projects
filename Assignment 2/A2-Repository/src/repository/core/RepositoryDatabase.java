@@ -186,12 +186,16 @@ public class RepositoryDatabase {
         System.out.println(books);
 
         System.out.println();
-        System.out.println("GetBookInfo with ID 4");
-        System.out.println(b1.getBookInfo(session, 4));
+        System.out.println("GetBookInfo with ID 3");
+        Book resultBook = b1.getBookInfo(session, 3);
+        System.out.println(b1.getBookInfo(session, 3));
+        System.out.println(resultBook.getTitle() == null);
 
         System.out.println();
         System.out.println("GetBookInfo with ISBN \"0140449337\"");
         System.out.println(b1.getBookInfo(session, "0140449337"));
+        Book resultBook2 = b1.getBookInfo(session, "1212");
+        System.out.println(resultBook2.getTitle() == null);
 
         // /Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\ 2/A2/tmp/endofownership_photo_final.jpeg
         //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\\ 2/A2/tmp/endofownership_photo_final.jpeg') WHERE (`id` = '2')");

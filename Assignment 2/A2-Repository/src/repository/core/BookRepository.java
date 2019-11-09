@@ -207,7 +207,7 @@ public class BookRepository implements IBookRepository {
             throw new RepositoryException("You must be logged in to do this operation.");
         }
 
-        ResultSet rs = connection.executeQuery("SELECT * FROM book WHERE id=" + id);
+        ResultSet rs = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
         if (rs == null) {
             throw new RepositoryException("Book not found in the database");
         }

@@ -21,7 +21,7 @@ public class BookRepository implements IBookRepository {
     private BookRepository() {
         connection = RepositoryDatabase.getInstance();
         System.out.println("Connection " + connection);
-        books = new ArrayList<Book>();
+        books = new ArrayList<>();
 
     }
 
@@ -35,13 +35,8 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public ArrayList<Book> listAllBooks(Session session) throws RepositoryException {
+    public ArrayList<Book> listAllBooks(Session session) {
 
-        String user = (String) Session.getCurrentUser();
-        if (null == user) {
-            throw new RepositoryException("You must be logged in to do this operation.");
-        }
-   
         try {
             ResultSet resultSet = connection.executeQuery("SELECT * FROM book");
 
@@ -63,8 +58,7 @@ public class BookRepository implements IBookRepository {
                 //books.add(new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData)));
             }
 
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
         }
         return books; // Updated ArrayList of Book
     }
@@ -92,8 +86,7 @@ public class BookRepository implements IBookRepository {
                 result.setId(bookId); // Set ID of book to match Database ID
                 //result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
         }
         return result;
     }
@@ -121,8 +114,7 @@ public class BookRepository implements IBookRepository {
                 result.setId(bookId); // Set ID of book to match Database ID
                 //result = new Book(title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (SQLException e) {
         }
         return result;
     }
@@ -190,11 +182,14 @@ public class BookRepository implements IBookRepository {
             throw new RepositoryException("You must be logged in to do this operation.");
         }
         
-        
+        ResultSet rs = connection.executeQuery("SELECT * FROM book WHERE id=" + id);
+        if(rs == null) {
+            throw new RepositoryException("Book not found in the database");
+        }
+
         try {
             connection.executeUpdate("DELETE FROM book WHERE id=" + id);
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 
@@ -203,7 +198,6 @@ public class BookRepository implements IBookRepository {
             connection.executeUpdate("DELETE FROM book");
             Book.resetCount(); //Re-initialise ID assigning counter
         } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 

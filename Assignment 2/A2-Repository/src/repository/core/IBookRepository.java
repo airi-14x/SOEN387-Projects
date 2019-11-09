@@ -8,7 +8,7 @@ import java.util.ArrayList;
  */
 public interface IBookRepository {
 
-    ArrayList<Book> listAllBooks(Session session) throws RepositoryException;
+    ArrayList<Book> listAllBooks(Session session);
 
     Book getBookInfo(Session session, int id);
 

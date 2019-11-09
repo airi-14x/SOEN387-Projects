@@ -49,7 +49,6 @@ public class BookRepositoryTest {
     @After
     public void tearDown() throws RepositoryException {
         bookRepository = null;
-        author = null;
         book1 = null;
         book2 = null;
         session = null;
@@ -65,7 +64,7 @@ public class BookRepositoryTest {
         assertNotNull(books); 
     }
     
-    @Test
+    //@Test
     public void getBookInfoTest() {
         System.out.println("Testing getBookInfo by book id");
         
@@ -93,6 +92,16 @@ public class BookRepositoryTest {
         assertEquals(resultBook2.getPublisherCompany(), book1.getPublisherCompany());
         assertEquals(resultBook2.getPublisherAddress(), book1.getPublisherAddress());
         
+    }
+    
+    @Test
+    public void addNewBookTest() throws RepositoryException {
+        System.out.println("Testing addNewBook");
+        Book book = new Book("Title", "Description", "ISBN", new Author("First Name", "Last Name"), "Publisher Company", "Publisher Address");
+        bookRepository.addNewBook(session, book);
+        
+        assertFalse(book.getId() == 0);
+        assertNotNull(bookRepository);
     }
     
     

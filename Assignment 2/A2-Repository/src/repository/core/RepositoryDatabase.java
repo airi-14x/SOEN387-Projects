@@ -5,6 +5,9 @@
  */
 package repository.core;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -39,6 +42,10 @@ public class RepositoryDatabase {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public Connection getConnectionInstance() {
+        return connection;
     }
 
     // SINGLETON
@@ -205,10 +212,10 @@ public class RepositoryDatabase {
         System.out.println(books);
 
         System.out.println();
-        System.out.println("GetBookInfo with ID 3");
-        Book resultBook = b1.getBookInfo(session, 3);
-        System.out.println(b1.getBookInfo(session, 3));
-        System.out.println(resultBook.getTitle() == null);
+        System.out.println("GetBookInfo with ID 4");
+        //Book resultBook = b1.getBookInfo(session, 4);
+        System.out.println(b1.getBookInfo(session, 4));
+        //System.out.println(resultBook.getTitle() == null);
 
         System.out.println();
         System.out.println("GetBookInfo with ISBN \"0140449337\"");
@@ -216,9 +223,25 @@ public class RepositoryDatabase {
         Book resultBook2 = b1.getBookInfo(session, "1212");
         System.out.println(resultBook2.getTitle() == null);
 
-        // /Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\ 2/A2/tmp/endofownership_photo_final.jpeg
-        //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\\ 2/A2/tmp/endofownership_photo_final.jpeg') WHERE (`id` = '2')");
-        //database.executeUpdate("INSERT INTO `book`(`title`,`image_mime`,`image_data`) VALUES('The End of Ownership', 'image/jpeg', LOAD_FILE('/Users/Airi/Documents/SOEN387-Projects-and-Labs/Assignment\\ 2/A2/tmp/endofownership_photo_final.jpeg')) ");
+        File file = new File("./tmp/endofownership_photo_final.jpeg");
+
+        b1.setBookCoverImage(session, file, "image/jpeg", 2);
+        FileInputStream input = null;
+        try {
+            input = new FileInputStream(file);
+
+            System.out.println(input);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        //String updateSQL = "UPDATE book SET image_data = ?, image_mime = ? WHERE id=?";
+        //PreparedStatement pstmt = database.connection.prepareStatement(updateSQL);
+        //pstmt.setBinaryStream(1, input);
+        //pstmt.setString(2, "image/jpeg");
+        //pstmt.setInt(3, 2);
+        //pstmt.executeUpdate();
+        // database.executeUpdate("INSERT INTO `book`(`title`,`image_mime`,`image_data`) VALUES('The End of Ownership', 'image/jpeg', input) ");
         System.out.println();
         System.out.println("Book ArrayList: ");
         books = b1.listAllBooks(session);

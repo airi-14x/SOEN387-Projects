@@ -1,5 +1,6 @@
 package repository.core;
 
+import java.io.File;
 import java.util.ArrayList;
 
 /**
@@ -18,7 +19,8 @@ public interface IBookRepository {
 
     void updateBookInfo(Session session, int id, String title, String description, Author author) throws RepositoryException;
 
-    void setBookCoverImage(Session session) throws RepositoryException; // Reset and Set function. Need to pick out image type!
+    //void setBookCoverImage(Session session) throws RepositoryException; // Reset and Set function. Need to pick out image type!
+    void setBookCoverImage(Session session, File image, String mimeType, int id); // Reset and Set function. Need to pick out image type!
 
     void deleteBook(Session session, int id) throws RepositoryException;
 

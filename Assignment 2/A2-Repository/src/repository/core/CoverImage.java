@@ -23,7 +23,7 @@ public class CoverImage {
     }
 
     public CoverImage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getMimeType() {
@@ -52,6 +52,7 @@ public class CoverImage {
 
     @Override
     public String toString() {
-        return "CoverImage{mimeType=" + mimeType + "}";
+        return "CoverImage{" + "mimeType=" + mimeType + ", image=" + image + ", imagePath=" + imagePath + '}';
     }
+
 }

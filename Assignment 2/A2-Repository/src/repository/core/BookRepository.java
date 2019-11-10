@@ -45,7 +45,6 @@ public class BookRepository implements IBookRepository {
         try {
             resetBooks(session);
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book");
-
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String title = resultSet.getString("title");
@@ -55,10 +54,13 @@ public class BookRepository implements IBookRepository {
                 String firstName = resultSet.getString("first_name");
                 String publisherCompany = resultSet.getString("publisher_company");
                 String address = resultSet.getString("address");
-                //String mimeType = resultSet.getString("mime_type");
-                //Blob imageData = resultSet.getBlob("image_data");
-                Book book = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address);
-                //Book book = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
+                String mimeType = resultSet.getString("image_mime");
+                Blob imageData = resultSet.getBlob("image_data");
+
+                System.out.println("mimeType " + mimeType);
+                System.out.println("imageData " + imageData);
+                //Book book = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address);
+                Book book = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
                 book.setId(id); // Set ID of book to match Database ID
                 books.add(book);
 
@@ -86,8 +88,11 @@ public class BookRepository implements IBookRepository {
                 String firstName = resultSet.getString("first_name");
                 String publisherCompany = resultSet.getString("publisher_company");
                 String address = resultSet.getString("address");
-                //String mimeType = resultSet.getString("mime_type");
-                //Blob imageData = resultSet.getBlob("image_data");
+                String mimeType = resultSet.getString("image_mime");
+                Blob imageData = resultSet.getBlob("image_data");
+
+                System.out.println("mimeType " + mimeType);
+                System.out.println("imageData " + imageData);
 
                 result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address);
                 result.setId(bookId); // Set ID of book to match Database ID
@@ -114,8 +119,8 @@ public class BookRepository implements IBookRepository {
                 String firstName = resultSet.getString("first_name");
                 String publisherCompany = resultSet.getString("publisher_company");
                 String address = resultSet.getString("address");
-                //String mimeType = resultSet.getString("mime_type");
-                //Blob imageData = resultSet.getBlob("image_data");
+                String mimeType = resultSet.getString("image_mime");
+                Blob imageData = resultSet.getBlob("image_data");
 
                 result = new Book(title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address);
                 result.setId(bookId); // Set ID of book to match Database ID
@@ -152,12 +157,18 @@ public class BookRepository implements IBookRepository {
 
         System.out.print("Book Current ID" + book.getId());
 
-        File file = new File("./endofownership_photo_final.jpeg");
-        setBookCoverImage(session, file, "image/jpeg", book.getId());
+        if (book.getCover() != null) {
+            if (book.getCover().getImagePath() != null) {
+                File file = new File(book.getCover().getImagePath());
+                setBookCoverImage(session, file, book.getCover().getMimeType(), book.getId());
+            }
+
+        }
 
         System.out.println("");
 
         books.add(book);
+        System.out.println(books);
         return book.getId(); //Return: Should be ID
     }
 
@@ -180,16 +191,6 @@ public class BookRepository implements IBookRepository {
         books.get(id - 1).setAuthor(author);
     }
 
-    @Override
-    /*
-    public void setBookCoverImage(Session session) throws RepositoryException {
-        String user = (String) Session.getCurrentUser();
-        if (null == user) {
-            throw new RepositoryException("You must be logged in to do this operation.");
-        }
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-     */
     public void setBookCoverImage(Session session, File image, String mimeType, int id) throws RepositoryException {
         FileInputStream input = null;
         String updateSQL = "UPDATE book SET image_data = ?, image_mime = ? WHERE id=?";

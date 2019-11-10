@@ -5,6 +5,7 @@
  */
 package repository.core;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -175,6 +176,10 @@ public class RepositoryDatabase {
             Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        for (Book book : books) {
+            System.out.println(book);
+        }
+
         // --- UPDATE / DELETE / SEARCH -- //
         Author author4 = new Author("Laurent", "Deversa");
         System.out.println();
@@ -234,8 +239,7 @@ public class RepositoryDatabase {
         Book resultBook2 = b1.getBookInfo(session, "1212");
         System.out.println(resultBook2.getTitle() == null);
 
-        /*
-        // --- DATABASE: Cover ADD and GET BLOB --- //
+        // --- DATABASE: SetCover() --- //
         File file = new File("./endofownership_photo_final.jpeg");
 
         try {
@@ -244,7 +248,8 @@ public class RepositoryDatabase {
             Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-
+        // --- GET BLOB ---- //
+        /*
         String selectSQL = "SELECT image_data FROM book where id=?";
         PreparedStatement pstmt = database.connection.prepareStatement(selectSQL);
         pstmt.setInt(1, 2);

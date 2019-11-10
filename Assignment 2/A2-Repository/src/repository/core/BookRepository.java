@@ -5,8 +5,13 @@
  */
 package repository.core;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,12 +20,12 @@ import java.util.ArrayList;
 public class BookRepository implements IBookRepository {
 
     private ArrayList<Book> books;
-    private RepositoryDatabase connection;
+    private RepositoryDatabase repositoryDatabaseConnection;
     private static BookRepository instance = null;
 
     private BookRepository() {
-        connection = RepositoryDatabase.getInstance();
-        System.out.println("Connection " + connection);
+        repositoryDatabaseConnection = RepositoryDatabase.getInstance();
+        System.out.println("Connection " + repositoryDatabaseConnection);
         books = new ArrayList<Book>();
 
     }
@@ -39,7 +44,7 @@ public class BookRepository implements IBookRepository {
 
         try {
             resetBooks(session);
-            ResultSet resultSet = connection.executeQuery("SELECT * FROM book");
+            ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book");
 
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
@@ -69,7 +74,7 @@ public class BookRepository implements IBookRepository {
         Book result = new Book();
 
         try {
-            ResultSet resultSet = connection.executeQuery("SELECT * FROM book WHERE id=" + id);
+            ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
 
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
@@ -97,7 +102,7 @@ public class BookRepository implements IBookRepository {
         Book result = new Book();
 
         try {
-            ResultSet resultSet = connection.executeQuery("SELECT * FROM book WHERE isbn=" + isbn);
+            ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE isbn=" + isbn);
 
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
@@ -134,11 +139,11 @@ public class BookRepository implements IBookRepository {
             throw new RepositoryException("You must be logged in to do this operation.");
         }
 
-        connection.executeUpdate("INSERT INTO book(title, description,isbn, first_name, last_name, publisher_company, address) VALUES(\"" + book.getTitle() + "\",\""
+        repositoryDatabaseConnection.executeUpdate("INSERT INTO book(title, description,isbn, first_name, last_name, publisher_company, address) VALUES(\"" + book.getTitle() + "\",\""
                 + book.getDescription() + "\",\"" + book.getISBN() + "\", \"" + book.getAuthor().getFirstName() + "\", \""
                 + book.getAuthor().getLastName() + "\", \"" + book.getPublisherCompany() + "\", \"" + book.getPublisherAddress() + "\")");
 
-        /*connection.executeUpdate("INSERT INTO book(id, title, description, isbn, last_name, first_name, publisher_company, address, mime_type, image_data) "
+        /*repositoryDatabaseConnection.executeUpdate("INSERT INTO book(id, title, description, isbn, last_name, first_name, publisher_company, address, mime_type, image_data) "
                 + "VALUES(\"" + book.getId() + "\", \"" + book.getTitle() + "\", \"" + book.getDescription() + "\", \"" + book.getISBN() + "\",\""
                 + book.getAuthor().getFirstName() + "\", \"" + book.getAuthor().getLastName() + "\", \"" + book.getPublisherCompany() + "\", \"" + book.getPublisherAddress() + "\", \"mime_type" + "\", \"image_data"
         );*/
@@ -153,12 +158,12 @@ public class BookRepository implements IBookRepository {
         if (null == user) {
             throw new RepositoryException("You must be logged in to do this operation.");
         }
-        
+
         String statement = "UPDATE book SET title = '" + title + "', description = '"
                 + description + "', last_name = '" + author.getLastName() + "', first_name = '"
                 + author.getFirstName() + "' WHERE id = '" + id + "';";
         System.out.println("STATEMENT: " + statement);
-        connection.executeUpdate(statement);
+        repositoryDatabaseConnection.executeUpdate(statement);
 
         // ID begins at index 1. But books:Arraylist starts at index 0.
         books.get(id - 1).setTitle(title);
@@ -167,6 +172,7 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
+    /*
     public void setBookCoverImage(Session session) throws RepositoryException {
         String user = (String) Session.getCurrentUser();
         if (null == user) {
@@ -174,29 +180,47 @@ public class BookRepository implements IBookRepository {
         }
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+     */
+    public void setBookCoverImage(Session session, File image, String mimeType, int id) {
+        FileInputStream input = null;
+        String updateSQL = "UPDATE book SET image_data = ?, image_mime = ? WHERE id=?";
+        try {
+            input = new FileInputStream(image);
+            PreparedStatement pstmt = repositoryDatabaseConnection.getConnectionInstance().prepareStatement(updateSQL);
+            pstmt.setBinaryStream(1, input);
+            pstmt.setString(2, mimeType);
+            pstmt.setInt(3, id);
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(BookRepository.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(BookRepository.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 
     @Override
     public void deleteBook(Session session, int id) throws RepositoryException {
-        
+
         String user = (String) Session.getCurrentUser();
         if (null == user) {
             throw new RepositoryException("You must be logged in to do this operation.");
         }
-        
-        ResultSet rs = connection.executeQuery("SELECT * FROM book WHERE id=" + id);
-        if(rs == null) {
+
+        ResultSet rs = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
+        if (rs == null) {
             throw new RepositoryException("Book not found in the database");
         }
 
         try {
-            connection.executeUpdate("DELETE FROM book WHERE id=" + id);
+            repositoryDatabaseConnection.executeUpdate("DELETE FROM book WHERE id=" + id);
         } catch (Exception e) {
         }
     }
 
     public void deleteAllBooks(Session session) {
         try {
-            connection.executeUpdate("DELETE FROM book");
+            repositoryDatabaseConnection.executeUpdate("DELETE FROM book");
             Book.resetCount(); //Re-initialise ID assigning counter
         } catch (Exception e) {
         }
@@ -208,7 +232,7 @@ public class BookRepository implements IBookRepository {
 
     public void createBookTable(Session session) {
         try {
-            connection.executeUpdate("CREATE TABLE `book`(\n"
+            repositoryDatabaseConnection.executeUpdate("CREATE TABLE `book`(\n"
                     + "	`id` INT  NOT NULL AUTO_INCREMENT,\n"
                     + "    `title` VARCHAR(64) DEFAULT NULL,\n"
                     + "    `description` VARCHAR(256) DEFAULT NULL,\n"
@@ -228,7 +252,7 @@ public class BookRepository implements IBookRepository {
 
     public void dropBookTable() {
         try {
-            connection.executeUpdate("DROP TABLE book");
+            repositoryDatabaseConnection.executeUpdate("DROP TABLE book");
             Book.resetCount(); //Re-initialise ID assigning counter
         } catch (Exception e) {
             e.printStackTrace();
@@ -238,14 +262,14 @@ public class BookRepository implements IBookRepository {
     Book getBookInfo(Session session, Book book) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
     @Override
-    public String toString(){
+    public String toString() {
         String output = "";
-        for(int i = 0; i < books.size(); i++) {
-            output += "Title: " + books.get(i).getTitle() + ", Description: " + books.get(i).getDescription() + ", ISBN: " + books.get(i).getISBN() + 
-                    ", Author: " + books.get(i).getAuthor() + ", Publisher Company: " + books.get(i).getPublisherCompany() + ", Publisher Address: " + 
-                    books.get(i).getPublisherAddress() + "\n";
+        for (int i = 0; i < books.size(); i++) {
+            output += "Title: " + books.get(i).getTitle() + ", Description: " + books.get(i).getDescription() + ", ISBN: " + books.get(i).getISBN()
+                    + ", Author: " + books.get(i).getAuthor() + ", Publisher Company: " + books.get(i).getPublisherCompany() + ", Publisher Address: "
+                    + books.get(i).getPublisherAddress() + "\n";
         }
         return output;
     }

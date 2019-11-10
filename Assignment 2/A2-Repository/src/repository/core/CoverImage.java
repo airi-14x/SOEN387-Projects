@@ -15,6 +15,7 @@ public class CoverImage {
 
     private String mimeType;
     private Blob image;
+    private String imagePath;
 
     public CoverImage(String mimeType, Blob image) {
         this.mimeType = mimeType;
@@ -22,7 +23,7 @@ public class CoverImage {
     }
 
     public CoverImage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public String getMimeType() {
@@ -41,8 +42,17 @@ public class CoverImage {
         this.image = image;
     }
 
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
+
     @Override
     public String toString() {
-        return "CoverImage{mimeType=" + mimeType + "}";
+        return "CoverImage{" + "mimeType=" + mimeType + ", image=" + image + ", imagePath=" + imagePath + '}';
     }
+
 }

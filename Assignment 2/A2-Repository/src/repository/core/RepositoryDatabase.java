@@ -6,8 +6,6 @@
 package repository.core;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -225,7 +223,12 @@ public class RepositoryDatabase {
 
         File file = new File("./tmp/endofownership_photo_final.jpeg");
 
-        b1.setBookCoverImage(session, file, "image/jpeg", 2);
+        try {
+            b1.setBookCoverImage(session, file, "image/jpeg", 2);
+        } catch (RepositoryException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        /*
         FileInputStream input = null;
         try {
             input = new FileInputStream(file);
@@ -233,7 +236,7 @@ public class RepositoryDatabase {
             System.out.println(input);
         } catch (FileNotFoundException ex) {
             Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
 
         //String updateSQL = "UPDATE book SET image_data = ?, image_mime = ? WHERE id=?";
         //PreparedStatement pstmt = database.connection.prepareStatement(updateSQL);

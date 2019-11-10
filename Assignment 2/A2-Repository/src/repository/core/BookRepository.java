@@ -181,9 +181,13 @@ public class BookRepository implements IBookRepository {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
      */
-    public void setBookCoverImage(Session session, File image, String mimeType, int id) {
+    public void setBookCoverImage(Session session, File image, String mimeType, int id) throws RepositoryException {
         FileInputStream input = null;
         String updateSQL = "UPDATE book SET image_data = ?, image_mime = ? WHERE id=?";
+        String user = (String) Session.getCurrentUser();
+        if (null == user) {
+            throw new RepositoryException("You must be logged in to do this operation.");
+        }
         try {
             input = new FileInputStream(image);
             PreparedStatement pstmt = repositoryDatabaseConnection.getConnectionInstance().prepareStatement(updateSQL);

@@ -6,8 +6,13 @@
 package repository.core;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -105,8 +110,8 @@ public class RepositoryDatabase {
     }
 
     public static void main(String[] args) throws SQLException {
-        //RepositoryDatabase database = new RepositoryDatabase();
-        //database.createStatement();
+        RepositoryDatabase database = new RepositoryDatabase();
+        database.createStatement();
         //database.executeUpdate("UPDATE book SET last_name = 'Hello2', first_name = 'Hello' WHERE (id = '2')");
         //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('src/java/repository/database/endofownership_photo_final.jpeg') WHERE (`id` = '2')");
         //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('endofownership_photo_final.jpeg') WHERE (`id` = '2');");
@@ -221,7 +226,7 @@ public class RepositoryDatabase {
         Book resultBook2 = b1.getBookInfo(session, "1212");
         System.out.println(resultBook2.getTitle() == null);
 
-        File file = new File("./tmp/endofownership_photo_final.jpeg");
+        File file = new File("./endofownership_photo_final.jpeg");
 
         try {
             b1.setBookCoverImage(session, file, "image/jpeg", 2);
@@ -245,6 +250,32 @@ public class RepositoryDatabase {
         //pstmt.setInt(3, 2);
         //pstmt.executeUpdate();
         // database.executeUpdate("INSERT INTO `book`(`title`,`image_mime`,`image_data`) VALUES('The End of Ownership', 'image/jpeg', input) ");
+        String selectSQL = "SELECT image_data FROM book where id=?";
+        PreparedStatement pstmt = database.connection.prepareStatement(selectSQL);
+        pstmt.setInt(1, 2);
+        ResultSet rs = pstmt.executeQuery();
+        FileOutputStream output = null;
+        try {
+            output = new FileOutputStream("image");
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        //System.out.println("Writing to file " + file.getAbsolutePath());
+        while (rs.next()) {
+            InputStream input = rs.getBinaryStream("image_data");
+            byte[] buffer = new byte[1024];
+            try {
+                while (input.read(buffer) > 0) {
+                    output.write(buffer);
+                }
+                output.close();
+                //rs.close();
+            } catch (IOException ex) {
+                Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
         System.out.println();
         System.out.println("Book ArrayList: ");
         books = b1.listAllBooks(session);

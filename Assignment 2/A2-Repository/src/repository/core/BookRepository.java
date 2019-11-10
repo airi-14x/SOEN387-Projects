@@ -58,6 +58,7 @@ public class BookRepository implements IBookRepository {
                 //String mimeType = resultSet.getString("mime_type");
                 //Blob imageData = resultSet.getBlob("image_data");
                 Book book = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address);
+                //Book book = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
                 book.setId(id); // Set ID of book to match Database ID
                 books.add(book);
 
@@ -148,6 +149,14 @@ public class BookRepository implements IBookRepository {
                 + book.getAuthor().getFirstName() + "\", \"" + book.getAuthor().getLastName() + "\", \"" + book.getPublisherCompany() + "\", \"" + book.getPublisherAddress() + "\", \"mime_type" + "\", \"image_data"
         );*/
         book.autoIncrement();
+
+        System.out.print("Book Current ID" + book.getId());
+
+        File file = new File("./endofownership_photo_final.jpeg");
+        setBookCoverImage(session, file, "image/jpeg", book.getId());
+
+        System.out.println("");
+
         books.add(book);
         return book.getId(); //Return: Should be ID
     }

@@ -15,6 +15,7 @@ public class CoverImage {
 
     private String mimeType;
     private Blob image;
+    private String imagePath;
 
     public CoverImage(String mimeType, Blob image) {
         this.mimeType = mimeType;
@@ -39,6 +40,14 @@ public class CoverImage {
 
     public void setImage(Blob image) {
         this.image = image;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 
     @Override

@@ -1047,3 +1047,15 @@
 0:0:0:0:0:0:0:1 - - [12/Nov/2019:12:21:00 -0500] "GET /A2-UI/login.jsp HTTP/1.1" 200 584
 0:0:0:0:0:0:0:1 - - [12/Nov/2019:12:21:02 -0500] "POST /A2-UI/LoginController HTTP/1.1" 500 1351
 0:0:0:0:0:0:0:1 - - [12/Nov/2019:12:21:03 -0500] "GET /A2-UI/DisplayAllController?displayAll=Submit HTTP/1.1" 200 2660
+127.0.0.1 - - [12/Nov/2019:12:25:36 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [12/Nov/2019:12:25:36 -0500] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [12/Nov/2019:12:25:36 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [12/Nov/2019:12:25:36 -0500] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [12/Nov/2019:12:25:36 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [12/Nov/2019:12:25:36 -0500] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [12/Nov/2019:12:25:36 -0500] "GET /manager/text/list HTTP/1.1" 401 2562
+127.0.0.1 - airi14x [12/Nov/2019:12:25:36 -0500] "GET /manager/text/list HTTP/1.1" 200 1019
+127.0.0.1 - - [12/Nov/2019:12:25:36 -0500] "GET /manager/text/reload?path=/A2-UI HTTP/1.1" 401 2562
+127.0.0.1 - airi14x [12/Nov/2019:12:25:37 -0500] "GET /manager/text/reload?path=/A2-UI HTTP/1.1" 200 90
+127.0.0.1 - - [12/Nov/2019:12:25:37 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [12/Nov/2019:12:25:37 -0500] "GET /manager/text/ HTTP/1.1" 200 41

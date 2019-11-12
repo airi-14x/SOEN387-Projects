@@ -12,7 +12,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Display All Books</title>
+         <link href="style/displayAllCSS.css" rel="stylesheet" type="text/css">
     </head>
     <%
         String user = (String) Session.getCurrentUser();
@@ -21,18 +22,19 @@
         }
     %>
     <body>
-        <h1> Display All Books in Repository Database: </h1><br>
+        <h1> Display All Books in Repository Database </h1><br>
         
+        <div>
         <table border="1px solid black;">
             <tr>
-                <td>ID</td>
-                <td>Title</td>
-                <td>Description</td>
-                <td>ISBN</td>
-                <td>Author</td>
-                <td>Publisher Company</td>
-                <td>Publisher Address</td>
-                <td>Book Cover</td>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>ISBN</th>
+                <th>Author</th>
+                <th>Publisher Company</th>
+                <th>Publisher Address</th>
+                <th>Book Cover</th>
             </tr>
             <c:forEach items="${books}" var="book">
                 <tr>
@@ -45,9 +47,9 @@
                     <td>${book.publisherAddress}</td>
                     <td>${book.cover}</td>
                 </tr>
-            </c:forEach>  
-            
+            </c:forEach>   
         </table>
+        </div>
         
     </body>
 </html>

@@ -24,12 +24,24 @@
         <div>
             <form action="AddBookController" method="POST">
                 Title <input type="text" name="title"><br>
-                ISBN <input type="text" name="isbn"><br>
                 Description <input type="text" name="description"><br>
+                ISBN <input type="text" name="isbn"><br>
                 Author First Name <input type="text" name="fname"><br>
                 Author Last Name <input type="text" name="lname"><br>
                 Publisher <input type="text" name="pname"><br>
                 Publisher Address <input type="text" name="paddress"><br>
+                <input type="submit" value="Submit" name="submit"/>
+            </form>
+        </div>
+        
+        <h1>Update a book</h1>
+        <div>
+            <form action="UpdateBookController" method="POST">
+                ID <input type="text" name="id"><br>
+                Title <input type="text" name="title"><br>
+                Description <input type="text" name="description"><br>
+                Author First Name <input type="text" name="fname"><br>
+                Author Last Name <input type="text" name="lname"><br>
                 <input type="submit" value="Submit" name="submit"/>
             </form>
         </div>

@@ -68,7 +68,7 @@ public class AddBookController extends HttpServlet {
         //ArrayList<Book> books = bookRepo.listAllBooks(new Session());
 
         Author author = new Author(fName, lName);
-        Book book = new Book(title, isbn, description, author, publisherName, publisherAddress);
+        Book book = new Book(title, description, isbn, author, publisherName, publisherAddress);
         //Book book = new Book(title, isbn, description, author, publisherName, publisherAddress, new CoverImage());
         try {
             bookRepo.addNewBook(new Session(), book);

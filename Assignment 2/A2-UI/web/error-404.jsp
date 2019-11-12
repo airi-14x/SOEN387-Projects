@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>404 Error Page</title>
+        <link href="style/error-404CSS.css" rel="stylesheet" type="text/css">
     </head>
     <body>
         <h1>404 - The page you requested could not be found.</h1>

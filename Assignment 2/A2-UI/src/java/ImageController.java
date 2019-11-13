@@ -5,7 +5,6 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -71,19 +70,28 @@ public class ImageController extends HttpServlet {
   
         Book resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("bookId")));
 
+        
         java.sql.Blob image = resultBook.getCover().getImage();
         String contentType = resultBook.getCover().getMimeType();
+        response.setContentType(contentType);
+        OutputStream out = response.getOutputStream();
         byte imageData[] = null;
-        
-        try {
+     
+        if(image == null){
+            out.write("No cover image for this book.".getBytes());
+        }
+        else {
+            try {
             imageData = image.getBytes(1,(int)image.length());
         }
         catch (SQLException ex) {
             Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        response.setContentType(contentType);
-        OutputStream out = response.getOutputStream();
+
         out.write(imageData);
+            
+        }
+        
         out.flush();
         out.close();
         

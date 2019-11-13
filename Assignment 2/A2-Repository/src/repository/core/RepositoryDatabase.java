@@ -104,13 +104,9 @@ public class RepositoryDatabase {
         }
     }
 
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, RepositoryException {
         RepositoryDatabase database = new RepositoryDatabase();
         database.createStatement();
-        //database.executeUpdate("UPDATE book SET last_name = 'Hello2', first_name = 'Hello' WHERE (id = '2')");
-        //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('src/java/repository/database/endofownership_photo_final.jpeg') WHERE (`id` = '2')");
-        //database.executeUpdate("UPDATE `BookRepo`.`book` SET `image_data` = LOAD_FILE('endofownership_photo_final.jpeg') WHERE (`id` = '2');");
-        //database.executeQuery("SELECT * FROM book");
 
         Session session = null;
         session = new Session();
@@ -134,148 +130,28 @@ public class RepositoryDatabase {
         Author author = new Author("Aurelius", "Marcus");
         Book book1 = new Book("Meditations", "Written in Greek, without any intention of publication, by the only Roman emperor", "0140449337", author,
                 "Penguin Classic", "England", cover1);
-
-        System.out.println("BEFORE adding Book 1:");
-        books = b1.listAllBooks(session);
-        try {
-            System.out.println(b1.addNewBook(session, book1)); // GET ID
-        } catch (RepositoryException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        for (Book book : books) {
-            System.out.println(book);
-        }
-
+        
+        CoverImage cover2 = new CoverImage();
+        cover2.setMimeType("image/png");
+        cover2.setImagePath("./panda.png");
+        
         Author author2 = new Author("Epictetus", "Unknown");
         Book book2 = new Book("Discourses, Fragments, Handbook", "About things that are within our power and those that are not.", "0199595186",
-                author2, "Oxford University Press", "England");
-
-        System.out.println();
-        System.out.println("BEFORE adding Book 2:");
-        books = b1.listAllBooks(session);
-        try {
-            System.out.println(b1.addNewBook(session, book2)); // GET ID
-        } catch (RepositoryException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        for (Book book : books) {
-            System.out.println(book);
-        }
-
+                author2, "Oxford University Press", "England", cover2);
+        
         Author author3 = new Author("Kishimi", "Ichiro");
-        Book book3 = new Book("Courage to be Happy", "The Courage to be Happy is a profound insight into the way we should live our lives that has already sold more than one million copies in Japan.", "1911630210", author3, "Allen & Unwin", "London, England");
-
-        System.out.println();
-        System.out.println("BEFORE adding Book 3:");
-        //books = b1.listAllBooks(session);
-        try {
-            System.out.println(b1.addNewBook(session, book3)); // Get ID
-        } catch (RepositoryException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        for (Book book : books) {
-            System.out.println(book);
-        }
-
-        // --- UPDATE / DELETE / SEARCH -- //
-        Author author4 = new Author("Laurent", "Deversa");
-        System.out.println();
-        System.out.println("BEFORE:");
-        books = b1.listAllBooks(session);
-        for (Book book : books) {
-            System.out.println(book);
-        }
-
-        try {
-            b1.updateBookInfo(session, 2, "Margin", "1232", author4); // UPDATE
-        } catch (RepositoryException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        System.out.println();
-        System.out.println("AFTER:");
-        books = b1.listAllBooks(session);
-        for (Book book : books) {
-            System.out.println(book);
-        }
-
-        System.out.println();
-        System.out.println("Delete one book:");
-        try {
-            b1.deleteBook(session, 3);
-        } catch (RepositoryException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        books = b1.listAllBooks(session);
-        for (Book book : books) {
-            System.out.println(book);
-        }
-
-        try {
-            //b1.deleteAllBooks();
-            System.out.println(b1.addNewBook(session, book3)); // Get ID
-        } catch (RepositoryException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        System.out.println();
-        System.out.println("After - Add another book:");
-        books = b1.listAllBooks(session);
-        System.out.println(books);
-
-        System.out.println();
-        System.out.println("GetBookInfo with ID 4");
-        //Book resultBook = b1.getBookInfo(session, 4);
-        System.out.println(b1.getBookInfo(session, 4));
-        //System.out.println(resultBook.getTitle() == null);
-
-        System.out.println();
-        System.out.println("GetBookInfo with ISBN \"0140449337\"");
-        System.out.println(b1.getBookInfo(session, "0140449337"));
-        Book resultBook2 = b1.getBookInfo(session, "1212");
-        System.out.println(resultBook2.getTitle() == null);
-
-        // --- DATABASE: SetCover() --- //
-        File file = new File("./endofownership_photo_final.jpeg");
-
-        try {
-            b1.setBookCoverImage(session, file, "image/jpeg", 2);
-        } catch (RepositoryException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        // --- GET BLOB ---- //
-        /*
-        String selectSQL = "SELECT image_data FROM book where id=?";
-        PreparedStatement pstmt = database.connection.prepareStatement(selectSQL);
-        pstmt.setInt(1, 2);
-        ResultSet rs = pstmt.executeQuery();
-        FileOutputStream output = null;
-        try {
-            output = new FileOutputStream("image");
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        //System.out.println("Writing to file " + file.getAbsolutePath());
-        while (rs.next()) {
-            InputStream input = rs.getBinaryStream("image_data");
-            byte[] buffer = new byte[1024];
-            try {
-                while (input.read(buffer) > 0) {
-                    output.write(buffer);
-                }
-                output.close();
-                //rs.close();
-            } catch (IOException ex) {
-                Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-         */
+        CoverImage cover3 = new CoverImage();
+        cover3.setMimeType("image/png");
+        cover3.setImagePath("./redpanda.png");
+        Book book3 = new Book("Courage to be Happy", "The Courage to be Happy is a profound insight into the way we should live our lives that has already sold more than one million copies in Japan.", "1911630210", author3, "Allen & Unwin", "London, England", cover3);
+        
+        System.out.println("Adding book 1 to database");
+        b1.addNewBook(session, book1);
+        System.out.println("Adding book 2 to database");
+        b1.addNewBook(session, book2);
+        System.out.println("Adding book 3 to dabatase");
+        b1.addNewBook(session, book3);
+        
         System.out.println();
         System.out.println("Book ArrayList: ");
         books = b1.listAllBooks(session);

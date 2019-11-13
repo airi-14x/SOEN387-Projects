@@ -54,6 +54,10 @@ public class Session {
     public static String getCurrentUser() {
         return currentUser.toString();
     }
+    
+    public static String getUserName() {
+        return (String) currentUser.get("userId");
+    }
 
     public boolean isUserLoggedIn() {
         return currentUser != null;

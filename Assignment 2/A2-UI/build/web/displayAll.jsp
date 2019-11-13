@@ -15,11 +15,15 @@
         <title>Display All Books</title>
          <link href="style/displayAllCSS.css" rel="stylesheet" type="text/css">
     </head>
+    <jsp:useBean id="currentUser" scope="session" class="repository.core.Session" />
+
     <%
-        String user = (String) Session.getCurrentUser();
+        String user = currentUser.getCurrentUser();
+        
         if (null == user) {
             response.sendRedirect("login.jsp");
         }
+       
     %>
     <body>
         <h1> Display All Books in Repository Database </h1><br>
@@ -38,18 +42,19 @@
             </tr>
             <c:forEach items="${books}" var="book">
                 <tr>
-                    <td>${book.id}</td>
-                    <td>${book.title}</td>
-                    <td>${book.description}</td>
-                    <td>${book.getISBN()}</td>
-                    <td>${book.author}</td>
-                    <td>${book.publisherCompany}</td>
-                    <td>${book.publisherAddress}</td>
-                    <td>${book.cover}</td>
+                    <form action="ImageController" method="GET"> 
+                        <td><input type="text" value="${book.id}" name="bookId" readonly/></td>
+                        <td>${book.title}</td>
+                        <td>${book.description}</td>
+                        <td>${book.getISBN()}</td>
+                        <td>${book.author}</td>
+                        <td>${book.publisherCompany}</td>
+                        <td>${book.publisherAddress}</td>
+                        <td><input type="submit" value="View Cover" name="viewCover"/></td>
+                    </form>
                 </tr>
             </c:forEach>   
         </table>
         </div>
-        
     </body>
 </html>

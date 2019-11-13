@@ -5,9 +5,12 @@
  */
 package repository.core;
 
+import java.io.BufferedInputStream;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -40,11 +43,14 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public ArrayList<Book> listAllBooks(Session session) {
+    public ArrayList<Book> listAllBooks(Session session) throws RepositoryException {
 
         try {
             resetBooks(session);
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book");
+            if(resultSet == null) {
+                throw new RepositoryException("No Books to display at the moment");
+            }
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String title = resultSet.getString("title");
@@ -108,7 +114,6 @@ public class BookRepository implements IBookRepository {
 
         try {
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE isbn=" + isbn);
-
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
@@ -189,6 +194,8 @@ public class BookRepository implements IBookRepository {
         books.get(id - 1).setDescription(description);
         books.get(id - 1).setAuthor(author);
     }
+    
+    
 
     public void setBookCoverImage(Session session, File image, String mimeType, int id) throws RepositoryException {
         FileInputStream input = null;

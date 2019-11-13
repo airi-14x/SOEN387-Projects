@@ -14,15 +14,21 @@
         <title>Book Store</title>
         <link href="style/homeCSS.css" rel="stylesheet" type="text/css">
     </head>
+    <jsp:useBean id="currentUser" scope="session" class="repository.core.Session" />
+
     <%
-        String userName = (String) request.getAttribute("username");
-        if (null == userName) {
+        String user = currentUser.getCurrentUser();
+        String userName = "";
+        if (null == user) {
             response.sendRedirect("login.jsp");
+        }
+        else {
+            userName = currentUser.getUserName();
         }
     %>
     
     <body>
-        <h1>Welcome to the Book Store <%=request.getAttribute("username")%> !</h1>
+        <h1>Welcome to the Book Store <%=userName%> !</h1>
         <div> 
             <form action="DisplayAllController" method="GET">
                  View All Books <input type="submit" name="displayAll" value="Submit"/><br>
@@ -41,6 +47,7 @@
                 Delete all: 
                 <input type="submit" name="delete" value="deleteAll"/>
             </form>
+            
         </div>
         <form action="LogoutController" method="POST">
             <input type="submit" value="Logout"/>

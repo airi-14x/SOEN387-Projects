@@ -7,6 +7,7 @@ package repository.core;
 
 import java.sql.Blob;
 
+
 /**
  *
  * @author Jasmine Latendresse and Airi Chow
@@ -17,6 +18,7 @@ public class CoverImage {
     private Blob image;
     private String imagePath;
 
+
     public CoverImage(String mimeType, Blob image) {
         this.mimeType = mimeType;
         this.image = image;
@@ -25,7 +27,7 @@ public class CoverImage {
     public CoverImage() {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     public String getMimeType() {
         return mimeType;
     }
@@ -49,7 +51,7 @@ public class CoverImage {
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
     }
-
+    
     @Override
     public String toString() {
         return "CoverImage{" + "mimeType=" + mimeType + ", image=" + image + ", imagePath=" + imagePath + '}';

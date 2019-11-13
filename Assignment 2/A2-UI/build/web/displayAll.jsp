@@ -15,11 +15,15 @@
         <title>Display All Books</title>
          <link href="style/displayAllCSS.css" rel="stylesheet" type="text/css">
     </head>
+    <jsp:useBean id="currentUser" scope="session" class="repository.core.Session" />
+
     <%
-        String user = (String) Session.getCurrentUser();
+        String user = currentUser.getCurrentUser();
+        
         if (null == user) {
             response.sendRedirect("login.jsp");
         }
+       
     %>
     <body>
         <h1> Display All Books in Repository Database </h1><br>

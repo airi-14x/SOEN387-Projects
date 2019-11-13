@@ -9,19 +9,23 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="repository.core.Book"%>
 
+<jsp:useBean id="currentUser" scope="session" class="repository.core.Session" />
+
+    <%
+        String user = currentUser.getCurrentUser();
+        if (null == user) {
+            response.sendRedirect("login.jsp");
+        }
+
+    %>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Display Book</title>
     </head>
-    <%
-        String user = (String) Session.getCurrentUser();
-        if (null == user) {
-            response.sendRedirect("login.jsp");
-        }
-
-    %>
+    
     <body>
         <div>
             <table border="1px solid black;">
@@ -37,7 +41,6 @@
                 </tr>
                 <c:forEach items="${books}" var="book">
                     <tr>
-                    <form action="ImageController" method="GET">
                         <td><input type="text" value="${book.id}" name="bookId" readonly/></td>
                         <td>${book.title}</td>
                         <td>${book.description}</td>
@@ -45,8 +48,7 @@
                         <td>${book.author}</td>
                         <td>${book.publisherCompany}</td>
                         <td>${book.publisherAddress}</td>
-                        <td><input type="submit" value="View Cover" name="viewCover"/></td>
-                    </form>
+                        <td><form action="ImageController" method="GET"><input type="submit" value="View Cover" name="viewCover"/></form></td>
                     </tr>
                 </c:forEach>   
             </table>

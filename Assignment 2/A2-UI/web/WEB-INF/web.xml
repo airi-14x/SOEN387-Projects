@@ -64,8 +64,8 @@
         
     </session-config>
     <welcome-file-list>
-        <welcome-file>home.jsp</welcome-file>
         <welcome-file>login.jsp</welcome-file>
+        <welcome-file>home.jsp</welcome-file>
         <welcome-file>logout.jsp</welcome-file>
         <welcome-file>addBook.jsp</welcome-file>
         <welcome-file>error.jsp</welcome-file>

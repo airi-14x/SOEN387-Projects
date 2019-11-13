@@ -13,11 +13,14 @@
         <title>Add Book Page</title>
         <link href="style/addBookCSS.css" rel="stylesheet" type="text/css">
     </head>
+    <jsp:useBean id="currentUser" scope="session" class="repository.core.Session" />
+
     <%
-        String user = (String) Session.getCurrentUser();
+        String user = currentUser.getCurrentUser();
         if (null == user) {
             response.sendRedirect("login.jsp");
         }
+       
     %>
     <body>
         <h1>Add a book</h1>

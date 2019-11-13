@@ -11,12 +11,11 @@
 
 <jsp:useBean id="currentUser" scope="session" class="repository.core.Session" />
 
-    <%
-        String user = currentUser.getCurrentUser();
+     <%
+        String user = (String) Session.getCurrentUser();
         if (null == user) {
             response.sendRedirect("login.jsp");
         }
-
     %>
 
 <!DOCTYPE html>
@@ -41,14 +40,16 @@
                 </tr>
                 <c:forEach items="${books}" var="book">
                     <tr>
-                        <td><input type="text" value="${book.id}" name="bookId" readonly/></td>
-                        <td>${book.title}</td>
-                        <td>${book.description}</td>
-                        <td>${book.getISBN()}</td>
-                        <td>${book.author}</td>
-                        <td>${book.publisherCompany}</td>
-                        <td>${book.publisherAddress}</td>
-                        <td><form action="ImageController" method="GET"><input type="submit" value="View Cover" name="viewCover"/></form></td>
+                        <form action="ImageController" method="GET">
+                            <td><input type="text" value="${book.id}" name="bookId" readonly/></td>
+                            <td>${book.title}</td>
+                            <td>${book.description}</td>
+                            <td>${book.getISBN()}</td>
+                            <td>${book.author}</td>
+                            <td>${book.publisherCompany}</td>
+                            <td>${book.publisherAddress}</td>
+                            <td><input type="submit" value="View Cover" name="viewCover"/></td>
+                        </form>
                     </tr>
                 </c:forEach>   
             </table>

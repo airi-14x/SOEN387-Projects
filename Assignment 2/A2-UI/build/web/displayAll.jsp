@@ -38,18 +38,19 @@
             </tr>
             <c:forEach items="${books}" var="book">
                 <tr>
-                    <td>${book.id}</td>
-                    <td>${book.title}</td>
-                    <td>${book.description}</td>
-                    <td>${book.getISBN()}</td>
-                    <td>${book.author}</td>
-                    <td>${book.publisherCompany}</td>
-                    <td>${book.publisherAddress}</td>
-                    <td>${book.cover}</td>
+                    <form action="ImageController" method="GET"> 
+                        <td><input type="text" value="${book.id}" name="bookId" readonly/></td>
+                        <td>${book.title}</td>
+                        <td>${book.description}</td>
+                        <td>${book.getISBN()}</td>
+                        <td>${book.author}</td>
+                        <td>${book.publisherCompany}</td>
+                        <td>${book.publisherAddress}</td>
+                        <td><input type="submit" value="View Cover" name="viewCover"/></td>
+                    </form>
                 </tr>
             </c:forEach>   
         </table>
         </div>
-        
     </body>
 </html>

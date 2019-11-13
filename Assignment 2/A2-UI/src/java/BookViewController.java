@@ -5,8 +5,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import com.mysql.cj.jdbc.Blob;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.Base64;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -85,6 +93,7 @@ public class BookViewController extends HttpServlet {
         } else {
             request.setAttribute("book", "Please enter ID or ISBN!");
         }
+        
 
         RequestDispatcher rd = request.getRequestDispatcher("/bookView.jsp");
         rd.forward(request, response);

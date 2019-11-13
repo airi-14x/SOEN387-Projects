@@ -41,6 +41,7 @@
                 Delete all: 
                 <input type="submit" name="delete" value="deleteAll"/>
             </form>
+            
         </div>
         <form action="LogoutController" method="POST">
             <input type="submit" value="Logout"/>

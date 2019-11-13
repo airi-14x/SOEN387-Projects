@@ -164,7 +164,7 @@ public class BookRepositoryTest {
     }
 
     @Test
-    public void deleteAllBooksTest() {
+    public void deleteAllBooksTest() throws RepositoryException {
         System.out.println("Testing deleteAllBooks");
 
         int initialSize = allBooksInDB.size();

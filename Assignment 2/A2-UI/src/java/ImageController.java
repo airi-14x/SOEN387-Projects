@@ -1,12 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.util.ArrayList;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -17,16 +13,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import repository.core.Book;
 import repository.core.BookRepository;
-import repository.core.RepositoryException;
 import repository.core.Session;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
  *
- * @author Airi
+ * @author jasminelatendresse
  */
-@WebServlet("/DisplayAllController")
-public class DisplayAllController extends HttpServlet {
-
+@WebServlet("/ImageController")
+public class ImageController extends HttpServlet {
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -44,13 +45,14 @@ public class DisplayAllController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet DisplayAllController</title>");
+            out.println("<title>Servlet ImageController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet DisplayAllController at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ImageController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
+        doGet(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -65,17 +67,26 @@ public class DisplayAllController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        BookRepository bookRepo = BookRepository.getInstance();
+  
+        Book resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("bookId")));
+
+        java.sql.Blob image = resultBook.getCover().getImage();
+        String contentType = resultBook.getCover().getMimeType();
+        byte imageData[] = null;
+        
         try {
-            BookRepository bookRepo = BookRepository.getInstance();
-            ArrayList<Book> books = bookRepo.listAllBooks(new Session());
-            request.setAttribute("books", books);
-            RequestDispatcher rd = request.getRequestDispatcher("/displayAll.jsp");
-            // Temporary at displayAll jsp --> Need to figure out how to move it to home
-            // without showing Login page because username would be null if sent from here at the moment.
-            rd.forward(request, response);
-        } catch (RepositoryException ex) {
-            Logger.getLogger(DisplayAllController.class.getName()).log(Level.SEVERE, null, ex);
+            imageData = image.getBytes(1,(int)image.length());
         }
+        catch (SQLException ex) {
+            Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        response.setContentType(contentType);
+        OutputStream out = response.getOutputStream();
+        out.write(imageData);
+        out.flush();
+        out.close();
+        
     }
 
     /**
@@ -101,5 +112,4 @@ public class DisplayAllController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

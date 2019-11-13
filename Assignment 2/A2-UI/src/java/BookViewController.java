@@ -73,12 +73,12 @@ public class BookViewController extends HttpServlet {
             throws ServletException, IOException {
         BookRepository bookRepo = BookRepository.getInstance();
         Book resultBook = null;
-        OutputStream out = response.getOutputStream();
+        request.setAttribute("error", " ");
 
         if (request.getParameter("viewBookID").equals("") == false) {
             resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("viewBookID")));
             if (resultBook.getTitle() == null) {
-                out.write("Sorry there's no book with that ID.".getBytes());
+                request.setAttribute("error", "Sorry there's no book with that ID.");
             } else {
                 request.setAttribute("book", resultBook);
             }
@@ -86,17 +86,15 @@ public class BookViewController extends HttpServlet {
         } else if (request.getParameter("ISBN").equals("") == false) {
             resultBook = bookRepo.getBookInfo(new Session(), request.getParameter("ISBN"));
             if (resultBook.getTitle() == null) {
-                out.write("Sorry there's no book with that ISBN.".getBytes());
+                request.setAttribute("error", "Sorry there's no book with that ISBN.");
             } else {
                 request.setAttribute("book", resultBook);
             }
         } else {
-            out.write("Please enter ID or ISBN!".getBytes());
+            request.setAttribute("error", "Please enter ID or ISBN!");
         }
         
-        out.flush();
-        out.close();
-
+    
         RequestDispatcher rd = request.getRequestDispatcher("/bookView.jsp");
         rd.forward(request, response);
         //getServletContext().getRequestDispatcher("/bookView.jsp").forward(request, response);

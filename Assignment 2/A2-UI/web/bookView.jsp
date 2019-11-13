@@ -25,9 +25,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Display Book</title>
     </head>
-    
     <body>
         <div>
+            <%=request.getAttribute("error")%>
             <table border="1px solid black;">
                 <tr>
                     <th>ID</th>

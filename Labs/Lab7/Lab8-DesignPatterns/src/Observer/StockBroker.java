@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab8.designpatterns;
+package Observer;
 
-import java.io.File;
-import java.util.ArrayList;
+import java.util.Map;
 
 /**
  *
  * @author Airi
  */
-public interface CompressionStrategy {
+// Observer Interface
+public interface StockBroker {
 
-    public void compressFiles(ArrayList<File> files);
+    void update(Map<String, Double> stockList);
 }

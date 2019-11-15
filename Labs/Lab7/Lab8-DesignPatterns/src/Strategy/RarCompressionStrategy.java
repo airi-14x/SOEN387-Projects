@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package lab8.designpatterns;
+package Strategy;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -12,11 +12,11 @@ import java.util.ArrayList;
  *
  * @author Airi
  */
-public class ZipCompressionStrategy implements CompressionStrategy {
+public class RarCompressionStrategy implements CompressionStrategy {
 
     @Override
     public void compressFiles(ArrayList<File> files) {
-        System.out.println("In ZIP Compression Strategy");
+        System.out.println("In Rar Compression Strategy");
     }
 
 }

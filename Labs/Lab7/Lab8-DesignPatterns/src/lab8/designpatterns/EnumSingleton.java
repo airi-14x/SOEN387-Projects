@@ -32,27 +32,3 @@ enum EnumSingleton {
                 + "days=" + Arrays.toString(days) + '}';
     }
 }
-
-/*
-    enumEnumSingleton {
-WEEKDAY("Monday", "Tuesday", "Wednesday", "Thursday", "Friday"),
-WEEKEND("Saturday", "Sunday");
-privateString[] days;
-EnumSingleton(String ...days) {
-System.out.println("Initializing enum with "+ Arrays.toString(days));
-this.days= days;
-}
-publicString[] getDays() {
-returnthis.days;
-}
-@Override
-publicString toString() {
-return"EnumSingleton{"+
-"days="+ Arrays.toString(days) +
-'}';
-}
-}
-
-
- */
-//}

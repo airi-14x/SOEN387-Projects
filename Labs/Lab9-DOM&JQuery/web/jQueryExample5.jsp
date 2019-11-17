@@ -1,6 +1,6 @@
 <%-- 
-    Document   : jQueryExample3
-    Created on : 17 nov. 2019, 11:06:41
+    Document   : jQueryExample5
+    Created on : 17 nov. 2019, 13:20:49
     Author     : Airi
 --%>
 
@@ -9,20 +9,21 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>jQuery Example 3</title>
+        <title>jQuery Example 5</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
         </script>
         <script>
         $(document).ready(function(){
-           $("button").click(function(){
-             $("p").toggle();  
+           $("button").dblclick(function(){
+            $(this).hide();
            });
         });
         </script>
     </head>
     <body>
-        <button>It's a Toggle Button</button>
-        <p>Welcome to tutorial class!</p>
-        <p>We are learning jQuery in SOEN 387.</p>
+        <button>If you double-click on me, I will disappear.</button><br><br>
+        <button>Click me away!</button><br><br>
+        <button>Click me too!</button><br><br>
     </body>
 </html>
+

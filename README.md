@@ -11,10 +11,10 @@
 ### Assignment 2: Deadline - November 1st 2019
 
 ```
-- The Repository Core 
+- The Repository Core
   (implementing the business logic tier with no assumptions
     on the front-end  platform.)
-- The front-end Web Project 
+- The front-end Web Project
   (implementing the front-end UI using servlets and jsp)
 
 1. Creating the Database Layer
@@ -22,4 +22,19 @@
 3. Creating Junit Test
 4. Creating the Front-End UI
 5. The System Model
+```
+
+### Assignment 3: Deadline - December 2nd 2019
+```
+In this assignment, we use the project implemented in assignment 2 and refactor it by applying the following architectural patterns:
+- Table Data Gateway / Active Record
+- Domain Model
+- Service Layer
+- Template View
+
+1. Part A - The Data Access Layer
+2. Part B - The Repository Core
+3. Part C - The Web Presentation Layer
+4. Part D - The Service Layer
+5. Part E - The System Model
 ```

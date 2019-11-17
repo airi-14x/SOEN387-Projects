@@ -15,6 +15,7 @@
     </session-config>
     
      <welcome-file-list>
+        <welcome-file>jQueryExample2.jsp</welcome-file>
         <welcome-file>Example7.jsp</welcome-file>
         <welcome-file>Example5.jsp</welcome-file>
         <welcome-file>Example4.jsp</welcome-file>

@@ -8,7 +8,7 @@
 5. The readme.md file (required but not marked)
 ```
 
-### Assignment 2: Deadline - November 1st 2019
+### Assignment 2: Deadline - ~~November 1st 2019~~ November 13th 2019
 
 ```
 - The Repository Core

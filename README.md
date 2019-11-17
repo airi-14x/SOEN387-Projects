@@ -26,7 +26,8 @@
 
 ### Assignment 3: Deadline - December 2nd 2019
 ```
-In this assignment, we use the project implemented in assignment 2 and refactor it by applying the following architectural patterns:
+In this assignment, we use the project implemented in assignment 2
+and refactor it by applying the following architectural patterns:
 - Table Data Gateway / Active Record
 - Domain Model
 - Service Layer

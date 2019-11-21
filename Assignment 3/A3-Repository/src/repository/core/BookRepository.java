@@ -5,12 +5,9 @@
  */
 package repository.core;
 
-import java.io.BufferedInputStream;
-import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -48,7 +45,7 @@ public class BookRepository implements IBookRepository {
         try {
             resetBooks(session);
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book");
-            if(resultSet == null) {
+            if (resultSet == null) {
                 throw new RepositoryException("No Books to display at the moment");
             }
             while (resultSet.next()) {
@@ -189,13 +186,15 @@ public class BookRepository implements IBookRepository {
         System.out.println("STATEMENT: " + statement);
         repositoryDatabaseConnection.executeUpdate(statement);
 
-        // ID begins at index 1. But books:Arraylist starts at index 0.
-        books.get(id - 1).setTitle(title);
-        books.get(id - 1).setDescription(description);
-        books.get(id - 1).setAuthor(author);
+        for (Book book : books) {
+            if (book.getId() == id) {
+                book.setTitle(title);
+                book.setDescription(description);
+                book.setAuthor(author);
+            }
+        }
+
     }
-    
-    
 
     public void setBookCoverImage(Session session, File image, String mimeType, int id) throws RepositoryException {
         FileInputStream input = null;
@@ -256,7 +255,7 @@ public class BookRepository implements IBookRepository {
                     + "	`id` INT  NOT NULL AUTO_INCREMENT,\n"
                     + "    `title` VARCHAR(64) DEFAULT NULL,\n"
                     + "    `description` VARCHAR(256) DEFAULT NULL,\n"
-                    + "    `isbn` VARCHAR(64) DEFAULT NULL,\n"
+                    + "    `isbn` VARCHAR(64) DEFAULT NULL UNIQUE,\n"
                     + "    `last_name` VARCHAR(64) DEFAULT NULL,\n"
                     + "    `first_name` VARCHAR(64) DEFAULT NULL,\n"
                     + "    `publisher_company` VARCHAR(64) DEFAULT NULL,\n"

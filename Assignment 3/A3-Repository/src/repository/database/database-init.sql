@@ -2,7 +2,7 @@ CREATE TABLE `book`(
 	`id` INT  NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(64) DEFAULT NULL,
     `description` VARCHAR(256) DEFAULT NULL,
-    `isbn` VARCHAR(64) DEFAULT NULL,
+    `isbn` VARCHAR(64) DEFAULT NULL UNIQUE,
     `last_name` VARCHAR(64) DEFAULT NULL,
     `first_name` VARCHAR(64) DEFAULT NULL,
     `publisher_company` VARCHAR(64) DEFAULT NULL,

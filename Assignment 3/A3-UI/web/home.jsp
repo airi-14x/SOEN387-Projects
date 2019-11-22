@@ -21,24 +21,23 @@
         String userName = "";
         if (null == user) {
             response.sendRedirect("login.jsp");
-        }
-        else {
+        } else {
             userName = currentUser.getUserName();
         }
     %>
-    
+
     <body>
         <h1>Welcome to the Book Store <%=userName%> !</h1>
         <div> 
             <form action="DisplayAllController" method="GET">
-                 View All Books <input type="submit" name="displayAll" value="Submit"/><br>
+                View All Books <input type="submit" name="displayAll" value="Submit"/><br>
             </form>
-            
+
             <form action="BookViewController" method="GET">
                 View Book with ID:<input type="text" name="viewBookID"> or with ISBN: <input type="text" name="ISBN">
                 <input type="submit" name="viewBook" value="Submit"/><br>
             </form>
-            
+
             <a href="addBook.jsp">Add/Update a book</a><br>
 
             <form action="DeleteBookController" method="GET">
@@ -47,7 +46,11 @@
                 Delete all: 
                 <input type="submit" name="delete" value="deleteAll"/>
             </form>
-            
+
+            <% if(request.getAttribute("error") != null) {
+                System.out.println(request.getAttribute("error"));
+            }%>
+
         </div>
         <form action="LogoutController" method="POST">
             <input type="submit" value="Logout"/>

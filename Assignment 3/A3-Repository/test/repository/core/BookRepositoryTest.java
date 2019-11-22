@@ -75,7 +75,7 @@ public class BookRepositoryTest {
     }
 
     @Test
-    public void getBookInfoTest() {
+    public void getBookInfoTest() throws RepositoryException {
         System.out.println("Testing getBookInfo by book id");
 
         Book resultBook = bookRepository.getBookInfo(session, book1.getId());

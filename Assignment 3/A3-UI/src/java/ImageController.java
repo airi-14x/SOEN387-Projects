@@ -20,14 +20,13 @@ import repository.core.Session;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author jasminelatendresse
  */
 @WebServlet("/ImageController")
 public class ImageController extends HttpServlet {
-    
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -67,6 +66,7 @@ public class ImageController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         BookRepository bookRepo = BookRepository.getInstance();
   
         Book resultBook = null;
@@ -77,31 +77,37 @@ public class ImageController extends HttpServlet {
             Logger.getLogger(ImageController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        
-        java.sql.Blob image = resultBook.getCover().getImage();
-        String contentType = resultBook.getCover().getMimeType();
-        response.setContentType(contentType);
-        OutputStream out = response.getOutputStream();
-        byte imageData[] = null;
-     
-        if(image == null){
-            out.write("No cover image for this book.".getBytes());
-        }
-        else {
-            try {
-            imageData = image.getBytes(1,(int)image.length());
-        }
-        catch (SQLException ex) {
-            Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
+
+        try {
+            BookRepository bookRepo = BookRepository.getInstance();
+
+            Book resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("bookId")));
+
+            java.sql.Blob image = resultBook.getCover().getImage();
+            String contentType = resultBook.getCover().getMimeType();
+            response.setContentType(contentType);
+            OutputStream out = response.getOutputStream();
+            byte imageData[] = null;
+
+            if (image == null) {
+                out.write("No cover image for this book.".getBytes());
+            } else {
+                try {
+                    imageData = image.getBytes(1, (int) image.length());
+                } catch (SQLException ex) {
+                    Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
+                out.write(imageData);
+
+            }
+
+            out.flush();
+            out.close();
+        } catch (RepositoryException ex) {
+            Logger.getLogger(ImageController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        out.write(imageData);
-            
-        }
-        
-        out.flush();
-        out.close();
-        
     }
 
     /**

@@ -5,14 +5,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import com.mysql.cj.jdbc.Blob;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -76,6 +70,7 @@ public class BookViewController extends HttpServlet {
         Book resultBook = null;
         request.setAttribute("error", " ");
 
+
         if (!request.getParameter("viewBookID").equals("")) {
             String bookID = (String) request.getParameter("viewBookID");
             try {
@@ -96,6 +91,7 @@ public class BookViewController extends HttpServlet {
                 request.setAttribute("error", "No book found in the dabatase with id = " + request.getParameter("viewBookID"));
             }
             if (resultBookID != 0) {
+
                 request.setAttribute("book", resultBook);
             }
             else {

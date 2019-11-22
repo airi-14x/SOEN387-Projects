@@ -66,16 +66,46 @@ public class DeleteBookController extends HttpServlet {
 
         BookRepository bookRepo = BookRepository.getInstance();
 
-        if (request.getParameter("deleteBookID") == null) {
+        if (request.getParameter("deleteBookID").equals("")) {
+            request.setAttribute("errorMessage", "Please enter a book ID in order to delete a book.");
+            RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+            rd.forward(request, response);
+            response.sendRedirect("error.jsp");
 
         } else if (request.getParameter("deleteBookID").equals("") && request.getParameter("delete").equals("deleteAll")) {
             bookRepo.deleteAllBooks(new Session());
-        } else if (request.getParameter("delete").equals("deleteBook") && !(request.getParameter("deleteBookID").equals(""))) {
+        } 
+        else if (request.getParameter("delete").equals("deleteBook") && !(request.getParameter("deleteBookID").equals(""))) {
             String bookID = (String) request.getParameter("deleteBookID");
+            int bookIDtoInt = 0;
+            
             try {
-                bookRepo.deleteBook(new Session(), Integer.parseInt(bookID));
-            } catch (RepositoryException ex) {
+                bookIDtoInt = Integer.parseInt(bookID);
+            } catch (NumberFormatException e) {
+                request.setAttribute("errorMessage", "The book ID must be an integer");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("error.jsp");
+            }
+            
+            try {
+                bookRepo.getBookInfo(new Session(), bookIDtoInt);
+            } catch (RepositoryException e) {
+                request.setAttribute("errorMessage", "Book with id " + bookIDtoInt + " not found in the database.");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("error.jsp");
+            }
+            
+            try {
+                bookRepo.deleteBook(new Session(), bookIDtoInt);
+
+            } catch (Exception ex) {
                 Logger.getLogger(DeleteBookController.class.getName()).log(Level.SEVERE, null, ex);
+                request.setAttribute("errorMessage", "Book with id " + bookID + " could not be found in the database.");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("error.jsp");
             }
         }
 

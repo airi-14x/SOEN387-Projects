@@ -76,11 +76,15 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public Book getBookInfo(Session session, int id) {
+    public Book getBookInfo(Session session, int id) throws RepositoryException {
         Book result = new Book();
 
         try {
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
+            
+            if(resultSet == null) {
+                throw new RepositoryException("Book not found in database");
+            }
 
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
@@ -228,7 +232,7 @@ public class BookRepository implements IBookRepository {
 
         ResultSet rs = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
         if (rs == null) {
-            throw new RepositoryException("Book not found in the database");
+            throw new RepositoryException("Book not found in the databse");
         }
 
         try {

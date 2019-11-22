@@ -11,7 +11,7 @@ public interface IBookRepository {
 
     ArrayList<Book> listAllBooks(Session session) throws RepositoryException;
 
-    Book getBookInfo(Session session, int id);
+    Book getBookInfo(Session session, int id) throws RepositoryException;
 
     Book getBookInfo(Session session, String isbn);
 

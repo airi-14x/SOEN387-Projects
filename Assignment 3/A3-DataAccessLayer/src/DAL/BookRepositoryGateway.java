@@ -28,11 +28,11 @@ import repository.core.Session;
 public class BookRepositoryGateway {
 
     private ArrayList<Book> books;
-    private RepositoryDatabase repositoryDatabaseConnection;
+    private BookRepositoryDatabase repositoryDatabaseConnection;
     private static BookRepositoryGateway instance = null;
 
     private BookRepositoryGateway() {
-        repositoryDatabaseConnection = RepositoryDatabase.getInstance();
+        repositoryDatabaseConnection = BookRepositoryDatabase.getInstance();
         System.out.println("Connection " + repositoryDatabaseConnection);
         books = new ArrayList<Book>();
     }

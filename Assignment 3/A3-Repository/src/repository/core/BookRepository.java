@@ -81,8 +81,8 @@ public class BookRepository implements IBookRepository {
 
         try {
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
-            
-            if(resultSet == null) {
+
+            if (resultSet == null) {
                 throw new RepositoryException("Book not found in database");
             }
 

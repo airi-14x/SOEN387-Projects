@@ -5,14 +5,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import com.mysql.cj.jdbc.Blob;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -23,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import repository.core.Book;
 import repository.core.BookRepository;
+import repository.core.RepositoryException;
 import repository.core.Session;
 
 /**
@@ -76,7 +71,11 @@ public class BookViewController extends HttpServlet {
         request.setAttribute("error", " ");
 
         if (request.getParameter("viewBookID").equals("") == false) {
-            resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("viewBookID")));
+            try {
+                resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("viewBookID")));
+            } catch (RepositoryException ex) {
+                Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
+            }
             if (resultBook.getTitle() == null) {
                 request.setAttribute("error", "Sorry there's no book with that ID.");
             } else {
@@ -93,8 +92,7 @@ public class BookViewController extends HttpServlet {
         } else {
             request.setAttribute("error", "Please enter ID or ISBN!");
         }
-        
-    
+
         RequestDispatcher rd = request.getRequestDispatcher("/bookView.jsp");
         rd.forward(request, response);
         //getServletContext().getRequestDispatcher("/bookView.jsp").forward(request, response);

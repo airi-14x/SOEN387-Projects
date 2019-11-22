@@ -67,6 +67,17 @@ public class ImageController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        BookRepository bookRepo = BookRepository.getInstance();
+  
+        Book resultBook = null;
+        
+        try {
+            bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("bookId")));
+        } catch (RepositoryException ex) {
+            Logger.getLogger(ImageController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+
         try {
             BookRepository bookRepo = BookRepository.getInstance();
 

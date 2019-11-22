@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import repository.core.Book;
 import repository.core.BookRepository;
+import repository.core.RepositoryException;
 import repository.core.Session;
 
 /*
@@ -68,7 +69,13 @@ public class ImageController extends HttpServlet {
             throws ServletException, IOException {
         BookRepository bookRepo = BookRepository.getInstance();
   
-        Book resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("bookId")));
+        Book resultBook = null;
+        
+        try {
+            bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("bookId")));
+        } catch (RepositoryException ex) {
+            Logger.getLogger(ImageController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         
         java.sql.Blob image = resultBook.getCover().getImage();

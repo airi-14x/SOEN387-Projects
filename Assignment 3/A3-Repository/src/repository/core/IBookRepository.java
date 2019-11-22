@@ -13,7 +13,7 @@ public interface IBookRepository {
 
     Book getBookInfo(Session session, int id) throws RepositoryException;
 
-    Book getBookInfo(Session session, String isbn);
+    Book getBookInfo(Session session, String isbn) throws RepositoryException;
 
     int addNewBook(Session session, Book book) throws RepositoryException;
 

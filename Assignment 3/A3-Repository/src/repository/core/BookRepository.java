@@ -85,7 +85,7 @@ public class BookRepository implements IBookRepository {
             if(resultSet == null) {
                 throw new RepositoryException("Book not found in database");
             }
-
+            
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
@@ -110,11 +110,14 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public Book getBookInfo(Session session, String isbn) {
+    public Book getBookInfo(Session session, String isbn) throws RepositoryException {
         Book result = new Book();
-
         try {
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE isbn=" + isbn);
+            if(resultSet == null) {
+                throw new RepositoryException("Book not found in database");
+            }
+            
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");

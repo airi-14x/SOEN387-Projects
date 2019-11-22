@@ -22,6 +22,7 @@ public class BookRepository implements IBookRepository {
     private ArrayList<Book> books;
     private RepositoryDatabase repositoryDatabaseConnection;
     private static BookRepository instance = null;
+    //private BookRepositoryGateway gatewayInstance = null;
 
     private BookRepository() {
         repositoryDatabaseConnection = RepositoryDatabase.getInstance();

@@ -6,6 +6,8 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLIntegrityConstraintViolationException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -68,12 +70,12 @@ public class AddBookController extends HttpServlet {
 
         Author author = new Author(fName, lName);
         Book book = new Book(title, description, isbn, author, publisherName, publisherAddress);
-        //Book book = new Book(title, isbn, description, author, publisherName, publisherAddress, new CoverImage());
         try {
             bookRepo.addNewBook(new Session(), book);
         } catch (RepositoryException ex) {
             Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            
+        } 
         //request.setAttribute("books", books);
         RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
         rd.forward(request, response);

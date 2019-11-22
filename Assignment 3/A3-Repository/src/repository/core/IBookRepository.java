@@ -1,6 +1,7 @@
 package repository.core;
 
 import java.io.File;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.ArrayList;
 
 /**

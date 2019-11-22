@@ -22,6 +22,7 @@ public class BookRepository implements IBookRepository {
     private ArrayList<Book> books;
     private RepositoryDatabase repositoryDatabaseConnection;
     private static BookRepository instance = null;
+    //private BookRepositoryGateway gatewayInstance = null;
 
     private BookRepository() {
         repositoryDatabaseConnection = RepositoryDatabase.getInstance();
@@ -81,8 +82,8 @@ public class BookRepository implements IBookRepository {
 
         try {
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
-            
-            if(resultSet == null) {
+
+            if (resultSet == null) {
                 throw new RepositoryException("Book not found in database");
             }
 

@@ -17,9 +17,9 @@ import java.util.logging.Logger;
  *
  * @author Airi
  */
-public class RepositoryDatabase {
+public class BookRepositoryDatabase {
 
-    private static RepositoryDatabase database_instance; // SINGLETON
+    private static BookRepositoryDatabase database_instance; // SINGLETON
     private Connection connection = null;
     private Statement statement = null;
     private ResultSet result_set = null;
@@ -27,16 +27,16 @@ public class RepositoryDatabase {
     private String user = "root";
     private String pass = "root1234";
 
-    private RepositoryDatabase() {
+    private BookRepositoryDatabase() {
 
         // 1. Get a connection to database
         try {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/BookRepo?serverTimezone=UTC", user, pass);
         } catch (SQLException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BookRepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BookRepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -45,10 +45,10 @@ public class RepositoryDatabase {
     }
 
     // SINGLETON
-    public static RepositoryDatabase getInstance() {
+    public static BookRepositoryDatabase getInstance() {
         if (database_instance == null) {
-            database_instance = new RepositoryDatabase();
-            System.out.println("DAL.RepositoryDatabase - Instance is created!");
+            database_instance = new BookRepositoryDatabase();
+            System.out.println("DAL.BookRepositoryDatabase - Instance is created!");
         }
         return database_instance;
     }
@@ -59,7 +59,7 @@ public class RepositoryDatabase {
             // 2. Create a statement
             statement = connection.createStatement();
         } catch (SQLException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BookRepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
         return statement;
     }
@@ -69,7 +69,7 @@ public class RepositoryDatabase {
             createStatement();
             result_set = statement.executeQuery(query);
         } catch (SQLException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BookRepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
         return result_set;
     }
@@ -80,7 +80,7 @@ public class RepositoryDatabase {
             createStatement();
             update = statement.executeUpdate(query);
         } catch (SQLException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BookRepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
         return update;
     }
@@ -98,7 +98,7 @@ public class RepositoryDatabase {
                 connection.close();
             }
         } catch (SQLException ex) {
-            Logger.getLogger(RepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BookRepositoryDatabase.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

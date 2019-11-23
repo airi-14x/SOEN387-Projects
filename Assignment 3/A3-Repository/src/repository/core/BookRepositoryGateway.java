@@ -5,6 +5,7 @@
  */
 package repository.core;
 
+import DAL.BookRepositoryDatabase;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -20,11 +21,11 @@ import java.util.logging.Logger;
 public class BookRepositoryGateway implements IBookRepository {
 
     private ArrayList<Book> books;
-    private RepositoryDatabase repositoryDatabaseConnection;
+    private BookRepositoryDatabase repositoryDatabaseConnection;
     private static BookRepositoryGateway instance = null;
 
     private BookRepositoryGateway() {
-        repositoryDatabaseConnection = RepositoryDatabase.getInstance();
+        repositoryDatabaseConnection = BookRepositoryDatabase.getInstance();
         System.out.println("Connection " + repositoryDatabaseConnection);
         books = new ArrayList<Book>();
 

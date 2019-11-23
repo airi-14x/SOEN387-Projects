@@ -5,6 +5,7 @@
  */
 package repository.core;
 
+import DAL.BookRepositoryDatabase;
 import java.io.File;
 import java.util.ArrayList;
 import org.json.simple.JSONObject;
@@ -25,7 +26,7 @@ public class BookRepositoryGatewayTest {
     static Book book2;
     static Session session;
     static JSONObject user;
-    static RepositoryDatabase repoDb = null;
+    static BookRepositoryDatabase repoDb = null;
     static File file = null;
 
     public BookRepositoryGatewayTest() {
@@ -34,7 +35,7 @@ public class BookRepositoryGatewayTest {
     @BeforeClass
     public static void setUp() throws BookRepositoryGatewayException {
         bookRepository = BookRepositoryGateway.getInstance();
-        repoDb = RepositoryDatabase.getInstance();
+        repoDb = BookRepositoryDatabase.getInstance();
 
         session = new Session();
         user = new JSONObject();

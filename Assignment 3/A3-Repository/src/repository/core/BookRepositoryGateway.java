@@ -46,9 +46,7 @@ public class BookRepositoryGateway implements IBookRepository {
         try {
             resetBooks(session);
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book");
-            if (resultSet == null) {
-                throw new BookRepositoryGatewayException("No Books to display at the moment");
-            }
+
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String title = resultSet.getString("title");
@@ -61,9 +59,14 @@ public class BookRepositoryGateway implements IBookRepository {
                 String mimeType = resultSet.getString("image_mime");
                 Blob imageData = resultSet.getBlob("image_data");
 
+                //System.out.println("mimeType " + mimeType);
+                //System.out.println("imageData " + imageData);
+                //Book book = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address);
                 Book book = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
                 book.setId(id); // Set ID of book to match Database ID
                 books.add(book);
+
+                //books.add(new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData)));
             }
 
         } catch (SQLException e) {
@@ -73,12 +76,12 @@ public class BookRepositoryGateway implements IBookRepository {
 
     @Override
     public Book getBookInfo(Session session, int id) throws BookRepositoryGatewayException {
-        Book result = new Book();
+        Book result = null;
 
         try {
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
 
-            if (resultSet == null) {
+            if (!resultSet.next()) {
                 throw new BookRepositoryGatewayException("Book not found in database");
             }
 
@@ -94,7 +97,10 @@ public class BookRepositoryGateway implements IBookRepository {
                 String mimeType = resultSet.getString("image_mime");
                 Blob imageData = resultSet.getBlob("image_data");
 
+                //System.out.println("mimeType " + mimeType);
+                //System.out.println("imageData " + imageData);
                 result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
+                //result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address);
                 result.setId(bookId); // Set ID of book to match Database ID
             }
         } catch (SQLException e) {
@@ -104,10 +110,10 @@ public class BookRepositoryGateway implements IBookRepository {
 
     @Override
     public Book getBookInfo(Session session, String isbn) throws BookRepositoryGatewayException {
-        Book result = new Book();
+        Book result = null;
         try {
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE isbn=" + isbn);
-            if (resultSet == null) {
+            if (!resultSet.next()) {
                 throw new BookRepositoryGatewayException("Book not found in database");
             }
 
@@ -124,6 +130,7 @@ public class BookRepositoryGateway implements IBookRepository {
                 Blob imageData = resultSet.getBlob("image_data");
 
                 result = new Book(title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
+                //result = new Book(title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address);
                 result.setId(bookId); // Set ID of book to match Database ID
 
             }
@@ -152,6 +159,11 @@ public class BookRepositoryGateway implements IBookRepository {
                 setBookCoverImage(session, file, book.getCover().getMimeType(), book.getId());
             }
 
+        }
+        for (int i = 0; i < books.size(); i++) {
+            if (books.get(i).getISBN().equals(book.getISBN())) {
+                throw new BookRepositoryGatewayException("ISBN must be unique");
+            }
         }
 
         //System.out.println("");
@@ -211,13 +223,12 @@ public class BookRepositoryGateway implements IBookRepository {
         if (null == user) {
             throw new BookRepositoryGatewayException("You must be logged in to do this operation.");
         }
-
-        ResultSet rs = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
-        if (rs == null) {
-            throw new BookRepositoryGatewayException("Book not found in the databse");
-        }
-
         try {
+            ResultSet rs = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
+            if (!rs.next()) {
+                throw new BookRepositoryGatewayException("Book not found in the databse");
+            }
+
             repositoryDatabaseConnection.executeUpdate("DELETE FROM book WHERE id=" + id);
         } catch (Exception e) {
         }

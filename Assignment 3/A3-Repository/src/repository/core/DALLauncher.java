@@ -3,13 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAL;
+package repository.core;
 
 import java.util.ArrayList;
-import repository.core.Author;
-import repository.core.Book;
-import repository.core.CoverImage;
-import repository.core.Session;
 
 /**
  *
@@ -76,5 +72,4 @@ public class DALLauncher {
         }
 
     }
-
 }

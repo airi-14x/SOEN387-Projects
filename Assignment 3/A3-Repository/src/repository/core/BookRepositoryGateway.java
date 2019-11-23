@@ -5,6 +5,7 @@
  */
 package repository.core;
 
+import DAL.BookRepositoryDatabase;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -17,37 +18,36 @@ import java.util.logging.Logger;
  *
  * @author Jasmine Latendresse and Airi Chow
  */
-public class BookRepository implements IBookRepository {
+public class BookRepositoryGateway implements IBookRepository {
 
     private ArrayList<Book> books;
-    private RepositoryDatabase repositoryDatabaseConnection;
-    private static BookRepository instance = null;
-    //private BookRepositoryGateway gatewayInstance = null;
+    private BookRepositoryDatabase repositoryDatabaseConnection;
+    private static BookRepositoryGateway instance = null;
 
-    private BookRepository() {
-        repositoryDatabaseConnection = RepositoryDatabase.getInstance();
+    private BookRepositoryGateway() {
+        repositoryDatabaseConnection = BookRepositoryDatabase.getInstance();
         System.out.println("Connection " + repositoryDatabaseConnection);
         books = new ArrayList<Book>();
 
     }
 
-    public static synchronized BookRepository getInstance() {
+    public static synchronized BookRepositoryGateway getInstance() {
         if (instance == null) {
-            instance = new BookRepository();
-            System.out.println("BookRepository - Instance is Created!");
+            instance = new BookRepositoryGateway();
+            System.out.println("Business Core: BookRepositoryGateway - Instance is Created!");
             System.out.println("Instance " + instance);
         }
         return instance;
     }
 
     @Override
-    public ArrayList<Book> listAllBooks(Session session) throws RepositoryException {
+    public ArrayList<Book> listAllBooks(Session session) throws BookRepositoryGatewayException {
 
         try {
             resetBooks(session);
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book");
             if (resultSet == null) {
-                throw new RepositoryException("No Books to display at the moment");
+                throw new BookRepositoryGatewayException("No Books to display at the moment");
             }
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
@@ -61,14 +61,9 @@ public class BookRepository implements IBookRepository {
                 String mimeType = resultSet.getString("image_mime");
                 Blob imageData = resultSet.getBlob("image_data");
 
-                //System.out.println("mimeType " + mimeType);
-                //System.out.println("imageData " + imageData);
-                //Book book = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address);
                 Book book = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
                 book.setId(id); // Set ID of book to match Database ID
                 books.add(book);
-
-                //books.add(new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData)));
             }
 
         } catch (SQLException e) {
@@ -77,16 +72,16 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public Book getBookInfo(Session session, int id) throws RepositoryException {
+    public Book getBookInfo(Session session, int id) throws BookRepositoryGatewayException {
         Book result = new Book();
 
         try {
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
 
             if (resultSet == null) {
-                throw new RepositoryException("Book not found in database");
+                throw new BookRepositoryGatewayException("Book not found in database");
             }
-            
+
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
@@ -99,10 +94,7 @@ public class BookRepository implements IBookRepository {
                 String mimeType = resultSet.getString("image_mime");
                 Blob imageData = resultSet.getBlob("image_data");
 
-                //System.out.println("mimeType " + mimeType);
-                //System.out.println("imageData " + imageData);
                 result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
-                //result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address);
                 result.setId(bookId); // Set ID of book to match Database ID
             }
         } catch (SQLException e) {
@@ -111,14 +103,14 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public Book getBookInfo(Session session, String isbn) throws RepositoryException {
+    public Book getBookInfo(Session session, String isbn) throws BookRepositoryGatewayException {
         Book result = new Book();
         try {
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE isbn=" + isbn);
-            if(resultSet == null) {
-                throw new RepositoryException("Book not found in database");
+            if (resultSet == null) {
+                throw new BookRepositoryGatewayException("Book not found in database");
             }
-            
+
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
@@ -132,7 +124,6 @@ public class BookRepository implements IBookRepository {
                 Blob imageData = resultSet.getBlob("image_data");
 
                 result = new Book(title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
-                //result = new Book(title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address);
                 result.setId(bookId); // Set ID of book to match Database ID
 
             }
@@ -141,28 +132,16 @@ public class BookRepository implements IBookRepository {
         return result;
     }
 
-    /**
-     *
-     * @param session
-     * @param book
-     * @return
-     * @throws RepositoryException
-     */
     @Override
-    public int addNewBook(Session session, Book book) throws RepositoryException {
+    public int addNewBook(Session session, Book book) throws BookRepositoryGatewayException {
         String user = (String) Session.getCurrentUser();
         if (null == user) {
-            throw new RepositoryException("You must be logged in to do this operation.");
+            throw new BookRepositoryGatewayException("You must be logged in to do this operation.");
         }
-        
+
         repositoryDatabaseConnection.executeUpdate("INSERT INTO book(title, description,isbn, first_name, last_name, publisher_company, address) VALUES(\"" + book.getTitle() + "\",\""
                 + book.getDescription() + "\",\"" + book.getISBN() + "\", \"" + book.getAuthor().getFirstName() + "\", \""
                 + book.getAuthor().getLastName() + "\", \"" + book.getPublisherCompany() + "\", \"" + book.getPublisherAddress() + "\")");
-       
-        /*repositoryDatabaseConnection.executeUpdate("INSERT INTO book(id, title, description, isbn, last_name, first_name, publisher_company, address, mime_type, image_data) "
-                + "VALUES(\"" + book.getId() + "\", \"" + book.getTitle() + "\", \"" + book.getDescription() + "\", \"" + book.getISBN() + "\",\""
-                + book.getAuthor().getFirstName() + "\", \"" + book.getAuthor().getLastName() + "\", \"" + book.getPublisherCompany() + "\", \"" + book.getPublisherAddress() + "\", \"mime_type" + "\", \"image_data"
-        );*/
 
         book.autoIncrement();
 
@@ -175,18 +154,16 @@ public class BookRepository implements IBookRepository {
 
         }
 
-        System.out.println("");
-
+        //System.out.println("");
         books.add(book);
-        //System.out.println(books);
         return book.getId(); //Return: Should be ID
     }
 
     @Override
-    public void updateBookInfo(Session session, int id, String title, String description, Author author) throws RepositoryException {
+    public void updateBookInfo(Session session, int id, String title, String description, Author author) throws BookRepositoryGatewayException {
         String user = (String) Session.getCurrentUser();
         if (null == user) {
-            throw new RepositoryException("You must be logged in to do this operation.");
+            throw new BookRepositoryGatewayException("You must be logged in to do this operation.");
         }
 
         String statement = "UPDATE book SET title = '" + title + "', description = '"
@@ -205,12 +182,12 @@ public class BookRepository implements IBookRepository {
 
     }
 
-    public void setBookCoverImage(Session session, File image, String mimeType, int id) throws RepositoryException {
+    public void setBookCoverImage(Session session, File image, String mimeType, int id) throws BookRepositoryGatewayException {
         FileInputStream input = null;
         String updateSQL = "UPDATE book SET image_data = ?, image_mime = ? WHERE id=?";
         String user = (String) Session.getCurrentUser();
         if (null == user) {
-            throw new RepositoryException("You must be logged in to do this operation.");
+            throw new BookRepositoryGatewayException("You must be logged in to do this operation.");
         }
         try {
             input = new FileInputStream(image);
@@ -220,24 +197,24 @@ public class BookRepository implements IBookRepository {
             pstmt.setInt(3, id);
             pstmt.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(BookRepository.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BookRepositoryGateway.class.getName()).log(Level.SEVERE, null, ex);
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(BookRepository.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BookRepositoryGateway.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
 
     @Override
-    public void deleteBook(Session session, int id) throws RepositoryException {
+    public void deleteBook(Session session, int id) throws BookRepositoryGatewayException {
 
         String user = (String) Session.getCurrentUser();
         if (null == user) {
-            throw new RepositoryException("You must be logged in to do this operation.");
+            throw new BookRepositoryGatewayException("You must be logged in to do this operation.");
         }
 
         ResultSet rs = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
         if (rs == null) {
-            throw new RepositoryException("Book not found in the databse");
+            throw new BookRepositoryGatewayException("Book not found in the databse");
         }
 
         try {
@@ -285,10 +262,6 @@ public class BookRepository implements IBookRepository {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    Book getBookInfo(Session session, Book book) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override

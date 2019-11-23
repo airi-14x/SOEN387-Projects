@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import repository.core.Book;
-import repository.core.BookRepository;
-import repository.core.RepositoryException;
+import repository.core.BookRepositoryGateway;
+import repository.core.BookRepositoryGatewayException;
 import repository.core.Session;
 
 /**
@@ -66,7 +66,7 @@ public class BookViewController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        BookRepository bookRepo = BookRepository.getInstance();
+        BookRepositoryGateway bookRepo = BookRepositoryGateway.getInstance();
         Book resultBook = null;
         request.setAttribute("error", " ");
 
@@ -75,7 +75,7 @@ public class BookViewController extends HttpServlet {
             String bookID = (String) request.getParameter("viewBookID");
             try {
                 resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(bookID));
-            } catch (RepositoryException e) {
+            } catch (BookRepositoryGatewayException e) {
                 Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, e);
                 request.setAttribute("error", "No book found in the dabatase with id = " + request.getParameter("viewBookID"));
             } catch (NumberFormatException e) {
@@ -101,7 +101,7 @@ public class BookViewController extends HttpServlet {
         } else if (!request.getParameter("ISBN").equals("")) {
             try {
                 resultBook = bookRepo.getBookInfo(new Session(), request.getParameter("ISBN"));
-            } catch (RepositoryException | NullPointerException e) {
+            } catch (BookRepositoryGatewayException | NullPointerException e) {
                 Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, e);
                 request.setAttribute("error", "No book found in the database with ISBN = " + request.getParameter("ISBN"));
             }

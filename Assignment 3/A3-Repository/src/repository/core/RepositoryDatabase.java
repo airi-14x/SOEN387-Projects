@@ -103,7 +103,7 @@ public class RepositoryDatabase {
         }
     }
 
-    public static void main(String[] args) throws SQLException, RepositoryException {
+    public static void main(String[] args) throws SQLException, BookRepositoryGatewayException {
         RepositoryDatabase database = new RepositoryDatabase();
         database.createStatement();
 
@@ -111,7 +111,7 @@ public class RepositoryDatabase {
         session = new Session();
         session.login("Jasmine", "test123");
 
-        BookRepository b1 = BookRepository.getInstance();
+        BookRepositoryGateway b1 = BookRepositoryGateway.getInstance();
         System.out.println();
         System.out.println("DROP TABLE");
         System.out.println();

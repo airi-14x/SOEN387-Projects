@@ -17,9 +17,9 @@ import org.junit.Test;
  *
  * @author jasminelatendresse
  */
-public class BookRepositoryTest {
+public class BookRepositoryGatewayTest {
 
-    static BookRepository bookRepository = null;
+    static BookRepositoryGateway bookRepository = null;
     static ArrayList<Book> allBooksInDB;
     static Book book1;
     static Book book2;
@@ -28,12 +28,12 @@ public class BookRepositoryTest {
     static RepositoryDatabase repoDb = null;
     static File file = null;
 
-    public BookRepositoryTest() {
+    public BookRepositoryGatewayTest() {
     }
 
     @BeforeClass
-    public static void setUp() throws RepositoryException {
-        bookRepository = BookRepository.getInstance();
+    public static void setUp() throws BookRepositoryGatewayException {
+        bookRepository = BookRepositoryGateway.getInstance();
         repoDb = RepositoryDatabase.getInstance();
 
         session = new Session();
@@ -55,7 +55,7 @@ public class BookRepositoryTest {
     }
 
     @AfterClass
-    public static void tearDown() throws RepositoryException {
+    public static void tearDown() throws BookRepositoryGatewayException {
         bookRepository = null;
         repoDb = null;
         book1 = null;
@@ -66,7 +66,7 @@ public class BookRepositoryTest {
     }
 
     @Test
-    public void listAllBooksTest() throws RepositoryException {
+    public void listAllBooksTest() throws BookRepositoryGatewayException {
         System.out.println("Testing listAllBooks");
 
         ArrayList<Book> books = bookRepository.listAllBooks(session);
@@ -75,7 +75,7 @@ public class BookRepositoryTest {
     }
 
     @Test
-    public void getBookInfoTest() throws RepositoryException {
+    public void getBookInfoTest() throws BookRepositoryGatewayException {
         System.out.println("Testing getBookInfo by book id");
 
         Book resultBook = bookRepository.getBookInfo(session, book1.getId());
@@ -111,7 +111,7 @@ public class BookRepositoryTest {
     }
 
     @Test
-    public void addNewBookTest() throws RepositoryException {
+    public void addNewBookTest() throws BookRepositoryGatewayException {
         System.out.println("Testing addNewBook");
         Book book = new Book("Title", "Description", "ISBN", new Author("First Name", "Last Name"), "Publisher Company", "Publisher Address", new CoverImage());
         bookRepository.addNewBook(session, book);
@@ -121,7 +121,7 @@ public class BookRepositoryTest {
     }
 
     @Test
-    public void updateBookInfoTest() throws RepositoryException {
+    public void updateBookInfoTest() throws BookRepositoryGatewayException {
         System.out.println("Testing updateBookInfo");
 
         Author author = new Author("New", "Name");
@@ -136,7 +136,7 @@ public class BookRepositoryTest {
     }
 
     @Test
-    public void setBookCoverImageTest() throws RepositoryException {
+    public void setBookCoverImageTest() throws BookRepositoryGatewayException {
         System.out.println("Testing setBookCoverImageTest");
 
         String mimeType = "image/jpeg";
@@ -148,7 +148,7 @@ public class BookRepositoryTest {
     }
 
     @Test
-    public void deleteBookTest() throws RepositoryException {
+    public void deleteBookTest() throws BookRepositoryGatewayException {
         System.out.println("Testing deleteBook");
 
         bookRepository.deleteBook(session, book1.getId());
@@ -164,7 +164,7 @@ public class BookRepositoryTest {
     }
 
     @Test
-    public void deleteAllBooksTest() throws RepositoryException {
+    public void deleteAllBooksTest() throws BookRepositoryGatewayException {
         System.out.println("Testing deleteAllBooks");
 
         int initialSize = allBooksInDB.size();

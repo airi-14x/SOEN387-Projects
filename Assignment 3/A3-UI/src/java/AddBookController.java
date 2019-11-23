@@ -18,8 +18,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import repository.core.Author;
 import repository.core.Book;
-import repository.core.BookRepository;
-import repository.core.RepositoryException;
+import repository.core.BookRepositoryGateway;
+import repository.core.BookRepositoryGatewayException;
 import repository.core.Session;
 
 /**
@@ -66,13 +66,13 @@ public class AddBookController extends HttpServlet {
         String publisherName = request.getParameter("pName");
         String publisherAddress = request.getParameter("paddress");
 
-        BookRepository bookRepo = BookRepository.getInstance();
+        BookRepositoryGateway bookRepo = BookRepositoryGateway.getInstance();
 
         Author author = new Author(fName, lName);
         Book book = new Book(title, description, isbn, author, publisherName, publisherAddress);
         try {
             bookRepo.addNewBook(new Session(), book);
-        } catch (RepositoryException ex) {
+        } catch (BookRepositoryGatewayException ex) {
             Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
             
         } 

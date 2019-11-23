@@ -9,9 +9,9 @@ package repository.core;
  *
  * @author Jasmine Latendresse and Airi Chow
  */
-public class RepositoryException extends Exception {
+public class BookRepositoryGatewayException extends Exception {
     
-    RepositoryException(String msg) {
+    BookRepositoryGatewayException(String msg) {
         super(msg);
     }
     

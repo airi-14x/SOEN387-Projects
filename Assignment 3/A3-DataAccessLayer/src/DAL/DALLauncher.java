@@ -4,12 +4,9 @@
  * and open the template in the editor.
  */
 package DAL;
-
-import java.util.ArrayList;
-import repository.core.Author;
-import repository.core.Book;
-import repository.core.CoverImage;
-import repository.core.Session;
+//import repository.core.Book;
+//import repository.core.CoverImage;
+//import repository.core.Session;
 
 /**
  *
@@ -20,7 +17,7 @@ public class DALLauncher {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws BookRepositoryGatewayException {
+    /*public static void main(String[] args) throws BookRepositoryGatewayException {
         Session session = null;
         session = new Session();
         session.login("Jasmine", "test123");
@@ -76,5 +73,5 @@ public class DALLauncher {
         }
 
     }
-
+     */
 }

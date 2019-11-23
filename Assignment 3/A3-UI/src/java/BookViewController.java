@@ -1,12 +1,17 @@
 
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import com.mysql.cj.jdbc.Blob;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -69,49 +74,34 @@ public class BookViewController extends HttpServlet {
         BookRepository bookRepo = BookRepository.getInstance();
         Book resultBook = null;
         request.setAttribute("error", " ");
-
-
+        String bookID = (String) request.getParameter("viewBookID");
         if (!request.getParameter("viewBookID").equals("")) {
-            String bookID = (String) request.getParameter("viewBookID");
             try {
                 resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(bookID));
-            } catch (RepositoryException e) {
-                Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, e);
-                request.setAttribute("error", "No book found in the dabatase with id = " + request.getParameter("viewBookID"));
+            } catch (RepositoryException ex) {
+                Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
+                request.setAttribute("error", "Sorry there's no book in the database with id = " + bookID);
             } catch (NumberFormatException e) {
                 request.setAttribute("error", "Book ID must be an integer.");
-            } catch (NullPointerException e) {
-                 request.setAttribute("error", "No book found in the dabatase with id = " + request.getParameter("viewBookID"));
             }
             
-            int resultBookID = 0;
-            try {
-               resultBookID =  resultBook.getId();
-            } catch (NullPointerException e) {
-                request.setAttribute("error", "No book found in the dabatase with id = " + request.getParameter("viewBookID"));
-            }
-            if (resultBookID != 0) {
-
-                request.setAttribute("book", resultBook);
-            }
-            else {
-                request.setAttribute("error", "No book found in the dabatase with id = " + request.getParameter("viewBookID"));
-            }
+            request.setAttribute("book", resultBook);
 
         } else if (!request.getParameter("ISBN").equals("")) {
             try {
                 resultBook = bookRepo.getBookInfo(new Session(), request.getParameter("ISBN"));
-            } catch (RepositoryException | NullPointerException e) {
-                Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, e);
-                request.setAttribute("error", "No book found in the database with ISBN = " + request.getParameter("ISBN"));
+            } catch (RepositoryException ex) {
+                Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
+                request.setAttribute("error", "Sorry there's no book in the database with ISBN = " + request.getParameter("ISBN"));
             }
-
+            
             request.setAttribute("book", resultBook);
-
+            
         } else {
             request.setAttribute("error", "Please enter ID or ISBN!");
         }
-
+        
+    
         RequestDispatcher rd = request.getRequestDispatcher("/bookView.jsp");
         rd.forward(request, response);
         //getServletContext().getRequestDispatcher("/bookView.jsp").forward(request, response);

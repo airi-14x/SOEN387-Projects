@@ -74,8 +74,12 @@ public class AddBookController extends HttpServlet {
             bookRepo.addNewBook(new Session(), book);
         } catch (RepositoryException ex) {
             Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
+            request.setAttribute("errorMessage", "Book ISBN must be unique");
+            RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+            rd.forward(request, response);
+            response.sendRedirect("error.jsp");
             
-        } 
+        }
         //request.setAttribute("books", books);
         RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
         rd.forward(request, response);

@@ -78,12 +78,12 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public Book getBookInfo(Session session, int id) throws RepositoryException {
-        Book result = new Book();
+        Book result = null;
 
         try {
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
 
-            if (resultSet == null) {
+            if (!resultSet.next()) {
                 throw new RepositoryException("Book not found in database");
             }
             
@@ -112,10 +112,10 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public Book getBookInfo(Session session, String isbn) throws RepositoryException {
-        Book result = new Book();
+        Book result = null;
         try {
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE isbn=" + isbn);
-            if(resultSet == null) {
+             if (!resultSet.next()) {
                 throw new RepositoryException("Book not found in database");
             }
             
@@ -175,8 +175,11 @@ public class BookRepository implements IBookRepository {
 
         }
 
-        System.out.println("");
-
+        for (int i = 0; i < books.size(); i++) {
+            if(books.get(i).getISBN().equals(book.getISBN())) {
+                throw new RepositoryException("ISBN must be unique");
+            }
+        }
         books.add(book);
         //System.out.println(books);
         return book.getId(); //Return: Should be ID

@@ -15,8 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import repository.core.Author;
-import repository.core.BookRepository;
-import repository.core.RepositoryException;
+import repository.core.BookRepositoryGateway;
+import repository.core.BookRepositoryGatewayException;
 import repository.core.Session;
 
 /**
@@ -90,11 +90,11 @@ public class UpdateBookController extends HttpServlet {
 
             Author author = new Author(fName, lName);
 
-            BookRepository bookRepo = BookRepository.getInstance();
+            BookRepositoryGateway bookRepo = BookRepositoryGateway.getInstance();
 
             try {
                 bookRepo.updateBookInfo(new Session(), Integer.parseInt(request.getParameter("id")), title, description, author);
-            } catch (RepositoryException ex) {
+            } catch (BookRepositoryGatewayException ex) {
                 Logger.getLogger(UpdateBookController.class.getName()).log(Level.SEVERE, null, ex);
             }
 

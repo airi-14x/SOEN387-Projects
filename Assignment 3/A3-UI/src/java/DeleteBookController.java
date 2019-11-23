@@ -14,8 +14,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import repository.core.BookRepository;
-import repository.core.RepositoryException;
+import repository.core.BookRepositoryGateway;
+import repository.core.BookRepositoryGatewayException;
 import repository.core.Session;
 
 /**
@@ -64,7 +64,7 @@ public class DeleteBookController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        BookRepository bookRepo = BookRepository.getInstance();
+        BookRepositoryGateway bookRepo = BookRepositoryGateway.getInstance();
 
         if (request.getParameter("deleteBookID").equals("") && !request.getParameter("delete").equals("deleteAll")) {
             request.setAttribute("errorMessage", "Please enter a book ID in order to delete a book.");
@@ -90,7 +90,7 @@ public class DeleteBookController extends HttpServlet {
             
             try {
                 bookRepo.getBookInfo(new Session(), bookIDtoInt);
-            } catch (RepositoryException e) {
+            } catch (BookRepositoryGatewayException e) {
                 request.setAttribute("errorMessage", "Book with id " + bookIDtoInt + " not found in the database.");
                 RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
                 rd.forward(request, response);

@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import repository.core.Book;
-import repository.core.BookRepository;
-import repository.core.RepositoryException;
+import repository.core.BookRepositoryGateway;
+import repository.core.BookRepositoryGatewayException;
 import repository.core.Session;
 
 /*
@@ -67,7 +67,7 @@ public class ImageController extends HttpServlet {
             throws ServletException, IOException {
 
         try {
-            BookRepository bookRepo = BookRepository.getInstance();
+            BookRepositoryGateway bookRepo = BookRepositoryGateway.getInstance();
 
             Book resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("bookId")));
 
@@ -92,7 +92,7 @@ public class ImageController extends HttpServlet {
 
             out.flush();
             out.close();
-        } catch (RepositoryException ex) {
+        } catch (BookRepositoryGatewayException ex) {
             Logger.getLogger(ImageController.class.getName()).log(Level.SEVERE, null, ex);
         }
 

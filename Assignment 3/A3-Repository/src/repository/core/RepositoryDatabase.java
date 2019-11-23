@@ -153,7 +153,7 @@ public class RepositoryDatabase {
         System.out.println("Adding book 3 to database");
         b1.addNewBook(session, book3);
         //System.out.println(b1.addNewBook(session, book3));
-
+        
         System.out.println();
         System.out.println("Book ArrayList: ");
         books = b1.listAllBooks(session);

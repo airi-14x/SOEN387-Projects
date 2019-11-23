@@ -70,25 +70,44 @@ public class BookViewController extends HttpServlet {
         Book resultBook = null;
         request.setAttribute("error", " ");
 
-        if (request.getParameter("viewBookID").equals("") == false) {
+
+        if (!request.getParameter("viewBookID").equals("")) {
+            String bookID = (String) request.getParameter("viewBookID");
             try {
-                resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("viewBookID")));
-            } catch (RepositoryException ex) {
-                Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
+                resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(bookID));
+            } catch (RepositoryException e) {
+                Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, e);
+                request.setAttribute("error", "No book found in the dabatase with id = " + request.getParameter("viewBookID"));
+            } catch (NumberFormatException e) {
+                request.setAttribute("error", "Book ID must be an integer.");
+            } catch (NullPointerException e) {
+                 request.setAttribute("error", "No book found in the dabatase with id = " + request.getParameter("viewBookID"));
             }
-            if (resultBook.getTitle() == null) {
-                request.setAttribute("error", "Sorry there's no book with that ID.");
-            } else {
+            
+            int resultBookID = 0;
+            try {
+               resultBookID =  resultBook.getId();
+            } catch (NullPointerException e) {
+                request.setAttribute("error", "No book found in the dabatase with id = " + request.getParameter("viewBookID"));
+            }
+            if (resultBookID != 0) {
+
                 request.setAttribute("book", resultBook);
+            }
+            else {
+                request.setAttribute("error", "No book found in the dabatase with id = " + request.getParameter("viewBookID"));
             }
 
-        } else if (request.getParameter("ISBN").equals("") == false) {
-            resultBook = bookRepo.getBookInfo(new Session(), request.getParameter("ISBN"));
-            if (resultBook.getTitle() == null) {
-                request.setAttribute("error", "Sorry there's no book with that ISBN.");
-            } else {
-                request.setAttribute("book", resultBook);
+        } else if (!request.getParameter("ISBN").equals("")) {
+            try {
+                resultBook = bookRepo.getBookInfo(new Session(), request.getParameter("ISBN"));
+            } catch (RepositoryException | NullPointerException e) {
+                Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, e);
+                request.setAttribute("error", "No book found in the database with ISBN = " + request.getParameter("ISBN"));
             }
+
+            request.setAttribute("book", resultBook);
+
         } else {
             request.setAttribute("error", "Please enter ID or ISBN!");
         }

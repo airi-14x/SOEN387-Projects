@@ -86,7 +86,7 @@ public class BookRepository implements IBookRepository {
             if (resultSet == null) {
                 throw new RepositoryException("Book not found in database");
             }
-
+            
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
@@ -111,11 +111,14 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public Book getBookInfo(Session session, String isbn) {
+    public Book getBookInfo(Session session, String isbn) throws RepositoryException {
         Book result = new Book();
-
         try {
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE isbn=" + isbn);
+            if(resultSet == null) {
+                throw new RepositoryException("Book not found in database");
+            }
+            
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
@@ -151,15 +154,16 @@ public class BookRepository implements IBookRepository {
         if (null == user) {
             throw new RepositoryException("You must be logged in to do this operation.");
         }
-
+        
         repositoryDatabaseConnection.executeUpdate("INSERT INTO book(title, description,isbn, first_name, last_name, publisher_company, address) VALUES(\"" + book.getTitle() + "\",\""
                 + book.getDescription() + "\",\"" + book.getISBN() + "\", \"" + book.getAuthor().getFirstName() + "\", \""
                 + book.getAuthor().getLastName() + "\", \"" + book.getPublisherCompany() + "\", \"" + book.getPublisherAddress() + "\")");
-
+       
         /*repositoryDatabaseConnection.executeUpdate("INSERT INTO book(id, title, description, isbn, last_name, first_name, publisher_company, address, mime_type, image_data) "
                 + "VALUES(\"" + book.getId() + "\", \"" + book.getTitle() + "\", \"" + book.getDescription() + "\", \"" + book.getISBN() + "\",\""
                 + book.getAuthor().getFirstName() + "\", \"" + book.getAuthor().getLastName() + "\", \"" + book.getPublisherCompany() + "\", \"" + book.getPublisherAddress() + "\", \"mime_type" + "\", \"image_data"
         );*/
+
         book.autoIncrement();
 
         //System.out.print("Book Current ID" + book.getId());

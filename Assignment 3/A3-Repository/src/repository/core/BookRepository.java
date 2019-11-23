@@ -46,9 +46,7 @@ public class BookRepository implements IBookRepository {
         try {
             resetBooks(session);
             ResultSet resultSet = repositoryDatabaseConnection.executeQuery("SELECT * FROM book");
-            if (resultSet == null) {
-                throw new RepositoryException("No Books to display at the moment");
-            }
+           
             while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String title = resultSet.getString("title");

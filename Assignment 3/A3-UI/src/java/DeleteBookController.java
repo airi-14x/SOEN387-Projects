@@ -66,7 +66,7 @@ public class DeleteBookController extends HttpServlet {
 
         BookRepository bookRepo = BookRepository.getInstance();
 
-        if (request.getParameter("deleteBookID").equals("")) {
+        if (request.getParameter("deleteBookID").equals("") && !request.getParameter("delete").equals("deleteAll")) {
             request.setAttribute("errorMessage", "Please enter a book ID in order to delete a book.");
             RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
             rd.forward(request, response);

@@ -56,13 +56,10 @@ public class DALLauncher {
 
         System.out.println("Adding book 1 to database");
         b1.addNewBook(session, book1);
-        //System.out.println(b1.addNewBook(session, book1));
         System.out.println("Adding book 2 to database");
         b1.addNewBook(session, book2);
-        //System.out.println(b1.addNewBook(session, book2));
         System.out.println("Adding book 3 to database");
         b1.addNewBook(session, book3);
-        //System.out.println(b1.addNewBook(session, book3));
 
         System.out.println();
         System.out.println("Book ArrayList: ");

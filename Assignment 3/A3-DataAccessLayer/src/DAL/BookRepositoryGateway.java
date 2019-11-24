@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package repository.core;
+package DAL;
 
-import DAL.BookRepositoryDatabase;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -33,7 +32,7 @@ public class BookRepositoryGateway {
     public static synchronized BookRepositoryGateway getInstance() {
         if (instance == null) {
             instance = new BookRepositoryGateway();
-            System.out.println("Business Core: BookRepositoryGateway - Instance is Created!");
+            System.out.println("DAL BookRepositoryGateway - Instance is Created!");
             System.out.println("Instance " + instance);
         }
         return instance;
@@ -54,16 +53,16 @@ public class BookRepositoryGateway {
         return resultSet;
     }
 
-    public void addNewBook(Book book) {
-        repositoryDatabaseConnection.executeUpdate("INSERT INTO book(title, description,isbn, first_name, last_name, publisher_company, address) VALUES(\"" + book.getTitle() + "\",\""
-                + book.getDescription() + "\",\"" + book.getISBN() + "\", \"" + book.getAuthor().getFirstName() + "\", \""
-                + book.getAuthor().getLastName() + "\", \"" + book.getPublisherCompany() + "\", \"" + book.getPublisherAddress() + "\")");
+    public void addNewBook(String title, String description, String isbn, String authorFirstName, String authorLastName, String publisherCompany, String publisherAddress) {
+        repositoryDatabaseConnection.executeUpdate("INSERT INTO book(title, description,isbn, first_name, last_name, publisher_company, address) VALUES(\"" + title + "\",\""
+                + description + "\",\"" + isbn + "\", \"" + authorFirstName + "\", \""
+                + authorLastName + "\", \"" + publisherCompany + "\", \"" + publisherAddress + "\")");
     }
 
-    public void updateBookInfo(int id, String title, String description, Author author) {
+    public void updateBookInfo(int id, String title, String description, String authorFirstName, String authorLastName) {
         String statement = "UPDATE book SET title = '" + title + "', description = '"
-                + description + "', last_name = '" + author.getLastName() + "', first_name = '"
-                + author.getFirstName() + "' WHERE id = '" + id + "';";
+                + description + "', last_name = '" + authorLastName + "', first_name = '"
+                + authorFirstName + "' WHERE id = '" + id + "';";
         System.out.println("STATEMENT: " + statement);
         repositoryDatabaseConnection.executeUpdate(statement);
     }

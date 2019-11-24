@@ -16,12 +16,12 @@ public class DALLauncher {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws BookRepositoryGatewayException {
+    public static void main(String[] args) throws BookRepositoryException {
         Session session = null;
         session = new Session();
         session.login("Jasmine", "test123");
 
-        BookRepositoryGateway b1 = BookRepositoryGateway.getInstance();
+        BookRepository b1 = BookRepository.getInstance();
         System.out.println();
         System.out.println("DROP TABLE");
         System.out.println();

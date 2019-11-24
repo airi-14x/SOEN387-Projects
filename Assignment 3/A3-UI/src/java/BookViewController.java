@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import repository.core.Book;
-import repository.core.BookRepositoryGateway;
-import repository.core.BookRepositoryGatewayException;
+import repository.core.BookRepository;
+import repository.core.BookRepositoryException;
 import repository.core.Session;
 
 /**
@@ -71,14 +71,14 @@ public class BookViewController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        BookRepositoryGateway bookRepo = BookRepositoryGateway.getInstance();
+        BookRepository bookRepo = BookRepository.getInstance();
         Book resultBook = null;
         request.setAttribute("error", " ");
         String bookID = (String) request.getParameter("viewBookID");
         if (!request.getParameter("viewBookID").equals("")) {
             try {
                 resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(bookID));
-            } catch (BookRepositoryGatewayException ex) {
+            } catch (BookRepositoryException ex) {
                 Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
                 request.setAttribute("error", "Sorry there's no book in the database with id = " + bookID);
             } catch (NumberFormatException e) {
@@ -90,7 +90,7 @@ public class BookViewController extends HttpServlet {
         } else if (!request.getParameter("ISBN").equals("")) {
             try {
                 resultBook = bookRepo.getBookInfo(new Session(), request.getParameter("ISBN"));
-            } catch (BookRepositoryGatewayException ex) {
+            } catch (BookRepositoryException ex) {
                 Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
                 request.setAttribute("error", "Sorry there's no book in the database with ISBN = " + request.getParameter("ISBN"));
             }

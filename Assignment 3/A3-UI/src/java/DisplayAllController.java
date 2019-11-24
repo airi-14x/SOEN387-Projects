@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import repository.core.Book;
-import repository.core.BookRepositoryGateway;
-import repository.core.BookRepositoryGatewayException;
+import repository.core.BookRepository;
+import repository.core.BookRepositoryException;
 import repository.core.Session;
 
 /**
@@ -66,14 +66,14 @@ public class DisplayAllController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
-            BookRepositoryGateway bookRepo = BookRepositoryGateway.getInstance();
+            BookRepository bookRepo = BookRepository.getInstance();
             ArrayList<Book> books = bookRepo.listAllBooks(new Session());
             request.setAttribute("books", books);
             RequestDispatcher rd = request.getRequestDispatcher("/displayAll.jsp");
             // Temporary at displayAll jsp --> Need to figure out how to move it to home
             // without showing Login page because username would be null if sent from here at the moment.
             rd.forward(request, response);
-        } catch (BookRepositoryGatewayException ex) {
+        } catch (BookRepositoryException ex) {
             Logger.getLogger(DisplayAllController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

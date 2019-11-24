@@ -22,6 +22,7 @@ public class BookRepository implements IBookRepository {
 
     private ArrayList<Book> books;
     private BookRepositoryDatabase repositoryDatabaseConnection;
+    private BookRepositoryGateway respositoryDatabaseGatewayConnection;
     private static BookRepository instance = null;
 
     private BookRepository() {
@@ -34,7 +35,7 @@ public class BookRepository implements IBookRepository {
     public static synchronized BookRepository getInstance() {
         if (instance == null) {
             instance = new BookRepository();
-            System.out.println("Business Core: BookRepositoryGateway - Instance is Created!");
+            System.out.println("Business Core: BookRepository - Instance is Created!");
             System.out.println("Instance " + instance);
         }
         return instance;
@@ -226,7 +227,7 @@ public class BookRepository implements IBookRepository {
         try {
             ResultSet rs = repositoryDatabaseConnection.executeQuery("SELECT * FROM book WHERE id=" + id);
             if (!rs.next()) {
-                throw new BookRepositoryException("Book not found in the databse");
+                throw new BookRepositoryException("Book not found in the database");
             }
 
             repositoryDatabaseConnection.executeUpdate("DELETE FROM book WHERE id=" + id);

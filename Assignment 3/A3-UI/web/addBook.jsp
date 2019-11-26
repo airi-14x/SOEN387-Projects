@@ -30,6 +30,7 @@
                 Author Last Name <input type="text" name="lname"><br>
                 Publisher <input type="text" name="pname"><br>
                 Publisher Address <input type="text" name="paddress"><br>
+                Cover Image <input type="file" name="image"/><br>
                 <input type="submit" value="Submit" name="submit"/>
             </form>
         </div>

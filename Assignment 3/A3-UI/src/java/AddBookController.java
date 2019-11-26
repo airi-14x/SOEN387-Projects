@@ -5,21 +5,23 @@
  */
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
-import java.sql.SQLIntegrityConstraintViolationException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import repository.core.Author;
 import repository.core.Book;
 import repository.core.BookRepository;
 import repository.core.BookRepositoryException;
+import repository.core.CoverImage;
 import repository.core.Session;
 
 /**
@@ -27,6 +29,7 @@ import repository.core.Session;
  * @author jasminelatendresse
  */
 @WebServlet("/AddBookController")
+@MultipartConfig
 public class AddBookController extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -67,9 +70,19 @@ public class AddBookController extends HttpServlet {
         String publisherAddress = request.getParameter("paddress");
 
         BookRepository bookRepo = BookRepository.getInstance();
+        
+        InputStream input = null;
+        Part filePart = request.getPart("image");
+        String fileType = "";
+        
+        if (filePart != null) {
+            fileType = filePart.getContentType();
+            input = filePart.getInputStream();
+        }
 
         Author author = new Author(fName, lName);
-        Book book = new Book(title, description, isbn, author, publisherName, publisherAddress);
+        CoverImage cover = new CoverImage(fileType, input);
+        Book book = new Book(title, description, isbn, author, publisherName, publisherAddress, cover);
         try {
             bookRepo.addNewBook(new Session(), book);
         } catch (BookRepositoryException ex) {

@@ -75,6 +75,12 @@ public class DisplayAllController extends HttpServlet {
             rd.forward(request, response);
         } catch (BookRepositoryException ex) {
             Logger.getLogger(DisplayAllController.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NullPointerException ex) {
+            request.setAttribute("errorMessage", "No books to display");
+            RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+            rd.forward(request, response);
+            response.sendRedirect("error.jsp");
+            
         }
     }
 

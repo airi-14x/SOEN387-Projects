@@ -5,6 +5,7 @@
  */
 package repository.core;
 
+import java.io.InputStream;
 import java.sql.Blob;
 
 
@@ -17,11 +18,17 @@ public class CoverImage {
     private String mimeType;
     private Blob image;
     private String imagePath;
+    private InputStream input;
 
 
     public CoverImage(String mimeType, Blob image) {
         this.mimeType = mimeType;
         this.image = image;
+    }
+    
+    public CoverImage(String mimeType, InputStream input) {
+        this.mimeType = mimeType;
+        this.input = input;
     }
 
     public CoverImage() {

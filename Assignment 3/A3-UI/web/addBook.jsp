@@ -22,7 +22,7 @@
     <body>
         <h1>Add a book</h1>
         <div>
-            <form action="AddBookController" method="POST">
+            <form action="AddBookController" method="POST" enctype="multipart/form-data">
                 Title <input type="text" name="title"><br>
                 Description <input type="text" name="description"><br>
                 ISBN <input type="text" name="isbn"><br>

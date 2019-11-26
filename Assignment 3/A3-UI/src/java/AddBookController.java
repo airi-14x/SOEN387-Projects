@@ -21,6 +21,7 @@ import repository.core.Author;
 import repository.core.Book;
 import repository.core.BookRepository;
 import repository.core.BookRepositoryException;
+import repository.core.CoverImage;
 import repository.core.Session;
 
 /**
@@ -72,9 +73,16 @@ public class AddBookController extends HttpServlet {
         
         InputStream input = null;
         Part filePart = request.getPart("image");
+        String fileType = "";
+        
+        if (filePart != null) {
+            fileType = filePart.getContentType();
+            input = filePart.getInputStream();
+        }
 
         Author author = new Author(fName, lName);
-        Book book = new Book(title, description, isbn, author, publisherName, publisherAddress);
+        CoverImage cover = new CoverImage(fileType, input);
+        Book book = new Book(title, description, isbn, author, publisherName, publisherAddress, cover);
         try {
             bookRepo.addNewBook(new Session(), book);
         } catch (BookRepositoryException ex) {

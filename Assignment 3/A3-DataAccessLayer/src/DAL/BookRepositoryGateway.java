@@ -8,6 +8,8 @@ package DAL;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.sql.Blob;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -58,6 +60,27 @@ public class BookRepositoryGateway {
                 + description + "\",\"" + isbn + "\", \"" + authorFirstName + "\", \""
                 + authorLastName + "\", \"" + publisherCompany + "\", \"" + publisherAddress + "\")");
     }
+    
+    public void addNewBook2(String title, String description, String isbn, String authorFirstName, String authorLastName, String publisherCompany, String publisherAddress, Blob image, String mimeType) {
+        String query = "INSERT INTO Book(title, description,isbn, first_name, last_name, publisher_company, address, image_data, image_mime) values (?,?,?,?,?,?,?,?,?)";
+        try {
+            PreparedStatement statement = repositoryDatabaseConnection.getConnectionInstance().prepareStatement(query);
+            statement.setString(1, title);
+            statement.setString(2, description);
+            statement.setString(3, isbn);
+            statement.setString(4, authorFirstName);
+            statement.setString(5, authorLastName);
+            statement.setString(6, publisherCompany);
+            statement.setString(7, publisherAddress);
+            statement.setBlob(8, image);
+            statement.setString(9, mimeType);
+
+            statement.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(BookRepositoryGateway.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
 
     public void updateBookInfo(int id, String title, String description, String authorFirstName, String authorLastName) {
         String statement = "UPDATE book SET title = '" + title + "', description = '"
@@ -66,6 +89,7 @@ public class BookRepositoryGateway {
         System.out.println("STATEMENT: " + statement);
         repositoryDatabaseConnection.executeUpdate(statement);
     }
+
 
     public void setBookCoverImage(File image, String mimeType, int id) {
         FileInputStream input = null;

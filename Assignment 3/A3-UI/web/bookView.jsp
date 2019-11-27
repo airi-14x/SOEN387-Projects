@@ -9,14 +9,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="repository.core.Book"%>
 
-<jsp:useBean id="currentUser" scope="session" class="repository.core.Session" />
-
-     <%
-        String user = (String) Session.getCurrentUser();
-        if (null == user) {
-            response.sendRedirect("login.jsp");
-        }
-    %>
+<%
+    Session currentSession = (Session) session.getAttribute("currentSession");
+    if (!currentSession.isUserLoggedIn()) {
+        response.sendRedirect("login.jsp");
+    }
+%>
 
 <!DOCTYPE html>
 <html>
@@ -40,16 +38,16 @@
                 </tr>
                 <c:forEach items="${books}" var="book">
                     <tr>
-                        <form action="ImageController" method="GET">
-                            <td><input type="text" value="${book.id}" name="bookId" readonly/></td>
-                            <td>${book.title}</td>
-                            <td>${book.description}</td>
-                            <td>${book.getISBN()}</td>
-                            <td>${book.author}</td>
-                            <td>${book.getPublisherCompany()}</td>
-                            <td>${book.getPublisherAddress()}</td>
-                            <td><input type="submit" value="View Cover" name="viewCover"/></td>
-                        </form>
+                    <form action="ImageController" method="GET">
+                        <td><input type="text" value="${book.id}" name="bookId" readonly/></td>
+                        <td>${book.title}</td>
+                        <td>${book.description}</td>
+                        <td>${book.getISBN()}</td>
+                        <td>${book.author}</td>
+                        <td>${book.getPublisherCompany()}</td>
+                        <td>${book.getPublisherAddress()}</td>
+                        <td><input type="submit" value="View Cover" name="viewCover"/></td>
+                    </form>
                     </tr>
                 </c:forEach>   
             </table>

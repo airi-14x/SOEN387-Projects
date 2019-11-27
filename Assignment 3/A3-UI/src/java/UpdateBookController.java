@@ -5,18 +5,23 @@
  */
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 import repository.core.Author;
 import repository.core.BookRepository;
 import repository.core.BookRepositoryException;
+import repository.core.CoverImage;
 import repository.core.Session;
 
 /**
@@ -24,6 +29,7 @@ import repository.core.Session;
  * @author Airi
  */
 @WebServlet("UpdateBookController")
+@MultipartConfig
 public class UpdateBookController extends HttpServlet {
 
     /**
@@ -79,29 +85,64 @@ public class UpdateBookController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        HttpSession session = request.getSession();
+        Session currentSession = (Session) session.getAttribute("currentSession");
 
-        if (request.getParameter("id") == null) {
+        if (currentSession.isUserLoggedIn()) {
 
-        } else {
             String title = request.getParameter("title");
             String description = request.getParameter("description");
             String fName = request.getParameter("fname");
-            String lName = request.getParameter("lName");
+            String lName = request.getParameter("lname");
+            String[] params = {title, description, fName, lName};
+
+            InputStream input = null;
+            Part filePart = request.getPart("image");
+            String fileType = "";
+            if (filePart != null) {
+                fileType = filePart.getContentType();
+                input = filePart.getInputStream();
+                System.out.println(fileType);
+            }
 
             Author author = new Author(fName, lName);
-
+            CoverImage cover = null;
             BookRepository bookRepo = BookRepository.getInstance();
 
             try {
-                bookRepo.updateBookInfo(new Session(), Integer.parseInt(request.getParameter("id")), title, description, author);
+                cover = new CoverImage(fileType, input);
+                bookRepo.updateBookInfo(currentSession, Integer.parseInt(request.getParameter("id")), title, description, author, cover);
             } catch (BookRepositoryException ex) {
                 Logger.getLogger(UpdateBookController.class.getName()).log(Level.SEVERE, null, ex);
+                request.setAttribute("errorMessage", "An error occurred");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("error.jsp");
+            } catch (Exception e) {
+                request.setAttribute("errorMessage", "An error occurred");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("error.jsp");
+            }
+            //Form validation
+            for (String param : params) {
+                if (param.equals("") || cover == null) {
+                    request.setAttribute("errorMessage", "Empty fields");
+                    RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                    rd.forward(request, response);
+                    response.sendRedirect("error.jsp");
+                    break;
+                }
             }
 
-        }
+            RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
+            rd.forward(request, response);
 
-        RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
-        rd.forward(request, response);
+        } else {
+            RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+            request.setAttribute("errorMessage", "You need to be logged in to do this operation.");
+            rd.forward(request, response);
+        }
 
     }
 

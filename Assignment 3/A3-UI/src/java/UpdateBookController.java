@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import repository.core.Author;
 import repository.core.BookRepository;
@@ -84,10 +85,11 @@ public class UpdateBookController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
+        HttpSession session = request.getSession();
+        Session currentSession = (Session) session.getAttribute("currentSession");
 
-        if (request.getParameter("id") == null) {
+        if (currentSession.isUserLoggedIn()) {
 
-        } else {
             String title = request.getParameter("title");
             String description = request.getParameter("description");
             String fName = request.getParameter("fname");
@@ -113,23 +115,28 @@ public class UpdateBookController extends HttpServlet {
             } catch (BookRepositoryException ex) {
                 Logger.getLogger(UpdateBookController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception e) {
-                
+
             }
             //Form validation
-        for(int i = 0; i < params.length; i++){
-            if(params[i].equals("") || cover == null) {
-                request.setAttribute("errorMessage", "Empty fields");
-                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
-                rd.forward(request, response);
-                response.sendRedirect("error.jsp");
-                break;
+            for (int i = 0; i < params.length; i++) {
+                if (params[i].equals("") || cover == null) {
+                    request.setAttribute("errorMessage", "Empty fields");
+                    RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                    rd.forward(request, response);
+                    response.sendRedirect("error.jsp");
+                    break;
+                }
             }
-        }
+
+            RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
+            rd.forward(request, response);
 
         }
-
-        RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
-        rd.forward(request, response);
+        else {
+            RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+            request.setAttribute("errorMessage", "You need to be logged in to do this operation.");
+            rd.forward(request, response);
+        }
 
     }
 

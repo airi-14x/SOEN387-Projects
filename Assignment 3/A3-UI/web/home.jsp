@@ -15,15 +15,16 @@
         <link href="style/homeCSS.css" rel="stylesheet" type="text/css">
     </head>
     <jsp:useBean id="currentUser" scope="session" class="repository.core.Session" />
-
     <%
-        String user = currentUser.getCurrentUser();
+        Session currentSession = (Session) session.getAttribute("currentSession");
         String userName = "";
-        if (null == user) {
+        if (!currentSession.isUserLoggedIn()) {
             response.sendRedirect("login.jsp");
-        } else {
+        }
+        else {
             userName = currentUser.getUserName();
         }
+        
     %>
 
     <body>
@@ -47,9 +48,9 @@
                 <input type="submit" name="delete" value="deleteAll"/>
             </form>
 
-            <% if(request.getAttribute("error") != null) {
-                System.out.println(request.getAttribute("error"));
-            }%>
+            <% if (request.getAttribute("error") != null) {
+                    System.out.println(request.getAttribute("error"));
+                }%>
 
         </div>
         <form action="LogoutController" method="POST">

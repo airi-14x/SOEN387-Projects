@@ -1,17 +1,16 @@
+
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import repository.core.Book;
 import repository.core.BookRepository;
-import repository.core.BookRepositoryException;
 import repository.core.Session;
 
 /*
@@ -52,20 +51,32 @@ public class ImageController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Session currentSession = (Session) session.getAttribute("currentSession");
 
-        try {
-            BookRepository bookRepo = BookRepository.getInstance();
+        if (currentSession.isUserLoggedIn()) {
 
-            Book resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("bookId")));
+            try {
+                BookRepository bookRepo = BookRepository.getInstance();
 
-            String contentType = resultBook.getCover().getMimeType();
-            System.out.println(contentType);
-            response.setContentType(contentType);
-            resultBook.getCover().getImageData(response.getOutputStream());
-        } catch (Exception ex) {
-            Logger.getLogger(ImageController.class.getName()).log(Level.SEVERE, null, ex);
+                Book resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("bookId")));
+
+                String contentType = resultBook.getCover().getMimeType();
+                System.out.println(contentType);
+                response.setContentType(contentType);
+                resultBook.getCover().getImageData(response.getOutputStream());
+            } catch (Exception ex) {
+                Logger.getLogger(ImageController.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
+        else {
+            RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+            request.setAttribute("errorMessage", "You need to be logged in to do this operation.");
+            rd.forward(request, response);
+        }
+        
     }
+
     /**
      * Handles the HTTP <code>POST</code> method.
      *

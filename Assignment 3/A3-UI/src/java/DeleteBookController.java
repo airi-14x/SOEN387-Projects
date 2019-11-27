@@ -5,7 +5,6 @@
  */
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -14,6 +13,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import repository.core.BookRepository;
 import repository.core.BookRepositoryException;
 import repository.core.Session;
@@ -52,54 +52,63 @@ public class DeleteBookController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Session currentSession = (Session) session.getAttribute("currentSession");
 
-        BookRepository bookRepo = BookRepository.getInstance();
+        if (currentSession.isUserLoggedIn()) {
 
-        if (request.getParameter("deleteBookID").equals("") && !request.getParameter("delete").equals("deleteAll")) {
-            request.setAttribute("errorMessage", "Please enter a book ID in order to delete a book.");
-            RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+            BookRepository bookRepo = BookRepository.getInstance();
+
+            if (request.getParameter("deleteBookID").equals("") && !request.getParameter("delete").equals("deleteAll")) {
+                request.setAttribute("errorMessage", "Please enter a book ID in order to delete a book.");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("error.jsp");
+
+            } else if (request.getParameter("deleteBookID").equals("") && request.getParameter("delete").equals("deleteAll")) {
+                bookRepo.deleteAllBooks(new Session());
+            } else if (request.getParameter("delete").equals("deleteBook") && !(request.getParameter("deleteBookID").equals(""))) {
+                String bookID = (String) request.getParameter("deleteBookID");
+                int bookIDtoInt = 0;
+
+                try {
+                    bookIDtoInt = Integer.parseInt(bookID);
+                } catch (NumberFormatException e) {
+                    request.setAttribute("errorMessage", "The book ID must be an integer");
+                    RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                    rd.forward(request, response);
+                    response.sendRedirect("error.jsp");
+                }
+
+                try {
+                    bookRepo.getBookInfo(new Session(), bookIDtoInt);
+                } catch (BookRepositoryException e) {
+                    request.setAttribute("errorMessage", "Book with id " + bookIDtoInt + " not found in the database.");
+                    RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                    rd.forward(request, response);
+                    response.sendRedirect("error.jsp");
+                }
+
+                try {
+                    bookRepo.deleteBook(new Session(), bookIDtoInt);
+
+                } catch (Exception ex) {
+                    Logger.getLogger(DeleteBookController.class.getName()).log(Level.SEVERE, null, ex);
+                    request.setAttribute("errorMessage", "Book with id " + bookID + " could not be found in the database.");
+                    RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                    rd.forward(request, response);
+                    response.sendRedirect("error.jsp");
+                }
+            }
+
+            RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
             rd.forward(request, response);
-            response.sendRedirect("error.jsp");
-
-        } else if (request.getParameter("deleteBookID").equals("") && request.getParameter("delete").equals("deleteAll")) {
-            bookRepo.deleteAllBooks(new Session());
-        } 
-        else if (request.getParameter("delete").equals("deleteBook") && !(request.getParameter("deleteBookID").equals(""))) {
-            String bookID = (String) request.getParameter("deleteBookID");
-            int bookIDtoInt = 0;
-            
-            try {
-                bookIDtoInt = Integer.parseInt(bookID);
-            } catch (NumberFormatException e) {
-                request.setAttribute("errorMessage", "The book ID must be an integer");
-                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
-                rd.forward(request, response);
-                response.sendRedirect("error.jsp");
-            }
-            
-            try {
-                bookRepo.getBookInfo(new Session(), bookIDtoInt);
-            } catch (BookRepositoryException e) {
-                request.setAttribute("errorMessage", "Book with id " + bookIDtoInt + " not found in the database.");
-                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
-                rd.forward(request, response);
-                response.sendRedirect("error.jsp");
-            }
-            
-            try {
-                bookRepo.deleteBook(new Session(), bookIDtoInt);
-
-            } catch (Exception ex) {
-                Logger.getLogger(DeleteBookController.class.getName()).log(Level.SEVERE, null, ex);
-                request.setAttribute("errorMessage", "Book with id " + bookID + " could not be found in the database.");
-                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
-                rd.forward(request, response);
-                response.sendRedirect("error.jsp");
-            }
         }
-
-        RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
-        rd.forward(request, response);
+        else {
+            RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+            request.setAttribute("errorMessage", "You need to be logged in to do this operation.");
+            rd.forward(request, response);
+        }
     }
 
     /**

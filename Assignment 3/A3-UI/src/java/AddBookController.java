@@ -77,7 +77,8 @@ public class AddBookController extends HttpServlet {
         String lName = request.getParameter("lname");
         String publisherName = request.getParameter("pname");
         String publisherAddress = request.getParameter("paddress");
-
+        
+        String[] params = {title, isbn, description, fName, lName, publisherName, publisherAddress};
         BookRepository bookRepo = BookRepository.getInstance();
 
         InputStream input = null;
@@ -107,8 +108,18 @@ public class AddBookController extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
             rd.forward(request, response);
             response.sendRedirect("error.jsp");
-
         }
+        //Form validation
+        for(int i = 0; i < params.length; i++){
+            if(params[i].equals("") || cover == null) {
+                request.setAttribute("errorMessage", "Empty fields");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("error.jsp");
+                break;
+            }
+        }
+        
         
         //request.setAttribute("books", books);
         RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");

@@ -92,6 +92,7 @@ public class UpdateBookController extends HttpServlet {
             String description = request.getParameter("description");
             String fName = request.getParameter("fname");
             String lName = request.getParameter("lname");
+            String[] params = {title, description, fName, lName};
 
             InputStream input = null;
             Part filePart = request.getPart("image");
@@ -113,7 +114,17 @@ public class UpdateBookController extends HttpServlet {
                 Logger.getLogger(UpdateBookController.class.getName()).log(Level.SEVERE, null, ex);
             } catch (Exception e) {
                 
-            } 
+            }
+            //Form validation
+        for(int i = 0; i < params.length; i++){
+            if(params[i].equals("") || cover == null) {
+                request.setAttribute("errorMessage", "Empty fields");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("error.jsp");
+                break;
+            }
+        }
 
         }
 

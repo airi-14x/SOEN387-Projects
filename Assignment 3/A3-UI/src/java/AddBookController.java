@@ -25,6 +25,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 import repository.core.Author;
 import repository.core.Book;
@@ -69,61 +70,70 @@ public class AddBookController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
+        HttpSession session = request.getSession();
+        Session currentSession = (Session) session.getAttribute("session");
 
-        String title = request.getParameter("title");
-        String isbn = request.getParameter("isbn");
-        String description = request.getParameter("description");
-        String fName = request.getParameter("fname");
-        String lName = request.getParameter("lname");
-        String publisherName = request.getParameter("pname");
-        String publisherAddress = request.getParameter("paddress");
-        
-        String[] params = {title, isbn, description, fName, lName, publisherName, publisherAddress};
-        BookRepository bookRepo = BookRepository.getInstance();
+        if (currentSession.isUserLoggedIn()) {
 
-        InputStream input = null;
-        Part filePart = request.getPart("image");
-        String fileType = "";
-        if (filePart != null) {
-            fileType = filePart.getContentType();
-            input = filePart.getInputStream();
-            System.out.println(fileType);
-        }
+            String title = request.getParameter("title");
+            String isbn = request.getParameter("isbn");
+            String description = request.getParameter("description");
+            String fName = request.getParameter("fname");
+            String lName = request.getParameter("lname");
+            String publisherName = request.getParameter("pname");
+            String publisherAddress = request.getParameter("paddress");
 
-        Author author = new Author(fName, lName);
-        CoverImage cover = null;
-        try {
-            cover = new CoverImage(fileType, input);
-        } catch (Exception ex) {
-            Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            String[] params = {title, isbn, description, fName, lName, publisherName, publisherAddress};
+            BookRepository bookRepo = BookRepository.getInstance();
 
-        Book book = new Book(title, description, isbn, author, publisherName, publisherAddress);
-        book.setCover(cover);
-        try {
-            bookRepo.addNewBook(new Session(), book);
-        } catch (BookRepositoryException ex) {
-            Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
-            request.setAttribute("errorMessage", "Book ISBN must be unique");
-            RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
-            rd.forward(request, response);
-            response.sendRedirect("error.jsp");
-        }
-        //Form validation
-        for(int i = 0; i < params.length; i++){
-            if(params[i].equals("") || cover == null) {
-                request.setAttribute("errorMessage", "Empty fields");
+            InputStream input = null;
+            Part filePart = request.getPart("image");
+            String fileType = "";
+            if (filePart != null) {
+                fileType = filePart.getContentType();
+                input = filePart.getInputStream();
+                System.out.println(fileType);
+            }
+
+            Author author = new Author(fName, lName);
+            CoverImage cover = null;
+            try {
+                cover = new CoverImage(fileType, input);
+            } catch (Exception ex) {
+                Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+            Book book = new Book(title, description, isbn, author, publisherName, publisherAddress);
+            book.setCover(cover);
+            try {
+                bookRepo.addNewBook(new Session(), book);
+            } catch (BookRepositoryException ex) {
+                Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
+                request.setAttribute("errorMessage", "Book ISBN must be unique");
                 RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
                 rd.forward(request, response);
                 response.sendRedirect("error.jsp");
-                break;
             }
+            //Form validation
+            for (int i = 0; i < params.length; i++) {
+                if (params[i].equals("") || cover == null) {
+                    request.setAttribute("errorMessage", "Empty fields");
+                    RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                    rd.forward(request, response);
+                    response.sendRedirect("error.jsp");
+                    break;
+                }
+            }
+
+            //request.setAttribute("books", books);
+            RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
+            rd.forward(request, response);
         }
-        
-        
-        //request.setAttribute("books", books);
-        RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
-        rd.forward(request, response);
+        else {
+            RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+            request.setAttribute("errorMessage", "You need to be logged in to do this operation.");
+            rd.forward(request, response);
+        }
 
     }
 

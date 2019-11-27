@@ -18,7 +18,7 @@ import org.junit.Test;
  *
  * @author jasminelatendresse
  */
-/*public class BookRepositoryTest {
+public class BookRepositoryTest {
 
     static BookRepository bookRepository = null;
     static ArrayList<Book> allBooksInDB;
@@ -27,8 +27,6 @@ import org.junit.Test;
     static Session session;
     static JSONObject user;
     static BookRepositoryDatabase repoDb = null;
-    static File file = null;
-
     public BookRepositoryTest() {
     }
 
@@ -36,6 +34,7 @@ import org.junit.Test;
     public static void setUp() throws BookRepositoryException {
         bookRepository = BookRepository.getInstance();
         repoDb = BookRepositoryDatabase.getInstance();
+       
 
         session = new Session();
         user = new JSONObject();
@@ -47,7 +46,6 @@ import org.junit.Test;
         book1 = allBooksInDB.get(0);
         book2 = allBooksInDB.get(1);
 
-        file = new File("./endofownership_photo_final.jpeg");
 
         System.out.println(allBooksInDB.toString());
         System.out.println(book1.toString());
@@ -63,7 +61,6 @@ import org.junit.Test;
         book2 = null;
         session = null;
         user = null;
-        file = null;
     }
 
     @Test
@@ -91,7 +88,7 @@ import org.junit.Test;
         assertEquals(resultBook.getPublisherAddress(), book1.getPublisherAddress());
         assertNotNull(resultBook.getCover());
         assertNotNull(resultBook.getCover().getMimeType());
-       // assertNotNull(resultBook.getCover().getImage());
+        assertNotNull(resultBook.getCover().getImageData());
 
         System.out.println("Testing getBookInfo by book isbn");
 
@@ -107,14 +104,14 @@ import org.junit.Test;
         assertEquals(resultBook2.getPublisherAddress(), book1.getPublisherAddress());
         assertNotNull(resultBook2.getCover());
         assertNotNull(resultBook2.getCover().getMimeType());
-        //assertNotNull(resultBook2.getCover().getImage());
+        assertNotNull(resultBook2.getCover().getImageData());
 
     }
 
     @Test
     public void addNewBookTest() throws BookRepositoryException {
         System.out.println("Testing addNewBook");
-        Book book = new Book("Title", "Description", "ISBN", new Author("First Name", "Last Name"), "Publisher Company", "Publisher Address", new CoverImage());
+        Book book = new Book("Title", "Description", "ISBN", new Author("First Name", "Last Name"), "Publisher Company", "Publisher Address", new CoverImage("image/png", "some_image".getBytes()));
         bookRepository.addNewBook(session, book);
 
         assertFalse(book.getId() == 0);
@@ -126,8 +123,8 @@ import org.junit.Test;
         System.out.println("Testing updateBookInfo");
 
         Author author = new Author("New", "Name");
-
-        bookRepository.updateBookInfo(session, book2.getId(), "New Title", "New Description", author);
+        CoverImage cover = new CoverImage("image/png", "some_image".getBytes());
+        bookRepository.updateBookInfo(session, book2.getId(), "New Title", "New Description", author, cover);
         System.out.println(book1.getTitle());
         System.out.println(book2.getTitle());
 
@@ -136,31 +133,14 @@ import org.junit.Test;
         assertEquals(author.toString(), book2.getAuthor().toString());
     }
 
-    @Test
-    public void setBookCoverImageTest() throws BookRepositoryException {
-        System.out.println("Testing setBookCoverImageTest");
-
-        String mimeType = "image/jpeg";
-        bookRepository.setBookCoverImage(session, file, mimeType, book2.getId());
-        System.out.println(book2.getCover());
-
-        // assertEquals("image/jpeg", book2.getCover().getMimeType());
-        //assertNotNull(book2.getCover().getImage());
-    }
-
-    @Test
+    
+//    @Test
     public void deleteBookTest() throws BookRepositoryException {
         System.out.println("Testing deleteBook");
 
         bookRepository.deleteBook(session, book1.getId());
 
-        assertNull(bookRepository.getBookInfo(session, book1.getId()).getTitle());
-        assertNull(bookRepository.getBookInfo(session, book1.getId()).getDescription());
-        assertNull(bookRepository.getBookInfo(session, book1.getId()).getISBN());
-        assertNull(bookRepository.getBookInfo(session, book1.getId()).getAuthor());
-        assertNull(bookRepository.getBookInfo(session, book1.getId()).getPublisherCompany());
-        assertNull(bookRepository.getBookInfo(session, book1.getId()).getPublisherAddress());
-        assertNull(bookRepository.getBookInfo(session, book1.getId()).getCover());
+        assertNull(book1);
 
     }
 
@@ -180,4 +160,4 @@ import org.junit.Test;
         assertEquals(0, sizeAfterDelete);
     }
 
-}*/
+}

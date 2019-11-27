@@ -33,8 +33,8 @@ public class DALLauncher {
         ArrayList<Book> books;
 
         CoverImage cover1 = new CoverImage();
-        cover1.setMimeType("image/jpeg");
-        cover1.setImagePath("./endofownership_photo_final.jpeg");
+        cover1.setMimeType("image/png");
+        cover1.setImagePath("./redpanda.png");
 
         Author author = new Author("Aurelius", "Marcus");
         Book book1 = new Book("Meditations", "Written in Greek, without any intention of publication, by the only Roman emperor", "0140449337", author,
@@ -51,15 +51,16 @@ public class DALLauncher {
         Author author3 = new Author("Kishimi", "Ichiro");
         CoverImage cover3 = new CoverImage();
         cover3.setMimeType("image/png");
+       
         cover3.setImagePath("./redpanda.png");
         Book book3 = new Book("Courage to be Happy", "The Courage to be Happy is a profound insight into the way we should live our lives that has already sold more than one million copies in Japan.", "1911630210", author3, "Allen & Unwin", "London, England", cover3);
 
         System.out.println("Adding book 1 to database");
-        b1.addNewBook(session, book1);
+        b1.addNewBook2(session, book1);
         System.out.println("Adding book 2 to database");
-        b1.addNewBook(session, book2);
+        b1.addNewBook2(session, book2);
         System.out.println("Adding book 3 to database");
-        b1.addNewBook(session, book3);
+        b1.addNewBook2(session, book3);
 
         System.out.println();
         System.out.println("Book ArrayList: ");

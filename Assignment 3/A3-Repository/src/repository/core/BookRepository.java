@@ -7,6 +7,7 @@ package repository.core;
 
 import DAL.BookRepositoryGateway;
 import java.io.File;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -125,6 +126,34 @@ public class BookRepository implements IBookRepository {
         }
         return result;
     }
+    
+    public int addNewBook2(Session session, Book book) throws BookRepositoryException {
+        String user = (String) Session.getCurrentUser();
+        if (null == user) {
+            throw new BookRepositoryException("You must be logged in to do this operation.");
+        }
+        String title = book.getTitle();
+        String description = book.getDescription();
+        String isbn = book.getISBN();
+        String authorFirstName = book.getAuthor().getFirstName();
+        String authorLastName = book.getAuthor().getLastName();
+        String publisherCompany = book.getPublisherCompany();
+        String publisherAddress = book.getPublisherAddress();
+        Blob image = book.getCover().getImage();
+        String mimeType = book.getCover().getMimeType();
+        
+        respositoryDatabaseGatewayConnection.addNewBook2(title, description, isbn, authorFirstName, authorLastName, publisherCompany, publisherAddress, image, mimeType);
+        if (book.getCover() != null) {
+            if (book.getCover().getImagePath() != null) {
+                File file = new File(book.getCover().getImagePath());
+                setBookCoverImage(session, file, book.getCover().getMimeType(), book.getId());
+            }
+          
+        }
+        book.autoIncrement();
+        books.add(book);
+        return book.getId();
+    }
 
     @Override
     public int addNewBook(Session session, Book book) throws BookRepositoryException {
@@ -140,16 +169,16 @@ public class BookRepository implements IBookRepository {
         String authorLastName = book.getAuthor().getLastName();
         String publisherCompany = book.getPublisherCompany();
         String publisherAddress = book.getPublisherAddress();
-
+        
+        
         respositoryDatabaseGatewayConnection.addNewBook(title, description, isbn, authorFirstName, authorLastName, publisherCompany, publisherAddress);
         book.autoIncrement();
-
         if (book.getCover() != null) {
             if (book.getCover().getImagePath() != null) {
                 File file = new File(book.getCover().getImagePath());
                 setBookCoverImage(session, file, book.getCover().getMimeType(), book.getId());
             }
-
+          
         }
         for (int i = 0; i < books.size(); i++) {
             if (books.get(i).getISBN().equals(book.getISBN())) {
@@ -189,6 +218,7 @@ public class BookRepository implements IBookRepository {
             throw new BookRepositoryException("You must be logged in to do this operation.");
         }
     }
+
 
     @Override
     public void deleteBook(Session session, int id) throws BookRepositoryException {

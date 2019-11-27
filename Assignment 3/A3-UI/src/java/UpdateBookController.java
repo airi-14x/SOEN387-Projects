@@ -5,18 +5,22 @@
  */
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import repository.core.Author;
 import repository.core.BookRepository;
 import repository.core.BookRepositoryException;
+import repository.core.CoverImage;
 import repository.core.Session;
 
 /**
@@ -24,6 +28,7 @@ import repository.core.Session;
  * @author Airi
  */
 @WebServlet("UpdateBookController")
+@MultipartConfig
 public class UpdateBookController extends HttpServlet {
 
     /**
@@ -86,17 +91,29 @@ public class UpdateBookController extends HttpServlet {
             String title = request.getParameter("title");
             String description = request.getParameter("description");
             String fName = request.getParameter("fname");
-            String lName = request.getParameter("lName");
+            String lName = request.getParameter("lname");
+
+            InputStream input = null;
+            Part filePart = request.getPart("image");
+            String fileType = "";
+            if (filePart != null) {
+                fileType = filePart.getContentType();
+                input = filePart.getInputStream();
+                System.out.println(fileType);
+            }
 
             Author author = new Author(fName, lName);
-
+            CoverImage cover = null;
             BookRepository bookRepo = BookRepository.getInstance();
 
             try {
-                bookRepo.updateBookInfo(new Session(), Integer.parseInt(request.getParameter("id")), title, description, author);
+                cover = new CoverImage(fileType, input);
+                bookRepo.updateBookInfo(new Session(), Integer.parseInt(request.getParameter("id")), title, description, author, cover);
             } catch (BookRepositoryException ex) {
                 Logger.getLogger(UpdateBookController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            } catch (Exception e) {
+                
+            } 
 
         }
 

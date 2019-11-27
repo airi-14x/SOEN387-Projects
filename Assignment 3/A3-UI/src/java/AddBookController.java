@@ -90,12 +90,17 @@ public class AddBookController extends HttpServlet {
         }
 
         Author author = new Author(fName, lName);
-        CoverImage cover = new CoverImage(fileType, input);
+        CoverImage cover = null;
+        try {
+            cover = new CoverImage(fileType, input);
+        } catch (Exception ex) {
+            Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
         Book book = new Book(title, description, isbn, author, publisherName, publisherAddress);
         book.setCover(cover);
         try {
-            bookRepo.addNewBook2(new Session(), book);
+            bookRepo.addNewBook(new Session(), book);
         } catch (BookRepositoryException ex) {
             Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
             request.setAttribute("errorMessage", "Book ISBN must be unique");

@@ -5,7 +5,9 @@
  */
 package repository.core;
 
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.sql.Blob;
 import java.util.Base64;
 
@@ -17,20 +19,15 @@ import java.util.Base64;
 public class CoverImage {
 
     private String mimeType;
-    private Blob image;
-    private String imagePath;
-    private InputStream input;
     byte[] imageData;
 
 
-    public CoverImage(String mimeType, Blob image) {
-        this.mimeType = mimeType;
-        this.image = image;
+    public CoverImage(String mimeType, Blob image) throws Exception {
+        this(mimeType, image.getBinaryStream());
     }
     
-    public CoverImage(String mimeType, InputStream input) {
-        this.mimeType = mimeType;
-        this.input = input;
+    public CoverImage(String mimeType, InputStream input) throws Exception {
+        this(mimeType, FileUtils.toByteArray(input));
     }
     
     public CoverImage(String mimeType, byte[] image) {
@@ -38,8 +35,7 @@ public class CoverImage {
         this.imageData = image;
     }
 
-    public CoverImage() {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private CoverImage() {
     }
     
     public String getMimeType() {
@@ -50,42 +46,36 @@ public class CoverImage {
         this.mimeType = mimeType;
     }
 
-    public Blob getImage() {
-        return image;
-    }
-
-    public void setImage(Blob image) {
-        this.image = image;
-    }
-
-    public String getImagePath() {
-        return imagePath;
-    }
-    
-    public InputStream getImageData() {
-        return input;
-    }
-    
-    public byte[] getImageBytes() {
+    public byte[] getImageData() {
         return imageData;
     }
-    
-    public void setImageData(InputStream input) {
-        this.input = input;
+
+    public void setImage(Blob image) throws Exception {
+        this.imageData = FileUtils.toByteArray(image.getBinaryStream());
     }
 
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
-    
-    public String getBase64Image() {
-        String base64Image = Base64.getEncoder().encodeToString(imageData);
-        return base64Image;
+    public void getImageData(OutputStream os) throws Exception {
+        os.write(imageData);
     }
     
     @Override
     public String toString() {
-        return "CoverImage{" + "mimeType=" + mimeType + ", image=" + image + ", imagePath=" + imagePath + '}';
+        return "CoverImage{" + "mimeType=" + mimeType + "}";
     }
 
+    private static class FileUtils
+    {
+        public static byte[] toByteArray(InputStream is) throws Exception
+        {
+            ByteArrayOutputStream ba = new ByteArrayOutputStream();
+            byte[] buf = new byte[1000];
+            for(;;)
+            {
+                int l = is.read(buf, 0, buf.length);
+                if(l <=0 ) break;
+                ba.write(buf, 0, l);
+            }
+            return ba.toByteArray();
+        }
+    }
 }

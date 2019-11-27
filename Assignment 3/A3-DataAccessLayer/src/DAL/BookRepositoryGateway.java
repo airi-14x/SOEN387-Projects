@@ -55,13 +55,8 @@ public class BookRepositoryGateway {
         return resultSet;
     }
 
-    public void addNewBook(String title, String description, String isbn, String authorFirstName, String authorLastName, String publisherCompany, String publisherAddress) {
-        repositoryDatabaseConnection.executeUpdate("INSERT INTO book(title, description,isbn, first_name, last_name, publisher_company, address) VALUES(\"" + title + "\",\""
-                + description + "\",\"" + isbn + "\", \"" + authorFirstName + "\", \""
-                + authorLastName + "\", \"" + publisherCompany + "\", \"" + publisherAddress + "\")");
-    }
     
-    public void addNewBook2(String title, String description, String isbn, String authorFirstName, String authorLastName, String publisherCompany, String publisherAddress, Blob image, String mimeType) {
+    public void addNewBook(String title, String description, String isbn, String authorFirstName, String authorLastName, String publisherCompany, String publisherAddress, byte[] image, String mimeType) {
         String query = "INSERT INTO Book(title, description,isbn, first_name, last_name, publisher_company, address, image_data, image_mime) values (?,?,?,?,?,?,?,?,?)";
         try {
             PreparedStatement statement = repositoryDatabaseConnection.getConnectionInstance().prepareStatement(query);
@@ -72,7 +67,7 @@ public class BookRepositoryGateway {
             statement.setString(5, authorLastName);
             statement.setString(6, publisherCompany);
             statement.setString(7, publisherAddress);
-            statement.setBlob(8, image);
+            statement.setBytes(8, image);
             statement.setString(9, mimeType);
 
             statement.execute();
@@ -81,33 +76,24 @@ public class BookRepositoryGateway {
         }
     }
     
-
-    public void updateBookInfo(int id, String title, String description, String authorFirstName, String authorLastName) {
-        String statement = "UPDATE book SET title = '" + title + "', description = '"
-                + description + "', last_name = '" + authorLastName + "', first_name = '"
-                + authorFirstName + "' WHERE id = '" + id + "';";
-        System.out.println("STATEMENT: " + statement);
-        repositoryDatabaseConnection.executeUpdate(statement);
-    }
-
-
-    public void setBookCoverImage(File image, String mimeType, int id) {
-        FileInputStream input = null;
-        String updateSQL = "UPDATE book SET image_data = ?, image_mime = ? WHERE id=?";
-
+    public void updateBookInfo(int id, String title, String description, String authorFirstName, String authorLastName, byte[] image, String mimeType) {
+        String query = "UPDATE book SET title=?, description=?, first_name=?, last_name=?, image_data=?, image_mime=? WHERE id=" + id;
+        
         try {
-            input = new FileInputStream(image);
-            PreparedStatement pstmt = repositoryDatabaseConnection.getConnectionInstance().prepareStatement(updateSQL);
-            pstmt.setBinaryStream(1, input);
-            pstmt.setString(2, mimeType);
-            pstmt.setInt(3, id);
-            pstmt.executeUpdate();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(BookRepositoryGateway.class.getName()).log(Level.SEVERE, null, ex);
+            PreparedStatement statement = repositoryDatabaseConnection.getConnectionInstance().prepareStatement(query);
+            statement.setString(1, title);
+            statement.setString(2, description);
+            statement.setString(3, authorFirstName);
+            statement.setString(4, authorLastName);
+            statement.setBytes(5, image);
+            statement.setString(6, mimeType);
+            
+            statement.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(BookRepositoryGateway.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
 
     public void deleteBook(int id) {
         repositoryDatabaseConnection.executeUpdate("DELETE FROM book WHERE id=" + id);

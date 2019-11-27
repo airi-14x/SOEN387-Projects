@@ -37,19 +37,6 @@ public class ImageController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ImageController</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ImageController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
         doGet(request, response);
     }
 
@@ -71,30 +58,11 @@ public class ImageController extends HttpServlet {
 
             Book resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("bookId")));
 
-            java.sql.Blob image = resultBook.getCover().getImage();
             String contentType = resultBook.getCover().getMimeType();
             System.out.println(contentType);
             response.setContentType(contentType);
-            OutputStream out = response.getOutputStream();
-            byte imageData[] = null;
-
-            if (image == null) {
-                out.write("No cover image for this book.".getBytes());
-            } else {
-                try {
-                    imageData = image.getBytes(1, (int) image.length());
-                    
-                } catch (SQLException ex) {
-                    Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-                out.write(imageData);
-
-            }
-
-            out.flush();
-            out.close();
-        } catch (BookRepositoryException ex) {
+            resultBook.getCover().getImageData(response.getOutputStream());
+        } catch (Exception ex) {
             Logger.getLogger(ImageController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

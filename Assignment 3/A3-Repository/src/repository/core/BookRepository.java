@@ -6,8 +6,6 @@
 package repository.core;
 
 import DAL.BookRepositoryGateway;
-import java.io.File;
-import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.logging.Level;

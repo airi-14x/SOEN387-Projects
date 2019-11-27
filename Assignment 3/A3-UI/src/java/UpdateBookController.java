@@ -114,8 +114,15 @@ public class UpdateBookController extends HttpServlet {
                 bookRepo.updateBookInfo(new Session(), Integer.parseInt(request.getParameter("id")), title, description, author, cover);
             } catch (BookRepositoryException ex) {
                 Logger.getLogger(UpdateBookController.class.getName()).log(Level.SEVERE, null, ex);
+                request.setAttribute("errorMessage", "An error occurred");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("error.jsp");
             } catch (Exception e) {
-
+                request.setAttribute("errorMessage", "An error occurred");
+                RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+                rd.forward(request, response);
+                response.sendRedirect("error.jsp");
             }
             //Form validation
             for (int i = 0; i < params.length; i++) {
@@ -131,8 +138,7 @@ public class UpdateBookController extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
             rd.forward(request, response);
 
-        }
-        else {
+        } else {
             RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
             request.setAttribute("errorMessage", "You need to be logged in to do this operation.");
             rd.forward(request, response);

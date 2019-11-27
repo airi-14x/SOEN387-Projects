@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -153,6 +155,14 @@ public class BookRepository implements IBookRepository {
     @Override
     public void updateBookInfo(Session session, int id, String title, String description, Author author, CoverImage image) throws BookRepositoryException {
         String user = (String) Session.getCurrentUser();
+        ResultSet rs = respositoryDatabaseGatewayConnection.getBookInfo(id);
+        try {
+            if (!rs.next()) {
+                throw new BookRepositoryException("Book not found in the database");
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BookRepository.class.getName()).log(Level.SEVERE, null, ex);
+        }
         if (null == user) {
             throw new BookRepositoryException("You must be logged in to do this operation.");
         }

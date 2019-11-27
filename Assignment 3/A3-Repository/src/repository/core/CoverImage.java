@@ -7,6 +7,7 @@ package repository.core;
 
 import java.io.InputStream;
 import java.sql.Blob;
+import java.util.Base64;
 
 
 /**
@@ -19,6 +20,7 @@ public class CoverImage {
     private Blob image;
     private String imagePath;
     private InputStream input;
+    byte[] imageData;
 
 
     public CoverImage(String mimeType, Blob image) {
@@ -29,6 +31,11 @@ public class CoverImage {
     public CoverImage(String mimeType, InputStream input) {
         this.mimeType = mimeType;
         this.input = input;
+    }
+    
+    public CoverImage(String mimeType, byte[] image) {
+        this.mimeType = mimeType;
+        this.imageData = image;
     }
 
     public CoverImage() {
@@ -54,9 +61,26 @@ public class CoverImage {
     public String getImagePath() {
         return imagePath;
     }
+    
+    public InputStream getImageData() {
+        return input;
+    }
+    
+    public byte[] getImageBytes() {
+        return imageData;
+    }
+    
+    public void setImageData(InputStream input) {
+        this.input = input;
+    }
 
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
+    }
+    
+    public String getBase64Image() {
+        String base64Image = Base64.getEncoder().encodeToString(imageData);
+        return base64Image;
     }
     
     @Override

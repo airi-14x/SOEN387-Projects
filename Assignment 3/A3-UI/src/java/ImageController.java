@@ -73,6 +73,7 @@ public class ImageController extends HttpServlet {
 
             java.sql.Blob image = resultBook.getCover().getImage();
             String contentType = resultBook.getCover().getMimeType();
+            System.out.println(contentType);
             response.setContentType(contentType);
             OutputStream out = response.getOutputStream();
             byte imageData[] = null;
@@ -82,6 +83,7 @@ public class ImageController extends HttpServlet {
             } else {
                 try {
                     imageData = image.getBytes(1, (int) image.length());
+                    
                 } catch (SQLException ex) {
                     Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -95,9 +97,7 @@ public class ImageController extends HttpServlet {
         } catch (BookRepositoryException ex) {
             Logger.getLogger(ImageController.class.getName()).log(Level.SEVERE, null, ex);
         }
-
     }
-
     /**
      * Handles the HTTP <code>POST</code> method.
      *

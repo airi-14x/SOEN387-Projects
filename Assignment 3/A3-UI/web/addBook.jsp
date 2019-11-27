@@ -4,6 +4,13 @@
     Author     : Airi
 --%>
 
+<%@page import="java.io.InputStream"%>
+<%@page import="java.io.File"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.io.FileInputStream"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="repository.core.Session"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,7 +20,7 @@
         <title>Add Book Page</title>
         <link href="style/addBookCSS.css" rel="stylesheet" type="text/css">
     </head>
-     <%
+    <%
         String user = (String) Session.getCurrentUser();
         if (null == user) {
             response.sendRedirect("login.jsp");
@@ -34,7 +41,7 @@
                 <input type="submit" value="Submit" name="submit"/>
             </form>
         </div>
-        
+
         <h1>Update a book</h1>
         <div>
             <form action="UpdateBookController" method="POST">

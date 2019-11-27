@@ -46,8 +46,8 @@
                             <td>${book.description}</td>
                             <td>${book.getISBN()}</td>
                             <td>${book.author}</td>
-                            <td>${book.publisherCompany}</td>
-                            <td>${book.publisherAddress}</td>
+                            <td>${book.getPublisherCompany()}</td>
+                            <td>${book.getPublisherAddress()}</td>
                             <td><input type="submit" value="View Cover" name="viewCover"/></td>
                         </form>
                     </tr>

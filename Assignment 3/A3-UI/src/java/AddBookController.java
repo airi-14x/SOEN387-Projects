@@ -106,8 +106,8 @@ public class AddBookController extends HttpServlet {
                 response.sendRedirect("error.jsp");
             }
             //Form validation
-            for (int i = 0; i < params.length; i++) {
-                if (params[i].equals("") || cover == null) {
+            for (String param : params) {
+                if (param.equals("") || cover == null) {
                     request.setAttribute("errorMessage", "Empty fields");
                     RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
                     rd.forward(request, response);

@@ -63,7 +63,7 @@ public class BookViewController extends HttpServlet {
             String bookID = (String) request.getParameter("viewBookID");
             if (!request.getParameter("viewBookID").equals("")) {
                 try {
-                    resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(bookID));
+                    resultBook = bookRepo.getBookInfo(currentSession, Integer.parseInt(bookID));
                 } catch (BookRepositoryException ex) {
                     Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
                     request.setAttribute("error", "Sorry there's no book in the database with id = " + bookID);
@@ -75,7 +75,7 @@ public class BookViewController extends HttpServlet {
 
             } else if (!request.getParameter("ISBN").equals("")) {
                 try {
-                    resultBook = bookRepo.getBookInfo(new Session(), request.getParameter("ISBN"));
+                    resultBook = bookRepo.getBookInfo(currentSession, request.getParameter("ISBN"));
                 } catch (BookRepositoryException ex) {
                     Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
                     request.setAttribute("error", "Sorry there's no book in the database with ISBN = " + request.getParameter("ISBN"));

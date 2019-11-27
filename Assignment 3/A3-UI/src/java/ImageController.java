@@ -59,7 +59,7 @@ public class ImageController extends HttpServlet {
             try {
                 BookRepository bookRepo = BookRepository.getInstance();
 
-                Book resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(request.getParameter("bookId")));
+                Book resultBook = bookRepo.getBookInfo(currentSession, Integer.parseInt(request.getParameter("bookId")));
 
                 String contentType = resultBook.getCover().getMimeType();
                 System.out.println(contentType);

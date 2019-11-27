@@ -66,7 +66,7 @@ public class DeleteBookController extends HttpServlet {
                 response.sendRedirect("error.jsp");
 
             } else if (request.getParameter("deleteBookID").equals("") && request.getParameter("delete").equals("deleteAll")) {
-                bookRepo.deleteAllBooks(new Session());
+                bookRepo.deleteAllBooks(currentSession);
             } else if (request.getParameter("delete").equals("deleteBook") && !(request.getParameter("deleteBookID").equals(""))) {
                 String bookID = (String) request.getParameter("deleteBookID");
                 int bookIDtoInt = 0;
@@ -81,7 +81,7 @@ public class DeleteBookController extends HttpServlet {
                 }
 
                 try {
-                    bookRepo.getBookInfo(new Session(), bookIDtoInt);
+                    bookRepo.getBookInfo(currentSession, bookIDtoInt);
                 } catch (BookRepositoryException e) {
                     request.setAttribute("errorMessage", "Book with id " + bookIDtoInt + " not found in the database.");
                     RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
@@ -90,7 +90,7 @@ public class DeleteBookController extends HttpServlet {
                 }
 
                 try {
-                    bookRepo.deleteBook(new Session(), bookIDtoInt);
+                    bookRepo.deleteBook(currentSession, bookIDtoInt);
 
                 } catch (Exception ex) {
                     Logger.getLogger(DeleteBookController.class.getName()).log(Level.SEVERE, null, ex);

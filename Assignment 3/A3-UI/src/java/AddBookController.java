@@ -97,7 +97,7 @@ public class AddBookController extends HttpServlet {
             Book book = new Book(title, description, isbn, author, publisherName, publisherAddress);
             book.setCover(cover);
             try {
-                bookRepo.addNewBook(new Session(), book);
+                bookRepo.addNewBook(currentSession, book);
             } catch (BookRepositoryException ex) {
                 Logger.getLogger(AddBookController.class.getName()).log(Level.SEVERE, null, ex);
                 request.setAttribute("errorMessage", "Book ISBN must be unique");

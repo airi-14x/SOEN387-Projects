@@ -111,7 +111,7 @@ public class UpdateBookController extends HttpServlet {
 
             try {
                 cover = new CoverImage(fileType, input);
-                bookRepo.updateBookInfo(new Session(), Integer.parseInt(request.getParameter("id")), title, description, author, cover);
+                bookRepo.updateBookInfo(currentSession, Integer.parseInt(request.getParameter("id")), title, description, author, cover);
             } catch (BookRepositoryException ex) {
                 Logger.getLogger(UpdateBookController.class.getName()).log(Level.SEVERE, null, ex);
                 request.setAttribute("errorMessage", "An error occurred");

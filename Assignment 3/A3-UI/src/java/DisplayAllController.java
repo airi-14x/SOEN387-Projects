@@ -60,11 +60,9 @@ public class DisplayAllController extends HttpServlet {
         if (currentSession.isUserLoggedIn()) {
             try {
                 BookRepository bookRepo = BookRepository.getInstance();
-                ArrayList<Book> books = bookRepo.listAllBooks(new Session());
+                ArrayList<Book> books = bookRepo.listAllBooks(currentSession);
                 request.setAttribute("books", books);
                 RequestDispatcher rd = request.getRequestDispatcher("/displayAll.jsp");
-                // Temporary at displayAll jsp --> Need to figure out how to move it to home
-                // without showing Login page because username would be null if sent from here at the moment.
                 rd.forward(request, response);
             } catch (BookRepositoryException ex) {
                 Logger.getLogger(DisplayAllController.class.getName()).log(Level.SEVERE, null, ex);

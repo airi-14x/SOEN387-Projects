@@ -67,7 +67,10 @@ public class BooksServlet extends HttpServlet {
             throws ServletException, IOException {
 
         BookRepository bookRepo = BookRepository.getInstance();
-        // JSONObject allBooksJSON = new JSONObject();
+
+        //Gson gson = new GsonBuilder()
+        //        .setPrettyPrinting()
+        //        .create();
         Collection<JSONObject> allBooksJSON = new ArrayList<JSONObject>();
 
         try {
@@ -83,10 +86,10 @@ public class BooksServlet extends HttpServlet {
                 jbook.put("publisher-company", book.getPublisherCompany());
                 jbook.put("publisher-address", book.getPublisherAddress());
 
-                if (book.getCover() != null) {
-                    jbook.put("has-image", "yes");
-                } else {
+                if (book.getCover().getImageData() == null) {
                     jbook.put("has-image", "no");
+                } else {
+                    jbook.put("has-image", "yes");
                 }
                 allBooksJSON.add(jbook);
             }
@@ -94,8 +97,8 @@ public class BooksServlet extends HttpServlet {
         } catch (BookRepositoryException ex) {
             Logger.getLogger(BooksServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         request.setAttribute("books", allBooksJSON);
+
         RequestDispatcher rd = request.getRequestDispatcher("/displayBooks.jsp");
         rd.forward(request, response);
         //processRequest(request, response);

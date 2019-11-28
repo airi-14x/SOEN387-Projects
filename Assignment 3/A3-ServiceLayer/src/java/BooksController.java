@@ -97,6 +97,8 @@ public class BooksController extends HttpServlet {
         } catch (BookRepositoryException ex) {
             Logger.getLogger(BooksController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        // !== ADD JSON VERSION OF ERROR
+        // ! -- Add error if there's no book!!
         request.setAttribute("books", allBooksJSON);
 
         RequestDispatcher rd = request.getRequestDispatcher("/displayBooks.jsp");

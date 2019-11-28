@@ -9,11 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Books</title>
     </head>
-    <body>
-        ${books}
-        
+    <body>        
          <form action="BooksController" method="GET">
                 View All Books <input type="submit" name="displayAll" value="Submit"/><br>
          </form>
@@ -22,5 +20,8 @@
                 View Book with ID:<input type="text" name="viewBookID">
                 <input type="submit" name="viewBook" value="Submit"/><br>
          </form>
+        
+        ${error}
+        ${books}
     </body>
 </html>

@@ -21,8 +21,8 @@
         <link href="style/addBookCSS.css" rel="stylesheet" type="text/css">
     </head>
     <%
-        String user = (String) Session.getCurrentUser();
-        if (null == user) {
+        Session currentSession = (Session) session.getAttribute("currentSession");
+        if (!currentSession.isUserLoggedIn()) {
             response.sendRedirect("login.jsp");
         }
     %>
@@ -44,12 +44,13 @@
 
         <h1>Update a book</h1>
         <div>
-            <form action="UpdateBookController" method="POST">
+            <form action="UpdateBookController" method="POST" enctype="multipart/form-data">
                 ID <input type="text" name="id"><br>
                 Title <input type="text" name="title"><br>
                 Description <input type="text" name="description"><br>
                 Author First Name <input type="text" name="fname"><br>
                 Author Last Name <input type="text" name="lname"><br>
+                Cover Image <input type="file" name="image"/><br>
                 <input type="submit" value="Submit" name="submit"/>
             </form>
         </div>

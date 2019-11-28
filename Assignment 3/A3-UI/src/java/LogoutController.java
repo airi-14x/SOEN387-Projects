@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import repository.core.Session;
 
 /*
@@ -24,19 +25,7 @@ public class LogoutController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Logout Controller</title>");
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Logout Controller at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
-        doPost(request,response);
+        doGet(request, response);
     }
 
     /**
@@ -48,18 +37,25 @@ public class LogoutController extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html");
-        Session session = new Session();
-        System.out.println("HI");
-        session.logout();
-        RequestDispatcher rd = request.getRequestDispatcher("/logout.jsp");
-        rd.forward(request, response);
-        response.sendRedirect("logout.jsp");
+        doGet(request, response);
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        doPost(request, response);
+
+        HttpSession session = request.getSession();
+        Session currentSession = (Session) session.getAttribute("currentSession");
+
+        boolean loggedOut = currentSession.logout();
+
+        if (loggedOut) {
+            getServletContext().getRequestDispatcher("/logout.jsp").forward(request, response);
+        } else {
+            request.setAttribute("errorMessage", "Could not logout");
+            RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+            rd.forward(request, response);
+            response.sendRedirect("error.jsp");
+        }
     }
 }

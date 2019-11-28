@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>BooksServlet</servlet-name>
-        <servlet-class>BooksServlet</servlet-class>
+        <servlet-name>BooksController</servlet-name>
+        <servlet-class>BooksController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BookController</servlet-name>
+        <servlet-class>BookController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>BooksServlet</servlet-name>
-        <url-pattern>/BooksServlet</url-pattern>
+        <servlet-name>BooksController</servlet-name>
+        <url-pattern>/BooksController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BookController</servlet-name>
+        <url-pattern>/BookController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -100,6 +100,7 @@ public class BooksController extends HttpServlet {
         // !== ADD JSON VERSION OF ERROR
         // ! -- Add error if there's no book!!
         request.setAttribute("books", allBooksJSON);
+        request.setAttribute("results", "Results");
 
         RequestDispatcher rd = request.getRequestDispatcher("/displayBooks.jsp");
         rd.forward(request, response);

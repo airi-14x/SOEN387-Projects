@@ -69,6 +69,7 @@ public class BookController extends HttpServlet {
         String bookID = (String) request.getParameter("viewBookID");
 
         JSONObject jbook = null;
+        JSONObject jerror = new JSONObject();
         if (!request.getParameter("viewBookID").equals("")) {
             try {
                 resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(bookID));
@@ -89,16 +90,22 @@ public class BookController extends HttpServlet {
 
             } catch (BookRepositoryException ex) {
                 Logger.getLogger(BookController.class.getName()).log(Level.SEVERE, null, ex);
-                request.setAttribute("error", "Sorry there's no book in the database with id = " + bookID);
+                String errorMessage = "Sorry there's no book in the database with id = " + bookID;
+                jerror.put("error", errorMessage);
+                request.setAttribute("error", jerror);
             } catch (NumberFormatException e) {
-                request.setAttribute("error", "Book ID must be an integer.");
+                String errorMessage = "Book ID must be an integer.";
+                jerror.put("error", errorMessage);
+                request.setAttribute("error", jerror);
             }
             request.setAttribute("books", jbook);
         } else {
-            request.setAttribute("error", "Please enter ID!");
+            String errorMessage = "Please enter ID!";
+            jerror.put("error", errorMessage);
+            request.setAttribute("error", jerror);
         }
 
-        // !== ADD JSON VERSION OF ERROR
+        request.setAttribute("results", "Results");
         RequestDispatcher rd = request.getRequestDispatcher("/displayBooks.jsp");
         rd.forward(request, response);
 

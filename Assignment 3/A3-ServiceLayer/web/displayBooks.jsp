@@ -26,7 +26,10 @@
          </form>
         </div>
         
-        <div class="error">${error}</div>
+        <div class="results">
+            <div class="results-header">${results}</div>
+            <div class="error">${error}</div>
         ${books}
+        </div>
     </body>
 </html>

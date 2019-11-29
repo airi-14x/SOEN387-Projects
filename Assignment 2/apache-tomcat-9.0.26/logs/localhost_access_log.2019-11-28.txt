@@ -860,3 +860,10 @@
 127.0.0.1 - airi14x [28/Nov/2019:18:13:51 -0500] "GET /manager/text/list HTTP/1.1" 200 1333
 127.0.0.1 - - [28/Nov/2019:18:13:51 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
 127.0.0.1 - airi14x [28/Nov/2019:18:13:51 -0500] "GET /manager/text/ HTTP/1.1" 200 41
+0:0:0:0:0:0:0:1 - - [28/Nov/2019:18:16:56 -0500] "GET /A3-ServiceLayer/BookController?viewBookID=2&viewBook=Submit HTTP/1.1" 200 890
+127.0.0.1 - - [28/Nov/2019:18:17:22 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [28/Nov/2019:18:17:22 -0500] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [28/Nov/2019:18:17:22 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [28/Nov/2019:18:17:22 -0500] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [28/Nov/2019:18:17:22 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [28/Nov/2019:18:17:22 -0500] "GET /manager/text/ HTTP/1.1" 200 41

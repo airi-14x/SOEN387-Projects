@@ -934,3 +934,19 @@
 		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
 		at java.lang.Thread.run(Thread.java:748)
 28-Nov-2019 18:13:51.491 AVERTISSEMENT [http-nio-8080-exec-156] org.apache.catalina.realm.LockOutRealm.filterLockedAccounts Une tentative d'authentification a été effectuée pour l'utilisateur verrouillé ("locked user") []
+28-Nov-2019 18:17:22.994 INFOS [main] org.apache.catalina.core.StandardServer.await Une commande d'arrêt valide a été reçue sur le port d'arrêt, arrêt de l'instance du serveur
+28-Nov-2019 18:17:22.995 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["http-nio-8080"] est mis en pause
+28-Nov-2019 18:17:23.006 INFOS [main] org.apache.coyote.AbstractProtocol.pause Le gestionnaire de protocole ["ajp-nio-8009"] est mis en pause
+28-Nov-2019 18:17:23.014 INFOS [main] org.apache.catalina.core.StandardService.stopInternal Arrêt du service [Catalina]
+28-Nov-2019 18:17:23.026 AVERTISSEMENT [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesJdbc L'application web [A3-ServiceLayer] a enregistré un pilote JDBC [com.mysql.cj.jdbc.Driver], mais ne l'a pas désenregistré avant l'arrêt de l'application.  Pour éviter une fuite de mémoire, le pilote JDBC a été désenregistré de force.
+28-Nov-2019 18:17:23.026 AVERTISSEMENT [main] org.apache.catalina.loader.WebappClassLoaderBase.clearReferencesThreads L'application web [A3-ServiceLayer] semble avoir démarré un thread nommé [mysql-cj-abandoned-connection-cleanup] mais ne l'a pas arrêté, ce qui va probablement créer une fuite de mémoire; la trace du thread est: 
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.cj.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:85)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+28-Nov-2019 18:17:23.048 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["http-nio-8080"]
+28-Nov-2019 18:17:23.050 INFOS [main] org.apache.coyote.AbstractProtocol.stop Arrêt du gestionnaire de protocole ["ajp-nio-8009"]
+28-Nov-2019 18:17:23.051 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["http-nio-8080"]
+28-Nov-2019 18:17:23.051 INFOS [main] org.apache.coyote.AbstractProtocol.destroy Destruction du gestionnaire de protocole ["ajp-nio-8009"]

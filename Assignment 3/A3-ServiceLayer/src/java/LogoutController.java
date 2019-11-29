@@ -6,24 +6,16 @@
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.json.simple.JSONObject;
-import repository.core.Book;
-import repository.core.BookRepository;
-import repository.core.BookRepositoryException;
-import repository.core.Session;
 
 /**
  *
  * @author Airi
  */
-public class BookController extends HttpServlet {
+public class LogoutController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -42,10 +34,10 @@ public class BookController extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet BookServlet</title>");
+            out.println("<title>Servlet LogoutController</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet BookServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet LogoutController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -63,45 +55,7 @@ public class BookController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        BookRepository bookRepo = BookRepository.getInstance();
-        Book resultBook = null;
-        request.setAttribute("error", " ");
-        String bookID = (String) request.getParameter("viewBookID");
-
-        JSONObject jbook = null;
-        if (!request.getParameter("viewBookID").equals("")) {
-            try {
-                resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(bookID));
-                jbook = new JSONObject();
-                jbook.put("id", resultBook.getId());
-                jbook.put("title", resultBook.getTitle());
-                jbook.put("description", resultBook.getDescription());
-                jbook.put("isbn", resultBook.getISBN());
-                jbook.put("author", resultBook.getAuthor());
-                jbook.put("publisher-company", resultBook.getPublisherCompany());
-                jbook.put("publisher-address", resultBook.getPublisherAddress());
-
-                if (resultBook.getCover().getImageData() == null) {
-                    jbook.put("has-image", "no");
-                } else {
-                    jbook.put("has-image", "yes");
-                }
-
-            } catch (BookRepositoryException ex) {
-                Logger.getLogger(BookController.class.getName()).log(Level.SEVERE, null, ex);
-                request.setAttribute("error", "Sorry there's no book in the database with id = " + bookID);
-            } catch (NumberFormatException e) {
-                request.setAttribute("error", "Book ID must be an integer.");
-            }
-            request.setAttribute("books", jbook);
-        } else {
-            request.setAttribute("error", "Please enter ID!");
-        }
-
-        // !== ADD JSON VERSION OF ERROR
-        RequestDispatcher rd = request.getRequestDispatcher("/displayBooks.jsp");
-        rd.forward(request, response);
-
+        processRequest(request, response);
     }
 
     /**

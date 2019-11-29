@@ -31,5 +31,9 @@
             <div class="error">${error}</div>
         ${books}
         </div>
+        
+        <form action="LogoutController" method="POST">
+            <input type="submit" value="Logout"/>
+        </form><br>
     </body>
 </html>

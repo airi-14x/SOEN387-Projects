@@ -5,16 +5,24 @@
         <servlet-class>BooksController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>BookController</servlet-name>
-        <servlet-class>BookController</servlet-class>
+        <servlet-name>LoginController</servlet-name>
+        <servlet-class>LoginController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutController</servlet-name>
+        <servlet-class>LogoutController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>BooksController</servlet-name>
         <url-pattern>/BooksController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>BookController</servlet-name>
-        <url-pattern>/BookController</url-pattern>
+        <servlet-name>LoginController</servlet-name>
+        <url-pattern>/LoginController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutController</servlet-name>
+        <url-pattern>/LogoutController</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

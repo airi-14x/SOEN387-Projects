@@ -17,12 +17,12 @@
         <h1>Display Books</h1>
         <div class="submit-actions">
          <form action="BooksController" method="GET">
-                View All Books: <input type="submit" name="displayAll" value="Submit"/><br>
+                View All Books: <input type="submit" name="books" value="displayAll"/><br>
          </form>
         
-         <form action="BookController" method="GET">
+         <form action="BooksController" method="GET">
                 View Book with ID:<input type="text" name="viewBookID">
-                <input type="submit" name="viewBook" value="Submit"/><br>
+                <input type="submit" name="books" value="displayBook"/><br>
          </form>
         </div>
         

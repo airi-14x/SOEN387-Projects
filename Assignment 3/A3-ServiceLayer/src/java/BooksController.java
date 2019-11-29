@@ -67,44 +67,75 @@ public class BooksController extends HttpServlet {
             throws ServletException, IOException {
 
         BookRepository bookRepo = BookRepository.getInstance();
+        JSONObject jerror = new JSONObject();
 
-        //Gson gson = new GsonBuilder()
-        //        .setPrettyPrinting()
-        //        .create();
-        Collection<JSONObject> allBooksJSON = new ArrayList<JSONObject>();
+        if (request.getParameter("books").equals("displayAll")) {
+            try {
+                Collection<JSONObject> allBooksJSON = new ArrayList<JSONObject>();
+                ArrayList<Book> books = bookRepo.listAllBooks(new Session());
 
-        try {
-            ArrayList<Book> books = bookRepo.listAllBooks(new Session());
+                for (Book book : books) {
+                    JSONObject jbook = new JSONObject();
+                    jbook.put("id", book.getId());
+                    jbook.put("title", book.getTitle());
+                    jbook.put("description", book.getDescription());
+                    jbook.put("isbn", book.getISBN());
+                    jbook.put("author", book.getAuthor());
+                    jbook.put("publisher-company", book.getPublisherCompany());
+                    jbook.put("publisher-address", book.getPublisherAddress());
 
-            for (Book book : books) {
-                JSONObject jbook = new JSONObject();
-                jbook.put("id", book.getId());
-                jbook.put("title", book.getTitle());
-                jbook.put("description", book.getDescription());
-                jbook.put("isbn", book.getISBN());
-                jbook.put("author", book.getAuthor());
-                jbook.put("publisher-company", book.getPublisherCompany());
-                jbook.put("publisher-address", book.getPublisherAddress());
-
-                if (book.getCover().getImageData() == null) {
-                    jbook.put("has-image", "no");
-                } else {
-                    jbook.put("has-image", "yes");
+                    allBooksJSON.add(jbook);
                 }
-                allBooksJSON.add(jbook);
+                request.setAttribute("books", allBooksJSON);
+
+            } catch (BookRepositoryException ex) {
+                Logger.getLogger(BooksController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        } else if (request.getParameter("books").equals("displayBook")) {
+            Book resultBook = null;
+            String bookID = (String) request.getParameter("viewBookID");
+            JSONObject jbook = null;
+
+            if (!request.getParameter("viewBookID").equals("")) {
+                try {
+                    resultBook = bookRepo.getBookInfo(new Session(), Integer.parseInt(bookID));
+                    jbook = new JSONObject();
+                    jbook.put("id", resultBook.getId());
+                    jbook.put("title", resultBook.getTitle());
+                    jbook.put("description", resultBook.getDescription());
+                    jbook.put("isbn", resultBook.getISBN());
+                    jbook.put("author", resultBook.getAuthor());
+                    jbook.put("publisher-company", resultBook.getPublisherCompany());
+                    jbook.put("publisher-address", resultBook.getPublisherAddress());
+
+                    if (resultBook.getCover().getImageData() == null) {
+                        jbook.put("has-image", "no");
+                    } else {
+                        jbook.put("has-image", "yes");
+                    }
+                    request.setAttribute("books", jbook);
+                } catch (BookRepositoryException ex) {
+                    Logger.getLogger(BooksController.class.getName()).log(Level.SEVERE, null, ex);
+                    String errorMessage = "Sorry there's no book in the database with id = " + bookID;
+                    jerror.put("error", errorMessage);
+                    request.setAttribute("error", jerror);
+                } catch (NumberFormatException e) {
+                    String errorMessage = "Book ID must be an integer.";
+                    jerror.put("error", errorMessage);
+                    request.setAttribute("error", jerror);
+                }
+            } else {
+                String errorMessage = "Please enter ID!";
+                jerror.put("error", errorMessage);
+                request.setAttribute("error", jerror);
             }
 
-        } catch (BookRepositoryException ex) {
-            Logger.getLogger(BooksController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        // !== ADD JSON VERSION OF ERROR
-        // ! -- Add error if there's no book!!
-        request.setAttribute("books", allBooksJSON);
+
         request.setAttribute("results", "Results");
 
         RequestDispatcher rd = request.getRequestDispatcher("/displayBooks.jsp");
         rd.forward(request, response);
-        //processRequest(request, response);
     }
 
     /**

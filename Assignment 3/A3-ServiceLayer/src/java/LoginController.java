@@ -11,7 +11,6 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import repository.core.Session;
 
 /**
@@ -62,21 +61,36 @@ public class LoginController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html");
-        HttpSession session = request.getSession();
+        Session currentSession = new Session();
         Cookie ck[] = request.getCookies();
+        RequestDispatcher dispatcher;
 
-        if (session.getAttribute("currentSession") == null) {
-            Session currentSession = new Session();
-            Cookie sessionCookie = new Cookie("test", "1234");
-            session.setAttribute("currentSession", currentSession);
-            response.addCookie(sessionCookie);
-            RequestDispatcher disp = request.getRequestDispatcher("/login.jsp");
-            disp.forward(request, response);
-        } else if (ck[0] != null) {
+        if (request.getMethod().equals("POST")) {
+            String username = request.getParameter("username");
+            String password = request.getParameter("password");
 
-            RequestDispatcher disp = request.getRequestDispatcher("/displayBooks.jsp");
-            disp.forward(request, response);
+            if (currentSession.login(username, password)) {
+                Cookie userCookie = new Cookie("user", username);
+                userCookie.setMaxAge(60);
+                response.addCookie(userCookie);
+
+                dispatcher = request.getRequestDispatcher("/displayBooks.jsp");
+                dispatcher.forward(request, response);
+            } else {
+                dispatcher = request.getRequestDispatcher("/login.jsp");
+                dispatcher.forward(request, response);
+            }
+        } else if (request.getMethod().equals("GET")) {
+
+            if (ck.length == 0 && currentSession.isUserLoggedIn() == false) {
+                dispatcher = request.getRequestDispatcher("/login.jsp");
+                dispatcher.forward(request, response);
+            } else {
+                dispatcher = request.getRequestDispatcher("/displayBooks.jsp");
+                dispatcher.forward(request, response);
+            }
         }
+
     }
 
     /**

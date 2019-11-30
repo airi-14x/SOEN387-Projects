@@ -71,6 +71,9 @@ public class BookRepository implements IBookRepository {
 
         try {
             ResultSet resultSet = respositoryDatabaseGatewayConnection.getBookInfo(id);
+             if (!resultSet.next()) {
+                    throw new BookRepositoryException("Book not found in database");
+            }
 
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
@@ -80,16 +83,12 @@ public class BookRepository implements IBookRepository {
                 String lastName = resultSet.getString("last_name");
                 String firstName = resultSet.getString("first_name");
                 String publisherCompany = resultSet.getString("publisher_company");
-                String address = resultSet.getString("address");
+                String publisherAddress = resultSet.getString("address");
                 String mimeType = resultSet.getString("image_mime");
                 byte[] imageData = resultSet.getBytes("image_data");
-
-                result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
-                result.setId(bookId); // Set ID of book to match Database ID
-            }
-
-            if (result == null) {
-                throw new BookRepositoryException("Book not found in database");
+                System.out.println(isbn);
+                result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, publisherAddress, new CoverImage(mimeType, imageData));
+                result.setId(bookId);// Set ID of book to match Database ID
             }
 
         } catch (SQLException e) {
@@ -98,29 +97,28 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public Book getBookInfo(Session session, String isbn) throws BookRepositoryException {
+    public Book getBookInfo(Session session, String bookIsbn) throws BookRepositoryException {
         Book result = null;
         try {
-            ResultSet resultSet = respositoryDatabaseGatewayConnection.getBookInfo(isbn);
-
+            ResultSet resultSet = respositoryDatabaseGatewayConnection.getBookInfo(bookIsbn);
+            if (!resultSet.next()) {
+                    throw new BookRepositoryException("Book not found in database");
+            }
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
                 String description = resultSet.getString("description");
-                String bookIsbn = resultSet.getString("isbn");
+                String isbn = resultSet.getString("isbn");
                 String lastName = resultSet.getString("last_name");
                 String firstName = resultSet.getString("first_name");
                 String publisherCompany = resultSet.getString("publisher_company");
-                String address = resultSet.getString("address");
+                String publisherAddress = resultSet.getString("address");
                 String mimeType = resultSet.getString("image_mime");
                 byte[] imageData = resultSet.getBytes("image_data");
 
-                result = new Book(title, description, bookIsbn, new Author(firstName, lastName), publisherCompany, address, new CoverImage(mimeType, imageData));
+                result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, publisherAddress, new CoverImage(mimeType, imageData));
                 result.setId(bookId); // Set ID of book to match Database ID
 
-                if (result == null) {
-                    throw new BookRepositoryException("Book not found in database");
-                }
             }
         } catch (SQLException e) {
         }

@@ -28,9 +28,9 @@ import repository.core.Session;
  *
  * @author Airi
  */
-@WebServlet("UpdateBookController")
+@WebServlet("EditController")
 @MultipartConfig
-public class UpdateBookController extends HttpServlet {
+public class EditBookController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -44,9 +44,7 @@ public class UpdateBookController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-        }
+        doPost(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -75,12 +73,11 @@ public class UpdateBookController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html");
         HttpSession session = request.getSession();
         Session currentSession = (Session) session.getAttribute("currentSession");
 
         if (currentSession.isUserLoggedIn()) {
-
+            
             String title = request.getParameter("title");
             String description = request.getParameter("description");
             String fName = request.getParameter("fname");
@@ -104,7 +101,7 @@ public class UpdateBookController extends HttpServlet {
                 cover = new CoverImage(fileType, input);
                 bookRepo.updateBookInfo(currentSession, Integer.parseInt(request.getParameter("id")), title, description, author, cover);
             } catch (BookRepositoryException ex) {
-                Logger.getLogger(UpdateBookController.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(EditBookController.class.getName()).log(Level.SEVERE, null, ex);
                 request.setAttribute("errorMessage", "An error occurred");
                 RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
                 rd.forward(request, response);
@@ -126,7 +123,7 @@ public class UpdateBookController extends HttpServlet {
                 }
             }
 
-            RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
+            RequestDispatcher rd = request.getRequestDispatcher("BookViewController?viewBookID=" + request.getParameter("id"));
             rd.forward(request, response);
 
         } else {

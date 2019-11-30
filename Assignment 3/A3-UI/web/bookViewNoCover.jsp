@@ -1,7 +1,7 @@
 <%-- 
-    Document   : viewBook
-    Created on : 6 nov. 2019, 08:40:53
-    Author     : Airi
+    Document   : bookViewNoCover
+    Created on : 2019-11-30, 11:24:33
+    Author     : jasminelatendresse
 --%>
 
 <%@page import="java.io.OutputStream"%>
@@ -47,7 +47,6 @@
                     <td><jsp:getProperty name = "book" property = "author"/></td>
                     <td><jsp:getProperty name = "book" property = "publisherCompany"/></td>
                     <td><jsp:getProperty name = "book" property = "publisherAddress"/></td>
-                    <td><input type="submit" value="View Cover" name="viewCover"/></td>
                     <td><a href="./addBook.jsp">Edit book</a></td>
                 </form>
                 </tr>

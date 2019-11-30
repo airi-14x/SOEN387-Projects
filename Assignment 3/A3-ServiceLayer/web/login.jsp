@@ -20,6 +20,7 @@
                 Password: <input type="password" name="password"><br>
                 <input type="submit" value="Login"/>
             </form>
+            <h1>${errorMessage}</h1>
         </div>
     </body>
 </html>

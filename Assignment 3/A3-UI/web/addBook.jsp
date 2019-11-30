@@ -21,10 +21,15 @@
         <link href="style/addBookCSS.css" rel="stylesheet" type="text/css">
     </head>
     <%
-        Session currentSession = (Session) session.getAttribute("currentSession");
-        if (!currentSession.isUserLoggedIn()) {
+        try {
+            Session currentSession = (Session) session.getAttribute("currentSession");
+            if (!currentSession.isUserLoggedIn()) {
+                response.sendRedirect("login.jsp");
+            }
+        } catch (Exception e) {
             response.sendRedirect("login.jsp");
         }
+
     %>
     <body>
         <h1>Add a book</h1>

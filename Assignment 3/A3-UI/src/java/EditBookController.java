@@ -77,7 +77,7 @@ public class EditBookController extends HttpServlet {
         Session currentSession = (Session) session.getAttribute("currentSession");
 
         if (currentSession.isUserLoggedIn()) {
-
+            
             String title = request.getParameter("title");
             String description = request.getParameter("description");
             String fName = request.getParameter("fname");

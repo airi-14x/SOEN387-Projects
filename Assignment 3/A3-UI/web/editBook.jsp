@@ -21,10 +21,23 @@
         <link href="style/addBookCSS.css" rel="stylesheet" type="text/css">
     </head>
     <%
-        Session currentSession = (Session) session.getAttribute("currentSession");
-        if (!currentSession.isUserLoggedIn()) {
+        try {
+            Session currentSession = (Session) session.getAttribute("currentSession");
+            if (!currentSession.isUserLoggedIn()) {
+                response.sendRedirect("login.jsp");
+            }
+        } catch (Exception e) {
             response.sendRedirect("login.jsp");
         }
+
+        if (!request.getParameterMap().containsKey("bookID")) {
+            request.setAttribute("errorMessage", "Cannot access this page at the moment");
+            RequestDispatcher rd = request.getRequestDispatcher("/error.jsp");
+            rd.forward(request, response);
+            response.sendRedirect("error.jsp");
+        }
+
+
     %>
     <body>
         <h1>Edit book</h1>

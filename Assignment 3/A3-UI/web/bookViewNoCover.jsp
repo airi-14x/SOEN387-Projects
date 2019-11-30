@@ -10,10 +10,15 @@
 <%@page import="repository.core.Book"%>
 
 <%
-    Session currentSession = (Session) session.getAttribute("currentSession");
-    if (!currentSession.isUserLoggedIn()) {
+    try {
+        Session currentSession = (Session) session.getAttribute("currentSession");
+        if (!currentSession.isUserLoggedIn()) {
+            response.sendRedirect("login.jsp");
+        }
+    } catch(Exception e) {
         response.sendRedirect("login.jsp");
     }
+
 %>
 
 <!DOCTYPE html>

@@ -16,15 +16,19 @@
     </head>
     <jsp:useBean id="currentUser" scope="session" class="repository.core.Session" />
     <%
-        Session currentSession = (Session) session.getAttribute("currentSession");
         String userName = "";
-        if (!currentSession.isUserLoggedIn()) {
+        try {
+            Session currentSession = (Session) session.getAttribute("currentSession");
+            
+            if (!currentSession.isUserLoggedIn()) {
+                response.sendRedirect("login.jsp");
+            }
+            else {
+                userName = currentUser.getUserName();
+            }
+        } catch (Exception e) {
             response.sendRedirect("login.jsp");
         }
-        else {
-            userName = currentUser.getUserName();
-        }
-        
     %>
 
     <body>

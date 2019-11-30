@@ -21,6 +21,10 @@
         <servlet-class>BookViewNoCoverController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>EditBookController</servlet-name>
+        <servlet-class>EditBookController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>DeleteBookController</servlet-name>
         <servlet-class>DeleteBookController</servlet-class>
     </servlet>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>BookViewNoCoverController</servlet-name>
         <url-pattern>/BookViewNoCoverController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditBookController</servlet-name>
+        <url-pattern>/EditBookController</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>DisplayAllController</servlet-name>

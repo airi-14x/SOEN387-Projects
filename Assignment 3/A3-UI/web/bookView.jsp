@@ -49,7 +49,7 @@
                     <td><jsp:getProperty name = "book" property = "publisherCompany"/></td>
                     <td><jsp:getProperty name = "book" property = "publisherAddress"/></td>
                     <td><input type="submit" value="View Cover" name="viewCover"/></td>
-                    <td><a href="./addBook.jsp">Edit book</a></td>
+                    <td><a href="./editBook.jsp?bookID=<jsp:getProperty name = "book" property = "id"/>">Edit book</a></td>
                 </form>
                 </tr>
             </table>

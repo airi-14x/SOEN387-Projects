@@ -62,8 +62,6 @@ public class LoginController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html");
         Session currentSession;
-        Cookie ck[] = request.getCookies();
-        RequestDispatcher dispatcher;
 
         if (request.getMethod().equals("POST")) {
             currentSession = new Session();
@@ -75,10 +73,13 @@ public class LoginController extends HttpServlet {
                 userCookie.setMaxAge(60);
                 response.addCookie(userCookie);
 
+                response.sendRedirect("displayBooks.jsp");
+            } else {
+                request.setAttribute("errorMessage", "Login failed");
+                RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+                rd.forward(request, response);
             }
         }
-
-        response.sendRedirect("displayBooks.jsp");
 
     }
 

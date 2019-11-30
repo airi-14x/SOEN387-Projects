@@ -23,8 +23,9 @@
         <title>Display Book</title>
     </head>
     <body>
+        <div><a href="BookViewController?viewBookID=<jsp:getProperty name = "book" property = "id"/>">View book with cover</a></div>
         <div>
-            <h2>Book details</h2>
+            <h2>Book details - No cover</h2>
             <%=request.getAttribute("error")%>
             <jsp:useBean id = "book" class = "repository.core.Book" scope = "session"/>
             <table border="1px solid black;">

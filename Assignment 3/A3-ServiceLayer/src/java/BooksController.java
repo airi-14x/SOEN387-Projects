@@ -12,6 +12,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -68,8 +69,15 @@ public class BooksController extends HttpServlet {
 
         BookRepository bookRepo = BookRepository.getInstance();
         JSONObject jerror = new JSONObject();
+        Session currentSession = new Session();
 
-        if (request.getParameter("books").equals("displayAll")) {
+        Cookie ck[] = request.getCookies();
+
+        if (ck == null || currentSession.isUserLoggedIn() == false) {
+            request.setAttribute("errorMessage", "Must be logged in for these actions!");
+            RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+            rd.forward(request, response);
+        } else if (request.getParameter("books").equals("displayAll")) {
             try {
                 Collection<JSONObject> allBooksJSON = new ArrayList<JSONObject>();
                 ArrayList<Book> books = bookRepo.listAllBooks(new Session());

@@ -12,9 +12,36 @@
         <title>Books</title>
         <link href="style/displayBooksCSS.css" rel="stylesheet" type="text/css">
     </head>
+    
+    <jsp:useBean id="currentUser" scope="session" class="repository.core.Session" />
+    <%
+        Cookie ck[] = request.getCookies();
+        String username = null;
+        
+        if (currentUser.isUserLoggedIn() == false)
+        {
+           response.sendRedirect("login.jsp");
+        }
+        
+        else if (currentUser.isUserLoggedIn())
+        {
+            
+            for(int i = 0; i < ck.length; i++)
+            {
+                if(currentUser.getUserName().equals(ck[i].getValue()))
+                     username = ck[i].getValue();
+            }
+            
+            if (username == null)
+                response.sendRedirect("login.jsp"); 
+            
+        }
+        
+    %>
+    
     <body>
         
-        <h1>Display Books</h1>
+        <h1>Welcome to the Books <%= username %> !</h1>
         <div class="submit-actions">
          <form action="BooksController" method="GET">
                 View All Books: <input type="submit" name="books" value="displayAll"/><br>

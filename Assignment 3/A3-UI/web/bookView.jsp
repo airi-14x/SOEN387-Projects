@@ -18,7 +18,6 @@
     } catch (Exception e) {
         response.sendRedirect("login.jsp");
     }
-
 %>
 
 <!DOCTYPE html>

@@ -88,6 +88,7 @@ public class BookRepository implements IBookRepository {
                 System.out.println(isbn);
                 result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, publisherAddress, new CoverImage(mimeType, imageData));
                 result.setId(bookId);// Set ID of book to match Database ID
+            
             }
 
         } catch (SQLException e) {

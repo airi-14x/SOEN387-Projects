@@ -37,7 +37,7 @@ public class BookViewController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        doPost(request, response);
+        doGet(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -59,8 +59,8 @@ public class BookViewController extends HttpServlet {
             BookRepository bookRepo = BookRepository.getInstance();
             Book resultBook = null;
             request.setAttribute("error", " ");
-            String bookID = (String) request.getParameter("viewBookID");
             if (!request.getParameter("viewBookID").equals("")) {
+                String bookID = (String) request.getParameter("viewBookID");
                 try {
                     resultBook = bookRepo.getBookInfo(currentSession, Integer.parseInt(bookID));
                 } catch (BookRepositoryException ex) {

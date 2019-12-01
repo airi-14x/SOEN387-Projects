@@ -47,7 +47,7 @@
                         <td><input type="text" value="${book.id}" name="bookId" readonly/></td>
                         <td>${book.title}</td>
                         <td>${book.description}</td>
-                        <td>${book.getISBN()}</td>
+                        <td>${book.ISBN}</td>
                         <td>${book.author}</td>
                         <td>${book.publisherCompany}</td>
                         <td>${book.publisherAddress}</td>

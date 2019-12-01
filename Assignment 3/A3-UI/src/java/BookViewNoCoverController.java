@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,13 +14,18 @@ import repository.core.BookRepository;
 import repository.core.BookRepositoryException;
 import repository.core.Session;
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
 /**
  *
- * @author Airi
+ * @author jasminelatendresse
  */
-@WebServlet("/BookViewController")
-public class BookViewController extends HttpServlet {
-
+@WebServlet("/BookViewNoCoverController")
+public class BookViewNoCoverController extends HttpServlet{
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -37,7 +38,7 @@ public class BookViewController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        doGet(request, response);
+        doPost(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -59,8 +60,8 @@ public class BookViewController extends HttpServlet {
             BookRepository bookRepo = BookRepository.getInstance();
             Book resultBook = null;
             request.setAttribute("error", " ");
+            String bookID = (String) request.getParameter("viewBookID");
             if (!request.getParameter("viewBookID").equals("")) {
-                String bookID = (String) request.getParameter("viewBookID");
                 try {
                     resultBook = bookRepo.getBookInfo(currentSession, Integer.parseInt(bookID));
                 } catch (BookRepositoryException ex) {
@@ -72,21 +73,8 @@ public class BookViewController extends HttpServlet {
 
                 request.setAttribute("book", resultBook);
 
-            } else if (!request.getParameter("ISBN").equals("")) {
-                try {
-                    resultBook = bookRepo.getBookInfo(currentSession, request.getParameter("ISBN"));
-                } catch (BookRepositoryException ex) {
-                    Logger.getLogger(BookViewController.class.getName()).log(Level.SEVERE, null, ex);
-                    request.setAttribute("error", "Sorry there's no book in the database with ISBN = " + request.getParameter("ISBN"));
-                }
-
-                request.setAttribute("book", resultBook);
-
-            } else {
-                request.setAttribute("error", "Please enter ID or ISBN!");
-            }
-
-            RequestDispatcher rd = request.getRequestDispatcher("/bookView.jsp");
+            } 
+            RequestDispatcher rd = request.getRequestDispatcher("/bookViewNoCover.jsp");
             rd.forward(request, response);
             //getServletContext().getRequestDispatcher("/bookView.jsp").forward(request, response);
         }
@@ -121,4 +109,8 @@ public class BookViewController extends HttpServlet {
         return "Short description";
     }// </editor-fold>
 
+    
+    
+    
+    
 }

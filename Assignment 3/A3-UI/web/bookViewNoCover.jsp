@@ -1,7 +1,7 @@
 <%-- 
-    Document   : viewBook
-    Created on : 6 nov. 2019, 08:40:53
-    Author     : Airi
+    Document   : bookViewNoCover
+    Created on : 2019-11-30, 11:24:33
+    Author     : jasminelatendresse
 --%>
 
 <%@page import="java.io.OutputStream"%>
@@ -15,9 +15,10 @@
         if (!currentSession.isUserLoggedIn()) {
             response.sendRedirect("login.jsp");
         }
-    } catch (Exception e) {
+    } catch(Exception e) {
         response.sendRedirect("login.jsp");
     }
+
 %>
 
 <!DOCTYPE html>
@@ -26,12 +27,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Display Book</title>
     </head>
-    <jsp:useBean id = "book" class = "repository.core.Book" scope = "session"/>
     <body>
-        <div><a href="BookViewNoCoverController?viewBookID=<jsp:getProperty name = "book" property = "id"/>">View book without cover</a></div>
+        <div><a href="BookViewController?viewBookID=<jsp:getProperty name = "book" property = "id"/>">View book with cover</a></div>
         <div>
-            <h2>Book details - With cover</h2>
+            <h2>Book details - No cover</h2>
             <%=request.getAttribute("error")%>
+            <jsp:useBean id = "book" class = "repository.core.Book" scope = "session"/>
             <table border="1px solid black;">
                 <tr>
                     <th>ID</th>
@@ -52,7 +53,6 @@
                     <td><jsp:getProperty name = "book" property = "author"/></td>
                     <td><jsp:getProperty name = "book" property = "publisherCompany"/></td>
                     <td><jsp:getProperty name = "book" property = "publisherAddress"/></td>
-                    <td><input type="submit" value="View Cover" name="viewCover"/></td>
                     <td><a href="./editBook.jsp?bookID=<jsp:getProperty name = "book" property = "id"/>">Edit book</a></td>
                 </form>
                 </tr>

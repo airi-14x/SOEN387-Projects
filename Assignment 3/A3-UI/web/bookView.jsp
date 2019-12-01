@@ -58,5 +58,6 @@
                 </tr>
             </table>
         </div>
+        <a href="./home.jsp">Back to homepage</a>
     </body>
 </html>

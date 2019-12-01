@@ -70,7 +70,6 @@ public class BookRepository implements IBookRepository {
         Book result = null;
         ResultSet resultSet = respositoryDatabaseGatewayConnection.getBookInfo(id);
         try {
-            
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
@@ -85,7 +84,10 @@ public class BookRepository implements IBookRepository {
                 System.out.println(isbn);
                 result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, publisherAddress, new CoverImage(mimeType, imageData));
                 result.setId(bookId);// Set ID of book to match Database ID
-            
+                
+                if(isbn == null) {
+                    throw new BookRepositoryException("Book not found");
+                }
             }
 
         } catch (SQLException e) {
@@ -112,6 +114,9 @@ public class BookRepository implements IBookRepository {
 
                 result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, publisherAddress, new CoverImage(mimeType, imageData));
                 result.setId(bookId); // Set ID of book to match Database ID
+                if(isbn == null) {
+                    throw new BookRepositoryException("Book not found");
+                }
 
             }
         } catch (SQLException e) {
@@ -184,7 +189,8 @@ public class BookRepository implements IBookRepository {
         }
         try {
             ResultSet rs = respositoryDatabaseGatewayConnection.getBookInfo(id);
-            if (!rs.next()) {
+            String isbn = rs.getString("isbn");
+            if (isbn.isEmpty()) {
                 throw new BookRepositoryException("Book not found in the database");
             }
 

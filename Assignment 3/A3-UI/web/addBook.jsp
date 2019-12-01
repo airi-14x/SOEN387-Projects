@@ -32,6 +32,7 @@
 
     %>
     <body>
+        <a href="./home.jsp">Back to homepage</a>
         <h1>Add a book</h1>
         <div>
             <form action="AddBookController" method="POST" enctype="multipart/form-data">

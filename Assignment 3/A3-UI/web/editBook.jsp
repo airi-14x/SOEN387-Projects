@@ -52,5 +52,6 @@
                 <input type="submit" value="Submit" name="submit"/>
             </form>
         </div>
+        <a href="./home.jsp">Back to homepage</a>
     </body>
 </html>

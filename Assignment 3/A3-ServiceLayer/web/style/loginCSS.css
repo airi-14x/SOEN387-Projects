@@ -8,7 +8,7 @@ and open the template in the editor.
     Author     : Airi
 */
 
-div {
+.login {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
@@ -47,4 +47,9 @@ input[type=submit]:hover {
 
 h1 {
     text-align: center;
+}
+
+.error{
+    color: red;
+    font-weight: bolder;
 }

@@ -14,12 +14,13 @@
     </head>
     <body>
         <h1>Login</h1>
-        <div>
+        <div class="login">
             <form action="LoginController" method="POST">
                 Username: <input type="text" name="username"><br>
                 Password: <input type="password" name="password"><br>
                 <input type="submit" value="Login"/>
             </form>
+            <div class="error"><h2>${errorMessage}</h2></div>
         </div>
     </body>
 </html>

@@ -84,8 +84,8 @@ public class BookRepository implements IBookRepository {
                 System.out.println(isbn);
                 result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, publisherAddress, new CoverImage(mimeType, imageData));
                 result.setId(bookId);// Set ID of book to match Database ID
-                
-                if(isbn == null) {
+
+                if (isbn == null) {
                     throw new BookRepositoryException("Book not found");
                 }
             }
@@ -114,7 +114,7 @@ public class BookRepository implements IBookRepository {
 
                 result = new Book(title, description, isbn, new Author(firstName, lastName), publisherCompany, publisherAddress, new CoverImage(mimeType, imageData));
                 result.setId(bookId); // Set ID of book to match Database ID
-                if(isbn == null) {
+                if (isbn == null) {
                     throw new BookRepositoryException("Book not found");
                 }
 
@@ -123,7 +123,7 @@ public class BookRepository implements IBookRepository {
         }
         return result;
     }
-    
+
     @Override
     public int addNewBook(Session session, Book book) throws BookRepositoryException {
         String user = (String) Session.getCurrentUser();
@@ -139,9 +139,9 @@ public class BookRepository implements IBookRepository {
         String publisherAddress = book.getPublisherAddress();
         byte[] image = book.getCover().getImageData();
         String mimeType = book.getCover().getMimeType();
-        
+
         respositoryDatabaseGatewayConnection.addNewBook(title, description, isbn, authorFirstName, authorLastName, publisherCompany, publisherAddress, image, mimeType);
-      
+
         book.autoIncrement();
         books.add(book);
         return book.getId();
@@ -161,14 +161,14 @@ public class BookRepository implements IBookRepository {
         if (null == user) {
             throw new BookRepositoryException("You must be logged in to do this operation.");
         }
-        
+
         String authorFirstName = author.getFirstName();
         String authorLastName = author.getLastName();
         byte[] imageData = image.getImageData();
         String mimeType = image.getMimeType();
-        
+
         respositoryDatabaseGatewayConnection.updateBookInfo(id, title, description, authorFirstName, authorLastName, imageData, mimeType);
-        
+
         for (Book book : books) {
             if (book.getId() == id) {
                 book.setTitle(title);
@@ -179,7 +179,6 @@ public class BookRepository implements IBookRepository {
         }
     }
 
-
     @Override
     public void deleteBook(Session session, int id) throws BookRepositoryException {
 
@@ -188,11 +187,11 @@ public class BookRepository implements IBookRepository {
             throw new BookRepositoryException("You must be logged in to do this operation.");
         }
         try {
-            ResultSet rs = respositoryDatabaseGatewayConnection.getBookInfo(id);
-            String isbn = rs.getString("isbn");
-            if (isbn.isEmpty()) {
-                throw new BookRepositoryException("Book not found in the database");
-            }
+            //ResultSet rs = respositoryDatabaseGatewayConnection.getBookInfo(id);
+            //String isbn = rs.getString("isbn");
+            //if (isbn.isEmpty()) {
+            //    throw new BookRepositoryException("Book not found in the database");
+            //}
 
             respositoryDatabaseGatewayConnection.deleteBook(id);
         } catch (Exception e) {

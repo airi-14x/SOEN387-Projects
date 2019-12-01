@@ -70,10 +70,7 @@ public class BookRepository implements IBookRepository {
         Book result = null;
         ResultSet resultSet = respositoryDatabaseGatewayConnection.getBookInfo(id);
         try {
-            if (!resultSet.next()) {
-                throw new BookRepositoryException("Book not found in database");
-            }
-
+            
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");
@@ -101,9 +98,6 @@ public class BookRepository implements IBookRepository {
         Book result = null;
         ResultSet resultSet = respositoryDatabaseGatewayConnection.getBookInfo(bookIsbn);
         try {
-            if (!resultSet.next()) {
-                    throw new BookRepositoryException("Book not found in database");
-            }
             while (resultSet.next()) {
                 int bookId = resultSet.getInt("id");
                 String title = resultSet.getString("title");

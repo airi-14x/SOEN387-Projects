@@ -68,11 +68,10 @@ public class BookRepository implements IBookRepository {
     @Override
     public Book getBookInfo(Session session, int id) throws BookRepositoryException {
         Book result = null;
-
+        ResultSet resultSet = respositoryDatabaseGatewayConnection.getBookInfo(id);
         try {
-            ResultSet resultSet = respositoryDatabaseGatewayConnection.getBookInfo(id);
-             if (!resultSet.next()) {
-                    throw new BookRepositoryException("Book not found in database");
+            if (!resultSet.next()) {
+                throw new BookRepositoryException("Book not found in database");
             }
 
             while (resultSet.next()) {
@@ -99,8 +98,8 @@ public class BookRepository implements IBookRepository {
     @Override
     public Book getBookInfo(Session session, String bookIsbn) throws BookRepositoryException {
         Book result = null;
+        ResultSet resultSet = respositoryDatabaseGatewayConnection.getBookInfo(bookIsbn);
         try {
-            ResultSet resultSet = respositoryDatabaseGatewayConnection.getBookInfo(bookIsbn);
             if (!resultSet.next()) {
                     throw new BookRepositoryException("Book not found in database");
             }

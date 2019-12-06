@@ -128,3 +128,9 @@
 0:0:0:0:0:0:0:1 - - [01/Dec/2019:15:50:51 -0500] "POST /A3-UI/UpdateBookController HTTP/1.1" 500 300
 0:0:0:0:0:0:0:1 - - [01/Dec/2019:15:50:55 -0500] "POST /A3-UI/UpdateBookController HTTP/1.1" 200 1342
 0:0:0:0:0:0:0:1 - - [01/Dec/2019:15:50:55 -0500] "GET /A3-UI/DisplayAllController?displayAll=Submit HTTP/1.1" 200 2240
+127.0.0.1 - - [01/Dec/2019:15:57:09 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [01/Dec/2019:15:57:09 -0500] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [01/Dec/2019:15:57:09 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [01/Dec/2019:15:57:09 -0500] "GET /manager/text/ HTTP/1.1" 200 41
+127.0.0.1 - - [01/Dec/2019:15:57:09 -0500] "HEAD /netbeans-tomcat-status-test HTTP/1.1" 404 -
+127.0.0.1 - airi14x [01/Dec/2019:15:57:09 -0500] "GET /manager/text/ HTTP/1.1" 200 41
